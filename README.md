@@ -2,61 +2,53 @@
 
 A KNN-based tool that finds the 5 most statistically similar free agents from the prior 3 signing classes to estimate contract values for pending NHL free agents.
 
-**Live site:** `https://<your-username>.github.io/nhl-contract-comps/`
+**Live site:** `https://cbattinieri.github.io/nhl-contract-comps/`
 
 ## Architecture
 
-This was rebuilt from a Python Shiny app into a **static GitHub Pages site** for reliability and zero hosting cost:
+Static GitHub Pages site — no server, no hosting costs:
 
 ```
 generate_data.py          → Python pipeline: fetches data, runs KNN, outputs JSON
 data/comps.json           → Pre-computed results (auto-updated daily)
 index.html                → Static frontend (loads JSON, no server needed)
 .github/workflows/        → GitHub Action for daily data refresh
+test_local.py             → Local preview server (not deployed)
 ```
 
-## Key Fixes from Original
+## Season Switch Checklist
 
-- **Dynamic seasons** — season list auto-extends based on current date (no more hardcoded list)
-- **In-season signings** — properly handles `signing_status` vs `expiry_status` for current-year FAs
-- **No hardcoded column indices** — all references by column name, not position
-- **No code duplication** — single `run_knn_model()` function for all 4 model variants
-- **Cap ceiling projections** — configurable cap limits dict instead of scattered magic numbers
+Everything is dynamic except the salary cap numbers. Each offseason, update **one thing** in `generate_data.py`:
 
-## Setup
+### 1. Update `CAP_LIMITS` (required)
 
-### 1. Clone & install dependencies
+Open `generate_data.py` and find the `CAP_LIMITS` dictionary near the top. Add the new season's confirmed cap and update any projections:
 
-```bash
-git clone https://github.com/<your-username>/nhl-contract-comps.git
-cd nhl-contract-comps
-pip install -r requirements.txt
+```python
+CAP_LIMITS = {
+    ...
+    20252026: 95_500_000,   # confirmed
+    20262027: 104_000_000,  # update once confirmed (may be ~$107M)
+    20272028: 113_500_000,  # update once confirmed
+    20282029: ???_000_000,  # add when announced
+}
 ```
 
-### 2. Generate data locally
+**When:** After the NHL/NHLPA announces the official cap ceiling, typically January-June before the new season.
 
-```bash
-export PUCKPEDIA_API_KEY="your_api_key_here"
-python generate_data.py
-```
+**Where to find it:** [NHL.com salary cap announcements](https://www.nhl.com) or [PuckPedia](https://puckpedia.com).
 
-This creates `data/comps.json` — all the model results in one file.
+### 2. Re-run the Action (required)
 
-### 3. Preview locally
+After updating the cap, go to **Actions → Update Data & Deploy → Run workflow**. This regenerates all data with the new cap numbers.
 
-Open `index.html` in a browser, or use a local server:
+### That's it
 
-```bash
-python -m http.server 8000
-# then visit http://localhost:8000
-```
-
-### 4. Deploy to GitHub Pages
-
-1. Push to GitHub
-2. Go to **Settings → Pages → Source → Deploy from branch → `main`**
-3. Add your PuckPedia API key as a **Repository Secret** named `PUCKPEDIA_API_KEY`
-4. The GitHub Action will auto-update `data/comps.json` daily
+Everything else is automatic:
+- **Season detection** — computed from the current date (`year >= July → new season`)
+- **Season list** — auto-extends from 2003-04 through the current season
+- **Free agent detection** — derives from PuckPedia contract expiry data
+- **Daily refresh** — GitHub Action runs at 8 AM UTC during the season
 
 ## Model Details
 
@@ -69,4 +61,47 @@ Four KNN models run independently:
 | UFA Forwards | Above + L3 GP avg, L3 P/G avg, L3 EV P/G avg | Age & career stats heavily weighted; platform years at 0.25x |
 | UFA Defense | Same as UFA Forwards | |
 
-Cap Hit % estimate uses weighted averaging: 30% / 25% / 20% / 15% / 10% across the 5 nearest neighbors.
+### Estimation Method
+
+Cap hit % estimates use **inverse-distance weighting (IDW)** — each comp's influence is proportional to `1/distance`. Closer comps dominate; distant comps contribute minimally. Each estimate includes a ±1σ confidence interval.
+
+### Backtest Accuracy
+
+Each model is backtested via leave-one-season-out cross-validation. Typical MAE is ~1.9% of cap hit (~$1.8M AAV on the current cap). The backtest metrics are shown in the app header and regenerated with each data refresh.
+
+## Data Sources
+
+- **Stats & bios:** NHL public API (api.nhle.com)
+- **Contracts:** PuckPedia API (requires API key stored as `PUCKPEDIA_API_KEY` repo secret)
+- **Cap limits:** Manually maintained in `generate_data.py` from official NHL/NHLPA announcements
+
+## Historical Cap Reference
+
+For convenience, here are all confirmed NHL salary caps:
+
+| Season | Upper Limit |
+|--------|-------------|
+| 2003-04 | $39.0M |
+| 2005-06 | $39.0M |
+| 2006-07 | $44.0M |
+| 2007-08 | $50.3M |
+| 2008-09 | $56.7M |
+| 2009-10 | $56.8M |
+| 2010-11 | $59.4M |
+| 2011-12 | $64.3M |
+| 2012-13 | $70.2M |
+| 2013-14 | $64.3M |
+| 2014-15 | $69.0M |
+| 2015-16 | $71.4M |
+| 2016-17 | $73.0M |
+| 2017-18 | $75.0M |
+| 2018-19 | $79.5M |
+| 2019-20 | $81.5M |
+| 2020-21 | $81.5M |
+| 2021-22 | $81.5M |
+| 2022-23 | $82.5M |
+| 2023-24 | $83.5M |
+| 2024-25 | $88.0M |
+| 2025-26 | $95.5M ✓ |
+| 2026-27 | $104.0M (agreed, may adjust to ~$107M) |
+| 2027-28 | $113.5M (agreed, subject to minor adjustment) |

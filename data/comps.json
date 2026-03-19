@@ -1,156 +1,35 @@
 {
   "meta": {
-    "currentSeason": 20242025,
+    "currentSeason": 20252026,
     "currentCap": 95500000,
     "futureCaps": {
-      "20252026": 104000000,
-      "20262027": 113500000
+      "20262027": 104000000,
+      "20272028": 113500000
     },
-    "generatedAt": "2025-03-18T12:00:00",
+    "generatedAt": "2026-03-19T00:55:01.375800",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
-      "RFA_Forward": { "mae": 1.82, "median_ae": 1.21, "n": 285 },
-      "RFA_Defense": { "mae": 1.65, "median_ae": 1.08, "n": 142 },
-      "UFA_Forward": { "mae": 2.14, "median_ae": 1.53, "n": 340 },
-      "UFA_Defense": { "mae": 1.91, "median_ae": 1.35, "n": 178 }
+      "RFA_Forward": {
+        "mae": null,
+        "median_ae": null,
+        "n": 0
+      },
+      "RFA_Defense": {
+        "mae": null,
+        "median_ae": null,
+        "n": 0
+      },
+      "UFA_Forward": {
+        "mae": null,
+        "median_ae": null,
+        "n": 0
+      },
+      "UFA_Defense": {
+        "mae": null,
+        "median_ae": null,
+        "n": 0
+      }
     }
   },
-  "players": [
-    {
-      "playerId": 8478483,
-      "name": "Mitch Marner",
-      "position": "Winger",
-      "positionGroup": "Forward",
-      "signingStatus": "UFA",
-      "contractYear": 20242025,
-      "age": 28,
-      "height": "6'0\"",
-      "weight": "175",
-      "shoots": "R",
-      "term": 6, "value": 65280000, "aav": 10880000, "capHitPct": 11.39,
-      "gp": 65, "goals": 18, "assists": 56, "points": 74, "ppg": 1.14, "evPoints": 48, "toi": 20.5,
-      "careerGP": 600, "careerPoints": 680, "careerEVPoints": 400, "careerPPG": 1.13, "careerEVPPG": 0.67,
-      "careerTOI": 19.8, "careerGPPct": 91.2, "seasonNo": 9,
-      "estimatedCapHitPct": 10.48,
-      "estimatedAAV": 10008400,
-      "ciLow": 7.15, "ciHigh": 13.81,
-      "aavLow": 6828250, "aavHigh": 13188550,
-      "estimateStd": 3.33,
-      "compWeights": [0.3542, 0.3401, 0.1283, 0.1017, 0.0757],
-      "comps": [
-        {
-          "playerId": 8473548, "name": "Claude Giroux", "position": "Center", "positionGroup": "Forward",
-          "signingStatus": "UFA", "contractYear": 20222023, "age": 35,
-          "height": "5'11\"", "weight": "185", "shoots": "R",
-          "term": 3, "value": 19500000, "aav": 6500000, "capHitPct": 7.83,
-          "gp": 82, "goals": 22, "assists": 43, "points": 65, "ppg": 0.79, "evPoints": 45, "toi": 18.2,
-          "careerGP": 1000, "careerPoints": 900, "careerEVPoints": 550, "careerPPG": 0.9, "careerEVPPG": 0.55,
-          "careerTOI": 19.5, "careerGPPct": 89.5, "seasonNo": 15
-        },
-        {
-          "playerId": 8474141, "name": "Patrick Kane", "position": "Winger", "positionGroup": "Forward",
-          "signingStatus": "UFA", "contractYear": 20222023, "age": 34,
-          "height": "5'10\"", "weight": "177", "shoots": "L",
-          "term": 1, "value": 2750000, "aav": 2750000, "capHitPct": 3.31,
-          "gp": 70, "goals": 16, "assists": 32, "points": 48, "ppg": 0.69, "evPoints": 30, "toi": 18.0,
-          "careerGP": 1100, "careerPoints": 1200, "careerEVPoints": 700, "careerPPG": 1.09, "careerEVPPG": 0.64,
-          "careerTOI": 20.1, "careerGPPct": 88.0, "seasonNo": 16
-        },
-        {
-          "playerId": 8478402, "name": "Timo Meier", "position": "Winger", "positionGroup": "Forward",
-          "signingStatus": "UFA", "contractYear": 20222023, "age": 27,
-          "height": "6'1\"", "weight": "210", "shoots": "L",
-          "term": 8, "value": 70400000, "aav": 8800000, "capHitPct": 10.60,
-          "gp": 78, "goals": 27, "assists": 28, "points": 55, "ppg": 0.71, "evPoints": 35, "toi": 17.5,
-          "careerGP": 400, "careerPoints": 290, "careerEVPoints": 180, "careerPPG": 0.73, "careerEVPPG": 0.45,
-          "careerTOI": 16.8, "careerGPPct": 85.0, "seasonNo": 7
-        },
-        {
-          "playerId": 8478420, "name": "Alex DeBrincat", "position": "Winger", "positionGroup": "Forward",
-          "signingStatus": "UFA", "contractYear": 20232024, "age": 26,
-          "height": "5'7\"", "weight": "165", "shoots": "R",
-          "term": 4, "value": 31600000, "aav": 7900000, "capHitPct": 9.53,
-          "gp": 80, "goals": 27, "assists": 38, "points": 65, "ppg": 0.81, "evPoints": 42, "toi": 17.2,
-          "careerGP": 450, "careerPoints": 370, "careerEVPoints": 220, "careerPPG": 0.82, "careerEVPPG": 0.49,
-          "careerTOI": 17.0, "careerGPPct": 88.5, "seasonNo": 7
-        },
-        {
-          "playerId": 8479339, "name": "Brock Boeser", "position": "Winger", "positionGroup": "Forward",
-          "signingStatus": "UFA", "contractYear": 20232024, "age": 27,
-          "height": "6'1\"", "weight": "208", "shoots": "R",
-          "term": 3, "value": 19500000, "aav": 6500000, "capHitPct": 7.83,
-          "gp": 75, "goals": 25, "assists": 32, "points": 57, "ppg": 0.76, "evPoints": 38, "toi": 16.8,
-          "careerGP": 420, "careerPoints": 340, "careerEVPoints": 200, "careerPPG": 0.81, "careerEVPPG": 0.48,
-          "careerTOI": 17.1, "careerGPPct": 82.0, "seasonNo": 7
-        }
-      ],
-      "compDistances": [0.52, 0.54, 1.44, 1.82, 2.44],
-      "career": [
-        {"season": 20162017, "age": 20, "gp": 77, "points": 61, "ppg": 0.79, "evPoints": 40, "evPPG": 0.52, "toi": 17.3},
-        {"season": 20172018, "age": 21, "gp": 82, "points": 69, "ppg": 0.84, "evPoints": 45, "evPPG": 0.55, "toi": 18.1},
-        {"season": 20182019, "age": 22, "gp": 82, "points": 94, "ppg": 1.15, "evPoints": 60, "evPPG": 0.73, "toi": 19.5},
-        {"season": 20192020, "age": 23, "gp": 59, "points": 44, "ppg": 0.75, "evPoints": 28, "evPPG": 0.47, "toi": 19.8},
-        {"season": 20202021, "age": 24, "gp": 55, "points": 67, "ppg": 1.22, "evPoints": 42, "evPPG": 0.76, "toi": 20.0},
-        {"season": 20212022, "age": 25, "gp": 72, "points": 97, "ppg": 1.35, "evPoints": 62, "evPPG": 0.86, "toi": 20.5},
-        {"season": 20222023, "age": 26, "gp": 82, "points": 99, "ppg": 1.21, "evPoints": 65, "evPPG": 0.79, "toi": 20.3},
-        {"season": 20232024, "age": 27, "gp": 69, "points": 85, "ppg": 1.23, "evPoints": 55, "evPPG": 0.80, "toi": 20.8},
-        {"season": 20242025, "age": 28, "gp": 65, "points": 74, "ppg": 1.14, "evPoints": 48, "evPPG": 0.74, "toi": 20.5}
-      ],
-      "compCareers": {
-        "8473548": [
-          {"season": 20092010, "age": 22, "gp": 82, "points": 47, "ppg": 0.57, "evPoints": 30, "evPPG": 0.37, "toi": 17.5},
-          {"season": 20102011, "age": 23, "gp": 82, "points": 76, "ppg": 0.93, "evPoints": 50, "evPPG": 0.61, "toi": 18.8},
-          {"season": 20112012, "age": 24, "gp": 77, "points": 93, "ppg": 1.21, "evPoints": 62, "evPPG": 0.81, "toi": 19.5},
-          {"season": 20132014, "age": 26, "gp": 82, "points": 86, "ppg": 1.05, "evPoints": 55, "evPPG": 0.67, "toi": 20.2},
-          {"season": 20172018, "age": 30, "gp": 82, "points": 102, "ppg": 1.24, "evPoints": 68, "evPPG": 0.83, "toi": 20.5}
-        ],
-        "8474141": [
-          {"season": 20072008, "age": 19, "gp": 82, "points": 72, "ppg": 0.88, "evPoints": 48, "evPPG": 0.59, "toi": 18.0},
-          {"season": 20082009, "age": 20, "gp": 80, "points": 70, "ppg": 0.88, "evPoints": 44, "evPPG": 0.55, "toi": 18.5},
-          {"season": 20152016, "age": 27, "gp": 82, "points": 106, "ppg": 1.29, "evPoints": 70, "evPPG": 0.85, "toi": 21.1},
-          {"season": 20182019, "age": 30, "gp": 81, "points": 110, "ppg": 1.36, "evPoints": 72, "evPPG": 0.89, "toi": 22.3}
-        ]
-      }
-    },
-    {
-      "playerId": 8480801,
-      "name": "JT Compher",
-      "position": "Center",
-      "positionGroup": "Forward",
-      "signingStatus": "UFA",
-      "contractYear": 20242025,
-      "age": 30,
-      "height": "6'0\"", "weight": "195", "shoots": "R",
-      "term": 5, "value": 17750000, "aav": 3550000, "capHitPct": 3.72,
-      "gp": 60, "goals": 10, "assists": 18, "points": 28, "ppg": 0.47, "evPoints": 20, "toi": 16.0,
-      "careerGP": 500, "careerPoints": 230, "careerEVPoints": 150, "careerPPG": 0.46, "careerEVPPG": 0.30,
-      "careerTOI": 15.5, "careerGPPct": 80.0, "seasonNo": 8,
-      "estimatedCapHitPct": 2.85, "estimatedAAV": 2721750,
-      "ciLow": 2.10, "ciHigh": 3.60,
-      "aavLow": 2005500, "aavHigh": 3438000,
-      "estimateStd": 0.75,
-      "compWeights": [0.28, 0.25, 0.22, 0.14, 0.11],
-      "comps": [], "compDistances": [], "career": [], "compCareers": {}
-    },
-    {
-      "playerId": 8480069,
-      "name": "Cale Makar",
-      "position": "Defense",
-      "positionGroup": "Defense",
-      "signingStatus": "RFA",
-      "contractYear": 20242025,
-      "age": 26,
-      "height": "5'11\"", "weight": "187", "shoots": "R",
-      "term": 6, "value": 54000000, "aav": 9000000, "capHitPct": 9.42,
-      "gp": 65, "goals": 18, "assists": 50, "points": 68, "ppg": 1.05, "evPoints": 44, "toi": 25.5,
-      "careerGP": 350, "careerPoints": 400, "careerEVPoints": 250, "careerPPG": 1.14, "careerEVPPG": 0.71,
-      "careerTOI": 24.8, "careerGPPct": 85.0, "seasonNo": 6,
-      "estimatedCapHitPct": 11.20, "estimatedAAV": 10696000,
-      "ciLow": 9.85, "ciHigh": 12.55,
-      "aavLow": 9406750, "aavHigh": 11985250,
-      "estimateStd": 1.35,
-      "compWeights": [0.32, 0.27, 0.19, 0.13, 0.09],
-      "comps": [], "compDistances": [], "career": [], "compCareers": {}
-    }
-  ]
+  "players": []
 }

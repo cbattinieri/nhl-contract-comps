@@ -35,14 +35,36 @@ for y in range(2003, CURRENT_YEAR + 1):
         continue
     ALL_SEASONS.append(sid)
 
-# Cap upper limits by season (extend as needed)
+# Cap upper limits by season
+# ──────────────────────────────────────────────────────────────────────
+# UPDATE THIS EACH SEASON: add the new confirmed cap, update projections.
+# Use absolute season IDs so historical data stays correct forever.
+# ──────────────────────────────────────────────────────────────────────
 CAP_LIMITS = {
-    CURRENT_SEASON - 30003: 82_500_000,
-    CURRENT_SEASON - 20002: 83_500_000,
-    CURRENT_SEASON - 10001: 88_000_000,
-    CURRENT_SEASON:          95_500_000,
-    CURRENT_SEASON + 10001: 104_000_000,
-    CURRENT_SEASON + 20002: 113_500_000,
+    20032004: 39_000_000,
+    20052006: 39_000_000,
+    20062007: 44_000_000,
+    20072008: 50_300_000,
+    20082009: 56_700_000,
+    20092010: 56_800_000,
+    20102011: 59_400_000,
+    20112012: 64_300_000,
+    20122013: 70_200_000,
+    20132014: 64_300_000,
+    20142015: 69_000_000,
+    20152016: 71_400_000,
+    20162017: 73_000_000,
+    20172018: 75_000_000,
+    20182019: 79_500_000,
+    20192020: 81_500_000,
+    20202021: 81_500_000,
+    20212022: 81_500_000,
+    20222023: 82_500_000,
+    20232024: 83_500_000,
+    20242025: 88_000_000,
+    20252026: 95_500_000,   # confirmed
+    20262027: 104_000_000,  # agreed, may rise to ~$107M
+    20272028: 113_500_000,  # agreed, subject to minor adjustment
 }
 
 KNN_NEIGHBORS = 5

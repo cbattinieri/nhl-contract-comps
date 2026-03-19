@@ -133,8 +133,9 @@ def build_stats(raw_stats: pd.DataFrame) -> pd.DataFrame:
     df = raw_stats.copy()
 
     # July 1 reference date for age calc
+    # For season 20252026, July 1 age = age on 2026-07-01 (when FA opens)
     df["july_1"] = pd.to_datetime(
-        df["seasonId"].astype(str).str[:4] + "-07-01"
+        df["seasonId"].astype(str).str[4:8] + "-07-01"
     )
 
     # Sort for cumulative calculations

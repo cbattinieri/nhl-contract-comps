@@ -1,0 +1,689 @@
+"""
+NHL Contract Comparables - Data Pipeline
+Fetches stats + contracts, runs KNN models, outputs JSON for static site.
+"""
+
+import json
+import os
+import sys
+from datetime import datetime
+
+import numpy as np
+import pandas as pd
+import requests
+from sklearn.neighbors import NearestNeighbors
+from sklearn.preprocessing import StandardScaler
+
+# ---------------------------------------------------------------------------
+# CONFIG
+# ---------------------------------------------------------------------------
+PUCKPEDIA_API_KEY = os.environ.get("PUCKPEDIA_API_KEY", "")
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "data")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# Dynamic season calculation
+NOW = datetime.now()
+# NHL season spans two calendar years: a season starting in Oct 2024 is "20242025"
+CURRENT_YEAR = NOW.year if NOW.month >= 7 else NOW.year - 1
+CURRENT_SEASON = int(f"{CURRENT_YEAR}{CURRENT_YEAR + 1}")
+
+# Build season list dynamically from 2003-04 onward (skip 04-05 lockout)
+ALL_SEASONS = []
+for y in range(2003, CURRENT_YEAR + 1):
+    sid = f"{y}{y + 1}"
+    if sid == "20042005":  # lockout
+        continue
+    ALL_SEASONS.append(sid)
+
+# Cap upper limits by season (extend as needed)
+CAP_LIMITS = {
+    CURRENT_SEASON - 30003: 82_500_000,
+    CURRENT_SEASON - 20002: 83_500_000,
+    CURRENT_SEASON - 10001: 88_000_000,
+    CURRENT_SEASON:          95_500_000,
+    CURRENT_SEASON + 10001: 104_000_000,
+    CURRENT_SEASON + 20002: 113_500_000,
+}
+
+KNN_NEIGHBORS = 5
+LOOKBACK_SEASONS = 3  # how many prior FA classes to use as training data
+
+# Estimation uses inverse-distance weighting (IDW) instead of arbitrary
+# fixed weights. Closer comps get exponentially more influence.
+# A small epsilon prevents division-by-zero for exact matches.
+IDW_EPSILON = 1e-6
+
+# ---------------------------------------------------------------------------
+# DATA FETCHING
+# ---------------------------------------------------------------------------
+NHL_STATS_URL = "https://api.nhle.com/stats/rest/en/skater/summary?sort=points&limit=-1&cayenneExp=seasonId="
+NHL_BIOS_URL = "https://api.nhle.com/stats/rest/en/skater/bios?limit=-1&cayenneExp=seasonId="
+
+
+def fetch_nhl_data(base_url: str, seasons: list[str]) -> pd.DataFrame:
+    """Fetch data from NHL API across multiple seasons."""
+    all_rows = []
+    for season in seasons:
+        url = f"{base_url}{season}%20and%20gameTypeId=2"
+        try:
+            resp = requests.get(url, timeout=30)
+            resp.raise_for_status()
+            data = resp.json().get("data", [])
+            all_rows.extend(data)
+        except Exception as e:
+            print(f"  Warning: season {season} – {e}", file=sys.stderr)
+    return pd.DataFrame(all_rows)
+
+
+def fetch_contracts() -> pd.DataFrame:
+    """Fetch contract data from PuckPedia."""
+    if not PUCKPEDIA_API_KEY:
+        raise RuntimeError("PUCKPEDIA_API_KEY env var is required")
+
+    resp = requests.get(
+        f"https://puckpedia.com/api/players2?api_key={PUCKPEDIA_API_KEY}",
+        timeout=60,
+    )
+    resp.raise_for_status()
+    records = resp.json().get("data", [])
+    df = pd.DataFrame(records)
+
+    # Explode current contracts
+    df_current = df.explode("current")
+    df_current = pd.concat(
+        [df_current.drop(columns=["current"]),
+         df_current["current"].apply(pd.Series)],
+        axis=1,
+    )
+    df_current = df_current.drop(columns=["future"], errors="ignore")
+
+    # Keep only rows with a valid contract
+    df_current = df_current[df_current["contract_id"].notna()].copy()
+    return df_current
+
+
+# ---------------------------------------------------------------------------
+# DATA WRANGLING
+# ---------------------------------------------------------------------------
+
+def build_stats(raw_stats: pd.DataFrame) -> pd.DataFrame:
+    """Clean stats and compute career-to-date features."""
+    df = raw_stats.copy()
+
+    # July 1 reference date for age calc
+    df["july_1"] = pd.to_datetime(
+        df["seasonId"].astype(str).str[:4] + "-07-01"
+    )
+
+    # Sort for cumulative calculations
+    df = df.sort_values(["playerId", "seasonId"]).reset_index(drop=True)
+
+    # Season number per player
+    df["szn_no"] = df.groupby("playerId").cumcount() + 1
+
+    # Career-to-date cumulative stats
+    for col in ["gamesPlayed", "points", "evPoints"]:
+        df[f"ctd_{col}"] = df.groupby("playerId")[col].cumsum()
+
+    # Career-to-date averages (excluding current season)
+    df["ctd_p_pg"] = (
+        (df["ctd_points"] - df["points"]) / (df["ctd_gamesPlayed"] - df["gamesPlayed"])
+    ).fillna(0).round(4)
+
+    df["ctd_ev_p_pg"] = (
+        (df["ctd_evPoints"] - df["evPoints"]) / (df["ctd_gamesPlayed"] - df["gamesPlayed"])
+    ).fillna(0).round(4)
+
+    df["ctd_toi_avg"] = (
+        (df.groupby("playerId")["timeOnIcePerGame"].cumsum() - df["timeOnIcePerGame"])
+        / (df["szn_no"] - 1)
+    ).fillna(0).round(2)
+
+    df["pct_gp"] = (df["ctd_gamesPlayed"] / (df["szn_no"] * 82)).round(4)
+
+    # Even-strength per game
+    df["evPointsPerGame"] = (df["evPoints"] / df["gamesPlayed"]).fillna(0).round(4)
+
+    # L2/L3 rolling averages
+    rolling_cols = ["gamesPlayed", "points", "pointsPerGame",
+                    "evPoints", "evPointsPerGame", "timeOnIcePerGame"]
+    for col in rolling_cols:
+        shifted_1 = df.groupby("playerId")[col].shift(1).fillna(0)
+        shifted_2 = df.groupby("playerId")[col].shift(2).fillna(0)
+        df[f"{col}_L2"] = ((df[col] + shifted_1) / 2).round(4)
+        df[f"{col}_L3"] = ((df[col] + shifted_1 + shifted_2) / 3).round(4)
+
+    return df
+
+
+def build_contracts(raw_contracts: pd.DataFrame) -> pd.DataFrame:
+    """Derive contract_year and signing_status for each contract."""
+    df = raw_contracts.copy()
+
+    # Derive the season the contract started
+    df["contract_end_year"] = df["contract_end"].astype(str).str.split("-").str[0].astype(int)
+    df["contract_start_year"] = df["contract_end_year"] - df["length"].astype(int)
+    df["contract_year"] = (
+        df["contract_start_year"] * 10000
+        + df["contract_start_year"]
+        + 10001
+    ).astype(int)
+
+    # For current-season expiring FAs, use expiry_status as signing_status
+    current_mask = df["contract_end"] == f"{CURRENT_YEAR + 1}-{CURRENT_YEAR + 2}"
+    # Fallback: also check computed contract_year
+    current_mask_2 = df["contract_year"] == CURRENT_SEASON
+    is_current = current_mask | current_mask_2
+    df.loc[is_current, "signing_status"] = df.loc[is_current, "expiry_status"]
+
+    # Override contract_year for current expiring contracts
+    df.loc[is_current, "contract_year"] = CURRENT_SEASON
+
+    df["nhl_id"] = df["nhl_id"].astype(int)
+
+    # Drop ELC slides (signing_status == False)
+    df = df[df["signing_status"] != False]  # noqa: E712
+
+    return df
+
+
+def merge_stats_contracts(stats: pd.DataFrame, contracts: pd.DataFrame) -> pd.DataFrame:
+    """Merge on player ID + season, filter to skaters only."""
+    merged = pd.merge(
+        contracts, stats,
+        how="inner",
+        left_on=["nhl_id", "contract_year"],
+        right_on=["playerId", "seasonId"],
+    )
+    # Exclude goalies
+    merged = merged[merged["positionCode"] != "G"].copy()
+
+    # Normalize position
+    merged["position_group"] = np.where(
+        merged["positionCode"] == "D", "Defense", "Forward"
+    )
+    merged["position_display"] = np.where(
+        merged["positionCode"].isin(["L", "R"]), "Winger",
+        np.where(merged["positionCode"] == "C", "Center", "Defense")
+    )
+
+    return merged
+
+
+# ---------------------------------------------------------------------------
+# KNN MODEL
+# ---------------------------------------------------------------------------
+
+# Features used across all models
+BASE_FEATURES = [
+    "july_1_age", "ctd_gamesPlayed", "ctd_p_pg", "ctd_ev_p_pg",
+    "pct_gp", "ctd_toi_avg",
+]
+# Additional features for UFA models (platform-year stats matter more)
+UFA_EXTRA_FEATURES = [
+    "gamesPlayed_L3", "pointsPerGame_L3", "evPointsPerGame_L3",
+]
+# Feature weights for UFAs (emphasize age & career stats)
+UFA_WEIGHTS = {
+    "july_1_age": 30, "ctd_gamesPlayed": 10, "ctd_p_pg": 10,
+    "gamesPlayed_L3": 0.25, "pointsPerGame_L3": 0.25, "evPointsPerGame_L3": 0.25,
+}
+
+
+def run_knn_model(
+    data: pd.DataFrame,
+    features: list[str],
+    feature_weights: dict | None = None,
+) -> dict:
+    """
+    Fit KNN on historical FAs, predict comps for current-season FAs.
+    Returns {pending_player_id: [comp_player_id, ...]}
+    """
+    min_season = CURRENT_SEASON - (LOOKBACK_SEASONS * 10001)
+
+    pending = data[data["contract_year"] == CURRENT_SEASON].copy()
+    historical = data[
+        (data["contract_year"] != CURRENT_SEASON)
+        & (data["contract_year"] >= min_season)
+    ].copy()
+
+    if pending.empty or historical.empty:
+        return {}
+
+    scaler = StandardScaler()
+    X_hist = pd.DataFrame(
+        scaler.fit_transform(historical[features]),
+        columns=features,
+        index=historical.index,
+    )
+    X_pend = pd.DataFrame(
+        scaler.transform(pending[features]),
+        columns=features,
+        index=pending.index,
+    )
+
+    # Apply feature weights if provided
+    if feature_weights:
+        for feat, w in feature_weights.items():
+            if feat in X_hist.columns:
+                X_hist[feat] *= w
+                X_pend[feat] *= w
+
+    knn = NearestNeighbors(n_neighbors=min(KNN_NEIGHBORS, len(historical)), algorithm="auto")
+    knn.fit(X_hist)
+    distances, indices = knn.kneighbors(X_pend)
+
+    results = {}
+    for i, (dists, idxs) in enumerate(zip(distances, indices)):
+        pid = int(pending.iloc[i]["playerId"])
+        comp_ids = [int(historical.iloc[idx]["playerId"]) for idx in idxs]
+        comp_dists = [round(float(d), 4) for d in dists]
+        results[pid] = {"comps": comp_ids, "distances": comp_dists}
+
+    return results
+
+
+# ---------------------------------------------------------------------------
+# ESTIMATION — INVERSE DISTANCE WEIGHTING
+# ---------------------------------------------------------------------------
+
+def idw_estimate(cap_hit_pcts: list[float], distances: list[float]) -> dict:
+    """
+    Compute a cap-hit-% estimate using inverse-distance weighting (IDW).
+
+    Instead of arbitrary fixed weights (30/25/20/15/10), each comp's
+    influence is proportional to 1/distance.  Closer comps dominate;
+    distant comps contribute less.  This is the standard approach in
+    spatial statistics and KNN regression.
+
+    Returns dict with:
+      estimate   – IDW weighted mean cap hit %
+      weights    – the normalised weight each comp received
+      ci_low     – lower bound of a simple ±1σ interval
+      ci_high    – upper bound
+      std        – weighted standard deviation (measure of uncertainty)
+    """
+    if not cap_hit_pcts or not distances:
+        return {"estimate": 0, "weights": [], "ci_low": 0, "ci_high": 0, "std": 0}
+
+    n = len(cap_hit_pcts)
+    vals = np.array(cap_hit_pcts, dtype=float)
+    dists = np.array(distances, dtype=float)
+
+    # Inverse distance weights (with epsilon to avoid div/0)
+    raw_weights = 1.0 / (dists + IDW_EPSILON)
+    norm_weights = raw_weights / raw_weights.sum()
+
+    # Weighted mean
+    estimate = float(np.dot(norm_weights, vals))
+
+    # Weighted standard deviation (Bessel-corrected for small n)
+    # Formula: sqrt( sum(w_i * (x_i - mu)^2) / (1 - sum(w_i^2)) )
+    variance_numer = np.dot(norm_weights, (vals - estimate) ** 2)
+    variance_denom = 1.0 - np.dot(norm_weights, norm_weights)  # effective sample correction
+    if variance_denom > 0:
+        w_std = float(np.sqrt(variance_numer / variance_denom))
+    else:
+        w_std = float(np.std(vals))
+
+    return {
+        "estimate": round(estimate, 2),
+        "weights": [round(float(w), 4) for w in norm_weights],
+        "ci_low": round(max(0, estimate - w_std), 2),
+        "ci_high": round(estimate + w_std, 2),
+        "std": round(w_std, 2),
+    }
+
+
+def backtest_model(
+    merged: pd.DataFrame,
+    fa_status: str,
+    pos_group: str,
+    features: list[str],
+    feature_weights: dict | None,
+    cap_limits: dict,
+) -> dict:
+    """
+    Leave-one-season-out backtest.
+
+    For each historical FA class, hold it out as "pending", train on the
+    remaining classes, predict cap hit %, and compare to the actual.
+    Returns MAE, median absolute error, and per-player errors.
+    """
+    subset = merged[
+        (merged["signing_status"] == fa_status)
+        & (merged["position_group"] == pos_group)
+    ].copy()
+
+    # Only backtest on seasons that have actual contract data
+    seasons_with_data = sorted(
+        subset[subset["contract_year"] != CURRENT_SEASON]["contract_year"].unique()
+    )
+
+    if len(seasons_with_data) < 2:
+        return {"mae": None, "median_ae": None, "n": 0, "errors": []}
+
+    all_errors = []
+    for hold_out_season in seasons_with_data:
+        pending = subset[subset["contract_year"] == hold_out_season].copy()
+        min_train = hold_out_season - (LOOKBACK_SEASONS * 10001)
+        historical = subset[
+            (subset["contract_year"] != hold_out_season)
+            & (subset["contract_year"] >= min_train)
+            & (subset["contract_year"] < hold_out_season)
+        ].copy()
+
+        if pending.empty or len(historical) < KNN_NEIGHBORS:
+            continue
+
+        available_features = [f for f in features if f in pending.columns]
+        scaler = StandardScaler()
+        X_hist = pd.DataFrame(
+            scaler.fit_transform(historical[available_features]),
+            columns=available_features, index=historical.index,
+        )
+        X_pend = pd.DataFrame(
+            scaler.transform(pending[available_features]),
+            columns=available_features, index=pending.index,
+        )
+        if feature_weights:
+            for feat, w in feature_weights.items():
+                if feat in X_hist.columns:
+                    X_hist[feat] *= w
+                    X_pend[feat] *= w
+
+        k = min(KNN_NEIGHBORS, len(historical))
+        knn = NearestNeighbors(n_neighbors=k, algorithm="auto")
+        knn.fit(X_hist)
+        distances, indices = knn.kneighbors(X_pend)
+
+        for i in range(len(pending)):
+            comp_pcts = []
+            for idx in indices[i]:
+                comp_row = historical.iloc[idx]
+                cy = int(comp_row["contract_year"])
+                ul = cap_limits.get(cy, 95_500_000)
+                length = int(comp_row.get("length", 1)) if pd.notna(comp_row.get("length")) else 1
+                value = int(comp_row.get("value", 0)) if pd.notna(comp_row.get("value")) else 0
+                aav = value / length if length > 0 else 0
+                comp_pcts.append((aav / ul) * 100 if ul > 0 else 0)
+
+            est = idw_estimate(comp_pcts, list(distances[i]))
+
+            # Actual cap hit % for this pending player
+            prow = pending.iloc[i]
+            actual_cy = int(prow["contract_year"])
+            actual_ul = cap_limits.get(actual_cy, 95_500_000)
+            actual_length = int(prow.get("length", 1)) if pd.notna(prow.get("length")) else 1
+            actual_value = int(prow.get("value", 0)) if pd.notna(prow.get("value")) else 0
+            actual_aav = actual_value / actual_length if actual_length > 0 else 0
+            actual_pct = (actual_aav / actual_ul) * 100 if actual_ul > 0 else 0
+
+            error = est["estimate"] - actual_pct
+            all_errors.append({
+                "playerId": int(prow["playerId"]),
+                "season": actual_cy,
+                "predicted": est["estimate"],
+                "actual": round(actual_pct, 2),
+                "error": round(error, 2),
+                "abs_error": round(abs(error), 2),
+            })
+
+    if not all_errors:
+        return {"mae": None, "median_ae": None, "n": 0, "errors": []}
+
+    abs_errors = [e["abs_error"] for e in all_errors]
+    return {
+        "mae": round(float(np.mean(abs_errors)), 2),
+        "median_ae": round(float(np.median(abs_errors)), 2),
+        "n": len(all_errors),
+        "errors": all_errors,
+    }
+
+
+# ---------------------------------------------------------------------------
+# BUILD OUTPUT
+# ---------------------------------------------------------------------------
+
+def compute_age(stats: pd.DataFrame, bios: pd.DataFrame) -> pd.DataFrame:
+    """Add july_1_age to stats using bio birthDate."""
+    bios_slim = bios[["playerId", "birthDate"]].drop_duplicates(subset="playerId")
+    bios_slim["birthDate"] = pd.to_datetime(bios_slim["birthDate"], errors="coerce")
+
+    merged = stats.merge(bios_slim, on="playerId", how="left")
+    merged["july_1_age"] = (
+        (merged["july_1"] - merged["birthDate"]).dt.days / 365.25
+    ).fillna(0).astype(int)
+
+    return merged
+
+
+def build_player_record(row, cap_limits: dict) -> dict:
+    """Build a clean player record dict for JSON output."""
+    contract_year = int(row.get("contract_year", 0))
+    upper_limit = cap_limits.get(contract_year, 95_500_000)
+    length = int(row.get("length", 1)) if pd.notna(row.get("length")) else 1
+    value = int(row.get("value", 0)) if pd.notna(row.get("value")) else 0
+    aav = round(value / length) if length > 0 else 0
+    cap_hit_pct = round((aav / upper_limit) * 100, 2) if upper_limit > 0 else 0
+
+    return {
+        "playerId": int(row["playerId"]),
+        "name": str(row.get("skaterFullName", "")),
+        "position": str(row.get("position_display", "")),
+        "positionGroup": str(row.get("position_group", "")),
+        "signingStatus": str(row.get("signing_status", "")),
+        "contractYear": contract_year,
+        "age": int(row.get("july_1_age", 0)),
+        "height": str(row.get("height", "")),
+        "weight": str(row.get("weight", "")),
+        "shoots": str(row.get("shootsCatches", "")),
+        # Contract info
+        "term": length,
+        "value": value,
+        "aav": aav,
+        "capHitPct": cap_hit_pct,
+        # Season stats
+        "gp": int(row.get("gamesPlayed", 0)),
+        "goals": int(row.get("goals", 0)),
+        "assists": int(row.get("assists", 0)),
+        "points": int(row.get("points", 0)),
+        "ppg": round(float(row.get("pointsPerGame", 0)), 2),
+        "evPoints": int(row.get("evPoints", 0)),
+        "toi": round(float(row.get("timeOnIcePerGame", 0)) / 60, 2),
+        # Career-to-date
+        "careerGP": int(row.get("ctd_gamesPlayed", 0)),
+        "careerPoints": int(row.get("ctd_points", 0)),
+        "careerEVPoints": int(row.get("ctd_evPoints", 0)),
+        "careerPPG": round(float(row.get("ctd_p_pg", 0)), 2),
+        "careerEVPPG": round(float(row.get("ctd_ev_p_pg", 0)), 2),
+        "careerTOI": round(float(row.get("ctd_toi_avg", 0)) / 60, 2),
+        "careerGPPct": round(float(row.get("pct_gp", 0)) * 100, 2),
+        "seasonNo": int(row.get("szn_no", 0)),
+    }
+
+
+def build_career_history(player_id: int, stats: pd.DataFrame) -> list[dict]:
+    """Get full career season-by-season for plotting."""
+    player_data = stats[stats["playerId"] == player_id].sort_values("seasonId")
+    history = []
+    for _, row in player_data.iterrows():
+        history.append({
+            "season": int(row["seasonId"]),
+            "age": int(row.get("july_1_age", 0)),
+            "gp": int(row.get("gamesPlayed", 0)),
+            "points": int(row.get("points", 0)),
+            "ppg": round(float(row.get("pointsPerGame", 0)), 2),
+            "evPoints": int(row.get("evPoints", 0)),
+            "evPPG": round(float(row.get("evPointsPerGame", 0)), 2),
+            "toi": round(float(row.get("timeOnIcePerGame", 0)) / 60, 2),
+        })
+    return history
+
+
+# ---------------------------------------------------------------------------
+# MAIN
+# ---------------------------------------------------------------------------
+
+def main():
+    print(f"Current season: {CURRENT_SEASON}")
+    print(f"Fetching {len(ALL_SEASONS)} seasons of stats...")
+
+    # 1. Fetch NHL stats
+    raw_stats = fetch_nhl_data(NHL_STATS_URL, ALL_SEASONS)
+    print(f"  Got {len(raw_stats)} stat rows")
+
+    # 2. Fetch bios
+    raw_bios = fetch_nhl_data(NHL_BIOS_URL, ALL_SEASONS)
+    raw_bios = raw_bios.drop(
+        columns=["assists", "goals", "gamesPlayed", "points",
+                 "isInHallOfFameYn", "birthCity", "birthStateProvinceCode"],
+        errors="ignore",
+    ).drop_duplicates(subset="playerId")
+    print(f"  Got {len(raw_bios)} bio rows")
+
+    # 3. Build stats
+    stats = build_stats(raw_stats)
+    stats = compute_age(stats, raw_bios)
+    print(f"  Built {len(stats)} stat records with features")
+
+    # 4. Fetch contracts
+    print("Fetching contracts from PuckPedia...")
+    raw_contracts = fetch_contracts()
+    contracts = build_contracts(raw_contracts)
+    print(f"  Got {len(contracts)} contract rows")
+
+    # 5. Merge
+    merged = merge_stats_contracts(stats, contracts)
+    print(f"  Merged to {len(merged)} player-seasons")
+
+    # 6. Run 4 KNN models + backtests
+    print("Running KNN models...")
+    all_comps = {}
+    backtest_results = {}
+
+    for fa_status in ["RFA", "UFA"]:
+        for pos_group in ["Forward", "Defense"]:
+            subset = merged[
+                (merged["signing_status"] == fa_status)
+                & (merged["position_group"] == pos_group)
+            ].reset_index(drop=True)
+
+            if fa_status == "UFA":
+                features = BASE_FEATURES + UFA_EXTRA_FEATURES
+                weights = UFA_WEIGHTS
+            else:
+                features = BASE_FEATURES
+                weights = None
+
+            # Only include features that exist
+            features = [f for f in features if f in subset.columns]
+
+            result = run_knn_model(subset, features, weights)
+            for pid, comp_data in result.items():
+                all_comps[pid] = comp_data
+
+            # Backtest to measure model accuracy
+            bt = backtest_model(merged, fa_status, pos_group, features, weights, CAP_LIMITS)
+            model_key = f"{fa_status}_{pos_group}"
+            backtest_results[model_key] = {
+                "mae": bt["mae"],
+                "median_ae": bt["median_ae"],
+                "n": bt["n"],
+            }
+            print(f"  {fa_status} {pos_group}: {len(result)} players | "
+                  f"Backtest MAE={bt['mae']}%, Median AE={bt['median_ae']}% (n={bt['n']})")
+
+    # 7. Build output JSON
+    print("Building output JSON...")
+
+    # Player lookup for all merged data
+    player_records = {}
+    for _, row in merged.iterrows():
+        pid = int(row["playerId"])
+        key = f"{pid}_{int(row['contract_year'])}"
+        player_records[key] = build_player_record(row, CAP_LIMITS)
+
+    # Current-season pending FAs
+    pending_fas = merged[merged["contract_year"] == CURRENT_SEASON].copy()
+
+    output = {
+        "meta": {
+            "currentSeason": CURRENT_SEASON,
+            "currentCap": CAP_LIMITS.get(CURRENT_SEASON, 95_500_000),
+            "futureCaps": {
+                str(CURRENT_SEASON + 10001): CAP_LIMITS.get(CURRENT_SEASON + 10001, 104_000_000),
+                str(CURRENT_SEASON + 20002): CAP_LIMITS.get(CURRENT_SEASON + 20002, 113_500_000),
+            },
+            "generatedAt": datetime.now().isoformat(),
+            "estimationMethod": "inverse_distance_weighting",
+            "backtest": backtest_results,
+        },
+        "players": [],
+    }
+
+    for _, row in pending_fas.iterrows():
+        pid = int(row["playerId"])
+        if pid not in all_comps:
+            continue
+
+        player_data = build_player_record(row, CAP_LIMITS)
+        comp_info = all_comps[pid]
+
+        # Build comp records
+        comp_records = []
+        for comp_pid in comp_info["comps"]:
+            # Find the comp's contract-year record
+            comp_rows = merged[merged["playerId"] == comp_pid]
+            if comp_rows.empty:
+                continue
+            # Use the most recent contract record
+            comp_row = comp_rows.sort_values("contract_year").iloc[-1]
+            comp_records.append(build_player_record(comp_row, CAP_LIMITS))
+
+        # --- IDW cap hit estimate with confidence interval ---
+        comp_pcts = [c["capHitPct"] for c in comp_records]
+        comp_dists = comp_info["distances"]
+        est = idw_estimate(comp_pcts, comp_dists)
+
+        current_cap = CAP_LIMITS.get(CURRENT_SEASON, 95_500_000)
+        estimated_aav = round(est["estimate"] * current_cap / 100)
+        aav_low = round(est["ci_low"] * current_cap / 100)
+        aav_high = round(est["ci_high"] * current_cap / 100)
+
+        # Career history for chart
+        career = build_career_history(pid, stats)
+        comp_careers = {}
+        for comp_pid in comp_info["comps"]:
+            comp_careers[str(comp_pid)] = build_career_history(comp_pid, stats)
+
+        output["players"].append({
+            **player_data,
+            "estimatedCapHitPct": est["estimate"],
+            "estimatedAAV": estimated_aav,
+            "ciLow": est["ci_low"],
+            "ciHigh": est["ci_high"],
+            "aavLow": aav_low,
+            "aavHigh": aav_high,
+            "estimateStd": est["std"],
+            "compWeights": est["weights"],
+            "comps": comp_records,
+            "compDistances": comp_info["distances"],
+            "career": career,
+            "compCareers": comp_careers,
+        })
+
+    # Sort by name
+    output["players"].sort(key=lambda p: p["name"])
+
+    # Write JSON
+    out_path = os.path.join(OUTPUT_DIR, "comps.json")
+    with open(out_path, "w") as f:
+        json.dump(output, f, indent=2)
+
+    print(f"\nWrote {len(output['players'])} players to {out_path}")
+    print("Done!")
+
+
+if __name__ == "__main__":
+    main()

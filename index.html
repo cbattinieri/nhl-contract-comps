@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NHL Contract Comparables</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg-primary: #0a0e17;
+    --bg-card: #111827;
+    --bg-card-alt: #1a2235;
+    --bg-hover: #1e293b;
+    --border: #1e3a5f;
+    --border-accent: #2563eb;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #3b82f6;
+    --accent-bright: #60a5fa;
+    --accent-glow: rgba(59, 130, 246, 0.15);
+    --green: #10b981;
+    --orange: #f59e0b;
+    --red: #ef4444;
+    --ice-blue: #bfdbfe;
+    --rink-line: #dc2626;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 400;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-bottom: 2px solid var(--rink-line);
+    padding: 1.25rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .header h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .header h1 span { color: var(--accent-bright); }
+  .badge {
+    font-size: 0.6rem;
+    background: var(--accent);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  /* ── CONTROLS ── */
+  .controls {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .control-group {
+    display: flex;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .control-group button {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .control-group button.active {
+    background: var(--accent);
+    color: white;
+  }
+  .control-group button:hover:not(.active) {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+
+  .search-container {
+    position: relative;
+    min-width: 260px;
+  }
+  .search-container input {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    padding: 0.55rem 1rem 0.55rem 2.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-container input:focus { border-color: var(--accent); }
+  .search-container input::placeholder { color: var(--text-muted); }
+  .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  .search-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 50;
+    display: none;
+  }
+  .search-dropdown.open { display: block; }
+  .search-option {
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    transition: background 0.15s;
+  }
+  .search-option:hover { background: var(--bg-hover); }
+  .search-option .pos-tag {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 3rem;
+  }
+
+  /* ── TABS ── */
+  .tab-bar {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .tab-btn {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+  }
+  .tab-btn:hover { color: var(--text-secondary); }
+  .tab-btn.active {
+    color: var(--accent-bright);
+  }
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+  }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+  .card-header {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.75rem 1.25rem;
+    background: var(--bg-card-alt);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .card-header .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .card-body { padding: 1rem 1.25rem; }
+  .card-footer {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    padding: 0.5rem 1.25rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg-card-alt);
+  }
+
+  /* ── TABLES ── */
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  th {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--bg-card);
+  }
+  td {
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid rgba(30, 58, 95, 0.4);
+    color: var(--text-secondary);
+  }
+  tr:hover td { background: var(--bg-hover); }
+  tr.player-row td {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  td.name-cell {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  td.highlight {
+    color: var(--accent-bright);
+    font-weight: 600;
+  }
+
+  /* ── CHARTS ── */
+  .chart-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .chart-container {
+    position: relative;
+    height: 320px;
+  }
+  .chart-select {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    background: var(--bg-card-alt);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.35rem 0.75rem;
+    outline: none;
+    cursor: pointer;
+  }
+
+  /* ── INFO PANEL ── */
+  .info-panel {
+    line-height: 1.7;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+  }
+  .info-panel h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-primary);
+    margin: 1.25rem 0 0.5rem;
+  }
+  .info-panel h3:first-child { margin-top: 0; }
+
+  /* ── LOADING / EMPTY ── */
+  .loading, .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  .spinner {
+    width: 36px; height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 1rem;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── ESTIMATE BANNER ── */
+  .estimate-banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+  .est-stat {
+    text-align: center;
+  }
+  .est-stat .est-label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+  .est-stat .est-value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent-bright);
+    line-height: 1.2;
+  }
+  .est-stat .est-value.money { color: var(--green); }
+  .est-stat .est-range {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+  .est-stat .est-range span { color: var(--text-secondary); font-weight: 500; }
+
+  /* ── CONFIDENCE PILL ── */
+  .confidence-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
+    vertical-align: middle;
+  }
+  .confidence-pill.tight { background: rgba(16,185,129,0.15); color: var(--green); }
+  .confidence-pill.moderate { background: rgba(245,158,11,0.15); color: var(--orange); }
+  .confidence-pill.wide { background: rgba(239,68,68,0.15); color: var(--red); }
+
+  /* ── COMP WEIGHT BAR ── */
+  .weight-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .weight-bar-bg {
+    width: 40px;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .weight-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: width 0.3s;
+  }
+  .weight-pct {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    min-width: 32px;
+  }
+
+  /* ── BACKTEST BADGE ── */
+  .backtest-badge {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .backtest-badge .bt-val { color: var(--text-secondary); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .header-inner { flex-direction: column; align-items: flex-start; }
+    .controls { width: 100%; }
+    .search-container { width: 100%; min-width: auto; }
+    .chart-grid { grid-template-columns: 1fr; }
+    .main { padding: 1rem; }
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <h1>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/>
+      </svg>
+      NHL <span>Contract Comps</span>
+      <span class="badge" id="seasonBadge"></span>
+    </h1>
+    <div class="controls">
+      <div class="control-group" id="faToggle">
+        <button class="active" data-val="UFA">UFA</button>
+        <button data-val="RFA">RFA</button>
+      </div>
+      <div class="control-group" id="posToggle">
+        <button class="active" data-val="Forward">FWD</button>
+        <button data-val="Defense">DEF</button>
+      </div>
+      <div class="search-container">
+        <span class="search-icon">&#128269;</span>
+        <input type="text" id="searchInput" placeholder="Search for player..." autocomplete="off" />
+        <div class="search-dropdown" id="searchDropdown"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div id="loadingState" class="loading">
+    <div class="spinner"></div>
+    <p>Loading contract data...</p>
+  </div>
+
+  <div id="emptyState" class="empty-state" style="display:none;">
+    <p>Select a player to view contract comparables</p>
+  </div>
+
+  <div id="appContent" style="display:none;">
+    <!-- TABS -->
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="overview">Contract & Stats</button>
+      <button class="tab-btn" data-tab="stats">Stats Detail</button>
+      <button class="tab-btn" data-tab="contract">Contract</button>
+      <button class="tab-btn" data-tab="bio">Bio</button>
+      <button class="tab-btn" data-tab="info">Info & Notes</button>
+    </div>
+
+    <!-- TAB: OVERVIEW -->
+    <div class="tab-panel active" id="tab-overview">
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> Player Going to Market</div>
+        <div class="card-body table-wrap" id="playerOverviewTable"></div>
+      </div>
+      <div class="card" id="estimateBannerCard">
+        <div class="card-header">
+          <span class="dot"></span> Contract Estimate
+          <span id="confidencePill" class="confidence-pill" style="margin-left:auto;"></span>
+          <span id="backtestBadge" class="backtest-badge" style="margin-left:0.5rem;"></span>
+        </div>
+        <div class="estimate-banner" id="estimateBanner"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> Comparables</div>
+        <div class="card-body table-wrap" id="compsOverviewTable"></div>
+        <div class="card-footer">Career stats are cumulative through the listed contract year (inclusive). Weight = IDW influence on estimate.</div>
+      </div>
+      <div class="chart-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="dot"></span>
+            <select class="chart-select" id="careerStatSelect">
+              <option value="ppg">Pts/Game</option>
+              <option value="points">Points</option>
+              <option value="gp">GP</option>
+              <option value="evPPG">EV Pts/Game</option>
+              <option value="toi">TOI/Game</option>
+            </select>
+            <span style="margin-left:4px;">by Age</span>
+          </div>
+          <div class="card-body"><div class="chart-container"><canvas id="careerChart"></canvas></div></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="dot"></span> Cap Hit % — Future Projection</div>
+          <div class="card-body"><div class="chart-container"><canvas id="capFutureChart"></canvas></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: STATS -->
+    <div class="tab-panel" id="tab-stats">
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> Player Stats</div>
+        <div class="card-body table-wrap" id="playerStatsTable"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> Comparable Stats</div>
+        <div class="card-body table-wrap" id="compsStatsTable"></div>
+        <div class="card-footer">Career stats are cumulative through the listed contract year (inclusive)</div>
+      </div>
+    </div>
+
+    <!-- TAB: CONTRACT -->
+    <div class="tab-panel" id="tab-contract">
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> Player Contract Estimate</div>
+        <div class="card-body table-wrap" id="playerContractTable"></div>
+      </div>
+      <div class="card" id="contractEstimateCard">
+        <div class="card-header"><span class="dot"></span> AAV Range (±1σ)</div>
+        <div class="estimate-banner" id="contractEstimateBanner"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> Comparable Contracts</div>
+        <div class="card-body table-wrap" id="compsContractTable"></div>
+      </div>
+      <div class="chart-grid">
+        <div class="card">
+          <div class="card-header"><span class="dot"></span> Comps — Cap Hit % vs Term</div>
+          <div class="card-body"><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="dot"></span> Estimated Cap Hit % Over Time</div>
+          <div class="card-body"><div class="chart-container"><canvas id="capBarChart"></canvas></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: BIO -->
+    <div class="tab-panel" id="tab-bio">
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> Player Bio</div>
+        <div class="card-body table-wrap" id="playerBioTable"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> Comparable Bios</div>
+        <div class="card-body table-wrap" id="compsBioTable"></div>
+      </div>
+    </div>
+
+    <!-- TAB: INFO -->
+    <div class="tab-panel" id="tab-info">
+      <div class="card">
+        <div class="card-body info-panel">
+          <h3>Model</h3>
+          <p>Comparables are generated by a K-Nearest Neighbors model that finds the 5 most statistically similar players from the prior 3 free-agent classes. Four separate models are run — UFA Forwards, UFA Defensemen, RFA Forwards, RFA Defensemen — to normalize within peer groups.</p>
+          <p>UFA models emphasize age and career-to-date production, with platform-year stats (L3 averages) factored in at a lower weight. RFA models focus purely on career-to-date metrics since platform years are less predictive for restricted free agents.</p>
+          <p>Edge cases to be aware of: superstar-level players, players in their mid-30s, and RFAs with very few career games may produce unconventional comparables.</p>
+
+          <h3>Cap Hit % Estimate</h3>
+          <p>Estimates use inverse-distance weighting (IDW) rather than fixed weights. Each comp's influence is proportional to 1/distance — so a comp that is twice as close gets twice the weight. This means near-identical comps properly dominate the estimate while distant comps contribute minimally.</p>
+          <p>The ±1σ confidence interval uses the weighted standard deviation of the comps' cap hit percentages. A tight interval (e.g. ±0.5%) means the comps agree closely — the estimate is reliable. A wide interval (e.g. ±3%) means the comps varied significantly — treat the estimate with more caution.</p>
+          <p>Estimated AAV is calculated as Cap Hit % × current salary cap ceiling. The AAV range reflects the confidence interval translated to dollars.</p>
+
+          <h3>Backtest Accuracy</h3>
+          <p>Each model is backtested using leave-one-season-out validation: every historical FA class is held out, predicted using only prior years, and the error is measured against actual signings. The MAE (mean absolute error) shown in the header tells you how far off the model typically is in percentage points of cap hit.</p>
+
+          <h3>Data Sources</h3>
+          <p>Stats and biographical data from the NHL's public API (nhle.com). Contract data from PuckPedia.com. Data refreshed daily via GitHub Actions.</p>
+
+          <h3>Future Cap Projections</h3>
+          <p>Future-season cap hit percentages use projected cap ceilings to show how a player's AAV will decrease as a percentage of the cap over time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── APP STATE ────────────────────────────────────────────────────────
+const state = {
+  data: null,
+  faFilter: 'UFA',
+  posFilter: 'Forward',
+  selectedPlayer: null,
+  charts: {},
+};
+
+// ─── UTILS ────────────────────────────────────────────────────────────
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+const fmt = (n) => n != null ? n.toLocaleString() : '—';
+const fmtMoney = (n) => n != null ? '$' + n.toLocaleString() : '—';
+const fmtPct = (n) => n != null ? n.toFixed(2) + '%' : '—';
+const fmtDec = (n, d = 2) => n != null ? n.toFixed(d) : '—';
+const seasonLabel = (s) => {
+  const str = String(s);
+  return str.slice(0, 4) + '-' + str.slice(6);
+};
+
+// ─── DATA LOADING ─────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const resp = await fetch('data/comps.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    state.data = await resp.json();
+    $('#seasonBadge').textContent = seasonLabel(state.data.meta.currentSeason);
+    initApp();
+  } catch (e) {
+    $('#loadingState').innerHTML = `<p style="color:var(--red);">Failed to load data. Run generate_data.py first.</p>`;
+    console.error(e);
+  }
+}
+
+// ─── FILTERING ────────────────────────────────────────────────────────
+function getFilteredPlayers() {
+  if (!state.data) return [];
+  return state.data.players.filter(p =>
+    p.signingStatus === state.faFilter && p.positionGroup === state.posFilter
+  );
+}
+
+// ─── SEARCH ───────────────────────────────────────────────────────────
+function populateSearch() {
+  const players = getFilteredPlayers();
+  const dropdown = $('#searchDropdown');
+  const input = $('#searchInput');
+
+  input.value = '';
+  dropdown.innerHTML = '';
+
+  players.forEach(p => {
+    const opt = document.createElement('div');
+    opt.className = 'search-option';
+    opt.innerHTML = `<span>${p.name}</span><span class="pos-tag">${p.position}</span>`;
+    opt.addEventListener('click', () => {
+      selectPlayer(p);
+      dropdown.classList.remove('open');
+      input.value = p.name;
+    });
+    dropdown.appendChild(opt);
+  });
+
+  // Auto-select first player
+  if (players.length > 0) {
+    selectPlayer(players[0]);
+    input.value = players[0].name;
+  } else {
+    state.selectedPlayer = null;
+    $('#appContent').style.display = 'none';
+    $('#emptyState').style.display = 'flex';
+  }
+}
+
+function setupSearch() {
+  const input = $('#searchInput');
+  const dropdown = $('#searchDropdown');
+
+  input.addEventListener('focus', () => {
+    populateSearchFiltered(input.value);
+    dropdown.classList.add('open');
+  });
+
+  input.addEventListener('input', () => {
+    populateSearchFiltered(input.value);
+    dropdown.classList.add('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-container')) {
+      dropdown.classList.remove('open');
+    }
+  });
+}
+
+function populateSearchFiltered(query) {
+  const players = getFilteredPlayers();
+  const dropdown = $('#searchDropdown');
+  const q = query.toLowerCase();
+
+  dropdown.innerHTML = '';
+  const filtered = q ? players.filter(p => p.name.toLowerCase().includes(q)) : players;
+
+  filtered.forEach(p => {
+    const opt = document.createElement('div');
+    opt.className = 'search-option';
+    opt.innerHTML = `<span>${p.name}</span><span class="pos-tag">${p.position}</span>`;
+    opt.addEventListener('click', () => {
+      selectPlayer(p);
+      dropdown.classList.remove('open');
+      $('#searchInput').value = p.name;
+    });
+    dropdown.appendChild(opt);
+  });
+}
+
+// ─── TOGGLE BUTTONS ───────────────────────────────────────────────────
+function setupToggles() {
+  ['faToggle', 'posToggle'].forEach(id => {
+    const group = $(`#${id}`);
+    group.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (id === 'faToggle') state.faFilter = btn.dataset.val;
+        else state.posFilter = btn.dataset.val;
+        populateSearch();
+      });
+    });
+  });
+}
+
+// ─── TABS ─────────────────────────────────────────────────────────────
+function setupTabs() {
+  $$('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      $$('.tab-btn').forEach(b => b.classList.remove('active'));
+      $$('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      $(`#tab-${btn.dataset.tab}`).classList.add('active');
+    });
+  });
+}
+
+// ─── TABLE BUILDERS ───────────────────────────────────────────────────
+function buildTable(cols, rows, opts = {}) {
+  const { highlightFirst = false } = opts;
+  let html = '<table><thead><tr>';
+  cols.forEach(c => { html += `<th>${c.label}</th>`; });
+  html += '</tr></thead><tbody>';
+  rows.forEach((row, i) => {
+    const cls = (highlightFirst && i === 0) ? ' class="player-row"' : '';
+    html += `<tr${cls}>`;
+    cols.forEach(c => {
+      const val = c.render ? c.render(row) : (row[c.key] ?? '—');
+      const cellCls = c.highlight ? ' class="highlight"' : (c.nameCell ? ' class="name-cell"' : '');
+      html += `<td${cellCls}>${val}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  return html;
+}
+
+// Column definitions
+const COL = {
+  name: { key: 'name', label: 'Player', nameCell: true },
+  pos: { key: 'position', label: 'Pos' },
+  age: { key: 'age', label: 'Age' },
+  szn: { key: 'contractYear', label: 'Contract Year', render: r => seasonLabel(r.contractYear) },
+  gp: { key: 'gp', label: 'GP' },
+  g: { key: 'goals', label: 'G' },
+  a: { key: 'assists', label: 'A' },
+  pts: { key: 'points', label: 'Pts' },
+  ppg: { key: 'ppg', label: 'Pts/G', render: r => fmtDec(r.ppg) },
+  toi: { key: 'toi', label: 'TOI/G', render: r => fmtDec(r.toi) },
+  cGP: { key: 'careerGP', label: 'Career GP' },
+  cPts: { key: 'careerPoints', label: 'Career Pts' },
+  cPPG: { key: 'careerPPG', label: 'Career P/G', render: r => fmtDec(r.careerPPG) },
+  cEVPPG: { key: 'careerEVPPG', label: 'Career EV P/G', render: r => fmtDec(r.careerEVPPG) },
+  cTOI: { key: 'careerTOI', label: 'Career TOI', render: r => fmtDec(r.careerTOI) },
+  cGPPct: { key: 'careerGPPct', label: 'GP %', render: r => fmtDec(r.careerGPPct) + '%' },
+  height: { key: 'height', label: 'Height' },
+  weight: { key: 'weight', label: 'Weight' },
+  shoots: { key: 'shoots', label: 'Shoots' },
+  term: { key: 'term', label: 'Term' },
+  value: { key: 'value', label: 'Value', render: r => fmtMoney(r.value) },
+  aav: { key: 'aav', label: 'AAV', render: r => fmtMoney(r.aav) },
+  capPct: { key: 'capHitPct', label: 'Cap Hit %', render: r => fmtPct(r.capHitPct), highlight: true },
+};
+
+// ─── RENDER PLAYER ────────────────────────────────────────────────────
+function selectPlayer(player) {
+  state.selectedPlayer = player;
+  $('#appContent').style.display = 'block';
+  $('#emptyState').style.display = 'none';
+  renderAll();
+}
+
+function getConfidenceLevel(std) {
+  if (std == null) return { label: '—', cls: 'moderate' };
+  if (std <= 1.5) return { label: 'Tight', cls: 'tight' };
+  if (std <= 3.0) return { label: 'Moderate', cls: 'moderate' };
+  return { label: 'Wide', cls: 'wide' };
+}
+
+function renderEstimateBanner(el, p) {
+  const std = p.estimateStd ?? p.ciHigh - p.estimatedCapHitPct;
+  const conf = getConfidenceLevel(std);
+  el.innerHTML = `
+    <div class="est-stat">
+      <div class="est-label">Est. Cap Hit %</div>
+      <div class="est-value">${fmtPct(p.estimatedCapHitPct)}</div>
+      <div class="est-range"><span>${fmtPct(p.ciLow ?? p.estimatedCapHitPct)}</span> — <span>${fmtPct(p.ciHigh ?? p.estimatedCapHitPct)}</span></div>
+    </div>
+    <div class="est-stat">
+      <div class="est-label">Est. AAV</div>
+      <div class="est-value money">${fmtMoney(p.estimatedAAV)}</div>
+      <div class="est-range"><span>${fmtMoney(p.aavLow ?? p.estimatedAAV)}</span> — <span>${fmtMoney(p.aavHigh ?? p.estimatedAAV)}</span></div>
+    </div>
+    <div class="est-stat">
+      <div class="est-label">Uncertainty (σ)</div>
+      <div class="est-value" style="font-size:1.3rem;">${std != null ? std.toFixed(2) + '%' : '—'}</div>
+      <div class="est-range">of cap hit</div>
+    </div>
+  `;
+}
+
+function renderWeightCell(weight) {
+  if (weight == null) return '—';
+  const pct = (weight * 100).toFixed(1);
+  const barWidth = Math.min(100, weight * 100 / 0.5 * 100); // scale: 50% weight = full bar
+  return `<div class="weight-cell">
+    <div class="weight-bar-bg"><div class="weight-bar-fill" style="width:${barWidth}%"></div></div>
+    <span class="weight-pct">${pct}%</span>
+  </div>`;
+}
+
+function renderAll() {
+  const p = state.selectedPlayer;
+  if (!p) return;
+
+  const comps = p.comps || [];
+  const compWeights = p.compWeights || [];
+
+  // Attach weights to comps for table rendering
+  const compsWithWeights = comps.map((c, i) => ({
+    ...c,
+    _weight: compWeights[i] ?? null,
+  }));
+
+  // Make a "pending" version of the player for display
+  const playerPending = {
+    ...p,
+    term: '?',
+    value: null,
+    aav: p.estimatedAAV,
+    capHitPct: p.estimatedCapHitPct,
+  };
+
+  // ── Estimate banner ──
+  renderEstimateBanner($('#estimateBanner'), p);
+
+  // Confidence pill
+  const std = p.estimateStd ?? (p.ciHigh != null ? p.ciHigh - p.estimatedCapHitPct : null);
+  const conf = getConfidenceLevel(std);
+  const pill = $('#confidencePill');
+  pill.className = `confidence-pill ${conf.cls}`;
+  pill.textContent = `${conf.label} confidence`;
+
+  // Backtest badge
+  const bt = state.data?.meta?.backtest;
+  const btKey = `${p.signingStatus}_${p.positionGroup}`;
+  const btData = bt?.[btKey];
+  const btEl = $('#backtestBadge');
+  if (btData && btData.mae != null) {
+    btEl.innerHTML = `Backtest MAE: <span class="bt-val">${btData.mae}%</span> (n=${btData.n})`;
+  } else {
+    btEl.innerHTML = `Backtest: <span class="bt-val">—</span>`;
+  }
+
+  // ── Overview tab ──
+  const overviewCols = [COL.name, COL.pos, COL.age, COL.szn, COL.gp, COL.pts, COL.ppg, COL.toi, COL.cGP, COL.cPPG];
+  const overviewCompCols = [
+    { key: '_weight', label: 'Weight', render: r => renderWeightCell(r._weight) },
+    COL.name, COL.pos, COL.age, COL.szn, COL.gp, COL.pts, COL.ppg, COL.toi, COL.cGP, COL.cPPG, COL.capPct,
+    COL.aav, COL.term];
+  $('#playerOverviewTable').innerHTML = buildTable(overviewCols, [playerPending], { highlightFirst: true });
+  $('#compsOverviewTable').innerHTML = buildTable(overviewCompCols, compsWithWeights);
+
+  // ── Stats tab ──
+  const statsCols = [COL.name, COL.pos, COL.age, COL.szn, COL.gp, COL.g, COL.a, COL.pts, COL.ppg, COL.toi,
+    COL.cGP, COL.cPts, COL.cPPG, COL.cEVPPG, COL.cTOI, COL.cGPPct];
+  $('#playerStatsTable').innerHTML = buildTable(statsCols, [p], { highlightFirst: true });
+  $('#compsStatsTable').innerHTML = buildTable(statsCols, comps);
+
+  // ── Contract tab ──
+  const contractCols = [
+    { key: '_weight', label: 'Weight', render: r => renderWeightCell(r._weight) },
+    COL.name, COL.szn, COL.term, COL.value, COL.aav, COL.capPct];
+  const playerContractRow = {
+    ...playerPending,
+    capHitPct: p.estimatedCapHitPct,
+  };
+  $('#playerContractTable').innerHTML = buildTable(
+    [COL.name, COL.szn,
+      { key: 'term', label: 'Term', render: () => '?' },
+      { key: 'value', label: 'Value', render: () => '?' },
+      { ...COL.aav, label: 'Est. AAV', render: () => fmtMoney(p.estimatedAAV) },
+      { ...COL.capPct, label: 'Cap Hit % (Est.)' }],
+    [playerContractRow], { highlightFirst: true }
+  );
+  renderEstimateBanner($('#contractEstimateBanner'), p);
+  $('#compsContractTable').innerHTML = buildTable(contractCols, compsWithWeights);
+
+  // ── Bio tab ──
+  const bioCols = [COL.name, COL.pos, COL.age, COL.height, COL.weight, COL.shoots];
+  $('#playerBioTable').innerHTML = buildTable(bioCols, [p], { highlightFirst: true });
+  $('#compsBioTable').innerHTML = buildTable(bioCols, comps);
+
+  // Charts
+  renderCareerChart();
+  renderCapFutureChart();
+  renderScatterChart();
+  renderCapBarChart();
+}
+
+// ─── CHARTS ───────────────────────────────────────────────────────────
+const CHART_COLORS = ['#3b82f6', '#94a3b8', '#64748b', '#475569', '#334155', '#1e293b'];
+
+function destroyChart(name) {
+  if (state.charts[name]) {
+    state.charts[name].destroy();
+    state.charts[name] = null;
+  }
+}
+
+function renderCareerChart() {
+  destroyChart('career');
+  const p = state.selectedPlayer;
+  if (!p) return;
+
+  const stat = $('#careerStatSelect').value;
+  const statLabels = { ppg: 'Pts/Game', points: 'Points', gp: 'GP', evPPG: 'EV Pts/Game', toi: 'TOI/Game' };
+
+  const datasets = [];
+
+  // Player career line
+  if (p.career) {
+    datasets.push({
+      label: p.name,
+      data: p.career.map(s => ({ x: s.age, y: s[stat] })),
+      borderColor: CHART_COLORS[0],
+      backgroundColor: CHART_COLORS[0],
+      borderWidth: 3,
+      pointRadius: 4,
+      tension: 0.3,
+    });
+  }
+
+  // Comp career lines
+  if (p.compCareers) {
+    const compNames = {};
+    (p.comps || []).forEach(c => { compNames[c.playerId] = c.name; });
+
+    Object.entries(p.compCareers).forEach(([pid, career], i) => {
+      datasets.push({
+        label: compNames[pid] || `Comp ${i + 1}`,
+        data: career.map(s => ({ x: s.age, y: s[stat] })),
+        borderColor: CHART_COLORS[i + 1] || '#475569',
+        backgroundColor: CHART_COLORS[i + 1] || '#475569',
+        borderWidth: 1.5,
+        pointRadius: 2,
+        tension: 0.3,
+        borderDash: [4, 2],
+      });
+    });
+  }
+
+  state.charts.career = new Chart($('#careerChart'), {
+    type: 'line',
+    data: { datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'nearest', intersect: false },
+      scales: {
+        x: {
+          type: 'linear',
+          title: { display: true, text: 'July 1st Age', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', stepSize: 1, font: { family: 'Barlow' } },
+          grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+        y: {
+          title: { display: true, text: statLabels[stat] || stat, color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', font: { family: 'Barlow' } },
+          grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+      },
+      plugins: {
+        legend: {
+          labels: { color: '#94a3b8', font: { family: 'Barlow', size: 11 }, boxWidth: 12 },
+        },
+      },
+    },
+  });
+}
+
+function renderCapFutureChart() {
+  destroyChart('capFuture');
+  const p = state.selectedPlayer;
+  if (!p || !state.data) return;
+
+  const meta = state.data.meta;
+  const estAAV = p.estimatedAAV;
+  const currentCap = meta.currentCap;
+  const futureCaps = meta.futureCaps;
+
+  const seasons = [String(meta.currentSeason)];
+  const caps = [currentCap];
+  Object.entries(futureCaps).forEach(([s, c]) => { seasons.push(s); caps.push(c); });
+
+  const pcts = caps.map(c => round2((estAAV / c) * 100));
+
+  state.charts.capFuture = new Chart($('#capFutureChart'), {
+    type: 'bar',
+    data: {
+      labels: seasons.map(s => seasonLabel(parseInt(s))),
+      datasets: [{
+        data: pcts,
+        backgroundColor: ['#3b82f6', '#2563eb', '#1d4ed8'],
+        borderRadius: 4,
+        barPercentage: 0.6,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(2) + '%' } },
+      },
+      scales: {
+        y: {
+          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', callback: v => v + '%', font: { family: 'Barlow' } },
+          grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+        x: {
+          ticks: { color: '#64748b', font: { family: 'Barlow', size: 11 } },
+          grid: { display: false },
+        },
+      },
+    },
+  });
+}
+
+function renderScatterChart() {
+  destroyChart('scatter');
+  const p = state.selectedPlayer;
+  if (!p) return;
+
+  const comps = p.comps || [];
+
+  state.charts.scatter = new Chart($('#scatterChart'), {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: 'Comparables',
+        data: comps.map(c => ({ x: c.capHitPct, y: c.term })),
+        backgroundColor: '#94a3b8',
+        pointRadius: 6,
+        pointHoverRadius: 8,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const c = comps[ctx.dataIndex];
+              return `${c.name}: ${c.capHitPct}% / ${c.term}yr`;
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', callback: v => v + '%', font: { family: 'Barlow' } },
+          grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+        y: {
+          title: { display: true, text: 'Term (Years)', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', stepSize: 1, font: { family: 'Barlow' } },
+          grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+      },
+    },
+  });
+}
+
+function renderCapBarChart() {
+  destroyChart('capBar');
+  const p = state.selectedPlayer;
+  if (!p) return;
+
+  const comps = p.comps || [];
+  const names = comps.map(c => c.name);
+  const pcts = comps.map(c => c.capHitPct);
+
+  state.charts.capBar = new Chart($('#capBarChart'), {
+    type: 'bar',
+    data: {
+      labels: names,
+      datasets: [{
+        data: pcts,
+        backgroundColor: '#60a5fa',
+        borderRadius: 4,
+        barPercentage: 0.6,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ctx.parsed.x.toFixed(2) + '%' } },
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', callback: v => v + '%', font: { family: 'Barlow' } },
+          grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+        y: {
+          ticks: { color: '#94a3b8', font: { family: 'Barlow', size: 11 } },
+          grid: { display: false },
+        },
+      },
+    },
+  });
+}
+
+function round2(n) { return Math.round(n * 100) / 100; }
+
+// ─── INIT ─────────────────────────────────────────────────────────────
+function initApp() {
+  $('#loadingState').style.display = 'none';
+
+  setupToggles();
+  setupTabs();
+  setupSearch();
+  populateSearch();
+
+  // Re-render career chart when stat dropdown changes
+  $('#careerStatSelect').addEventListener('change', renderCareerChart);
+}
+
+// ─── BOOT ─────────────────────────────────────────────────────────────
+loadData();
+</script>
+</body>
+</html>

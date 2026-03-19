@@ -161,16 +161,18 @@ def build_contracts(raw_contracts: pd.DataFrame) -> pd.DataFrame:
     df = raw_contracts.copy()
 
     # Derive the season the contract started
+    # contract_end "2025-2026" with length 3 → started 2022 → season ID 20222023
     df["contract_end_year"] = df["contract_end"].astype(str).str.split("-").str[0].astype(int)
     df["contract_start_year"] = df["contract_end_year"] - df["length"].astype(int)
     df["contract_year"] = (
         df["contract_start_year"] * 10000
         + df["contract_start_year"]
-        + 10001
+        + 1
     ).astype(int)
 
     # For current-season expiring FAs, use expiry_status as signing_status
-    current_mask = df["contract_end"] == f"{CURRENT_YEAR + 1}-{CURRENT_YEAR + 2}"
+    # In the 2025-2026 season, current FAs have contract_end == "2025-2026"
+    current_mask = df["contract_end"] == f"{CURRENT_YEAR}-{CURRENT_YEAR + 1}"
     # Fallback: also check computed contract_year
     current_mask_2 = df["contract_year"] == CURRENT_SEASON
     is_current = current_mask | current_mask_2

@@ -60,6 +60,11 @@
     gap: 1.5rem;
     flex-wrap: wrap;
   }
+  .header-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
   .header h1 {
     font-family: var(--font-display);
     font-weight: 700;
@@ -74,12 +79,12 @@
   .header h1 span { color: var(--accent-bright); }
   .subtitle {
     font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 0.85rem;
-    letter-spacing: 0.12em;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-left: 0.25rem;
+    color: #f59e0b;
+    padding-left: 2.35rem;
   }
   .badge {
     font-size: 0.6rem;
@@ -482,14 +487,16 @@
 <!-- HEADER -->
 <div class="header">
   <div class="header-inner">
-    <h1>
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/>
-      </svg>
-      NHL <span>Contract Comps</span>
-      <span class="badge" id="seasonBadge"></span>
-    </h1>
-    <span class="subtitle">Batt Analytics</span>
+    <div class="header-brand">
+      <h1>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/>
+        </svg>
+        NHL <span>Contract Comps</span>
+        <span class="badge" id="seasonBadge"></span>
+      </h1>
+      <div class="subtitle">Batt Analytics</div>
+    </div>
     <div class="controls">
       <div class="control-group" id="faToggle">
         <button class="active" data-val="UFA">UFA</button>

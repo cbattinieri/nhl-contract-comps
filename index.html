@@ -717,7 +717,7 @@
           <div class="card-body"><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>
         </div>
         <div class="card">
-          <div class="card-header"><span class="dot"></span> Est. Cap Hit % by Season</div>
+          <div class="card-header"><span class="dot"></span> AAV vs Rising Market Value</div>
           <div class="card-body"><div class="chart-container"><canvas id="capBarChart"></canvas></div></div>
         </div>
       </div>
@@ -1280,43 +1280,61 @@ function renderCapBarChart() {
 
   const meta = state.data.meta;
   const estAAV = p.estimatedAAV;
+  const estPct = p.estimatedCapHitPct;
   const comps = p.comps || [];
 
-  // Build season/cap pairs: current + future
+  // Build season/cap pairs
   const seasonCaps = [[meta.currentSeason, meta.currentCap]];
   Object.entries(meta.futureCaps).forEach(([s, c]) => seasonCaps.push([parseInt(s), c]));
   seasonCaps.sort((a, b) => a[0] - b[0]);
 
   const labels = seasonCaps.map(([s]) => seasonLabel(s));
-  const playerPcts = seasonCaps.map(([, c]) => round2((estAAV / c) * 100));
+
+  // Player's actual AAV (flat — what they'd sign for)
+  const playerAAV = estAAV / 1_000_000;
+
+  // "Market equivalent" — what that same cap hit % costs under each year's cap
+  // This line RISES, showing the player becomes a bargain over time
+  const marketEquiv = seasonCaps.map(([, c]) => round2((estPct * c / 100) / 1_000_000));
 
   const datasets = [
     {
-      label: p.name + ' (projected)',
-      data: playerPcts,
+      label: p.name + ' AAV (fixed)',
+      data: labels.map(() => playerAAV),
       borderColor: '#f59e0b',
-      backgroundColor: 'rgba(245,158,11,0.1)',
+      backgroundColor: 'rgba(245,158,11,0.05)',
       borderWidth: 2.5,
-      pointRadius: 5,
+      pointRadius: 4,
       pointBackgroundColor: '#f59e0b',
-      pointHoverRadius: 7,
+      tension: 0,
+      fill: false,
+    },
+    {
+      label: 'Market value at ' + estPct.toFixed(1) + '% cap hit',
+      data: marketEquiv,
+      borderColor: '#10b981',
+      backgroundColor: 'rgba(16,185,129,0.08)',
+      borderWidth: 2.5,
+      pointRadius: 4,
+      pointBackgroundColor: '#10b981',
       tension: 0.3,
       fill: true,
     },
   ];
 
-  // Add each comp as a horizontal line at their actual cap hit %
+  // Comp AAVs adjusted to each season's cap (what their deal would cost under future caps)
   const compColors = ['#94a3b8', '#64748b', '#475569', '#334155', '#1e293b'];
   comps.forEach((c, i) => {
-    const compPct = c.capHitPct;
+    if (!c.capHitPct) return;
+    const compAdjusted = seasonCaps.map(([, cap]) => round2((c.capHitPct * cap / 100) / 1_000_000));
     datasets.push({
-      label: c.name + ' (' + fmtPct(compPct) + ')',
-      data: labels.map(() => compPct),
+      label: c.name,
+      data: compAdjusted,
       borderColor: compColors[i] || '#475569',
       borderWidth: 1.5,
       pointRadius: 0,
       borderDash: [6, 3],
-      tension: 0,
+      tension: 0.3,
       fill: false,
     });
   });
@@ -1332,7 +1350,7 @@ function renderCapBarChart() {
         legend: {
           labels: { color: '#94a3b8', font: { family: 'Barlow', size: 10 }, boxWidth: 10 },
         },
-        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%' } },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': $' + ctx.parsed.y.toFixed(2) + 'M' } },
       },
       scales: {
         x: {
@@ -1341,8 +1359,8 @@ function renderCapBarChart() {
           grid: { display: false },
         },
         y: {
-          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
-          ticks: { color: '#64748b', callback: v => v + '%', font: { family: 'Barlow' } },
+          title: { display: true, text: 'AAV ($M)', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', callback: v => '$' + v.toFixed(1) + 'M', font: { family: 'Barlow' } },
           grid: { color: 'rgba(30,58,95,0.3)' },
         },
       },

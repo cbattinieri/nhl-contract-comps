@@ -570,15 +570,15 @@ def compute_term_table(
     key = f"{fa_status}_{pos_group}"
     curve = curves.get(key)
 
-    # Compute reference term from comps (what term did similar players sign?)
+    # Reference term from comps
     if comp_records:
         comp_terms = [c["term"] for c in comp_records if c.get("term") and c["term"] >= 2]
         ref_term = np.mean(comp_terms) if comp_terms else 4.0
     else:
         ref_term = 4.0
 
-    # Get the slope magnitude from the data, but ENFORCE negative direction
-    # Economic logic: longer term = lower AAV (player trades security for discount)
+    # Get slope magnitude from data
+    raw_slope = 0
     if curve:
         tier_edges = curve["tier_edges"]
         tier_idx = None
@@ -593,24 +593,34 @@ def compute_term_table(
         else:
             raw_slope = curve["fallback"]["slope"]
 
-        # Use magnitude but force negative; scale by quality tier
-        slope_magnitude = abs(raw_slope) if raw_slope != 0 else 0.15
-        # Higher cap hit players have more room for term discount
+    slope_magnitude = abs(raw_slope) if raw_slope != 0 else 0.12
+
+    # RFA vs UFA: opposite economic dynamics
+    if fa_status == "RFA":
+        # Longer term = HIGHER AAV (buying UFA years at a premium)
+        # Short deals are bridges (cheap), long deals lock in UFA years (expensive)
+        if base_cap_pct >= 8.0:
+            slope_magnitude = max(slope_magnitude, 0.25)
+        elif base_cap_pct >= 5.0:
+            slope_magnitude = max(slope_magnitude, 0.15)
+        else:
+            slope_magnitude = max(slope_magnitude, 0.08)
+        slope = +slope_magnitude
+    else:
+        # UFA: Longer term = LOWER AAV (security discount)
+        # Short deals command premium (flexibility), long deals = discount for certainty
         if base_cap_pct >= 8.0:
             slope_magnitude = max(slope_magnitude, 0.20)
         elif base_cap_pct >= 5.0:
             slope_magnitude = max(slope_magnitude, 0.12)
         else:
             slope_magnitude = max(slope_magnitude, 0.06)
-
         slope = -slope_magnitude
-    else:
-        slope = -0.12
 
     table = []
     for t in range(2, 9):
         adjusted_pct = base_cap_pct + slope * (t - ref_term)
-        adjusted_pct = max(base_cap_pct * 0.70, min(base_cap_pct * 1.30, adjusted_pct))
+        adjusted_pct = max(base_cap_pct * 0.65, min(base_cap_pct * 1.35, adjusted_pct))
         adjusted_pct = round(max(0, adjusted_pct), 2)
         aav = round(adjusted_pct * current_cap / 100)
         table.append({"term": t, "capHitPct": adjusted_pct, "aav": aav})

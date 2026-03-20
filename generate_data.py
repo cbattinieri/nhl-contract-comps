@@ -564,42 +564,53 @@ def compute_term_table(
     pos_group: str,
     curves: dict,
     current_cap: int,
+    comp_records: list[dict] = None,
 ) -> list[dict]:
     """Compute adjusted AAV at each term length."""
     key = f"{fa_status}_{pos_group}"
     curve = curves.get(key)
 
-    if not curve:
-        return [
-            {"term": t, "capHitPct": base_cap_pct,
-             "aav": round(base_cap_pct * current_cap / 100)}
-            for t in range(2, 9)
-        ]
-
-    tier_edges = curve["tier_edges"]
-    tier_idx = None
-    for i in range(len(tier_edges) - 1):
-        if tier_edges[i] <= base_cap_pct < tier_edges[i + 1]:
-            tier_idx = i
-            break
-
-    tier_data = curve["tiers"].get(tier_idx) if tier_idx is not None else None
-    if tier_data and tier_data["n"] >= 5:
-        intercept = tier_data["intercept"]
-        slope = tier_data["slope"]
+    # Compute reference term from comps (what term did similar players sign?)
+    if comp_records:
+        comp_terms = [c["term"] for c in comp_records if c.get("term") and c["term"] >= 2]
+        ref_term = np.mean(comp_terms) if comp_terms else 4.0
     else:
-        intercept = curve["fallback"]["intercept"]
-        slope = curve["fallback"]["slope"]
+        ref_term = 4.0
 
-    if slope != 0:
-        implied_term = (base_cap_pct - intercept) / slope
+    # Get the slope magnitude from the data, but ENFORCE negative direction
+    # Economic logic: longer term = lower AAV (player trades security for discount)
+    if curve:
+        tier_edges = curve["tier_edges"]
+        tier_idx = None
+        for i in range(len(tier_edges) - 1):
+            if tier_edges[i] <= base_cap_pct < tier_edges[i + 1]:
+                tier_idx = i
+                break
+
+        tier_data = curve["tiers"].get(tier_idx) if tier_idx is not None else None
+        if tier_data and tier_data["n"] >= 5:
+            raw_slope = tier_data["slope"]
+        else:
+            raw_slope = curve["fallback"]["slope"]
+
+        # Use magnitude but force negative; scale by quality tier
+        slope_magnitude = abs(raw_slope) if raw_slope != 0 else 0.15
+        # Higher cap hit players have more room for term discount
+        if base_cap_pct >= 8.0:
+            slope_magnitude = max(slope_magnitude, 0.20)
+        elif base_cap_pct >= 5.0:
+            slope_magnitude = max(slope_magnitude, 0.12)
+        else:
+            slope_magnitude = max(slope_magnitude, 0.06)
+
+        slope = -slope_magnitude
     else:
-        implied_term = 4.0
+        slope = -0.12
 
     table = []
     for t in range(2, 9):
-        adjusted_pct = base_cap_pct + slope * (t - implied_term)
-        adjusted_pct = max(base_cap_pct * 0.5, min(base_cap_pct * 1.5, adjusted_pct))
+        adjusted_pct = base_cap_pct + slope * (t - ref_term)
+        adjusted_pct = max(base_cap_pct * 0.70, min(base_cap_pct * 1.30, adjusted_pct))
         adjusted_pct = round(max(0, adjusted_pct), 2)
         aav = round(adjusted_pct * current_cap / 100)
         table.append({"term": t, "capHitPct": adjusted_pct, "aav": aav})
@@ -860,7 +871,8 @@ def main():
         fa_status = str(row.get("signing_status", ""))
         pos_group = str(row.get("position_group", ""))
         term_table = compute_term_table(
-            est["estimate"], fa_status, pos_group, term_curves, current_cap
+            est["estimate"], fa_status, pos_group, term_curves, current_cap,
+            comp_records=comp_records,
         )
 
         output["players"].append({

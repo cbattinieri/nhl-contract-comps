@@ -466,6 +466,90 @@
   }
   .backtest-badge .bt-val { color: var(--text-secondary); }
 
+  /* ── TERM SLIDER ── */
+  .term-slider-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .term-slider-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .term-slider-label {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .term-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+  }
+  .term-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: 2px solid var(--bg-card);
+    box-shadow: 0 0 6px rgba(59,130,246,0.4);
+  }
+  .term-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: 2px solid var(--bg-card);
+  }
+  .term-slider-value {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-bright);
+    min-width: 40px;
+    text-align: center;
+  }
+  .term-slider-result {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .term-result-item {
+    text-align: center;
+  }
+  .term-result-label {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+  }
+  .term-result-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .term-result-value.money { color: var(--green); }
+  .term-result-value.pct { color: var(--accent-bright); }
+  .term-result-value.term { color: var(--text-primary); }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .header-inner { flex-direction: column; align-items: flex-start; }
@@ -550,6 +634,19 @@
         </div>
         <div class="estimate-banner" id="estimateBanner"></div>
       </div>
+      <div class="card" id="termSliderCard">
+        <div class="card-header"><span class="dot"></span> Term Sensitivity</div>
+        <div class="card-body">
+          <div class="term-slider-wrap">
+            <div class="term-slider-row">
+              <label class="term-slider-label">Contract Term</label>
+              <input type="range" id="termSlider" min="2" max="8" value="5" step="1" class="term-slider" />
+              <span class="term-slider-value" id="termSliderValue">5 yr</span>
+            </div>
+            <div class="term-slider-result" id="termSliderResult"></div>
+          </div>
+        </div>
+      </div>
       <div class="card">
         <div class="card-header"><span class="dot"></span> Comparables</div>
         <div class="card-body table-wrap" id="compsOverviewTable"></div>
@@ -601,6 +698,16 @@
         <div class="estimate-banner" id="contractEstimateBanner"></div>
       </div>
       <div class="card">
+        <div class="card-header"><span class="dot"></span> Term Sensitivity — Est. AAV by Contract Length</div>
+        <div class="card-body">
+          <div class="chart-grid">
+            <div class="table-wrap" id="termTable"></div>
+            <div class="chart-container"><canvas id="termChart"></canvas></div>
+          </div>
+        </div>
+        <div class="card-footer">Estimated AAV adjustment based on historical term-value relationship within quality tier. Longer term typically reduces AAV.</div>
+      </div>
+      <div class="card">
         <div class="card-header"><span class="dot"></span> Comparable Contracts</div>
         <div class="card-body table-wrap" id="compsContractTable"></div>
       </div>
@@ -610,7 +717,7 @@
           <div class="card-body"><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>
         </div>
         <div class="card">
-          <div class="card-header"><span class="dot"></span> Estimated Cap Hit % Over Time</div>
+          <div class="card-header"><span class="dot"></span> Est. Cap Hit % by Season</div>
           <div class="card-body"><div class="chart-container"><canvas id="capBarChart"></canvas></div></div>
         </div>
       </div>
@@ -983,6 +1090,9 @@ function renderAll() {
   renderCapFutureChart();
   renderScatterChart();
   renderCapBarChart();
+  renderTermTable();
+  renderTermChart();
+  renderTermSlider();
 }
 
 // ─── CHARTS ───────────────────────────────────────────────────────────
@@ -1166,39 +1276,118 @@ function renderScatterChart() {
 function renderCapBarChart() {
   destroyChart('capBar');
   const p = state.selectedPlayer;
-  if (!p) return;
+  if (!p || !state.data) return;
 
-  const comps = p.comps || [];
-  const names = comps.map(c => c.name);
-  const pcts = comps.map(c => c.capHitPct);
+  const meta = state.data.meta;
+  const estAAV = p.estimatedAAV;
+
+  // Build season/cap pairs: current + future
+  const seasonCaps = [[meta.currentSeason, meta.currentCap]];
+  Object.entries(meta.futureCaps).forEach(([s, c]) => seasonCaps.push([parseInt(s), c]));
+  seasonCaps.sort((a, b) => a[0] - b[0]);
+
+  const labels = seasonCaps.map(([s]) => seasonLabel(s));
+  const pcts = seasonCaps.map(([, c]) => round2((estAAV / c) * 100));
 
   state.charts.capBar = new Chart($('#capBarChart'), {
-    type: 'bar',
+    type: 'line',
     data: {
-      labels: names,
+      labels,
       datasets: [{
         data: pcts,
-        backgroundColor: '#60a5fa',
-        borderRadius: 4,
-        barPercentage: 0.6,
+        borderColor: '#f59e0b',
+        backgroundColor: 'rgba(245,158,11,0.1)',
+        borderWidth: 2.5,
+        pointRadius: 5,
+        pointBackgroundColor: '#f59e0b',
+        pointHoverRadius: 7,
+        tension: 0.3,
+        fill: true,
       }],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      indexAxis: 'y',
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => ctx.parsed.x.toFixed(2) + '%' } },
+        tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(2) + '% cap hit' } },
       },
       scales: {
         x: {
+          title: { display: true, text: 'Season', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', font: { family: 'Barlow', size: 11 } },
+          grid: { display: false },
+        },
+        y: {
           title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
           ticks: { color: '#64748b', callback: v => v + '%', font: { family: 'Barlow' } },
           grid: { color: 'rgba(30,58,95,0.3)' },
         },
+      },
+    },
+  });
+}
+
+function renderTermTable() {
+  const p = state.selectedPlayer;
+  if (!p || !p.termTable || !p.termTable.length) {
+    $('#termTable').innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;">No term data available</p>';
+    return;
+  }
+
+  const cols = [
+    { key: 'term', label: 'Term', render: r => r.term + ' yr' },
+    { key: 'aav', label: 'Est. AAV', render: r => fmtMoney(r.aav), nameCell: true },
+    { key: 'capHitPct', label: 'Cap Hit %', render: r => fmtPct(r.capHitPct), highlight: true },
+  ];
+
+  $('#termTable').innerHTML = buildTable(cols, p.termTable);
+}
+
+function renderTermChart() {
+  destroyChart('term');
+  const p = state.selectedPlayer;
+  if (!p || !p.termTable || !p.termTable.length) return;
+
+  const labels = p.termTable.map(r => r.term + 'yr');
+  const aavs = p.termTable.map(r => r.aav / 1_000_000);
+
+  state.charts.term = new Chart($('#termChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        data: aavs,
+        borderColor: '#3b82f6',
+        backgroundColor: 'rgba(59,130,246,0.1)',
+        borderWidth: 2.5,
+        pointRadius: 5,
+        pointBackgroundColor: '#3b82f6',
+        pointHoverRadius: 7,
+        tension: 0.3,
+        fill: true,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => '$' + ctx.parsed.y.toFixed(2) + 'M',
+          },
+        },
+      },
+      scales: {
         y: {
-          ticks: { color: '#94a3b8', font: { family: 'Barlow', size: 11 } },
+          title: { display: true, text: 'Est. AAV ($M)', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', callback: v => '$' + v.toFixed(1) + 'M', font: { family: 'Barlow' } },
+          grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+        x: {
+          title: { display: true, text: 'Contract Term', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', font: { family: 'Barlow', size: 11 } },
           grid: { display: false },
         },
       },
@@ -1207,6 +1396,44 @@ function renderCapBarChart() {
 }
 
 function round2(n) { return Math.round(n * 100) / 100; }
+
+function renderTermSlider() {
+  const p = state.selectedPlayer;
+  const slider = $('#termSlider');
+  const valueLabel = $('#termSliderValue');
+  const resultDiv = $('#termSliderResult');
+
+  if (!p || !p.termTable || !p.termTable.length) {
+    resultDiv.innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;">No term data</p>';
+    return;
+  }
+
+  const term = parseInt(slider.value);
+  valueLabel.textContent = term + ' yr';
+
+  const entry = p.termTable.find(r => r.term === term);
+  if (!entry) {
+    resultDiv.innerHTML = '';
+    return;
+  }
+
+  const totalValue = entry.aav * term;
+
+  resultDiv.innerHTML = `
+    <div class="term-result-item">
+      <div class="term-result-label">Term</div>
+      <div class="term-result-value term">${term} yr</div>
+    </div>
+    <div class="term-result-item">
+      <div class="term-result-label">Est. AAV</div>
+      <div class="term-result-value money">${fmtMoney(entry.aav)}</div>
+    </div>
+    <div class="term-result-item">
+      <div class="term-result-label">Total Value</div>
+      <div class="term-result-value money">${fmtMoney(totalValue)}</div>
+    </div>
+  `;
+}
 
 // ─── INIT ─────────────────────────────────────────────────────────────
 function initApp() {
@@ -1219,6 +1446,9 @@ function initApp() {
 
   // Re-render career chart when stat dropdown changes
   $('#careerStatSelect').addEventListener('change', renderCareerChart);
+
+  // Term slider
+  $('#termSlider').addEventListener('input', renderTermSlider);
 }
 
 // ─── BOOT ─────────────────────────────────────────────────────────────

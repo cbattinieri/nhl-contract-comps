@@ -479,6 +479,134 @@ def backtest_model(
     }
 
 
+
+# ---------------------------------------------------------------------------
+# TERM SENSITIVITY
+# ---------------------------------------------------------------------------
+
+def build_term_curves(merged: pd.DataFrame, cap_limits: dict) -> dict:
+    """Build term-adjustment model from historical data."""
+    df = merged.copy()
+    df["_ul"] = df["contract_year"].map(cap_limits).fillna(95_500_000)
+    df["_length"] = df["length"].fillna(1).astype(int).clip(lower=1)
+    df["_value"] = df["value"].fillna(0).astype(float)
+    df["_aav"] = df["_value"] / df["_length"]
+    df["_cap_pct"] = (df["_aav"] / df["_ul"]) * 100
+
+    df = df[
+        (df["contract_year"] != CURRENT_SEASON)
+        & (df["_length"] >= 2)
+        & (df["_cap_pct"] > 0)
+    ].copy()
+
+    curves = {}
+
+    for fa in ["RFA", "UFA"]:
+        for pos in ["Forward", "Defense"]:
+            seg = df[
+                (df["signing_status"] == fa)
+                & (df["position_group"] == pos)
+            ].copy()
+
+            if len(seg) < 10:
+                curves[f"{fa}_{pos}"] = None
+                continue
+
+            tier_edges = [0, 2.5, 5.0, 8.0, 100.0]
+            seg["_tier"] = pd.cut(seg["_cap_pct"], bins=tier_edges, labels=False)
+
+            tier_coefficients = {}
+            for tier in seg["_tier"].dropna().unique():
+                tier_data = seg[seg["_tier"] == tier]
+                if len(tier_data) < 5:
+                    continue
+
+                terms = tier_data["_length"].values.astype(float)
+                pcts = tier_data["_cap_pct"].values
+
+                if terms.std() == 0:
+                    continue
+                b = np.cov(terms, pcts)[0, 1] / np.var(terms)
+                a = pcts.mean() - b * terms.mean()
+
+                tier_coefficients[int(tier)] = {
+                    "intercept": round(float(a), 4),
+                    "slope": round(float(b), 4),
+                    "n": len(tier_data),
+                    "mean_term": round(float(terms.mean()), 1),
+                    "mean_pct": round(float(pcts.mean()), 2),
+                }
+
+            all_terms = seg["_length"].values.astype(float)
+            all_pcts = seg["_cap_pct"].values
+            if all_terms.std() > 0:
+                b_all = np.cov(all_terms, all_pcts)[0, 1] / np.var(all_terms)
+                a_all = all_pcts.mean() - b_all * all_terms.mean()
+            else:
+                a_all, b_all = float(all_pcts.mean()), 0.0
+
+            curves[f"{fa}_{pos}"] = {
+                "tiers": tier_coefficients,
+                "fallback": {
+                    "intercept": round(float(a_all), 4),
+                    "slope": round(float(b_all), 4),
+                    "n": len(seg),
+                },
+                "tier_edges": tier_edges,
+            }
+
+    return curves
+
+
+def compute_term_table(
+    base_cap_pct: float,
+    fa_status: str,
+    pos_group: str,
+    curves: dict,
+    current_cap: int,
+) -> list[dict]:
+    """Compute adjusted AAV at each term length."""
+    key = f"{fa_status}_{pos_group}"
+    curve = curves.get(key)
+
+    if not curve:
+        return [
+            {"term": t, "capHitPct": base_cap_pct,
+             "aav": round(base_cap_pct * current_cap / 100)}
+            for t in range(2, 9)
+        ]
+
+    tier_edges = curve["tier_edges"]
+    tier_idx = None
+    for i in range(len(tier_edges) - 1):
+        if tier_edges[i] <= base_cap_pct < tier_edges[i + 1]:
+            tier_idx = i
+            break
+
+    tier_data = curve["tiers"].get(tier_idx) if tier_idx is not None else None
+    if tier_data and tier_data["n"] >= 5:
+        intercept = tier_data["intercept"]
+        slope = tier_data["slope"]
+    else:
+        intercept = curve["fallback"]["intercept"]
+        slope = curve["fallback"]["slope"]
+
+    if slope != 0:
+        implied_term = (base_cap_pct - intercept) / slope
+    else:
+        implied_term = 4.0
+
+    table = []
+    for t in range(2, 9):
+        adjusted_pct = base_cap_pct + slope * (t - implied_term)
+        adjusted_pct = max(base_cap_pct * 0.5, min(base_cap_pct * 1.5, adjusted_pct))
+        adjusted_pct = round(max(0, adjusted_pct), 2)
+        aav = round(adjusted_pct * current_cap / 100)
+        table.append({"term": t, "capHitPct": adjusted_pct, "aav": aav})
+
+    return table
+
+
 # ---------------------------------------------------------------------------
 # BUILD OUTPUT
 # ---------------------------------------------------------------------------
@@ -665,6 +793,9 @@ def main():
     # 7. Build output JSON
     print("Building output JSON...")
 
+    # Build term sensitivity curves from historical data
+    term_curves = build_term_curves(merged, CAP_LIMITS)
+
     # Player lookup for all merged data
     player_records = {}
     for _, row in merged.iterrows():
@@ -725,6 +856,13 @@ def main():
         for comp_pid in comp_info["comps"]:
             comp_careers[str(comp_pid)] = build_career_history(comp_pid, stats)
 
+        # Term sensitivity table
+        fa_status = str(row.get("signing_status", ""))
+        pos_group = str(row.get("position_group", ""))
+        term_table = compute_term_table(
+            est["estimate"], fa_status, pos_group, term_curves, current_cap
+        )
+
         output["players"].append({
             **player_data,
             "estimatedCapHitPct": est["estimate"],
@@ -735,6 +873,7 @@ def main():
             "aavHigh": aav_high,
             "estimateStd": est["std"],
             "compWeights": est["weights"],
+            "termTable": term_table,
             "comps": comp_records,
             "compDistances": comp_info["distances"],
             "career": career,

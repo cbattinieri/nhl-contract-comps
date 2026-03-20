@@ -239,19 +239,32 @@ def merge_stats_contracts(stats: pd.DataFrame, contracts: pd.DataFrame) -> pd.Da
 # KNN MODEL
 # ---------------------------------------------------------------------------
 
-# Features used across all models
+# ---------------------------------------------------------------------------
+# FEATURE CONFIGURATION (validated via feature_study.ipynb)
+# ---------------------------------------------------------------------------
+# Career-to-date base features — used by all 4 models
 BASE_FEATURES = [
     "july_1_age", "ctd_gamesPlayed", "ctd_p_pg", "ctd_ev_p_pg",
     "pct_gp", "ctd_toi_avg",
 ]
-# Additional features for UFA models (platform-year stats matter more)
-UFA_EXTRA_FEATURES = [
-    "gamesPlayed_L3", "pointsPerGame_L3", "evPointsPerGame_L3",
+
+# L3 rolling averages — added to all models (biggest MAE improvement)
+L3_FEATURES = [
+    "gamesPlayed_L3", "points_L3", "pointsPerGame_L3",
+    "evPoints_L3", "evPointsPerGame_L3", "timeOnIcePerGame_L3",
 ]
-# Feature weights for UFAs (emphasize age & career stats)
+
+# RFA models: CTD + all L3, NO weights
+# Ablation result: MAE drops from ~1.91% to ~1.33% (fwd), ~2.01% to ~1.83% (def)
+RFA_FEATURES = BASE_FEATURES + L3_FEATURES
+RFA_WEIGHTS = None
+
+# UFA models: CTD + all L3, light L3 weight (2x)
+# Ablation result: MAE drops from ~1.99% to ~1.54% (fwd), ~2.17% to ~1.78% (def)
+UFA_FEATURES = BASE_FEATURES + L3_FEATURES
 UFA_WEIGHTS = {
-    "july_1_age": 30, "ctd_gamesPlayed": 10, "ctd_p_pg": 10,
-    "gamesPlayed_L3": 0.25, "pointsPerGame_L3": 0.25, "evPointsPerGame_L3": 0.25,
+    "gamesPlayed_L3": 2, "points_L3": 2, "pointsPerGame_L3": 2,
+    "evPoints_L3": 2, "evPointsPerGame_L3": 2, "timeOnIcePerGame_L3": 2,
 }
 
 
@@ -471,14 +484,41 @@ def backtest_model(
 # ---------------------------------------------------------------------------
 
 def compute_age(stats: pd.DataFrame, bios: pd.DataFrame) -> pd.DataFrame:
-    """Add july_1_age to stats using bio birthDate."""
+    """Add july_1_age and draft position data to stats using bios."""
     bios_slim = bios[["playerId", "birthDate"]].drop_duplicates(subset="playerId")
     bios_slim["birthDate"] = pd.to_datetime(bios_slim["birthDate"], errors="coerce")
+
+    # Draft info — NHL bios API includes draftYear, draftOverall, draftRound
+    draft_cols = ["playerId"]
+    for col in ["draftYear", "draftOverall", "draftRound"]:
+        if col in bios.columns:
+            draft_cols.append(col)
+    draft_slim = bios[draft_cols].drop_duplicates(subset="playerId")
 
     merged = stats.merge(bios_slim, on="playerId", how="left")
     merged["july_1_age"] = (
         (merged["july_1"] - merged["birthDate"]).dt.days / 365.25
     ).fillna(0).astype(int)
+
+    # Merge draft info
+    if "draftOverall" in draft_slim.columns:
+        merged = merged.merge(draft_slim, on="playerId", how="left")
+        # Fill undrafted players with 999 (clearly out of range)
+        merged["draftOverall"] = merged["draftOverall"].fillna(999).astype(int)
+    else:
+        merged["draftOverall"] = 999
+
+    # Create draft bucket feature (non-linear grouping)
+    # Top-5, Top-15, 1st round, 2nd round, 3rd-7th round, undrafted
+    conditions = [
+        merged["draftOverall"] <= 5,
+        merged["draftOverall"] <= 15,
+        merged["draftOverall"] <= 31,
+        merged["draftOverall"] <= 62,
+        merged["draftOverall"] <= 224,
+    ]
+    bucket_values = [1, 2, 3, 4, 5]  # 1=elite, 5=late round
+    merged["draftBucket"] = np.select(conditions, bucket_values, default=6)  # 6=undrafted
 
     return merged
 
@@ -503,6 +543,9 @@ def build_player_record(row, cap_limits: dict) -> dict:
         "height": str(row.get("height", "")),
         "weight": str(row.get("weight", "")),
         "shoots": str(row.get("shootsCatches", "")),
+        # Draft info
+        "draftOverall": int(row.get("draftOverall", 999)),
+        "draftBucket": int(row.get("draftBucket", 6)),
         # Contract info
         "term": length,
         "value": value,
@@ -595,11 +638,11 @@ def main():
             ].reset_index(drop=True)
 
             if fa_status == "UFA":
-                features = BASE_FEATURES + UFA_EXTRA_FEATURES
+                features = UFA_FEATURES
                 weights = UFA_WEIGHTS
             else:
-                features = BASE_FEATURES
-                weights = None
+                features = RFA_FEATURES
+                weights = RFA_WEIGHTS
 
             # Only include features that exist
             features = [f for f in features if f in subset.columns]

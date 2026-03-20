@@ -1280,6 +1280,7 @@ function renderCapBarChart() {
 
   const meta = state.data.meta;
   const estAAV = p.estimatedAAV;
+  const comps = p.comps || [];
 
   // Build season/cap pairs: current + future
   const seasonCaps = [[meta.currentSeason, meta.currentCap]];
@@ -1287,30 +1288,51 @@ function renderCapBarChart() {
   seasonCaps.sort((a, b) => a[0] - b[0]);
 
   const labels = seasonCaps.map(([s]) => seasonLabel(s));
-  const pcts = seasonCaps.map(([, c]) => round2((estAAV / c) * 100));
+  const playerPcts = seasonCaps.map(([, c]) => round2((estAAV / c) * 100));
+
+  const datasets = [
+    {
+      label: p.name + ' (projected)',
+      data: playerPcts,
+      borderColor: '#f59e0b',
+      backgroundColor: 'rgba(245,158,11,0.1)',
+      borderWidth: 2.5,
+      pointRadius: 5,
+      pointBackgroundColor: '#f59e0b',
+      pointHoverRadius: 7,
+      tension: 0.3,
+      fill: true,
+    },
+  ];
+
+  // Add each comp as a horizontal line at their actual cap hit %
+  const compColors = ['#94a3b8', '#64748b', '#475569', '#334155', '#1e293b'];
+  comps.forEach((c, i) => {
+    const compPct = c.capHitPct;
+    datasets.push({
+      label: c.name + ' (' + fmtPct(compPct) + ')',
+      data: labels.map(() => compPct),
+      borderColor: compColors[i] || '#475569',
+      borderWidth: 1.5,
+      pointRadius: 0,
+      borderDash: [6, 3],
+      tension: 0,
+      fill: false,
+    });
+  });
 
   state.charts.capBar = new Chart($('#capBarChart'), {
     type: 'line',
-    data: {
-      labels,
-      datasets: [{
-        data: pcts,
-        borderColor: '#f59e0b',
-        backgroundColor: 'rgba(245,158,11,0.1)',
-        borderWidth: 2.5,
-        pointRadius: 5,
-        pointBackgroundColor: '#f59e0b',
-        pointHoverRadius: 7,
-        tension: 0.3,
-        fill: true,
-      }],
-    },
+    data: { labels, datasets },
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
       plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(2) + '% cap hit' } },
+        legend: {
+          labels: { color: '#94a3b8', font: { family: 'Barlow', size: 10 }, boxWidth: 10 },
+        },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%' } },
       },
       scales: {
         x: {

@@ -527,7 +527,7 @@
   }
   .term-slider-result {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
   }
   .term-result-item {
@@ -1775,6 +1775,10 @@ function renderTermSlider() {
     <div class="term-result-item">
       <div class="term-result-label">Est. AAV</div>
       <div class="term-result-value money">${fmtMoney(entry.aav)}</div>
+    </div>
+    <div class="term-result-item">
+      <div class="term-result-label">Cap Hit %</div>
+      <div class="term-result-value pct">${fmtPct(entry.capHitPct)}</div>
     </div>
     <div class="term-result-item">
       <div class="term-result-label">Total Value</div>

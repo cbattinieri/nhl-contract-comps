@@ -67,6 +67,26 @@ CAP_LIMITS = {
     20272028: 113_500_000,  # agreed, subject to minor adjustment
 }
 
+# Historical caps for MC growth-rate bootstrap (anomalous years excluded at runtime)
+_CAP_HISTORY_MC = {
+    2005: 39_000_000, 2006: 44_000_000, 2007: 50_300_000,
+    2008: 56_700_000, 2009: 56_800_000, 2010: 59_400_000,
+    2011: 64_300_000,
+    # 2012 excluded — lockout reset
+    2013: 64_300_000, 2014: 69_000_000, 2015: 71_400_000,
+    2016: 73_000_000, 2017: 75_000_000, 2018: 79_500_000,
+    2019: 81_500_000,
+    # 2020, 2021 excluded — COVID freeze
+    2022: 82_500_000, 2023: 83_500_000, 2024: 88_000_000,
+}
+
+# Hard anchors — confirmed or agreed future caps, not used as training data
+_KNOWN_FUTURE_CAPS = {
+    2025: 95_500_000,
+    2026: 104_000_000,
+    2027: 113_500_000,
+}
+
 KNN_NEIGHBORS = 5
 LOOKBACK_SEASONS = 3  # how many prior FA classes to use as training data
 
@@ -122,6 +142,72 @@ def fetch_contracts() -> pd.DataFrame:
     # Keep only rows with a valid contract
     df_current = df_current[df_current["contract_id"].notna()].copy()
     return df_current
+
+
+# ---------------------------------------------------------------------------
+# CAP PROJECTION — Monte Carlo bootstrap
+# ---------------------------------------------------------------------------
+
+def _cap_growth_rates(cap_dict: dict, exclude: set) -> list:
+    years = sorted(cap_dict.keys())
+    rates = []
+    for i in range(1, len(years)):
+        y_prev, y_curr = years[i - 1], years[i]
+        if y_curr in exclude or y_curr - y_prev != 1:
+            continue
+        rates.append((cap_dict[y_curr] / cap_dict[y_prev]) - 1)
+    return rates
+
+
+def project_future_caps(
+    n_seasons: int = 8,
+    n_simulations: int = 10_000,
+    regime_weight: float = 0.7,
+) -> dict:
+    """
+    Bootstrap cap growth rates and project beyond the last known anchor.
+    Returns {season_id_str: p50_cap} for every future season up to n_seasons.
+    Confirmed/agreed caps are used as hard values; MC fills the rest.
+    """
+    _EXCLUDE = {2012, 2020, 2021}
+    all_rates    = _cap_growth_rates(_CAP_HISTORY_MC, _EXCLUDE)
+    recent_rates = _cap_growth_rates({k: v for k, v in _CAP_HISTORY_MC.items() if k >= 2022}, set())
+
+    pool = (
+        recent_rates * int(len(all_rates) * regime_weight)
+        + all_rates  * int(len(all_rates) * (1 - regime_weight))
+    )
+
+    anchor_base = max(_KNOWN_FUTURE_CAPS)
+    anchor_cap  = _KNOWN_FUTURE_CAPS[anchor_base]
+    n_proj      = n_seasons - len(_KNOWN_FUTURE_CAPS)  # seasons needing MC
+
+    # Simulate beyond the last anchor
+    mc_results = []
+    for _ in range(n_simulations):
+        cap = anchor_cap
+        row = {}
+        for offset in range(1, n_proj + 1):
+            growth = max(float(np.random.choice(pool)), 0.02)
+            cap    = cap * (1 + growth)
+            row[anchor_base + offset] = cap
+        mc_results.append(row)
+
+    mc_df = pd.DataFrame(mc_results)
+
+    # Build output: known anchors first, MC p50 beyond
+    result = {}
+    for cal_year, cap in sorted(_KNOWN_FUTURE_CAPS.items()):
+        if cal_year == CURRENT_YEAR:
+            continue  # skip the current season itself (already in currentCap)
+        sid = cal_year * 10000 + cal_year + 1
+        result[str(sid)] = cap
+
+    for cal_year in sorted(mc_df.columns):
+        sid = int(cal_year) * 10000 + int(cal_year) + 1
+        result[str(sid)] = int(round(mc_df[cal_year].quantile(0.50)))
+
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -827,14 +913,15 @@ def main():
     # Current-season pending FAs
     pending_fas = merged[merged["contract_year"] == CURRENT_SEASON].copy()
 
+    print("Projecting future salary caps (Monte Carlo)...")
+    future_caps = project_future_caps(n_seasons=8)
+    print(f"  Cap ladder: { {k: f'${v/1e6:.1f}M' for k, v in future_caps.items()} }")
+
     output = {
         "meta": {
             "currentSeason": CURRENT_SEASON,
             "currentCap": CAP_LIMITS.get(CURRENT_SEASON, 95_500_000),
-            "futureCaps": {
-                str(CURRENT_SEASON + 10001): CAP_LIMITS.get(CURRENT_SEASON + 10001, 104_000_000),
-                str(CURRENT_SEASON + 20002): CAP_LIMITS.get(CURRENT_SEASON + 20002, 113_500_000),
-            },
+            "futureCaps": future_caps,
             "generatedAt": datetime.now().isoformat(),
             "estimationMethod": "inverse_distance_weighting",
             "backtest": backtest_results,

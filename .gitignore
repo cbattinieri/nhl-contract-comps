@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# Aging model — large generated files, not needed in repo
+aging_trace_*.netcdf
+aging_curve/aging_data.parquet
+aging_curve/aging_curves_sanity_check.png
+validation_*.png
+
+# Archive
+_archive/

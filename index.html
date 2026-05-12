@@ -716,7 +716,7 @@
         <div class="card-header"><span class="dot"></span> Year-by-Year Contract Value</div>
         <div class="verdict-row" id="verdictChips"></div>
         <div class="card-body"><div class="chart-container" style="height:400px;"><canvas id="projectionChart"></canvas></div></div>
-        <div class="card-footer">Projected market cap hit % uses a population-level aging curve applied to the current KNN estimate. Contracted % uses estimated AAV held fixed against rising caps.</div>
+        <div class="card-footer">Blue = projected market value (what the player would command as % of cap, declining with age). Red = your fixed AAV as % of the rising cap ceiling. Green/amber dashed = upside and downside range.</div>
       </div>
       <div class="card">
         <div class="card-header"><span class="dot"></span> AAV vs Rising Market Value</div>
@@ -1546,17 +1546,20 @@ function renderProjectionChart() {
     ...Object.entries(meta.futureCaps).map(([s, c]) => [parseInt(s), c])
   ].sort((a, b) => a[0] - b[0]);
 
+  // yr=1 maps to capLadder[0] (current season), yr=2 to capLadder[1], etc.
   const getCap = (yr) => {
-    const idx = Math.min(yr, capLadder.length - 1);
+    const idx = Math.min(yr - 1, capLadder.length - 1);
     return capLadder[idx]?.[1] ?? capLadder[capLadder.length - 1][1];
   };
 
   const retentions    = agingRetention(age, posGroup, N_YEARS);
   const labels        = retentions.map((_, i) => `Yr ${i + 1}\n(age ${age + i + 1})`);
+  // Contracted: fixed AAV as % of each year's rising cap (declines over time)
   const contractedPct = retentions.map((_, i) => round2((estAAV / getCap(i + 1)) * 100));
-  const basePct       = retentions.map((r, i) => round2(estPct * r.base));
-  const bestPct       = retentions.map((r, i) => round2(estPct * r.best));
-  const downPct       = retentions.map((r, i) => round2(estPct * r.downside));
+  // Market: what the player would command as % of cap, adjusted for aging decline
+  const basePct       = retentions.map((r) => round2(estPct * r.base));
+  const bestPct       = retentions.map((r) => round2(estPct * r.best));
+  const downPct       = retentions.map((r) => round2(estPct * r.downside));
 
   // Verdict chips
   const chipsEl = $('#verdictChips');
@@ -1574,44 +1577,46 @@ function renderProjectionChart() {
       labels,
       datasets: [
         {
-          label: 'Projected market — best',
+          label: 'Best case',
           data: bestPct,
-          borderColor: 'rgba(16,185,129,0.4)',
-          backgroundColor: 'rgba(16,185,129,0.08)',
-          borderWidth: 1,
-          pointRadius: 0,
-          tension: 0.3,
-          fill: '+1',
-        },
-        {
-          label: 'Projected market — base',
-          data: basePct,
           borderColor: '#10b981',
-          backgroundColor: 'rgba(16,185,129,0.10)',
-          borderWidth: 2.5,
-          pointRadius: 5,
-          pointBackgroundColor: '#10b981',
-          tension: 0.3,
-          fill: false,
-        },
-        {
-          label: 'Projected market — downside',
-          data: downPct,
-          borderColor: 'rgba(16,185,129,0.4)',
-          backgroundColor: 'rgba(16,185,129,0.08)',
-          borderWidth: 1,
+          backgroundColor: 'rgba(59,130,246,0.07)',
+          borderWidth: 1.5,
           pointRadius: 0,
+          borderDash: [4, 3],
+          tension: 0.3,
+          fill: '+2',  // shaded band from best down to downside
+        },
+        {
+          label: 'Base case',
+          data: basePct,
+          borderColor: '#3b82f6',
+          backgroundColor: 'transparent',
+          borderWidth: 2.5,
+          pointRadius: 5,
+          pointBackgroundColor: '#3b82f6',
           tension: 0.3,
           fill: false,
         },
         {
-          label: 'Contracted cap hit %',
-          data: contractedPct,
+          label: 'Downside',
+          data: downPct,
           borderColor: '#f59e0b',
-          backgroundColor: 'rgba(245,158,11,0.06)',
-          borderWidth: 2.5,
-          pointRadius: 5,
-          pointBackgroundColor: '#f59e0b',
+          backgroundColor: 'transparent',
+          borderWidth: 1.5,
+          pointRadius: 0,
+          borderDash: [4, 3],
+          tension: 0.3,
+          fill: false,
+        },
+        {
+          label: 'Your AAV % of future cap',
+          data: contractedPct,
+          borderColor: '#ef4444',
+          backgroundColor: 'transparent',
+          borderWidth: 2,
+          pointRadius: 4,
+          pointBackgroundColor: '#ef4444',
           borderDash: [6, 3],
           tension: 0,
           fill: false,

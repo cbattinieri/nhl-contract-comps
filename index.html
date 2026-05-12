@@ -1520,17 +1520,26 @@ function verdictLabel(projPct, contractedPct) {
   return                  { label: 'Risk',    cls: 'risk'    };
 }
 
+function getTermAAV() {
+  const p    = state.selectedPlayer;
+  const term = parseInt($('#termSlider')?.value ?? 5);
+  const entry = p?.termTable?.find(r => r.term === term);
+  return {
+    term,
+    aav:    entry?.aav    ?? p?.estimatedAAV    ?? 0,
+    capPct: entry?.capHitPct ?? p?.estimatedCapHitPct ?? 0,
+  };
+}
+
 function renderProjectionChart() {
   destroyChart('projection');
   const p = state.selectedPlayer;
   if (!p || !state.data) return;
 
-  const meta      = state.data.meta;
-  const estPct    = p.estimatedCapHitPct;
-  const estAAV    = p.estimatedAAV;
+  const meta              = state.data.meta;
+  const { term: N_YEARS, aav: estAAV, capPct: estPct } = getTermAAV();
   const posGroup  = p.positionGroup;
   const age       = p.age;
-  const N_YEARS   = 8;
 
   // Build cap ladder: current + all future seasons sorted
   const capLadder = [[meta.currentSeason, meta.currentCap],
@@ -1638,17 +1647,17 @@ function renderCurvesCapChart() {
   if (!p || !state.data) return;
 
   const meta = state.data.meta;
-  const estAAV = p.estimatedAAV;
-  const estPct = p.estimatedCapHitPct;
+  const { term: N_YEARS, aav: estAAV, capPct: estPct } = getTermAAV();
 
-  // Build season/cap sequence: current + all known futures
+  // Build season/cap sequence: current + all known futures, capped to slider term
   const MC_CAPS = {
     [meta.currentSeason]: meta.currentCap,
     ...Object.fromEntries(Object.entries(meta.futureCaps).map(([s, c]) => [parseInt(s), c])),
   };
   const seasonCaps = Object.entries(MC_CAPS)
     .map(([s, c]) => [parseInt(s), c])
-    .sort((a, b) => a[0] - b[0]);
+    .sort((a, b) => a[0] - b[0])
+    .slice(0, N_YEARS);
 
   const labels    = seasonCaps.map(([s]) => seasonLabel(s));
   const fixedAAV  = seasonCaps.map(() => round2(estAAV / 1_000_000));
@@ -1786,8 +1795,12 @@ function initApp() {
   // Re-render career chart when stat dropdown changes
   $('#careerStatSelect').addEventListener('change', renderCareerChart);
 
-  // Term slider
-  $('#termSlider').addEventListener('input', renderTermSlider);
+  // Term slider — syncs overview slider, projection chart, and cap chart
+  $('#termSlider').addEventListener('input', () => {
+    renderTermSlider();
+    renderProjectionChart();
+    renderCurvesCapChart();
+  });
 }
 
 // ─── BOOT ─────────────────────────────────────────────────────────────

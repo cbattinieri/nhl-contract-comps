@@ -808,6 +808,16 @@
 
           <h3>Future Cap Projections</h3>
           <p>Future-season cap hit percentages use projected cap ceilings to show how a player's AAV will decrease as a percentage of the cap over time.</p>
+
+          <h3>Projections Tab</h3>
+          <p>The Projections tab answers a single question: over the life of this contract, is the player's production likely to justify their cap hit — and in which years does the balance shift? It combines two independent models: an aging curve that projects how the player's production will decline, and a cap trajectory model that projects how the salary cap will rise. Both are applied to the current contract estimate to produce a year-by-year picture of value.</p>
+          <p>Each contract year receives a verdict label — Bargain, Fair, Watch, or Risk — based on the gap between the player's contracted cap percentage and their projected market value in that year. A contract can start as Fair and slide into Watch or Risk territory in the final years as a player ages into the back half of a long deal. These verdicts update dynamically based on the contract term selected with the slider.</p>
+
+          <h3>Production Projection</h3>
+          <p>The production projection shown in the chart tooltip estimates how a player's on-ice output is expected to change year over year, based on where they are on the NHL aging curve for their position. Forwards are modeled relative to age 26 (the typical production peak); defensemen relative to age 27.</p>
+          <p>The curve is fit to every qualifying player-season in the cap era and captures the population-level pattern of how production rises toward the peak and then gradually declines. Each year's projected output is expressed as a retention rate — for example, a retention of 0.94 in year three means the model expects the player to produce at 94% of their current level by that point.</p>
+          <p>Three scenarios are shown in the chart: Base (50th percentile of the aging distribution), Best Case (75th percentile — player ages better than average), and Downside (25th percentile — player ages worse than average). The production figures shown in the tooltip correspond to the Base scenario, applied to the player's current points-per-game and time on ice.</p>
+          <p>Important limitations: the aging curve reflects population averages, not individual trajectories. Players who have already shown signs of decline, or conversely players who are still ascending, may diverge meaningfully from these projections. The model does not account for injury history, role changes, or team context.</p>
         </div>
       </div>
     </div>
@@ -1572,6 +1582,15 @@ function renderProjectionChart() {
   const bestPct       = retentions.map((r) => round2(estPct * r.best));
   const downPct       = retentions.map((r) => round2(estPct * r.downside));
 
+  // Production projections per year (base retention × current stats)
+  const fmtTOI = (decMins) => {
+    const m = Math.floor(decMins);
+    const s = Math.round((decMins - m) * 60);
+    return `${m}:${String(s).padStart(2, '0')}`;
+  };
+  const projPPG = retentions.map(r => (p.ppg  * r.base).toFixed(2));
+  const projTOI = retentions.map(r => fmtTOI(p.toi * r.base));
+
   // Verdict chips
   const chipsEl = $('#verdictChips');
   chipsEl.innerHTML = retentions.map((_, i) => {
@@ -1640,7 +1659,18 @@ function renderProjectionChart() {
       interaction: { mode: 'index', intersect: false },
       plugins: {
         legend: { labels: { color: '#94a3b8', font: { family: 'Barlow', size: 12 }, boxWidth: 12 } },
-        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%' } },
+        tooltip: {
+          callbacks: {
+            label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%',
+            footer: (items) => {
+              const i = items[0]?.dataIndex ?? 0;
+              return `Proj. production (base): ${projPPG[i]} pts/game  |  ${projTOI[i]} TOI`;
+            },
+          },
+          footerColor: '#94a3b8',
+          footerFont: { family: 'Barlow', size: 11, style: 'normal' },
+          footerMarginTop: 6,
+        },
       },
       scales: {
         x: {

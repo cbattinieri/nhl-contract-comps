@@ -676,7 +676,7 @@
           <div class="term-slider-wrap">
             <div class="term-slider-row">
               <label class="term-slider-label">Contract Term</label>
-              <input type="range" id="termSlider" min="2" max="8" value="5" step="1" class="term-slider" />
+              <input type="range" id="termSlider" min="1" max="8" value="5" step="1" class="term-slider" />
               <span class="term-slider-value" id="termSliderValue">5 yr</span>
             </div>
             <div class="term-slider-result" id="termSliderResult"></div>
@@ -1025,6 +1025,7 @@ function getConfidenceLevel(std) {
 function renderEstimateBanner(el, p) {
   const std = p.estimateStd ?? p.ciHigh - p.estimatedCapHitPct;
   const conf = getConfidenceLevel(std);
+  const avgTerm = p.avgCompTerm != null ? Math.round(p.avgCompTerm) + ' yr' : '—';
   el.innerHTML = `
     <div class="est-stat">
       <div class="est-label">Est. Cap Hit %</div>
@@ -1035,6 +1036,11 @@ function renderEstimateBanner(el, p) {
       <div class="est-label">Est. AAV</div>
       <div class="est-value money">${fmtMoney(p.estimatedAAV)}</div>
       <div class="est-range"><span>${fmtMoney(p.aavLow ?? p.estimatedAAV)}</span> — <span>${fmtMoney(p.aavHigh ?? p.estimatedAAV)}</span></div>
+    </div>
+    <div class="est-stat">
+      <div class="est-label">Avg Comp Term</div>
+      <div class="est-value" style="font-size:1.6rem;">${avgTerm}</div>
+      <div class="est-range">${p.avgCompTerm != null ? p.avgCompTerm.toFixed(1) + ' yr raw avg' : ''}</div>
     </div>
     <div class="est-stat">
       <div class="est-label">Uncertainty (σ)</div>
@@ -1137,6 +1143,11 @@ function renderAll() {
   $('#compsBioTable').innerHTML = buildTable(bioCols, comps);
 
   // Charts
+  const slider = $('#termSlider');
+  const defaultTerm = Math.min(8, Math.max(1, Math.round(p.avgCompTerm ?? 5)));
+  slider.value = defaultTerm;
+  $('#termSliderValue').textContent = defaultTerm + ' yr';
+
   renderCareerChart();
   renderCapFutureChart();
   renderProjectionChart();

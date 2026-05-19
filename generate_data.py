@@ -658,7 +658,7 @@ def compute_term_table(
 
     # Reference term from comps
     if comp_records:
-        comp_terms = [c["term"] for c in comp_records if c.get("term") and c["term"] >= 2]
+        comp_terms = [c["term"] for c in comp_records if c.get("term") and c["term"] >= 1]
         ref_term = np.mean(comp_terms) if comp_terms else 4.0
     else:
         ref_term = 4.0
@@ -704,7 +704,7 @@ def compute_term_table(
         slope = -slope_magnitude
 
     table = []
-    for t in range(2, 9):
+    for t in range(1, 9):
         adjusted_pct = base_cap_pct + slope * (t - ref_term)
         adjusted_pct = max(base_cap_pct * 0.65, min(base_cap_pct * 1.35, adjusted_pct))
         adjusted_pct = round(max(0, adjusted_pct), 2)
@@ -972,6 +972,10 @@ def main():
             comp_records=comp_records,
         )
 
+        # Average comp term (rounded to 1 decimal for display, used to default slider)
+        comp_terms = [c["term"] for c in comp_records if c.get("term") and c["term"] >= 1]
+        avg_comp_term = round(float(np.mean(comp_terms)), 1) if comp_terms else None
+
         output["players"].append({
             **player_data,
             "estimatedCapHitPct": est["estimate"],
@@ -982,6 +986,7 @@ def main():
             "aavHigh": aav_high,
             "estimateStd": est["std"],
             "compWeights": est["weights"],
+            "avgCompTerm": avg_comp_term,
             "termTable": term_table,
             "comps": comp_records,
             "compDistances": comp_info["distances"],

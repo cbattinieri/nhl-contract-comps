@@ -5,13 +5,13 @@
     "futureCaps": {
       "20262027": 104000000,
       "20272028": 113500000,
-      "20282029": 118695423,
+      "20282029": 119616766,
       "20292030": 125092182,
-      "20302031": 132597713,
-      "20312032": 140016961,
-      "20322033": 147555449
+      "20302031": 132741606,
+      "20312032": 139998255,
+      "20322033": 147573674
     },
-    "generatedAt": "2026-05-31T10:13:47.473659",
+    "generatedAt": "2026-06-01T13:34:52.688734",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -71555,7 +71555,7 @@
         {
           "playerId": 8482093,
           "name": "Seth Jarvis",
-          "position": "Center",
+          "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "RFA",
           "contractYear": 20232024,

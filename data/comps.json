@@ -7,11 +7,11 @@
       "20272028": 113500000,
       "20282029": 118695423,
       "20292030": 125092182,
-      "20302031": 132597713,
-      "20312032": 139895345,
-      "20322033": 147446155
+      "20302031": 132368846,
+      "20312032": 139990659,
+      "20322033": 147267036
     },
-    "generatedAt": "2026-06-04T10:59:06.113093",
+    "generatedAt": "2026-06-05T11:26:42.533552",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -28845,6 +28845,454 @@
             "evPoints": 1,
             "evPPG": 0.14,
             "toi": 17.17
+          }
+        ]
+      }
+    },
+    {
+      "playerId": 8481848,
+      "name": "Jacob Gaucher",
+      "position": "Center",
+      "positionGroup": "Forward",
+      "signingStatus": "RFA",
+      "contractYear": 20252026,
+      "age": 25,
+      "height": "76",
+      "weight": "225",
+      "shoots": "R",
+      "draftOverall": 999,
+      "draftBucket": 6,
+      "term": 1,
+      "value": 850000,
+      "aav": 850000,
+      "capHitPct": 0.89,
+      "gp": 4,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "ppg": 0.0,
+      "evPoints": 0,
+      "toi": 8.81,
+      "careerGP": 8,
+      "careerPoints": 0,
+      "careerEVPoints": 0,
+      "careerPPG": 0.0,
+      "careerEVPPG": 0.0,
+      "careerTOI": 7.34,
+      "careerGPPct": 4.88,
+      "seasonNo": 2,
+      "estimatedCapHitPct": 0.93,
+      "estimatedAAV": 888150,
+      "ciLow": 0.91,
+      "ciHigh": 0.94,
+      "aavLow": 869050,
+      "aavHigh": 897700,
+      "estimateStd": 0.02,
+      "compWeights": [
+        0.468,
+        0.1726,
+        0.1284,
+        0.1157,
+        0.1152
+      ],
+      "avgCompTerm": 2.2,
+      "termTable": [
+        {
+          "term": 1,
+          "capHitPct": 0.72,
+          "aav": 687600
+        },
+        {
+          "term": 2,
+          "capHitPct": 0.89,
+          "aav": 849950
+        },
+        {
+          "term": 3,
+          "capHitPct": 1.07,
+          "aav": 1021850
+        },
+        {
+          "term": 4,
+          "capHitPct": 1.25,
+          "aav": 1193750
+        },
+        {
+          "term": 5,
+          "capHitPct": 1.26,
+          "aav": 1203300
+        },
+        {
+          "term": 6,
+          "capHitPct": 1.26,
+          "aav": 1203300
+        },
+        {
+          "term": 7,
+          "capHitPct": 1.26,
+          "aav": 1203300
+        },
+        {
+          "term": 8,
+          "capHitPct": 1.26,
+          "aav": 1203300
+        }
+      ],
+      "comps": [
+        {
+          "playerId": 8481133,
+          "name": "Cole Reinhardt",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 25,
+          "height": "73",
+          "weight": "207",
+          "shoots": "L",
+          "draftOverall": 181,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 17,
+          "goals": 1,
+          "assists": 1,
+          "points": 2,
+          "ppg": 0.12,
+          "evPoints": 2,
+          "toi": 8.2,
+          "careerGP": 18,
+          "careerPoints": 2,
+          "careerEVPoints": 2,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 8.58,
+          "careerGPPct": 10.98,
+          "seasonNo": 2
+        },
+        {
+          "playerId": 8483395,
+          "name": "Arshdeep Bains",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "height": "72",
+          "weight": "183",
+          "shoots": "L",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 13,
+          "goals": 1,
+          "assists": 0,
+          "points": 1,
+          "ppg": 0.08,
+          "evPoints": 1,
+          "toi": 10.5,
+          "careerGP": 21,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 11.81,
+          "careerGPPct": 12.8,
+          "seasonNo": 2
+        },
+        {
+          "playerId": 8481532,
+          "name": "Alex Turcotte",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20232024,
+          "age": 23,
+          "height": "71",
+          "weight": "185",
+          "shoots": "L",
+          "draftOverall": 5,
+          "draftBucket": 1,
+          "term": 3,
+          "value": 2400000,
+          "aav": 800000,
+          "capHitPct": 0.96,
+          "gp": 20,
+          "goals": 1,
+          "assists": 3,
+          "points": 4,
+          "ppg": 0.2,
+          "evPoints": 4,
+          "toi": 9.28,
+          "careerGP": 32,
+          "careerPoints": 4,
+          "careerEVPoints": 4,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 9.12,
+          "careerGPPct": 13.01,
+          "seasonNo": 3
+        },
+        {
+          "playerId": 8481732,
+          "name": "Andre Lee",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "height": "76",
+          "weight": "205",
+          "shoots": "L",
+          "draftOverall": 188,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 19,
+          "goals": 1,
+          "assists": 2,
+          "points": 3,
+          "ppg": 0.16,
+          "evPoints": 3,
+          "toi": 9.17,
+          "careerGP": 19,
+          "careerPoints": 3,
+          "careerEVPoints": 3,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 23.17,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8484135,
+          "name": "Parker Ford",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "height": "69",
+          "weight": "181",
+          "shoots": "R",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 3,
+          "goals": 1,
+          "assists": 0,
+          "points": 1,
+          "ppg": 0.33,
+          "evPoints": 1,
+          "toi": 7.83,
+          "careerGP": 3,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 3.66,
+          "seasonNo": 1
+        }
+      ],
+      "compDistances": [
+        0.4812,
+        1.3049,
+        1.7537,
+        1.9464,
+        1.9547
+      ],
+      "career": [
+        {
+          "season": 20242025,
+          "age": 24,
+          "gp": 4,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "evPPG": 0.0,
+          "toi": 7.34
+        },
+        {
+          "season": 20252026,
+          "age": 25,
+          "gp": 4,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "evPPG": 0.0,
+          "toi": 8.81
+        }
+      ],
+      "compCareers": {
+        "8481133": [
+          {
+            "season": 20212022,
+            "age": 22,
+            "gp": 1,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 8.58
+          },
+          {
+            "season": 20242025,
+            "age": 25,
+            "gp": 17,
+            "points": 2,
+            "ppg": 0.12,
+            "evPoints": 2,
+            "evPPG": 0.12,
+            "toi": 8.2
+          },
+          {
+            "season": 20252026,
+            "age": 26,
+            "gp": 59,
+            "points": 15,
+            "ppg": 0.25,
+            "evPoints": 15,
+            "evPPG": 0.25,
+            "toi": 10.65
+          }
+        ],
+        "8483395": [
+          {
+            "season": 20232024,
+            "age": 23,
+            "gp": 8,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 11.81
+          },
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 13,
+            "points": 1,
+            "ppg": 0.08,
+            "evPoints": 1,
+            "evPPG": 0.08,
+            "toi": 10.5
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 28,
+            "points": 5,
+            "ppg": 0.18,
+            "evPoints": 4,
+            "evPPG": 0.14,
+            "toi": 9.21
+          }
+        ],
+        "8481532": [
+          {
+            "season": 20212022,
+            "age": 21,
+            "gp": 8,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 11.27
+          },
+          {
+            "season": 20222023,
+            "age": 22,
+            "gp": 4,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 6.97
+          },
+          {
+            "season": 20232024,
+            "age": 23,
+            "gp": 20,
+            "points": 4,
+            "ppg": 0.2,
+            "evPoints": 4,
+            "evPPG": 0.2,
+            "toi": 9.28
+          },
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 68,
+            "points": 25,
+            "ppg": 0.37,
+            "evPoints": 24,
+            "evPPG": 0.35,
+            "toi": 11.74
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 62,
+            "points": 14,
+            "ppg": 0.23,
+            "evPoints": 14,
+            "evPPG": 0.23,
+            "toi": 10.83
+          }
+        ],
+        "8481732": [
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 19,
+            "points": 3,
+            "ppg": 0.16,
+            "evPoints": 3,
+            "evPPG": 0.16,
+            "toi": 9.17
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 7,
+            "points": 2,
+            "ppg": 0.29,
+            "evPoints": 2,
+            "evPPG": 0.29,
+            "toi": 10.28
+          }
+        ],
+        "8484135": [
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 3,
+            "points": 1,
+            "ppg": 0.33,
+            "evPoints": 1,
+            "evPPG": 0.33,
+            "toi": 7.83
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 15,
+            "points": 1,
+            "ppg": 0.07,
+            "evPoints": 1,
+            "evPPG": 0.07,
+            "toi": 9.75
           }
         ]
       }

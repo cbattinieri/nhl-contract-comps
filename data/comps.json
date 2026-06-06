@@ -5,13 +5,13 @@
     "futureCaps": {
       "20262027": 104000000,
       "20272028": 113500000,
-      "20282029": 118695423,
+      "20282029": 119616766,
       "20292030": 125092182,
-      "20302031": 132368846,
-      "20312032": 139990659,
-      "20322033": 147267036
+      "20302031": 132597713,
+      "20312032": 139895345,
+      "20322033": 147543071
     },
-    "generatedAt": "2026-06-05T11:26:42.533552",
+    "generatedAt": "2026-06-06T10:02:09.621029",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -46997,6 +46997,404 @@
             "evPoints": 18,
             "evPPG": 0.33,
             "toi": 12.25
+          }
+        ]
+      }
+    },
+    {
+      "playerId": 8481569,
+      "name": "Marshall Warren",
+      "position": "Defense",
+      "positionGroup": "Defense",
+      "signingStatus": "RFA",
+      "contractYear": 20252026,
+      "age": 25,
+      "height": "72",
+      "weight": "185",
+      "shoots": "L",
+      "draftOverall": 166,
+      "draftBucket": 5,
+      "term": 1,
+      "value": 850000,
+      "aav": 850000,
+      "capHitPct": 0.89,
+      "gp": 8,
+      "goals": 0,
+      "assists": 3,
+      "points": 3,
+      "ppg": 0.38,
+      "evPoints": 3,
+      "toi": 11.48,
+      "careerGP": 8,
+      "careerPoints": 3,
+      "careerEVPoints": 3,
+      "careerPPG": 0.0,
+      "careerEVPPG": 0.0,
+      "careerTOI": 0.0,
+      "careerGPPct": 9.76,
+      "seasonNo": 1,
+      "estimatedCapHitPct": 0.94,
+      "estimatedAAV": 897700,
+      "ciLow": 0.91,
+      "ciHigh": 0.97,
+      "aavLow": 869050,
+      "aavHigh": 926350,
+      "estimateStd": 0.03,
+      "compWeights": [
+        0.2366,
+        0.2336,
+        0.2019,
+        0.1786,
+        0.1494
+      ],
+      "avgCompTerm": 2.2,
+      "termTable": [
+        {
+          "term": 1,
+          "capHitPct": 0.65,
+          "aav": 620750
+        },
+        {
+          "term": 2,
+          "capHitPct": 0.89,
+          "aav": 849950
+        },
+        {
+          "term": 3,
+          "capHitPct": 1.14,
+          "aav": 1088700
+        },
+        {
+          "term": 4,
+          "capHitPct": 1.27,
+          "aav": 1212850
+        },
+        {
+          "term": 5,
+          "capHitPct": 1.27,
+          "aav": 1212850
+        },
+        {
+          "term": 6,
+          "capHitPct": 1.27,
+          "aav": 1212850
+        },
+        {
+          "term": 7,
+          "capHitPct": 1.27,
+          "aav": 1212850
+        },
+        {
+          "term": 8,
+          "capHitPct": 1.27,
+          "aav": 1212850
+        }
+      ],
+      "comps": [
+        {
+          "playerId": 8481030,
+          "name": "Jack St. Ivany",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20232024,
+          "age": 24,
+          "height": "75",
+          "weight": "201",
+          "shoots": "R",
+          "draftOverall": 112,
+          "draftBucket": 5,
+          "term": 3,
+          "value": 2400000,
+          "aav": 800000,
+          "capHitPct": 0.96,
+          "gp": 14,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "ppg": 0.07,
+          "evPoints": 1,
+          "toi": 13.7,
+          "careerGP": 14,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 17.07,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482482,
+          "name": "Adam Wilsby",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "height": "73",
+          "weight": "192",
+          "shoots": "L",
+          "draftOverall": 101,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 23,
+          "goals": 1,
+          "assists": 4,
+          "points": 5,
+          "ppg": 0.22,
+          "evPoints": 5,
+          "toi": 18.1,
+          "careerGP": 23,
+          "careerPoints": 5,
+          "careerEVPoints": 5,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 28.05,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8481525,
+          "name": "Matthew Robertson",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "height": "76",
+          "weight": "209",
+          "shoots": "L",
+          "draftOverall": 49,
+          "draftBucket": 4,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 2,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 17.63,
+          "careerGP": 2,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 2.44,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482169,
+          "name": "Helge Grans",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 23,
+          "height": "75",
+          "weight": "201",
+          "shoots": "R",
+          "draftOverall": 35,
+          "draftBucket": 4,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 6,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "ppg": 0.17,
+          "evPoints": 1,
+          "toi": 14.46,
+          "careerGP": 6,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8484321,
+          "name": "Nikolas Matinpalo",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 26,
+          "height": "75",
+          "weight": "212",
+          "shoots": "R",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 2,
+          "value": 1750000,
+          "aav": 875000,
+          "capHitPct": 0.99,
+          "gp": 41,
+          "goals": 1,
+          "assists": 3,
+          "points": 4,
+          "ppg": 0.1,
+          "evPoints": 4,
+          "toi": 12.61,
+          "careerGP": 45,
+          "careerPoints": 4,
+          "careerEVPoints": 4,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 7.0,
+          "careerGPPct": 27.44,
+          "seasonNo": 2
+        }
+      ],
+      "compDistances": [
+        1.2053,
+        1.2208,
+        1.4127,
+        1.5966,
+        1.9089
+      ],
+      "career": [
+        {
+          "season": 20252026,
+          "age": 25,
+          "gp": 8,
+          "points": 3,
+          "ppg": 0.38,
+          "evPoints": 3,
+          "evPPG": 0.38,
+          "toi": 11.48
+        }
+      ],
+      "compCareers": {
+        "8481030": [
+          {
+            "season": 20232024,
+            "age": 24,
+            "gp": 14,
+            "points": 1,
+            "ppg": 0.07,
+            "evPoints": 1,
+            "evPPG": 0.07,
+            "toi": 13.7
+          },
+          {
+            "season": 20242025,
+            "age": 25,
+            "gp": 19,
+            "points": 1,
+            "ppg": 0.05,
+            "evPoints": 1,
+            "evPPG": 0.05,
+            "toi": 16.37
+          },
+          {
+            "season": 20252026,
+            "age": 26,
+            "gp": 20,
+            "points": 7,
+            "ppg": 0.35,
+            "evPoints": 7,
+            "evPPG": 0.35,
+            "toi": 16.33
+          }
+        ],
+        "8482482": [
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 23,
+            "points": 5,
+            "ppg": 0.22,
+            "evPoints": 5,
+            "evPPG": 0.22,
+            "toi": 18.1
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 58,
+            "points": 16,
+            "ppg": 0.28,
+            "evPoints": 16,
+            "evPPG": 0.28,
+            "toi": 17.01
+          }
+        ],
+        "8481525": [
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 2,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 17.63
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 72,
+            "points": 18,
+            "ppg": 0.25,
+            "evPoints": 18,
+            "evPPG": 0.25,
+            "toi": 17.4
+          }
+        ],
+        "8482169": [
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 6,
+            "points": 1,
+            "ppg": 0.17,
+            "evPoints": 1,
+            "evPPG": 0.17,
+            "toi": 14.46
+          }
+        ],
+        "8484321": [
+          {
+            "season": 20232024,
+            "age": 25,
+            "gp": 4,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 7.0
+          },
+          {
+            "season": 20242025,
+            "age": 26,
+            "gp": 41,
+            "points": 4,
+            "ppg": 0.1,
+            "evPoints": 4,
+            "evPPG": 0.1,
+            "toi": 12.61
+          },
+          {
+            "season": 20252026,
+            "age": 27,
+            "gp": 50,
+            "points": 5,
+            "ppg": 0.1,
+            "evPoints": 4,
+            "evPPG": 0.08,
+            "toi": 15.63
           }
         ]
       }

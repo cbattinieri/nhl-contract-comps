@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>NHL Contract Intelligence App</title>
+<title>NHL Contract Intelligence</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <style>
@@ -30,8 +30,6 @@
     --radius: 8px;
     --radius-lg: 12px;
   }
-
-  html { font-size: 17px; }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -62,11 +60,6 @@
     gap: 1.5rem;
     flex-wrap: wrap;
   }
-  .header-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-  }
   .header h1 {
     font-family: var(--font-display);
     font-weight: 700;
@@ -79,15 +72,6 @@
     gap: 0.5rem;
   }
   .header h1 span { color: var(--accent-bright); }
-  .subtitle {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #f59e0b;
-    padding-left: 2.35rem;
-  }
   .badge {
     font-size: 0.6rem;
     background: var(--accent);
@@ -407,6 +391,56 @@
   }
   .est-stat .est-range span { color: var(--text-secondary); font-weight: 500; }
 
+  /* ── SIGNED / PENDING STATUS ── */
+  .status-badge {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    font-family: var(--font-display); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border-radius: 4px; padding: 2px 8px;
+  }
+  .status-signed  { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+  .status-pending { background: rgba(245,158,11,0.12); color: #f59e0b; border: 1px solid rgba(245,158,11,0.25); }
+  .signed-banner {
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    padding: 1rem 1.25rem;
+    background: rgba(16,185,129,0.08); border-bottom: 1px solid rgba(16,185,129,0.2);
+  }
+  .signed-banner .signed-label { font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #10b981; }
+  .signed-banner .signed-val   { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+  .signed-banner .signed-sub   { font-size: 0.75rem; color: var(--text-muted); }
+  .pred-vs-actual {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
+    border-top: 1px solid var(--border);
+  }
+  .pva-col { padding: 1rem 1.25rem; text-align: center; }
+  .pva-col:not(:last-child) { border-right: 1px solid var(--border); }
+  .pva-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.25rem; }
+  .pva-val   { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); }
+  .pva-val.match  { color: #10b981; }
+  .pva-val.over   { color: var(--orange); }
+  .pva-val.under  { color: var(--accent-bright); }
+  .search-option .signed-dot { width: 6px; height: 6px; border-radius: 50%; background: #10b981; flex-shrink: 0; margin-left: auto; }
+
+  /* ── TERM SLIDER ── */
+  .term-slider-wrap { display:flex; flex-direction:column; gap:0.75rem; }
+  .term-slider-row { display:flex; align-items:center; gap:1rem; }
+  .term-slider-label { font-family:var(--font-display); font-size:0.78rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); white-space:nowrap; }
+  .term-slider { flex:1; -webkit-appearance:none; appearance:none; height:6px; background:var(--border); border-radius:3px; outline:none; cursor:pointer; }
+  .term-slider::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:20px; height:20px; border-radius:50%; background:var(--accent); cursor:pointer; border:2px solid var(--bg-card); box-shadow:0 0 6px rgba(59,130,246,0.4); }
+  .term-slider::-moz-range-thumb { width:20px; height:20px; border-radius:50%; background:var(--accent); cursor:pointer; border:2px solid var(--bg-card); }
+  .term-slider-value { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--accent-bright); min-width:40px; text-align:center; }
+  .term-slider-result { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+  .term-result-item { text-align:center; }
+  .term-result-label { font-family:var(--font-display); font-size:0.68rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.2rem; }
+  .term-result-value { font-family:var(--font-display); font-size:1.5rem; font-weight:700; line-height:1.2; }
+  .term-result-value.money { color:var(--green); }
+  .term-result-value.pct { color:var(--accent-bright); }
+  .term-result-value.term { color:var(--text-primary); }
+
+  .err-positive { color: var(--orange); }
+  .err-negative { color: var(--accent-bright); }
+  .err-zero     { color: #10b981; }
+
   /* ── CONFIDENCE PILL ── */
   .confidence-pill {
     display: inline-flex;
@@ -468,90 +502,6 @@
   }
   .backtest-badge .bt-val { color: var(--text-secondary); }
 
-  /* ── TERM SLIDER ── */
-  .term-slider-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .term-slider-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .term-slider-label {
-    font-family: var(--font-display);
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    white-space: nowrap;
-  }
-  .term-slider {
-    flex: 1;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 6px;
-    background: var(--border);
-    border-radius: 3px;
-    outline: none;
-    cursor: pointer;
-  }
-  .term-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--accent);
-    cursor: pointer;
-    border: 2px solid var(--bg-card);
-    box-shadow: 0 0 6px rgba(59,130,246,0.4);
-  }
-  .term-slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--accent);
-    cursor: pointer;
-    border: 2px solid var(--bg-card);
-  }
-  .term-slider-value {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--accent-bright);
-    min-width: 40px;
-    text-align: center;
-  }
-  .term-slider-result {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-  }
-  .term-result-item {
-    text-align: center;
-  }
-  .term-result-label {
-    font-family: var(--font-display);
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 0.2rem;
-  }
-  .term-result-value {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-  .term-result-value.money { color: var(--green); }
-  .term-result-value.pct { color: var(--accent-bright); }
-  .term-result-value.term { color: var(--text-primary); }
-
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .header-inner { flex-direction: column; align-items: flex-start; }
@@ -560,39 +510,6 @@
     .chart-grid { grid-template-columns: 1fr; }
     .main { padding: 1rem; }
   }
-
-  /* ── PROJECTION VERDICT CHIPS ── */
-  .verdict-row {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    padding: 1rem 1.25rem 0.75rem;
-  }
-  .verdict-chip {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
-    padding: 0.4rem 0.7rem;
-    border-radius: var(--radius);
-    font-family: var(--font-display);
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    font-size: 0.75rem;
-    min-width: 52px;
-    text-align: center;
-    border: 1px solid transparent;
-  }
-  .verdict-chip .chip-yr {
-    font-size: 0.65rem;
-    font-weight: 500;
-    opacity: 0.75;
-    text-transform: uppercase;
-  }
-  .verdict-chip.bargain { background: rgba(16,185,129,0.15); color: var(--green); border-color: rgba(16,185,129,0.3); }
-  .verdict-chip.fair    { background: rgba(96,165,250,0.12); color: var(--accent-bright); border-color: rgba(96,165,250,0.25); }
-  .verdict-chip.watch   { background: rgba(245,158,11,0.13); color: var(--orange); border-color: rgba(245,158,11,0.28); }
-  .verdict-chip.risk    { background: rgba(239,68,68,0.13);  color: var(--red); border-color: rgba(239,68,68,0.28); }
 
   /* ── SCROLLBAR ── */
   ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -606,16 +523,13 @@
 <!-- HEADER -->
 <div class="header">
   <div class="header-inner">
-    <div class="header-brand">
-      <h1>
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/>
-        </svg>
-        NHL <span>Contract Intelligence App</span>
-        <span class="badge" id="seasonBadge"></span>
-      </h1>
-      <div class="subtitle">Batt Analytics</div>
-    </div>
+    <h1>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/>
+      </svg>
+      NHL <span>Contract Intelligence</span>
+      <span class="badge" id="seasonBadge"></span>
+    </h1>
     <div class="controls">
       <div class="control-group" id="faToggle">
         <button class="active" data-val="UFA">UFA</button>
@@ -624,6 +538,11 @@
       <div class="control-group" id="posToggle">
         <button class="active" data-val="Forward">FWD</button>
         <button data-val="Defense">DEF</button>
+      </div>
+      <div class="control-group" id="statusToggle">
+        <button class="active" data-val="All">All</button>
+        <button data-val="Pending">Unsigned</button>
+        <button data-val="Signed">Signed</button>
       </div>
       <div class="search-container">
         <span class="search-icon">&#128269;</span>
@@ -645,11 +564,33 @@
     <p>Select a player to view contract comparables</p>
   </div>
 
+  <div id="signedListView" style="display:none;">
+    <div class="card">
+      <div class="card-header">
+        <span class="dot" style="background:#10b981;"></span> Signed Players
+        <span id="signedListMeta" style="margin-left:0.5rem;color:var(--text-muted);font-weight:400;"></span>
+      </div>
+      <div class="card-body table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Player</th><th>Pos</th><th>Age</th>
+              <th>Predicted AAV</th><th>Actual AAV</th>
+              <th>Predicted %</th><th>Actual %</th>
+              <th>Error</th><th>Term</th><th>Team</th><th>Signed</th>
+            </tr>
+          </thead>
+          <tbody id="signedListBody"></tbody>
+        </table>
+      </div>
+      <div class="card-footer">Click a player to view their full comp breakdown.</div>
+    </div>
+  </div>
+
   <div id="appContent" style="display:none;">
     <!-- TABS -->
     <div class="tab-bar">
       <button class="tab-btn active" data-tab="overview">Contract & Stats</button>
-      <button class="tab-btn" data-tab="projections">Projections</button>
       <button class="tab-btn" data-tab="stats">Stats Detail</button>
       <button class="tab-btn" data-tab="contract">Contract</button>
       <button class="tab-btn" data-tab="bio">Bio</button>
@@ -662,16 +603,23 @@
         <div class="card-header"><span class="dot"></span> Player Going to Market</div>
         <div class="card-body table-wrap" id="playerOverviewTable"></div>
       </div>
+      <div class="card" id="signedActualCard" style="display:none;">
+        <div class="card-header">
+          <span class="dot" style="background:#10b981;"></span> Actual Signed Contract
+          <span class="status-badge status-signed" style="margin-left:auto;">✓ Signed</span>
+        </div>
+        <div id="signedActualBanner"></div>
+      </div>
       <div class="card" id="estimateBannerCard">
         <div class="card-header">
-          <span class="dot"></span> Contract Estimate
+          <span class="dot"></span> Model Estimate
           <span id="confidencePill" class="confidence-pill" style="margin-left:auto;"></span>
           <span id="backtestBadge" class="backtest-badge" style="margin-left:0.5rem;"></span>
         </div>
         <div class="estimate-banner" id="estimateBanner"></div>
       </div>
       <div class="card" id="termSliderCard">
-        <div class="card-header"><span class="dot"></span> Term Sensitivity</div>
+        <div class="card-header"><span class="dot"></span> Term Sensitivity — Est. AAV by Contract Length</div>
         <div class="card-body">
           <div class="term-slider-wrap">
             <div class="term-slider-row">
@@ -710,21 +658,6 @@
       </div>
     </div>
 
-    <!-- TAB: PROJECTIONS -->
-    <div class="tab-panel" id="tab-projections">
-      <div class="card">
-        <div class="card-header"><span class="dot"></span> Year-by-Year Contract Value</div>
-        <div class="verdict-row" id="verdictChips"></div>
-        <div class="card-body"><div class="chart-container" style="height:400px;"><canvas id="projectionChart"></canvas></div></div>
-        <div class="card-footer">Blue = projected market value (what the player would command as % of cap, declining with age). Red = your fixed AAV as % of the rising cap ceiling. Green/amber dashed = upside and downside range.</div>
-      </div>
-      <div class="card">
-        <div class="card-header"><span class="dot"></span> AAV vs Rising Market Value</div>
-        <div class="card-body"><div class="chart-container" style="height:380px;"><canvas id="curvesCapChart"></canvas></div></div>
-        <div class="card-footer">Estimated AAV held fixed; cap hit % declines each season as the salary cap rises. Known caps through 2027-28; projections beyond use Monte Carlo bootstrap.</div>
-      </div>
-    </div>
-
     <!-- TAB: STATS -->
     <div class="tab-panel" id="tab-stats">
       <div class="card">
@@ -749,16 +682,6 @@
         <div class="estimate-banner" id="contractEstimateBanner"></div>
       </div>
       <div class="card">
-        <div class="card-header"><span class="dot"></span> Term Sensitivity — Est. AAV by Contract Length</div>
-        <div class="card-body">
-          <div class="chart-grid">
-            <div class="table-wrap" id="termTable"></div>
-            <div class="chart-container"><canvas id="termChart"></canvas></div>
-          </div>
-        </div>
-        <div class="card-footer">Estimated AAV adjustment based on historical term-value relationship within quality tier. Longer term typically reduces AAV.</div>
-      </div>
-      <div class="card">
         <div class="card-header"><span class="dot"></span> Comparable Contracts</div>
         <div class="card-body table-wrap" id="compsContractTable"></div>
       </div>
@@ -768,7 +691,7 @@
           <div class="card-body"><div class="chart-container"><canvas id="scatterChart"></canvas></div></div>
         </div>
         <div class="card">
-          <div class="card-header"><span class="dot"></span> AAV vs Rising Market Value</div>
+          <div class="card-header"><span class="dot"></span> Estimated Cap Hit % Over Time</div>
           <div class="card-body"><div class="chart-container"><canvas id="capBarChart"></canvas></div></div>
         </div>
       </div>
@@ -803,24 +726,21 @@
           <h3>Backtest Accuracy</h3>
           <p>Each model is backtested using leave-one-season-out validation: every historical FA class is held out, predicted using only prior years, and the error is measured against actual signings. The MAE (mean absolute error) shown in the header tells you how far off the model typically is in percentage points of cap hit.</p>
 
+          <h3>Term Sensitivity</h3>
+          <p>The contract-length slider re-prices the estimate for different deal lengths, since AAV isn't independent of term. RFAs tend to see their cap hit % rise on longer deals — the team is buying out more years of a still-developing player at a discount, so it pays a bit more per year for that cost certainty. UFAs tend to see the opposite: a longer term functions as a security blanket for the player, who will often take a slightly lower AAV in exchange for it. These tendencies are fitted from recent signings within each player's pay tier (low / mid / high cap hit %) wherever there's enough data to support a reliable trend; otherwise a conservative estimate is used as a fallback.</p>
+
+          <h3>Tracking Signings</h3>
+          <p>The Pending / Signed filter shows who's still on the open market versus who has already signed this offseason, with the Signed view listing every player in that FA-status/position group along with how their actual deal compared to the model's prediction. Entry-level contracts (the standard rookie deal every drafted player signs before reaching free agency) are intentionally excluded from this tracker — they're capped by league rules at a flat rate regardless of talent, so they aren't representative open-market signings and would only add noise to the comparison.</p>
+          <p>Players who haven't appeared in an NHL game in recent seasons won't show up in the tool even if they're technically eligible for free agency — the model needs actual NHL stats to generate meaningful comparable estimates, so players with no recent league activity are excluded rather than shown with unreliable projections.</p>
+
           <h3>Data Sources</h3>
           <p>Stats and biographical data from the NHL's public API (nhle.com). Contract data from PuckPedia.com. Data refreshed daily via GitHub Actions.</p>
 
           <h3>Future Cap Projections</h3>
           <p>Future-season cap hit percentages use projected cap ceilings to show how a player's AAV will decrease as a percentage of the cap over time.</p>
-
-          <h3>Projections Tab</h3>
-          <p>The Projections tab answers a single question: over the life of this contract, is the player's production likely to justify their cap hit — and in which years does the balance shift? It combines two independent models: an aging curve that projects how the player's production will decline, and a cap trajectory model that projects how the salary cap will rise. Both are applied to the current contract estimate to produce a year-by-year picture of value.</p>
-          <p>Each contract year receives a verdict label — Bargain, Fair, Watch, or Risk — based on the gap between the player's contracted cap percentage and their projected market value in that year. A contract can start as Fair and slide into Watch or Risk territory in the final years as a player ages into the back half of a long deal. These verdicts update dynamically based on the contract term selected with the slider.</p>
-
-          <h3>Production Projection</h3>
-          <p>The production projection shown in the chart tooltip estimates how a player's on-ice output is expected to change year over year, based on where they are on the NHL aging curve for their position. Forwards are modeled relative to age 26 (the typical production peak); defensemen relative to age 27.</p>
-          <p>The curve is fit to every qualifying player-season in the cap era and captures the population-level pattern of how production rises toward the peak and then gradually declines. Each year's projected output is expressed as a retention rate — for example, a retention of 0.94 in year three means the model expects the player to produce at 94% of their current level by that point.</p>
-          <p>Three scenarios are shown in the chart: Base (50th percentile of the aging distribution), Best Case (75th percentile — player ages better than average), and Downside (25th percentile — player ages worse than average). The production figures shown in the tooltip correspond to the Base scenario, applied to the player's current points-per-game and time on ice.</p>
-          <p>Important limitations: the aging curve reflects population averages, not individual trajectories. Players who have already shown signs of decline, or conversely players who are still ascending, may diverge meaningfully from these projections. The model does not account for injury history, role changes, or team context.</p>
         </div>
       </div>
-    </div>
+
   </div>
 </div>
 
@@ -830,6 +750,7 @@ const state = {
   data: null,
   faFilter: 'UFA',
   posFilter: 'Forward',
+  statusFilter: 'All',
   selectedPlayer: null,
   charts: {},
 };
@@ -863,13 +784,85 @@ async function loadData() {
 // ─── FILTERING ────────────────────────────────────────────────────────
 function getFilteredPlayers() {
   if (!state.data) return [];
-  return state.data.players.filter(p =>
-    p.signingStatus === state.faFilter && p.positionGroup === state.posFilter
+  return state.data.players.filter(p => {
+    if (p.signingStatus !== state.faFilter) return false;
+    if (p.positionGroup !== state.posFilter) return false;
+    if (state.statusFilter === 'Pending' && p.signed) return false;
+    if (state.statusFilter === 'Signed'  && !p.signed) return false;
+    return true;
+  });
+}
+
+// ─── SIGNED LIST VIEW ─────────────────────────────────────────────────
+// "Signed" status filter shows a sortable list of everyone who's already
+// signed in the current FA-status/position category, instead of drilling
+// into a single player — that's the more useful view for "who's off the board".
+function renderSignedList() {
+  const players = getFilteredPlayers().filter(p => p.signed && p.actualContract);
+
+  $('#appContent').style.display = 'none';
+  $('#emptyState').style.display = 'none';
+  $('#signedListView').style.display = 'block';
+
+  $('#signedListMeta').textContent =
+    `${players.length} ${state.faFilter} ${state.posFilter === 'Forward' ? 'forward' : 'defenseman'}${players.length === 1 ? '' : 's'} signed so far`;
+
+  if (!players.length) {
+    $('#signedListBody').innerHTML =
+      `<tr><td colspan="11" style="text-align:center;padding:2rem;color:var(--text-muted);">No ${state.faFilter} ${state.posFilter.toLowerCase()}s have signed yet this offseason.</td></tr>`;
+    return;
+  }
+
+  const sorted = [...players].sort((a, b) =>
+    (b.actualContract?.signingDate ?? '').localeCompare(a.actualContract?.signingDate ?? '')
   );
+
+  $('#signedListBody').innerHTML = sorted.map(p => {
+    const ac = p.actualContract;
+    const err = ac.capHitPct - p.estimatedCapHitPct;
+    const errCls = Math.abs(err) < 0.5 ? 'err-zero' : err > 0 ? 'err-positive' : 'err-negative';
+    const errStr = (err > 0 ? '+' : '') + err.toFixed(2) + '%';
+    return `<tr class="player-row" style="cursor:pointer;" data-pid="${p.playerId}">
+      <td class="name-cell">${p.name}</td>
+      <td>${p.position}</td>
+      <td>${p.age}</td>
+      <td>${fmtMoney(p.estimatedAAV)}</td>
+      <td style="color:#10b981;font-weight:600;">${fmtMoney(ac.aav)}</td>
+      <td>${fmtPct(p.estimatedCapHitPct)}</td>
+      <td style="color:#10b981;">${fmtPct(ac.capHitPct)}</td>
+      <td class="${errCls}" style="font-weight:600;">${errStr}</td>
+      <td>${ac.term} yr</td>
+      <td>${ac.team || '—'}</td>
+      <td style="font-size:0.78rem;">${ac.signingDate || '—'}</td>
+    </tr>`;
+  }).join('');
+
+  $$('#signedListBody tr[data-pid]').forEach(tr => {
+    tr.addEventListener('click', () => {
+      const player = sorted.find(p => p.playerId === parseInt(tr.dataset.pid));
+      if (!player) return;
+      // Drill into the player's full comp breakdown via the normal detail view
+      state.statusFilter = 'All';
+      $$('#statusToggle button').forEach(b => b.classList.remove('active'));
+      $('#statusToggle button[data-val="All"]').classList.add('active');
+      $('#signedListView').style.display = 'none';
+      selectPlayer(player);
+      $('#searchInput').value = player.name;
+    });
+  });
 }
 
 // ─── SEARCH ───────────────────────────────────────────────────────────
 function populateSearch() {
+  if (state.statusFilter === 'Signed') {
+    $('#searchInput').value = '';
+    $('#searchDropdown').innerHTML = '';
+    $('#searchDropdown').classList.remove('open');
+    renderSignedList();
+    return;
+  }
+  $('#signedListView').style.display = 'none';
+
   const players = getFilteredPlayers();
   const dropdown = $('#searchDropdown');
   const input = $('#searchInput');
@@ -880,7 +873,7 @@ function populateSearch() {
   players.forEach(p => {
     const opt = document.createElement('div');
     opt.className = 'search-option';
-    opt.innerHTML = `<span>${p.name}</span><span class="pos-tag">${p.position}</span>`;
+    opt.innerHTML = `<span>${p.name}</span><span class="pos-tag">${p.position}</span>${p.signed ? '<span class="signed-dot" title="Signed"></span>' : ''}`;
     opt.addEventListener('click', () => {
       selectPlayer(p);
       dropdown.classList.remove('open');
@@ -932,7 +925,7 @@ function populateSearchFiltered(query) {
   filtered.forEach(p => {
     const opt = document.createElement('div');
     opt.className = 'search-option';
-    opt.innerHTML = `<span>${p.name}</span><span class="pos-tag">${p.position}</span>`;
+    opt.innerHTML = `<span>${p.name}</span><span class="pos-tag">${p.position}</span>${p.signed ? '<span class="signed-dot" title="Signed"></span>' : ''}`;
     opt.addEventListener('click', () => {
       selectPlayer(p);
       dropdown.classList.remove('open');
@@ -944,14 +937,15 @@ function populateSearchFiltered(query) {
 
 // ─── TOGGLE BUTTONS ───────────────────────────────────────────────────
 function setupToggles() {
-  ['faToggle', 'posToggle'].forEach(id => {
+  ['faToggle', 'posToggle', 'statusToggle'].forEach(id => {
     const group = $(`#${id}`);
     group.querySelectorAll('button').forEach(btn => {
       btn.addEventListener('click', () => {
         group.querySelectorAll('button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         if (id === 'faToggle') state.faFilter = btn.dataset.val;
-        else state.posFilter = btn.dataset.val;
+        else if (id === 'posToggle') state.posFilter = btn.dataset.val;
+        else state.statusFilter = btn.dataset.val;
         populateSearch();
       });
     });
@@ -994,7 +988,7 @@ function buildTable(cols, rows, opts = {}) {
 const COL = {
   name: { key: 'name', label: 'Player', nameCell: true },
   pos: { key: 'position', label: 'Pos' },
-  age: { key: 'age', label: '7/1 Age' },
+  age: { key: 'age', label: 'Age' },
   szn: { key: 'contractYear', label: 'Contract Year', render: r => seasonLabel(r.contractYear) },
   gp: { key: 'gp', label: 'GP' },
   g: { key: 'goals', label: 'G' },
@@ -1032,10 +1026,83 @@ function getConfidenceLevel(std) {
   return { label: 'Wide', cls: 'wide' };
 }
 
+function renderTermSlider(p) {
+  p = p || state.selectedPlayer;
+  const slider    = $('#termSlider');
+  const valueLabel = $('#termSliderValue');
+  const resultDiv  = $('#termSliderResult');
+  if (!p || !p.termTable || !p.termTable.length) {
+    resultDiv.innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;">No term data available.</p>';
+    return;
+  }
+  const term  = parseInt(slider.value);
+  valueLabel.textContent = term + ' yr';
+  const entry = p.termTable.find(r => r.term === term);
+  if (!entry) { resultDiv.innerHTML = ''; return; }
+  const total = entry.aav * term;
+  resultDiv.innerHTML = `
+    <div class="term-result-item"><div class="term-result-label">Term</div><div class="term-result-value term">${term} yr</div></div>
+    <div class="term-result-item"><div class="term-result-label">Est. AAV</div><div class="term-result-value money">${fmtMoney(entry.aav)}</div></div>
+    <div class="term-result-item"><div class="term-result-label">Cap Hit %</div><div class="term-result-value pct">${fmtPct(entry.capHitPct)}</div></div>
+    <div class="term-result-item"><div class="term-result-label">Total Value</div><div class="term-result-value money">${fmtMoney(total)}</div></div>
+  `;
+}
+
+function renderSignedCard(p) {
+  const card = $('#signedActualCard');
+  const banner = $('#signedActualBanner');
+  if (!p.signed || !p.actualContract) {
+    card.style.display = 'none';
+    return;
+  }
+  card.style.display = 'block';
+  const ac = p.actualContract;
+  const diff = ac.capHitPct - p.estimatedCapHitPct;
+  const diffCls = Math.abs(diff) < 0.5 ? 'match' : diff > 0 ? 'over' : 'under';
+  const diffLabel = diff > 0 ? '+' + diff.toFixed(2) + '%' : diff.toFixed(2) + '%';
+  banner.innerHTML = `
+    <div class="signed-banner">
+      <div>
+        <div class="signed-label">Team</div>
+        <div class="signed-val">${ac.team || '—'}</div>
+      </div>
+      <div>
+        <div class="signed-label">Term</div>
+        <div class="signed-val">${ac.term} yr</div>
+      </div>
+      <div>
+        <div class="signed-label">AAV</div>
+        <div class="signed-val">${fmtMoney(ac.aav)}</div>
+      </div>
+      <div>
+        <div class="signed-label">Cap Hit %</div>
+        <div class="signed-val">${fmtPct(ac.capHitPct)}</div>
+      </div>
+      <div>
+        <div class="signed-label">Signed</div>
+        <div class="signed-val" style="font-size:0.9rem;">${ac.signingDate || '—'}</div>
+      </div>
+    </div>
+    <div class="pred-vs-actual">
+      <div class="pva-col">
+        <div class="pva-label">Predicted Cap Hit %</div>
+        <div class="pva-val">${fmtPct(p.estimatedCapHitPct)}</div>
+      </div>
+      <div class="pva-col">
+        <div class="pva-label">Actual Cap Hit %</div>
+        <div class="pva-val">${fmtPct(ac.capHitPct)}</div>
+      </div>
+      <div class="pva-col">
+        <div class="pva-label">Model Error</div>
+        <div class="pva-val ${diffCls}">${diffLabel}</div>
+      </div>
+    </div>
+  `;
+}
+
 function renderEstimateBanner(el, p) {
   const std = p.estimateStd ?? p.ciHigh - p.estimatedCapHitPct;
   const conf = getConfidenceLevel(std);
-  const avgTerm = p.avgCompTerm != null ? Math.round(p.avgCompTerm) + ' yr' : '—';
   el.innerHTML = `
     <div class="est-stat">
       <div class="est-label">Est. Cap Hit %</div>
@@ -1046,11 +1113,6 @@ function renderEstimateBanner(el, p) {
       <div class="est-label">Est. AAV</div>
       <div class="est-value money">${fmtMoney(p.estimatedAAV)}</div>
       <div class="est-range"><span>${fmtMoney(p.aavLow ?? p.estimatedAAV)}</span> — <span>${fmtMoney(p.aavHigh ?? p.estimatedAAV)}</span></div>
-    </div>
-    <div class="est-stat">
-      <div class="est-label">Avg Comp Term</div>
-      <div class="est-value" style="font-size:1.6rem;">${avgTerm}</div>
-      <div class="est-range">${p.avgCompTerm != null ? p.avgCompTerm.toFixed(1) + ' yr raw avg' : ''}</div>
     </div>
     <div class="est-stat">
       <div class="est-label">Uncertainty (σ)</div>
@@ -1091,6 +1153,14 @@ function renderAll() {
     aav: p.estimatedAAV,
     capHitPct: p.estimatedCapHitPct,
   };
+
+  // ── Signed / actual contract card ──
+  renderSignedCard(p);
+
+  // ── Term slider ──
+  const defaultTerm = Math.min(8, Math.max(1, Math.round(p.avgCompTerm ?? 5)));
+  $('#termSlider').value = defaultTerm;
+  renderTermSlider(p);
 
   // ── Estimate banner ──
   renderEstimateBanner($('#estimateBanner'), p);
@@ -1153,20 +1223,10 @@ function renderAll() {
   $('#compsBioTable').innerHTML = buildTable(bioCols, comps);
 
   // Charts
-  const slider = $('#termSlider');
-  const defaultTerm = Math.min(8, Math.max(1, Math.round(p.avgCompTerm ?? 5)));
-  slider.value = defaultTerm;
-  $('#termSliderValue').textContent = defaultTerm + ' yr';
-
   renderCareerChart();
   renderCapFutureChart();
-  renderProjectionChart();
-  renderCurvesCapChart();
   renderScatterChart();
   renderCapBarChart();
-  renderTermTable();
-  renderTermChart();
-  renderTermSlider();
 }
 
 // ─── CHARTS ───────────────────────────────────────────────────────────
@@ -1350,438 +1410,39 @@ function renderScatterChart() {
 function renderCapBarChart() {
   destroyChart('capBar');
   const p = state.selectedPlayer;
-  if (!p || !state.data) return;
+  if (!p) return;
 
-  const meta = state.data.meta;
-  const estAAV = p.estimatedAAV;
-  const estPct = p.estimatedCapHitPct;
   const comps = p.comps || [];
-
-  // Build season/cap pairs
-  const seasonCaps = [[meta.currentSeason, meta.currentCap]];
-  Object.entries(meta.futureCaps).forEach(([s, c]) => seasonCaps.push([parseInt(s), c]));
-  seasonCaps.sort((a, b) => a[0] - b[0]);
-
-  const labels = seasonCaps.map(([s]) => seasonLabel(s));
-
-  // Player's actual AAV (flat — what they'd sign for)
-  const playerAAV = estAAV / 1_000_000;
-
-  // "Market equivalent" — what that same cap hit % costs under each year's cap
-  // This line RISES, showing the player becomes a bargain over time
-  const marketEquiv = seasonCaps.map(([, c]) => round2((estPct * c / 100) / 1_000_000));
-
-  const datasets = [
-    {
-      label: p.name + ' AAV (fixed)',
-      data: labels.map(() => playerAAV),
-      borderColor: '#f59e0b',
-      backgroundColor: 'rgba(245,158,11,0.05)',
-      borderWidth: 2.5,
-      pointRadius: 4,
-      pointBackgroundColor: '#f59e0b',
-      tension: 0,
-      fill: false,
-    },
-    {
-      label: 'Market value at ' + estPct.toFixed(1) + '% cap hit',
-      data: marketEquiv,
-      borderColor: '#10b981',
-      backgroundColor: 'rgba(16,185,129,0.08)',
-      borderWidth: 2.5,
-      pointRadius: 4,
-      pointBackgroundColor: '#10b981',
-      tension: 0.3,
-      fill: true,
-    },
-  ];
-
-  // Comp AAVs adjusted to each season's cap (what their deal would cost under future caps)
-  const compColors = ['#94a3b8', '#64748b', '#475569', '#334155', '#1e293b'];
-  comps.forEach((c, i) => {
-    if (!c.capHitPct) return;
-    const compAdjusted = seasonCaps.map(([, cap]) => round2((c.capHitPct * cap / 100) / 1_000_000));
-    datasets.push({
-      label: c.name,
-      data: compAdjusted,
-      borderColor: compColors[i] || '#475569',
-      borderWidth: 1.5,
-      pointRadius: 0,
-      borderDash: [6, 3],
-      tension: 0.3,
-      fill: false,
-    });
-  });
+  const names = comps.map(c => c.name);
+  const pcts = comps.map(c => c.capHitPct);
 
   state.charts.capBar = new Chart($('#capBarChart'), {
-    type: 'line',
-    data: { labels, datasets },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: 'index', intersect: false },
-      plugins: {
-        legend: {
-          labels: { color: '#94a3b8', font: { family: 'Barlow', size: 10 }, boxWidth: 10 },
-        },
-        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': $' + ctx.parsed.y.toFixed(2) + 'M' } },
-      },
-      scales: {
-        x: {
-          title: { display: true, text: 'Season', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
-          ticks: { color: '#64748b', font: { family: 'Barlow', size: 11 } },
-          grid: { display: false },
-        },
-        y: {
-          title: { display: true, text: 'AAV ($M)', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
-          ticks: { color: '#64748b', callback: v => '$' + v.toFixed(1) + 'M', font: { family: 'Barlow' } },
-          grid: { color: 'rgba(30,58,95,0.3)' },
-        },
-      },
-    },
-  });
-}
-
-function renderTermTable() {
-  const p = state.selectedPlayer;
-  if (!p || !p.termTable || !p.termTable.length) {
-    $('#termTable').innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;">No term data available</p>';
-    return;
-  }
-
-  const cols = [
-    { key: 'term', label: 'Term', render: r => r.term + ' yr' },
-    { key: 'aav', label: 'Est. AAV', render: r => fmtMoney(r.aav), nameCell: true },
-    { key: 'capHitPct', label: 'Cap Hit %', render: r => fmtPct(r.capHitPct), highlight: true },
-  ];
-
-  $('#termTable').innerHTML = buildTable(cols, p.termTable);
-}
-
-function renderTermChart() {
-  destroyChart('term');
-  const p = state.selectedPlayer;
-  if (!p || !p.termTable || !p.termTable.length) return;
-
-  const labels = p.termTable.map(r => r.term + 'yr');
-  const aavs = p.termTable.map(r => r.aav / 1_000_000);
-
-  state.charts.term = new Chart($('#termChart'), {
-    type: 'line',
+    type: 'bar',
     data: {
-      labels,
+      labels: names,
       datasets: [{
-        data: aavs,
-        borderColor: '#3b82f6',
-        backgroundColor: 'rgba(59,130,246,0.1)',
-        borderWidth: 2.5,
-        pointRadius: 5,
-        pointBackgroundColor: '#3b82f6',
-        pointHoverRadius: 7,
-        tension: 0.3,
-        fill: true,
+        data: pcts,
+        backgroundColor: '#60a5fa',
+        borderRadius: 4,
+        barPercentage: 0.6,
       }],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      indexAxis: 'y',
       plugins: {
         legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: ctx => '$' + ctx.parsed.y.toFixed(2) + 'M',
-          },
-        },
+        tooltip: { callbacks: { label: ctx => ctx.parsed.x.toFixed(2) + '%' } },
       },
       scales: {
-        y: {
-          title: { display: true, text: 'Est. AAV ($M)', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
-          ticks: { color: '#64748b', callback: v => '$' + v.toFixed(1) + 'M', font: { family: 'Barlow' } },
+        x: {
+          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
+          ticks: { color: '#64748b', callback: v => v + '%', font: { family: 'Barlow' } },
           grid: { color: 'rgba(30,58,95,0.3)' },
-        },
-        x: {
-          title: { display: true, text: 'Contract Term', color: '#94a3b8', font: { family: 'Barlow Condensed' } },
-          ticks: { color: '#64748b', font: { family: 'Barlow', size: 11 } },
-          grid: { display: false },
-        },
-      },
-    },
-  });
-}
-
-// ─── PROJECTIONS TAB ──────────────────────────────────────────────────
-
-const AGING_GAMMA  = { Forward: -0.0014, Defense: -0.058 };
-const AGING_CENTER = { Forward: 26, Defense: 27 };
-
-function agingRetention(currentAge, posGroup, years) {
-  const gamma  = AGING_GAMMA[posGroup]  ?? -0.002;
-  const center = AGING_CENTER[posGroup] ?? 26;
-  const acNow  = currentAge - center;
-  const fNow   = 1 + gamma * acNow * acNow;
-
-  return Array.from({ length: years }, (_, i) => {
-    const yr     = i + 1;
-    const acFut  = (currentAge + yr) - center;
-    const fFut   = 1 + gamma * acFut * acFut;
-    const base   = Math.max(0.05, fNow !== 0 ? fFut / fNow : 1);
-    return {
-      base,
-      best:     Math.min(1.40, base * 1.05),
-      downside: Math.max(0.05, base * 0.93),
-    };
-  });
-}
-
-function verdictLabel(projPct, contractedPct) {
-  const diff = projPct - contractedPct;
-  if (diff >  1.0) return { label: 'Bargain', cls: 'bargain' };
-  if (diff > -0.5) return { label: 'Fair',    cls: 'fair'    };
-  if (diff > -1.5) return { label: 'Watch',   cls: 'watch'   };
-  return                  { label: 'Risk',    cls: 'risk'    };
-}
-
-function getTermAAV() {
-  const p    = state.selectedPlayer;
-  const term = parseInt($('#termSlider')?.value ?? 5);
-  const entry = p?.termTable?.find(r => r.term === term);
-  return {
-    term,
-    aav:    entry?.aav    ?? p?.estimatedAAV    ?? 0,
-    capPct: entry?.capHitPct ?? p?.estimatedCapHitPct ?? 0,
-  };
-}
-
-function renderProjectionChart() {
-  destroyChart('projection');
-  const p = state.selectedPlayer;
-  if (!p || !state.data) return;
-
-  const meta              = state.data.meta;
-  const { term: N_YEARS, aav: estAAV, capPct: estPct } = getTermAAV();
-  const posGroup  = p.positionGroup;
-  const age       = p.age;
-
-  // Build cap ladder: current + all future seasons sorted
-  const capLadder = [[meta.currentSeason, meta.currentCap],
-    ...Object.entries(meta.futureCaps).map(([s, c]) => [parseInt(s), c])
-  ].sort((a, b) => a[0] - b[0]);
-
-  // yr=1 maps to capLadder[0] (current season), yr=2 to capLadder[1], etc.
-  const getCap = (yr) => {
-    const idx = Math.min(yr - 1, capLadder.length - 1);
-    return capLadder[idx]?.[1] ?? capLadder[capLadder.length - 1][1];
-  };
-
-  const retentions    = agingRetention(age, posGroup, N_YEARS);
-  const labels        = retentions.map((_, i) => `Yr ${i + 1}\n(age ${age + i + 1})`);
-  // Contracted: fixed AAV as % of each year's rising cap (declines over time)
-  const contractedPct = retentions.map((_, i) => round2((estAAV / getCap(i + 1)) * 100));
-  // Market: what the player would command as % of cap, adjusted for aging decline
-  const basePct       = retentions.map((r) => round2(estPct * r.base));
-  const bestPct       = retentions.map((r) => round2(estPct * r.best));
-  const downPct       = retentions.map((r) => round2(estPct * r.downside));
-
-  // Production projections per year (base retention × current stats)
-  const fmtTOI = (decMins) => {
-    const m = Math.floor(decMins);
-    const s = Math.round((decMins - m) * 60);
-    return `${m}:${String(s).padStart(2, '0')}`;
-  };
-  const projPPG = retentions.map(r => (p.ppg  * r.base).toFixed(2));
-  const projTOI = retentions.map(r => fmtTOI(p.toi * r.base));
-
-  // Verdict chips
-  const chipsEl = $('#verdictChips');
-  chipsEl.innerHTML = retentions.map((_, i) => {
-    const v = verdictLabel(basePct[i], contractedPct[i]);
-    return `<div class="verdict-chip ${v.cls}">
-      <span class="chip-yr">Yr ${i + 1}</span>
-      <span>${v.label}</span>
-    </div>`;
-  }).join('');
-
-  state.charts.projection = new Chart($('#projectionChart'), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        {
-          label: 'Best case',
-          data: bestPct,
-          borderColor: '#10b981',
-          backgroundColor: 'rgba(59,130,246,0.07)',
-          borderWidth: 1.5,
-          pointRadius: 0,
-          borderDash: [4, 3],
-          tension: 0.3,
-          fill: '+2',  // shaded band from best down to downside
-        },
-        {
-          label: 'Base case',
-          data: basePct,
-          borderColor: '#3b82f6',
-          backgroundColor: 'transparent',
-          borderWidth: 2.5,
-          pointRadius: 5,
-          pointBackgroundColor: '#3b82f6',
-          tension: 0.3,
-          fill: false,
-        },
-        {
-          label: 'Downside',
-          data: downPct,
-          borderColor: '#f59e0b',
-          backgroundColor: 'transparent',
-          borderWidth: 1.5,
-          pointRadius: 0,
-          borderDash: [4, 3],
-          tension: 0.3,
-          fill: false,
-        },
-        {
-          label: 'Your AAV % of future cap',
-          data: contractedPct,
-          borderColor: '#ef4444',
-          backgroundColor: 'transparent',
-          borderWidth: 2,
-          pointRadius: 4,
-          pointBackgroundColor: '#ef4444',
-          borderDash: [6, 3],
-          tension: 0,
-          fill: false,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: 'index', intersect: false },
-      plugins: {
-        legend: { labels: { color: '#94a3b8', font: { family: 'Barlow', size: 12 }, boxWidth: 12 } },
-        tooltip: {
-          callbacks: {
-            label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%',
-            footer: (items) => {
-              const i = items[0]?.dataIndex ?? 0;
-              return `Proj. production (base): ${projPPG[i]} pts/game  |  ${projTOI[i]} TOI`;
-            },
-          },
-          footerColor: '#94a3b8',
-          footerFont: { family: 'Barlow', size: 11, style: 'normal' },
-          footerMarginTop: 6,
-        },
-      },
-      scales: {
-        x: {
-          ticks: { color: '#64748b', font: { family: 'Barlow', size: 11 } },
-          grid: { display: false },
         },
         y: {
-          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
-          ticks: { color: '#64748b', callback: v => v.toFixed(1) + '%', font: { family: 'Barlow' } },
-          grid: { color: 'rgba(30,58,95,0.3)' },
-        },
-      },
-    },
-  });
-}
-
-function renderCurvesCapChart() {
-  destroyChart('curvesCap');
-  const p = state.selectedPlayer;
-  if (!p || !state.data) return;
-
-  const meta = state.data.meta;
-  const { term: N_YEARS, aav: estAAV, capPct: estPct } = getTermAAV();
-
-  // Build season/cap sequence: current + all known futures, capped to slider term
-  const MC_CAPS = {
-    [meta.currentSeason]: meta.currentCap,
-    ...Object.fromEntries(Object.entries(meta.futureCaps).map(([s, c]) => [parseInt(s), c])),
-  };
-  const seasonCaps = Object.entries(MC_CAPS)
-    .map(([s, c]) => [parseInt(s), c])
-    .sort((a, b) => a[0] - b[0])
-    .slice(0, N_YEARS);
-
-  const labels    = seasonCaps.map(([s]) => seasonLabel(s));
-  const fixedAAV  = seasonCaps.map(() => round2(estAAV / 1_000_000));
-  const marketEq  = seasonCaps.map(([, c]) => round2((estPct * c / 100) / 1_000_000));
-  const capPcts   = seasonCaps.map(([, c]) => round2((estAAV / c) * 100));
-
-  state.charts.curvesCap = new Chart($('#curvesCapChart'), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        {
-          label: p.name + ' AAV (fixed)',
-          data: fixedAAV,
-          borderColor: '#f59e0b',
-          backgroundColor: 'rgba(245,158,11,0.05)',
-          borderWidth: 2.5,
-          pointRadius: 5,
-          tension: 0,
-          fill: false,
-          yAxisID: 'yAAV',
-        },
-        {
-          label: 'Market value at ' + fmtPct(estPct) + ' cap hit',
-          data: marketEq,
-          borderColor: '#10b981',
-          backgroundColor: 'rgba(16,185,129,0.08)',
-          borderWidth: 2.5,
-          pointRadius: 5,
-          tension: 0.3,
-          fill: true,
-          yAxisID: 'yAAV',
-        },
-        {
-          label: 'Contracted cap hit %',
-          data: capPcts,
-          borderColor: '#60a5fa',
-          backgroundColor: 'rgba(96,165,250,0.08)',
-          borderWidth: 2,
-          pointRadius: 4,
-          borderDash: [5, 3],
-          tension: 0.3,
-          fill: false,
-          yAxisID: 'yPct',
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: 'index', intersect: false },
-      plugins: {
-        legend: { labels: { color: '#94a3b8', font: { family: 'Barlow', size: 12 }, boxWidth: 12 } },
-        tooltip: {
-          callbacks: {
-            label: ctx => {
-              if (ctx.datasetIndex === 2) return ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%';
-              return ctx.dataset.label + ': $' + ctx.parsed.y.toFixed(2) + 'M';
-            },
-          },
-        },
-      },
-      scales: {
-        x: {
-          title: { display: true, text: 'Season', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
-          ticks: { color: '#64748b', font: { family: 'Barlow' } },
-          grid: { display: false },
-        },
-        yAAV: {
-          position: 'left',
-          title: { display: true, text: 'AAV ($M)', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
-          ticks: { color: '#64748b', callback: v => '$' + v.toFixed(1) + 'M', font: { family: 'Barlow' } },
-          grid: { color: 'rgba(30,58,95,0.3)' },
-        },
-        yPct: {
-          position: 'right',
-          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
-          ticks: { color: '#64748b', callback: v => v.toFixed(1) + '%', font: { family: 'Barlow' } },
+          ticks: { color: '#94a3b8', font: { family: 'Barlow', size: 11 } },
           grid: { display: false },
         },
       },
@@ -1790,48 +1451,6 @@ function renderCurvesCapChart() {
 }
 
 function round2(n) { return Math.round(n * 100) / 100; }
-
-function renderTermSlider() {
-  const p = state.selectedPlayer;
-  const slider = $('#termSlider');
-  const valueLabel = $('#termSliderValue');
-  const resultDiv = $('#termSliderResult');
-
-  if (!p || !p.termTable || !p.termTable.length) {
-    resultDiv.innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;">No term data</p>';
-    return;
-  }
-
-  const term = parseInt(slider.value);
-  valueLabel.textContent = term + ' yr';
-
-  const entry = p.termTable.find(r => r.term === term);
-  if (!entry) {
-    resultDiv.innerHTML = '';
-    return;
-  }
-
-  const totalValue = entry.aav * term;
-
-  resultDiv.innerHTML = `
-    <div class="term-result-item">
-      <div class="term-result-label">Term</div>
-      <div class="term-result-value term">${term} yr</div>
-    </div>
-    <div class="term-result-item">
-      <div class="term-result-label">Est. AAV</div>
-      <div class="term-result-value money">${fmtMoney(entry.aav)}</div>
-    </div>
-    <div class="term-result-item">
-      <div class="term-result-label">Cap Hit %</div>
-      <div class="term-result-value pct">${fmtPct(entry.capHitPct)}</div>
-    </div>
-    <div class="term-result-item">
-      <div class="term-result-label">Total Value</div>
-      <div class="term-result-value money">${fmtMoney(totalValue)}</div>
-    </div>
-  `;
-}
 
 // ─── INIT ─────────────────────────────────────────────────────────────
 function initApp() {
@@ -1845,12 +1464,8 @@ function initApp() {
   // Re-render career chart when stat dropdown changes
   $('#careerStatSelect').addEventListener('change', renderCareerChart);
 
-  // Term slider — syncs overview slider, projection chart, and cap chart
-  $('#termSlider').addEventListener('input', () => {
-    renderTermSlider();
-    renderProjectionChart();
-    renderCurvesCapChart();
-  });
+  // Term slider
+  $('#termSlider').addEventListener('input', () => renderTermSlider(state.selectedPlayer));
 }
 
 // ─── BOOT ─────────────────────────────────────────────────────────────

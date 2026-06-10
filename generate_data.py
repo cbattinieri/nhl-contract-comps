@@ -22,9 +22,15 @@ OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "data")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Dynamic season calculation
+# During the NHL off-season (June–September), PuckPedia clears expired contracts
+# and rolls to the upcoming season. Advance to match so pending FAs are found.
 NOW = datetime.now()
-# NHL season spans two calendar years: a season starting in Oct 2024 is "20242025"
-CURRENT_YEAR = NOW.year if NOW.month >= 7 else NOW.year - 1
+if NOW.month >= 10:
+    CURRENT_YEAR = NOW.year       # Oct 2026 → 2026-27 season
+elif NOW.month >= 6:
+    CURRENT_YEAR = NOW.year       # Jun-Sep 2026 → advance to 2026-27 (off-season)
+else:
+    CURRENT_YEAR = NOW.year - 1   # Jan-May 2026 → still 2025-26 season
 CURRENT_SEASON = int(f"{CURRENT_YEAR}{CURRENT_YEAR + 1}")
 
 # Build season list dynamically from 2003-04 onward (skip 04-05 lockout)
@@ -67,26 +73,6 @@ CAP_LIMITS = {
     20272028: 113_500_000,  # agreed, subject to minor adjustment
 }
 
-# Historical caps for MC growth-rate bootstrap (anomalous years excluded at runtime)
-_CAP_HISTORY_MC = {
-    2005: 39_000_000, 2006: 44_000_000, 2007: 50_300_000,
-    2008: 56_700_000, 2009: 56_800_000, 2010: 59_400_000,
-    2011: 64_300_000,
-    # 2012 excluded — lockout reset
-    2013: 64_300_000, 2014: 69_000_000, 2015: 71_400_000,
-    2016: 73_000_000, 2017: 75_000_000, 2018: 79_500_000,
-    2019: 81_500_000,
-    # 2020, 2021 excluded — COVID freeze
-    2022: 82_500_000, 2023: 83_500_000, 2024: 88_000_000,
-}
-
-# Hard anchors — confirmed or agreed future caps, not used as training data
-_KNOWN_FUTURE_CAPS = {
-    2025: 95_500_000,
-    2026: 104_000_000,
-    2027: 113_500_000,
-}
-
 KNN_NEIGHBORS = 5
 LOOKBACK_SEASONS = 3  # how many prior FA classes to use as training data
 
@@ -117,97 +103,164 @@ def fetch_nhl_data(base_url: str, seasons: list[str]) -> pd.DataFrame:
     return pd.DataFrame(all_rows)
 
 
-def fetch_contracts() -> pd.DataFrame:
-    """Fetch contract data from PuckPedia."""
+def fetch_raw_puckpedia() -> list:
+    """Fetch raw player records from PuckPedia API."""
     if not PUCKPEDIA_API_KEY:
         raise RuntimeError("PUCKPEDIA_API_KEY env var is required")
-
     resp = requests.get(
         f"https://puckpedia.com/api/players2?api_key={PUCKPEDIA_API_KEY}",
         timeout=60,
     )
     resp.raise_for_status()
-    records = resp.json().get("data", [])
+    return resp.json().get("data", [])
+
+
+def load_previous_fa_class() -> dict:
+    """Load existing comps.json if it belongs to the same FA class year."""
+    out_path = os.path.join(OUTPUT_DIR, "comps.json")
+    if not os.path.exists(out_path):
+        return {}
+    try:
+        with open(out_path) as f:
+            data = json.load(f)
+        if data.get("meta", {}).get("faClassYear") == CURRENT_YEAR:
+            return data
+    except Exception:
+        pass
+    return {}
+
+
+OFFSEASON_CUTOFF_MMDD = "04-01"  # April 1 — captures playoff/post-season signings
+
+def get_actual_contract(pp_record: dict, signing_year: int) -> dict | None:
+    """Return the contract a player signed this offseason, or None if not yet signed."""
+    for c in pp_record.get("current", []):
+        signing_date = (c.get("signing_date") or "")
+        # Contract signed on or after April 1 of the signing year
+        if signing_date >= f"{signing_year}-{OFFSEASON_CUTOFF_MMDD}":
+            try:
+                length = int(float(c.get("length") or 1))
+                value  = int(float(c.get("value")  or 0))
+            except (ValueError, TypeError):
+                continue
+            aav       = round(value / length) if length > 0 else 0
+            cap_limit = CAP_LIMITS.get(CURRENT_SEASON, 95_500_000)
+            return {
+                "term":          length,
+                "value":         value,
+                "aav":           aav,
+                "capHitPct":     round((aav / cap_limit) * 100, 2) if cap_limit > 0 else 0,
+                "signingDate":   signing_date,
+                "team":          c.get("team_name", ""),
+                "signingStatus": c.get("signing_status", ""),
+            }
+    return None
+
+
+def fetch_contracts(puckpedia_records: list) -> pd.DataFrame:
+    """Build contracts DataFrame from raw PuckPedia records.
+
+    Returns a combined DataFrame of:
+      1. Historical/active contracts (for KNN training)
+      2. Pending FA rows (players with no current contract — they just became free agents)
+         These rows have is_pending_fa=True and no contract value/length.
+         signing_status is inferred from ufa_year.
+    """
+    records = puckpedia_records
     df = pd.DataFrame(records)
 
-    # Explode current contracts
-    df_current = df.explode("current")
-    df_current = pd.concat(
-        [df_current.drop(columns=["current"]),
-         df_current["current"].apply(pd.Series)],
+    # ── 1. ACTIVE CONTRACTS (historical comps) ──────────────────────────────
+    df_with = df[df["current"].apply(lambda x: isinstance(x, list) and len(x) > 0)].copy()
+    df_exploded = df_with.explode("current")
+    df_active = pd.concat(
+        [df_exploded.drop(columns=["current"]),
+         df_exploded["current"].apply(pd.Series)],
         axis=1,
     )
-    df_current = df_current.drop(columns=["future"], errors="ignore")
+    df_active = df_active.drop(columns=["future"], errors="ignore")
+    df_active = df_active.loc[:, ~df_active.columns.duplicated()]  # drop duplicate cols
+    df_active = df_active[df_active["contract_id"].notna()].copy()
+    df_active["is_pending_fa"] = False
 
-    # Keep only rows with a valid contract
-    df_current = df_current[df_current["contract_id"].notna()].copy()
-    return df_current
-
-
-# ---------------------------------------------------------------------------
-# CAP PROJECTION — Monte Carlo bootstrap
-# ---------------------------------------------------------------------------
-
-def _cap_growth_rates(cap_dict: dict, exclude: set) -> list:
-    years = sorted(cap_dict.keys())
-    rates = []
-    for i in range(1, len(years)):
-        y_prev, y_curr = years[i - 1], years[i]
-        if y_curr in exclude or y_curr - y_prev != 1:
-            continue
-        rates.append((cap_dict[y_curr] / cap_dict[y_prev]) - 1)
-    return rates
-
-
-def project_future_caps(
-    n_seasons: int = 8,
-    n_simulations: int = 10_000,
-    regime_weight: float = 0.7,
-) -> dict:
-    """
-    Bootstrap cap growth rates and project beyond the last known anchor.
-    Returns {season_id_str: p50_cap} for every future season up to n_seasons.
-    Confirmed/agreed caps are used as hard values; MC fills the rest.
-    """
-    _EXCLUDE = {2012, 2020, 2021}
-    all_rates    = _cap_growth_rates(_CAP_HISTORY_MC, _EXCLUDE)
-    recent_rates = _cap_growth_rates({k: v for k, v in _CAP_HISTORY_MC.items() if k >= 2022}, set())
-
-    pool = (
-        recent_rates * int(len(all_rates) * regime_weight)
-        + all_rates  * int(len(all_rates) * (1 - regime_weight))
+    # ── 2. PENDING FAs (no current contract = just became a free agent) ──────
+    # Include active="1" players (standard) PLUS active="0" players whose ufa_year equals
+    # the current year — PuckPedia marks some confirmed UFAs as "inactive" (roster status,
+    # not contract status), causing them to be silently excluded. Harvey-Pinard, Studnicka,
+    # Perunovich, Lind etc. are real 2026 UFAs that would otherwise be invisible.
+    is_unsigned = df["current"].apply(lambda x: isinstance(x, list) and len(x) == 0)
+    is_active = df["active"].astype(str) == "1"
+    is_confirmed_ufa = (
+        df["active"].astype(str) == "0"
+    ) & (
+        df["ufa_year"].astype(str) == str(CURRENT_YEAR)
     )
+    df_free = df[
+        is_unsigned & df["nhl_id"].notna() & (is_active | is_confirmed_ufa)
+    ].copy()
+    df_free = df_free.drop(columns=["current", "future"], errors="ignore")
 
-    anchor_base = max(_KNOWN_FUTURE_CAPS)
-    anchor_cap  = _KNOWN_FUTURE_CAPS[anchor_base]
-    n_proj      = n_seasons - len(_KNOWN_FUTURE_CAPS)  # seasons needing MC
+    def infer_status(ufa_yr):
+        try:
+            return "UFA" if int(ufa_yr or 9999) <= CURRENT_YEAR else "RFA"
+        except (ValueError, TypeError):
+            return "UFA"
 
-    # Simulate beyond the last anchor
-    mc_results = []
-    for _ in range(n_simulations):
-        cap = anchor_cap
-        row = {}
-        for offset in range(1, n_proj + 1):
-            growth = max(float(np.random.choice(pool)), 0.02)
-            cap    = cap * (1 + growth)
-            row[anchor_base + offset] = cap
-        mc_results.append(row)
+    df_free["signing_status"] = df_free["ufa_year"].apply(infer_status)
+    df_free["expiry_status"]   = df_free["signing_status"]
+    df_free["is_pending_fa"]   = True
+    df_free["is_retro_signed"] = False
+    df_free["contract_id"]     = "pending"
+    df_free["contract_end"]    = None
+    df_free["length"]          = np.nan
+    df_free["value"]           = np.nan
 
-    mc_df = pd.DataFrame(mc_results)
+    print(f"  Pending FAs from PuckPedia (0 current contracts, active=1): {len(df_free)}")
 
-    # Build output: known anchors first, MC p50 beyond
-    result = {}
-    for cal_year, cap in sorted(_KNOWN_FUTURE_CAPS.items()):
-        if cal_year == CURRENT_YEAR:
-            continue  # skip the current season itself (already in currentCap)
-        sid = cal_year * 10000 + cal_year + 1
-        result[str(sid)] = cap
+    # ── 3. RETROACTIVELY SIGNED FAs (signed this offseason, before tracking started) ──
+    # Players with a contract signed on/after June 1 of this year who aren't in df_free.
+    # We run KNN on their pre-signing stats and attach their actual contract in main().
+    offseason_cutoff = f"{CURRENT_YEAR}-{OFFSEASON_CUTOFF_MMDD}"
+    free_nhl_ids = set(df_free["nhl_id"].dropna().astype(int))
+    retro_rows = []
+    for r in records:
+        nhl_id = r.get("nhl_id")
+        # Note: PuckPedia's "active" flag tracks roster status, not contract status —
+        # most depth/fringe players who sign real NHL deals (e.g. Jacob Gaucher, 1yr/$850K
+        # RFA re-signing) are flagged active="0". Don't gate on it here; the ELC guard
+        # below and the signing-date/contract checks are sufficient to find real signings.
+        if not nhl_id:
+            continue
+        try:
+            nhl_id_int = int(nhl_id)
+        except (ValueError, TypeError):
+            continue
+        if nhl_id_int in free_nhl_ids:
+            continue  # already in unsigned pool
+        for c in (r.get("current") or []):
+            signing_date = c.get("signing_date", "") or ""
+            if signing_date >= offseason_cutoff:
+                if c.get("signing_status") is False:
+                    # ELC slide (e.g. a draft pick signing his first NHL deal) —
+                    # not a free-agent market signing, so it doesn't belong in the FA tracker.
+                    break
+                row_dict = {k: v for k, v in r.items() if k not in ("current", "future")}
+                # Infer signing status from the contract they just signed
+                row_dict["signing_status"] = c.get("signing_status") or c.get("expiry_status") or infer_status(r.get("ufa_year"))
+                row_dict["expiry_status"]   = row_dict["signing_status"]
+                row_dict["is_pending_fa"]   = True
+                row_dict["is_retro_signed"] = True
+                row_dict["contract_id"]     = "retro_pending"
+                row_dict["contract_end"]    = None
+                row_dict["length"]          = np.nan
+                row_dict["value"]           = np.nan
+                retro_rows.append(row_dict)
+                break  # one row per player
 
-    for cal_year in sorted(mc_df.columns):
-        sid = int(cal_year) * 10000 + int(cal_year) + 1
-        result[str(sid)] = int(round(mc_df[cal_year].quantile(0.50)))
+    df_retro = pd.DataFrame(retro_rows) if retro_rows else pd.DataFrame(columns=df_free.columns)
+    print(f"  Retroactively signed FAs (signed since {offseason_cutoff}): {len(df_retro)}")
 
-    return result
+    # ── 4. COMBINE ────────────────────────────────────────────────────────────
+    return pd.concat([df_active, df_free, df_retro], ignore_index=True)
 
 
 # ---------------------------------------------------------------------------
@@ -268,32 +321,35 @@ def build_stats(raw_stats: pd.DataFrame) -> pd.DataFrame:
 def build_contracts(raw_contracts: pd.DataFrame) -> pd.DataFrame:
     """Derive contract_year and signing_status for each contract."""
     df = raw_contracts.copy()
+    LAST_STATS_SEASON = CURRENT_SEASON - 10001  # most recent season with stats
 
-    # Derive the season the contract started
-    # contract_end "2025-2026" with length 3 → started 2022 → season ID 20222023
-    df["contract_end_year"] = df["contract_end"].astype(str).str.split("-").str[0].astype(int)
-    df["contract_start_year"] = df["contract_end_year"] - df["length"].astype(int)
-    df["contract_year"] = (
-        df["contract_start_year"] * 10000
-        + df["contract_start_year"]
+    # ── Active contracts: derive contract_year from contract_end + length ────
+    active = df["is_pending_fa"] != True
+    df.loc[active, "contract_end_year"] = (
+        df.loc[active, "contract_end"].astype(str).str.split("-").str[0].astype(int)
+    )
+    df.loc[active, "contract_start_year"] = (
+        df.loc[active, "contract_end_year"] - df.loc[active, "length"].astype(float).astype(int)
+    )
+    df.loc[active, "contract_year"] = (
+        df.loc[active, "contract_start_year"] * 10000
+        + df.loc[active, "contract_start_year"]
         + 1
     ).astype(int)
 
-    # For current-season expiring FAs, use expiry_status as signing_status
-    # In the 2025-2026 season, current FAs have contract_end == "2025-2026"
-    current_mask = df["contract_end"] == f"{CURRENT_YEAR}-{CURRENT_YEAR + 1}"
-    # Fallback: also check computed contract_year
-    current_mask_2 = df["contract_year"] == CURRENT_SEASON
-    is_current = current_mask | current_mask_2
-    df.loc[is_current, "signing_status"] = df.loc[is_current, "expiry_status"]
+    # signing_status for active contracts from expiry_status on the signing season
+    is_signing_season = df.loc[active, "contract_end"] == f"{CURRENT_YEAR}-{CURRENT_YEAR + 1}"
+    signing_idx = df[active].index[is_signing_season]
+    df.loc[signing_idx, "signing_status"] = df.loc[signing_idx, "expiry_status"]
 
-    # Override contract_year for current expiring contracts
-    df.loc[is_current, "contract_year"] = CURRENT_SEASON
+    # ── Pending FAs: use most recent stats season for the merge ──────────────
+    pending = df["is_pending_fa"] == True
+    df.loc[pending, "contract_year"] = LAST_STATS_SEASON
 
     df["nhl_id"] = df["nhl_id"].astype(int)
 
-    # Drop ELC slides (signing_status == False)
-    df = df[df["signing_status"] != False]  # noqa: E712
+    # Drop ELC slides for active contracts only
+    df = df[(df["signing_status"] != False) | (df["is_pending_fa"] == True)]  # noqa: E712
 
     return df
 
@@ -325,32 +381,19 @@ def merge_stats_contracts(stats: pd.DataFrame, contracts: pd.DataFrame) -> pd.Da
 # KNN MODEL
 # ---------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------
-# FEATURE CONFIGURATION (validated via feature_study.ipynb)
-# ---------------------------------------------------------------------------
-# Career-to-date base features — used by all 4 models
+# Features used across all models
 BASE_FEATURES = [
     "july_1_age", "ctd_gamesPlayed", "ctd_p_pg", "ctd_ev_p_pg",
     "pct_gp", "ctd_toi_avg",
 ]
-
-# L3 rolling averages — added to all models (biggest MAE improvement)
-L3_FEATURES = [
-    "gamesPlayed_L3", "points_L3", "pointsPerGame_L3",
-    "evPoints_L3", "evPointsPerGame_L3", "timeOnIcePerGame_L3",
+# Additional features for UFA models (platform-year stats matter more)
+UFA_EXTRA_FEATURES = [
+    "gamesPlayed_L3", "pointsPerGame_L3", "evPointsPerGame_L3",
 ]
-
-# RFA models: CTD + all L3, NO weights
-# Ablation result: MAE drops from ~1.91% to ~1.33% (fwd), ~2.01% to ~1.83% (def)
-RFA_FEATURES = BASE_FEATURES + L3_FEATURES
-RFA_WEIGHTS = None
-
-# UFA models: CTD + all L3, light L3 weight (2x)
-# Ablation result: MAE drops from ~1.99% to ~1.54% (fwd), ~2.17% to ~1.78% (def)
-UFA_FEATURES = BASE_FEATURES + L3_FEATURES
+# Feature weights for UFAs (emphasize age & career stats)
 UFA_WEIGHTS = {
-    "gamesPlayed_L3": 2, "points_L3": 2, "pointsPerGame_L3": 2,
-    "evPoints_L3": 2, "evPointsPerGame_L3": 2, "timeOnIcePerGame_L3": 2,
+    "july_1_age": 30, "ctd_gamesPlayed": 10, "ctd_p_pg": 10,
+    "gamesPlayed_L3": 0.25, "pointsPerGame_L3": 0.25, "evPointsPerGame_L3": 0.25,
 }
 
 
@@ -365,10 +408,11 @@ def run_knn_model(
     """
     min_season = CURRENT_SEASON - (LOOKBACK_SEASONS * 10001)
 
-    pending = data[data["contract_year"] == CURRENT_SEASON].copy()
+    pending = data[data["is_pending_fa"] == True].copy()
     historical = data[
-        (data["contract_year"] != CURRENT_SEASON)
+        (data["is_pending_fa"] != True)
         & (data["contract_year"] >= min_season)
+        & (data["contract_year"] < CURRENT_SEASON)
     ].copy()
 
     if pending.empty or historical.empty:
@@ -410,6 +454,105 @@ def run_knn_model(
 # ---------------------------------------------------------------------------
 # ESTIMATION — INVERSE DISTANCE WEIGHTING
 # ---------------------------------------------------------------------------
+
+# Cap-hit tiers used to bucket the term/AAV relationship. A $12M player and a
+# $2M player trade term for money at very different rates, so slopes are fit
+# separately within each tier.
+TERM_SLOPE_TIERS = [("high", 8.0, np.inf), ("mid", 5.0, 8.0), ("low", 0.0, 5.0)]
+
+# Used only when a tier has too few historical signings to fit a reliable slope.
+TERM_SLOPE_FALLBACKS = {
+    "RFA": {"high": 0.25, "mid": 0.15, "low": 0.08},
+    "UFA": {"high": -0.20, "mid": -0.12, "low": -0.06},
+}
+TERM_SLOPE_MIN_CONTRACTS = 15
+
+
+def derive_term_slopes(merged: pd.DataFrame, cap_limits: dict) -> dict:
+    """Fit term-vs-cap-hit% slopes from actual historical signings.
+
+    Replaces hand-picked slope constants with linear regressions of capHitPct
+    on contract term, run separately per (signing_status, cap-hit tier) on
+    real signed contracts. RFA slopes come out positive (teams extract a term
+    discount), UFA slopes negative (players trade term for security) — but the
+    magnitude is now backed by data instead of guessed.
+
+    Returns {fa_status: {tier_name: {"slope": float, "n": int, "fitted": bool}}}
+    """
+    signed = merged[merged["is_pending_fa"] != True].copy()  # noqa: E712
+    signed["length"] = pd.to_numeric(signed["length"], errors="coerce")
+    signed["value"] = pd.to_numeric(signed["value"], errors="coerce")
+    signed = signed[
+        signed["length"].notna() & signed["value"].notna() & (signed["length"] >= 1)
+    ].copy()
+    signed["aav"] = signed["value"] / signed["length"]
+    signed["cap_limit"] = signed["contract_year"].astype(int).map(
+        lambda cy: cap_limits.get(cy, 95_500_000)
+    )
+    signed["cap_hit_pct"] = signed["aav"] / signed["cap_limit"] * 100
+
+    slopes = {}
+    for fa_status in ["RFA", "UFA"]:
+        sub = signed[signed["signing_status"] == fa_status]
+        tier_slopes = {}
+        for tier_name, lo, hi in TERM_SLOPE_TIERS:
+            tier_data = sub[(sub["cap_hit_pct"] >= lo) & (sub["cap_hit_pct"] < hi)]
+            fallback = TERM_SLOPE_FALLBACKS[fa_status][tier_name]
+            if len(tier_data) >= TERM_SLOPE_MIN_CONTRACTS:
+                fitted_slope, _ = np.polyfit(tier_data["length"], tier_data["cap_hit_pct"], 1)
+                fitted_slope = round(float(fitted_slope), 4)
+                # Talent confound guard: across the full population, better players get
+                # BOTH higher AAV% and longer term, so a naive regression often recovers
+                # "talent level" rather than the true term-for-security trade-off. Reject
+                # any fit whose sign contradicts the known economics (RFA: team extracts
+                # more for term => slope >= 0; UFA: player trades term for AAV => slope <= 0)
+                # rather than ship an economically-backwards term table.
+                expected_sign_ok = (fitted_slope >= 0) if fa_status == "RFA" else (fitted_slope <= 0)
+                if expected_sign_ok:
+                    tier_slopes[tier_name] = {"slope": fitted_slope, "n": int(len(tier_data)), "fitted": True}
+                else:
+                    tier_slopes[tier_name] = {
+                        "slope": fallback, "n": int(len(tier_data)),
+                        "fitted": False, "rejected_fit": fitted_slope, "reject_reason": "wrong_sign",
+                    }
+            else:
+                tier_slopes[tier_name] = {"slope": fallback, "n": int(len(tier_data)), "fitted": False}
+        slopes[fa_status] = tier_slopes
+    return slopes
+
+
+def compute_term_table(
+    base_cap_pct: float,
+    fa_status: str,
+    comp_records: list[dict],
+    current_cap: int,
+    term_slopes: dict,
+) -> list[dict]:
+    """Compute adjusted AAV estimate at each term length (1–8 years).
+
+    RFA economics: longer term → higher AAV % (team extracts value).
+    UFA economics: longer term → lower AAV % (player accepts security discount).
+    Slope magnitude is fit from historical signings (see derive_term_slopes);
+    clamped to ±35% of base estimate.
+    """
+    comp_terms = [
+        c["term"] for c in comp_records
+        if c.get("term") and isinstance(c.get("term"), (int, float)) and c["term"] >= 1
+    ]
+    ref_term = float(np.mean(comp_terms)) if comp_terms else 4.0
+
+    tier_name = "high" if base_cap_pct >= 8.0 else "mid" if base_cap_pct >= 5.0 else "low"
+    fallback = TERM_SLOPE_FALLBACKS[fa_status][tier_name]
+    slope = term_slopes.get(fa_status, {}).get(tier_name, {}).get("slope", fallback)
+
+    table = []
+    for t in range(1, 9):
+        adj = base_cap_pct + slope * (t - ref_term)
+        adj = max(base_cap_pct * 0.65, min(base_cap_pct * 1.35, adj))
+        adj = round(max(0.0, adj), 2)
+        table.append({"term": t, "capHitPct": adj, "aav": round(adj * current_cap / 100)})
+    return table
+
 
 def idw_estimate(cap_hit_pcts: list[float], distances: list[float]) -> dict:
     """
@@ -565,155 +708,6 @@ def backtest_model(
     }
 
 
-
-# ---------------------------------------------------------------------------
-# TERM SENSITIVITY
-# ---------------------------------------------------------------------------
-
-def build_term_curves(merged: pd.DataFrame, cap_limits: dict) -> dict:
-    """Build term-adjustment model from historical data."""
-    df = merged.copy()
-    df["_ul"] = df["contract_year"].map(cap_limits).fillna(95_500_000)
-    df["_length"] = df["length"].fillna(1).astype(int).clip(lower=1)
-    df["_value"] = df["value"].fillna(0).astype(float)
-    df["_aav"] = df["_value"] / df["_length"]
-    df["_cap_pct"] = (df["_aav"] / df["_ul"]) * 100
-
-    df = df[
-        (df["contract_year"] != CURRENT_SEASON)
-        & (df["_length"] >= 2)
-        & (df["_cap_pct"] > 0)
-    ].copy()
-
-    curves = {}
-
-    for fa in ["RFA", "UFA"]:
-        for pos in ["Forward", "Defense"]:
-            seg = df[
-                (df["signing_status"] == fa)
-                & (df["position_group"] == pos)
-            ].copy()
-
-            if len(seg) < 10:
-                curves[f"{fa}_{pos}"] = None
-                continue
-
-            tier_edges = [0, 2.5, 5.0, 8.0, 100.0]
-            seg["_tier"] = pd.cut(seg["_cap_pct"], bins=tier_edges, labels=False)
-
-            tier_coefficients = {}
-            for tier in seg["_tier"].dropna().unique():
-                tier_data = seg[seg["_tier"] == tier]
-                if len(tier_data) < 5:
-                    continue
-
-                terms = tier_data["_length"].values.astype(float)
-                pcts = tier_data["_cap_pct"].values
-
-                if terms.std() == 0:
-                    continue
-                b = np.cov(terms, pcts)[0, 1] / np.var(terms)
-                a = pcts.mean() - b * terms.mean()
-
-                tier_coefficients[int(tier)] = {
-                    "intercept": round(float(a), 4),
-                    "slope": round(float(b), 4),
-                    "n": len(tier_data),
-                    "mean_term": round(float(terms.mean()), 1),
-                    "mean_pct": round(float(pcts.mean()), 2),
-                }
-
-            all_terms = seg["_length"].values.astype(float)
-            all_pcts = seg["_cap_pct"].values
-            if all_terms.std() > 0:
-                b_all = np.cov(all_terms, all_pcts)[0, 1] / np.var(all_terms)
-                a_all = all_pcts.mean() - b_all * all_terms.mean()
-            else:
-                a_all, b_all = float(all_pcts.mean()), 0.0
-
-            curves[f"{fa}_{pos}"] = {
-                "tiers": tier_coefficients,
-                "fallback": {
-                    "intercept": round(float(a_all), 4),
-                    "slope": round(float(b_all), 4),
-                    "n": len(seg),
-                },
-                "tier_edges": tier_edges,
-            }
-
-    return curves
-
-
-def compute_term_table(
-    base_cap_pct: float,
-    fa_status: str,
-    pos_group: str,
-    curves: dict,
-    current_cap: int,
-    comp_records: list[dict] = None,
-) -> list[dict]:
-    """Compute adjusted AAV at each term length."""
-    key = f"{fa_status}_{pos_group}"
-    curve = curves.get(key)
-
-    # Reference term from comps
-    if comp_records:
-        comp_terms = [c["term"] for c in comp_records if c.get("term") and c["term"] >= 1]
-        ref_term = np.mean(comp_terms) if comp_terms else 4.0
-    else:
-        ref_term = 4.0
-
-    # Get slope magnitude from data
-    raw_slope = 0
-    if curve:
-        tier_edges = curve["tier_edges"]
-        tier_idx = None
-        for i in range(len(tier_edges) - 1):
-            if tier_edges[i] <= base_cap_pct < tier_edges[i + 1]:
-                tier_idx = i
-                break
-
-        tier_data = curve["tiers"].get(tier_idx) if tier_idx is not None else None
-        if tier_data and tier_data["n"] >= 5:
-            raw_slope = tier_data["slope"]
-        else:
-            raw_slope = curve["fallback"]["slope"]
-
-    slope_magnitude = abs(raw_slope) if raw_slope != 0 else 0.12
-
-    # RFA vs UFA: opposite economic dynamics
-    if fa_status == "RFA":
-        # Longer term = HIGHER AAV (buying UFA years at a premium)
-        # Short deals are bridges (cheap), long deals lock in UFA years (expensive)
-        if base_cap_pct >= 8.0:
-            slope_magnitude = max(slope_magnitude, 0.25)
-        elif base_cap_pct >= 5.0:
-            slope_magnitude = max(slope_magnitude, 0.15)
-        else:
-            slope_magnitude = max(slope_magnitude, 0.08)
-        slope = +slope_magnitude
-    else:
-        # UFA: Longer term = LOWER AAV (security discount)
-        # Short deals command premium (flexibility), long deals = discount for certainty
-        if base_cap_pct >= 8.0:
-            slope_magnitude = max(slope_magnitude, 0.20)
-        elif base_cap_pct >= 5.0:
-            slope_magnitude = max(slope_magnitude, 0.12)
-        else:
-            slope_magnitude = max(slope_magnitude, 0.06)
-        slope = -slope_magnitude
-
-    table = []
-    for t in range(1, 9):
-        adjusted_pct = base_cap_pct + slope * (t - ref_term)
-        adjusted_pct = max(base_cap_pct * 0.65, min(base_cap_pct * 1.35, adjusted_pct))
-        adjusted_pct = round(max(0, adjusted_pct), 2)
-        aav = round(adjusted_pct * current_cap / 100)
-        table.append({"term": t, "capHitPct": adjusted_pct, "aav": aav})
-
-    return table
-
-
 # ---------------------------------------------------------------------------
 # BUILD OUTPUT
 # ---------------------------------------------------------------------------
@@ -832,6 +826,12 @@ def main():
     print(f"Current season: {CURRENT_SEASON}")
     print(f"Fetching {len(ALL_SEASONS)} seasons of stats...")
 
+    # 0. Load previous FA class (for tracking signed players)
+    prev_fa_data = load_previous_fa_class()
+    prev_fa_ids  = {p["playerId"]: p for p in prev_fa_data.get("players", [])}
+    if prev_fa_ids:
+        print(f"  Loaded {len(prev_fa_ids)} players from previous FA class snapshot")
+
     # 1. Fetch NHL stats
     raw_stats = fetch_nhl_data(NHL_STATS_URL, ALL_SEASONS)
     print(f"  Got {len(raw_stats)} stat rows")
@@ -850,9 +850,11 @@ def main():
     stats = compute_age(stats, raw_bios)
     print(f"  Built {len(stats)} stat records with features")
 
-    # 4. Fetch contracts
+    # 4. Fetch contracts (single PuckPedia API call, reused for signed tracking)
     print("Fetching contracts from PuckPedia...")
-    raw_contracts = fetch_contracts()
+    puckpedia_records = fetch_raw_puckpedia()
+    pp_by_nhl_id = {int(r["nhl_id"]): r for r in puckpedia_records if r.get("nhl_id")}
+    raw_contracts = fetch_contracts(puckpedia_records)
     contracts = build_contracts(raw_contracts)
     print(f"  Got {len(contracts)} contract rows")
 
@@ -860,7 +862,19 @@ def main():
     merged = merge_stats_contracts(stats, contracts)
     print(f"  Merged to {len(merged)} player-seasons")
 
-    # 6. Run 4 KNN models + backtests
+    # 6. Derive term-vs-cap-hit% slopes from real signings (replaces hardcoded constants)
+    term_slopes = derive_term_slopes(merged, CAP_LIMITS)
+    for fa_status, tiers in term_slopes.items():
+        for tier_name, info in tiers.items():
+            if info["fitted"]:
+                src = "fitted"
+            elif "rejected_fit" in info:
+                src = f"fallback (fitted {info['rejected_fit']} rejected: {info['reject_reason']})"
+            else:
+                src = "fallback (insufficient data)"
+            print(f"  Term slope {fa_status}/{tier_name}: {info['slope']} (n={info['n']}, {src})")
+
+    # 7. Run 4 KNN models + backtests
     print("Running KNN models...")
     all_comps = {}
     backtest_results = {}
@@ -873,11 +887,11 @@ def main():
             ].reset_index(drop=True)
 
             if fa_status == "UFA":
-                features = UFA_FEATURES
+                features = BASE_FEATURES + UFA_EXTRA_FEATURES
                 weights = UFA_WEIGHTS
             else:
-                features = RFA_FEATURES
-                weights = RFA_WEIGHTS
+                features = BASE_FEATURES
+                weights = None
 
             # Only include features that exist
             features = [f for f in features if f in subset.columns]
@@ -897,11 +911,8 @@ def main():
             print(f"  {fa_status} {pos_group}: {len(result)} players | "
                   f"Backtest MAE={bt['mae']}%, Median AE={bt['median_ae']}% (n={bt['n']})")
 
-    # 7. Build output JSON
+    # 8. Build output JSON
     print("Building output JSON...")
-
-    # Build term sensitivity curves from historical data
-    term_curves = build_term_curves(merged, CAP_LIMITS)
 
     # Player lookup for all merged data
     player_records = {}
@@ -910,21 +921,22 @@ def main():
         key = f"{pid}_{int(row['contract_year'])}"
         player_records[key] = build_player_record(row, CAP_LIMITS)
 
-    # Current-season pending FAs
-    pending_fas = merged[merged["contract_year"] == CURRENT_SEASON].copy()
-
-    print("Projecting future salary caps (Monte Carlo)...")
-    future_caps = project_future_caps(n_seasons=8)
-    print(f"  Cap ladder: { {k: f'${v/1e6:.1f}M' for k, v in future_caps.items()} }")
+    # Current-season pending FAs — only players whose contracts actually expire this season
+    pending_fas = merged[merged["is_pending_fa"] == True].copy()
 
     output = {
         "meta": {
             "currentSeason": CURRENT_SEASON,
+            "faClassYear": CURRENT_YEAR,
             "currentCap": CAP_LIMITS.get(CURRENT_SEASON, 95_500_000),
-            "futureCaps": future_caps,
+            "futureCaps": {
+                str(CURRENT_SEASON + 10001): CAP_LIMITS.get(CURRENT_SEASON + 10001, 104_000_000),
+                str(CURRENT_SEASON + 20002): CAP_LIMITS.get(CURRENT_SEASON + 20002, 113_500_000),
+            },
             "generatedAt": datetime.now().isoformat(),
             "estimationMethod": "inverse_distance_weighting",
             "backtest": backtest_results,
+            "termSlopes": term_slopes,
         },
         "players": [],
     }
@@ -937,14 +949,16 @@ def main():
         player_data = build_player_record(row, CAP_LIMITS)
         comp_info = all_comps[pid]
 
-        # Build comp records
+        # Build comp records — always use a real signed contract row, never a pending row
         comp_records = []
         for comp_pid in comp_info["comps"]:
-            # Find the comp's contract-year record
-            comp_rows = merged[merged["playerId"] == comp_pid]
+            comp_rows = merged[
+                (merged["playerId"] == comp_pid) &
+                (merged["is_pending_fa"] != True)
+            ]
             if comp_rows.empty:
                 continue
-            # Use the most recent contract record
+            # Use the most recent signed contract record
             comp_row = comp_rows.sort_values("contract_year").iloc[-1]
             comp_records.append(build_player_record(comp_row, CAP_LIMITS))
 
@@ -958,26 +972,30 @@ def main():
         aav_low = round(est["ci_low"] * current_cap / 100)
         aav_high = round(est["ci_high"] * current_cap / 100)
 
+        # --- Term sensitivity table ---
+        fa_status = str(row.get("signing_status", "UFA"))
+        term_table = compute_term_table(est["estimate"], fa_status, comp_records, current_cap, term_slopes)
+        comp_terms = [c["term"] for c in comp_records if c.get("term") and c["term"] >= 1]
+        avg_comp_term = round(float(np.mean(comp_terms)), 1) if comp_terms else 4.0
+
         # Career history for chart
         career = build_career_history(pid, stats)
         comp_careers = {}
         for comp_pid in comp_info["comps"]:
             comp_careers[str(comp_pid)] = build_career_history(comp_pid, stats)
 
-        # Term sensitivity table
-        fa_status = str(row.get("signing_status", ""))
-        pos_group = str(row.get("position_group", ""))
-        term_table = compute_term_table(
-            est["estimate"], fa_status, pos_group, term_curves, current_cap,
-            comp_records=comp_records,
-        )
-
-        # Average comp term (rounded to 1 decimal for display, used to default slider)
-        comp_terms = [c["term"] for c in comp_records if c.get("term") and c["term"] >= 1]
-        avg_comp_term = round(float(np.mean(comp_terms)), 1) if comp_terms else None
+        # Check if this player is retro-signed (signed this offseason)
+        is_retro = bool(row.get("is_retro_signed", False))
+        actual_contract = None
+        if is_retro:
+            pp_record = pp_by_nhl_id.get(pid)
+            if pp_record:
+                actual_contract = get_actual_contract(pp_record, CURRENT_YEAR)
 
         output["players"].append({
             **player_data,
+            "signed": is_retro and actual_contract is not None,
+            "actualContract": actual_contract,
             "estimatedCapHitPct": est["estimate"],
             "estimatedAAV": estimated_aav,
             "ciLow": est["ci_low"],
@@ -994,10 +1012,68 @@ def main():
             "compCareers": comp_careers,
         })
 
-    # Sort by name
-    output["players"].sort(key=lambda p: p["name"])
+    # ── Carry forward previously-pending players who have since signed ────────
+    current_output_ids = {p["playerId"] for p in output["players"]}
+    signed_count = 0
 
-    # Write JSON
+    for pid, prev_player in prev_fa_ids.items():
+        if pid in current_output_ids:
+            continue  # still pending this run, already included above
+
+        if prev_player.get("signed"):
+            # An older run may have mistakenly tagged an ELC slide as a signed FA
+            # (see the ELC guard above) — drop those instead of re-propagating them.
+            if prev_player.get("actualContract", {}).get("signingStatus") is False:
+                continue
+            # Already confirmed signed in a previous run — carry forward as-is
+            output["players"].append(prev_player)
+            signed_count += 1
+        else:
+            # Was pending — check if they signed since last run
+            pp_record = pp_by_nhl_id.get(pid)
+            if not pp_record:
+                continue
+            actual = get_actual_contract(pp_record, CURRENT_YEAR)
+            if actual:
+                signed_player = dict(prev_player)
+                signed_player["signed"] = True
+                signed_player["actualContract"] = actual
+                output["players"].append(signed_player)
+                signed_count += 1
+
+    print(f"  {signed_count} previously-pending players carried forward as signed")
+
+    # Sort: pending first (alphabetical), then signed (alphabetical)
+    output["players"].sort(key=lambda p: (p.get("signed", False), p["name"]))
+
+    # ── Write fa_class_{CURRENT_YEAR}.json — all players in this FA class ────
+    # Updated daily. Frozen after December flip when tool moves to next class.
+    archive_path = os.path.join(OUTPUT_DIR, f"fa_class_{CURRENT_YEAR}.json")
+    signed_players   = [p for p in output["players"] if p.get("signed")]
+    unsigned_players = [p for p in output["players"] if not p.get("signed")]
+    archive_data = {
+        "meta": {
+            "faClassYear":  CURRENT_YEAR,
+            "generatedAt":  datetime.now().isoformat(),
+            "signedCount":  len(signed_players),
+            "pendingCount": len(unsigned_players),
+            "currentCap":   CAP_LIMITS.get(CURRENT_SEASON, 95_500_000),
+        },
+        "players": output["players"],  # full class — both pending and signed
+    }
+    with open(archive_path, "w") as f:
+        json.dump(archive_data, f, indent=2)
+    print(f"  Wrote FA class archive: fa_class_{CURRENT_YEAR}.json  "
+          f"({len(signed_players)} signed, {len(unsigned_players)} pending)")
+
+    # ── Scan for available archive years and embed in meta ───────────────────
+    available_archives = []
+    for yr in range(CURRENT_YEAR - 5, CURRENT_YEAR + 1):
+        if os.path.exists(os.path.join(OUTPUT_DIR, f"fa_class_{yr}.json")):
+            available_archives.append(yr)
+    output["meta"]["archives"] = available_archives
+
+    # Write main comps.json
     out_path = os.path.join(OUTPUT_DIR, "comps.json")
     with open(out_path, "w") as f:
         json.dump(output, f, indent=2)

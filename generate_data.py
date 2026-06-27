@@ -409,8 +409,14 @@ def run_knn_model(
     min_season = CURRENT_SEASON - (LOOKBACK_SEASONS * 10001)
 
     pending = data[data["is_pending_fa"] == True].copy()
+    # Exclude any player who appears in the pending pool from historical, even if
+    # they also have an active contract row (e.g. retro-signed players whose new
+    # deal is dated to the current or prior season by PuckPedia). Without this,
+    # a retro-signed player can appear in both pools and become their own comp.
+    pending_player_ids = set(pending["playerId"].unique())
     historical = data[
         (data["is_pending_fa"] != True)
+        & ~data["playerId"].isin(pending_player_ids)
         & (data["contract_year"] >= min_season)
         & (data["contract_year"] < CURRENT_SEASON)
     ].copy()
@@ -941,6 +947,8 @@ def main():
         "players": [],
     }
 
+    pending_fa_player_ids = set(pending_fas["playerId"].unique())
+
     for _, row in pending_fas.iterrows():
         pid = int(row["playerId"])
         if pid not in all_comps:
@@ -949,9 +957,13 @@ def main():
         player_data = build_player_record(row, CAP_LIMITS)
         comp_info = all_comps[pid]
 
-        # Build comp records — always use a real signed contract row, never a pending row
+        # Build comp records — use historical signed contracts only.
+        # Exclude any player in the current FA class to prevent leakage from
+        # retro-signed players whose new contract is dated to the current/prior season.
         comp_records = []
         for comp_pid in comp_info["comps"]:
+            if comp_pid in pending_fa_player_ids:
+                continue
             comp_rows = merged[
                 (merged["playerId"] == comp_pid) &
                 (merged["is_pending_fa"] != True)

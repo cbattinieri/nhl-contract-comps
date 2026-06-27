@@ -733,6 +733,8 @@
           <p>The Pending / Signed filter shows who's still on the open market versus who has already signed this offseason, with the Signed view listing every player in that FA-status/position group along with how their actual deal compared to the model's prediction. Entry-level contracts (the standard rookie deal every drafted player signs before reaching free agency) are intentionally excluded from this tracker — they're capped by league rules at a flat rate regardless of talent, so they aren't representative open-market signings and would only add noise to the comparison.</p>
           <p>Players who haven't appeared in an NHL game in recent seasons won't show up in the tool even if they're technically eligible for free agency — the model needs actual NHL stats to generate meaningful comparable estimates, so players with no recent league activity are excluded rather than shown with unreliable projections.</p>
 
+          <p>To account for data integrity, players who have already signed in this FA cycle are excluded from comparables until next year's model run.</p>
+
           <h3>Data Sources</h3>
           <p>Stats and biographical data from the NHL's public API (nhle.com). Contract data from PuckPedia.com. Data refreshed daily via GitHub Actions.</p>
 

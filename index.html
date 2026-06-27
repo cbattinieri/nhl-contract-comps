@@ -1068,12 +1068,15 @@ function renderTermSlider(p) {
   }
 
   resultDiv.innerHTML = `
-    ${regimeBadge}
+    ${regimeBadge || crossoverNote ? `
+      <div style="grid-column:1/-1;margin-bottom:0.4rem;">
+        ${regimeBadge}
+        ${crossoverNote}
+      </div>` : ''}
     <div class="term-result-item"><div class="term-result-label">Term</div><div class="term-result-value term">${term} yr</div></div>
     <div class="term-result-item"><div class="term-result-label">Est. AAV</div><div class="term-result-value money">${fmtMoney(entry.aav)}</div></div>
     <div class="term-result-item"><div class="term-result-label">Cap Hit %</div><div class="term-result-value pct">${fmtPct(entry.capHitPct)}</div></div>
     <div class="term-result-item"><div class="term-result-label">Total Value</div><div class="term-result-value money">${fmtMoney(total)}</div></div>
-    ${crossoverNote}
   `;
 }
 

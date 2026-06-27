@@ -430,6 +430,11 @@
   .term-slider::-moz-range-thumb { width:20px; height:20px; border-radius:50%; background:var(--accent); cursor:pointer; border:2px solid var(--bg-card); }
   .term-slider-value { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--accent-bright); min-width:40px; text-align:center; }
   .term-slider-result { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+  .term-regime-badge { display:inline-block; font-family:var(--font-display); font-size:0.7rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:2px 8px; border-radius:4px; margin-bottom:0.5rem; }
+  .term-regime-badge.bridge { background:rgba(245,158,11,0.12); color:#f59e0b; border:1px solid rgba(245,158,11,0.25); }
+  .term-regime-badge.crossover { background:rgba(59,130,246,0.12); color:#60a5fa; border:1px solid rgba(59,130,246,0.25); }
+  .term-regime-badge.ufa { background:rgba(16,185,129,0.12); color:#10b981; border:1px solid rgba(16,185,129,0.25); }
+  .term-crossover-marker { font-family:var(--font-display); font-size:0.72rem; color:var(--text-muted); text-align:center; margin-top:0.25rem; letter-spacing:0.03em; }
   .term-result-item { text-align:center; }
   .term-result-label { font-family:var(--font-display); font-size:0.68rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.2rem; }
   .term-result-value { font-family:var(--font-display); font-size:1.5rem; font-weight:700; line-height:1.2; }
@@ -727,7 +732,7 @@
           <p>Each model is backtested using leave-one-season-out validation: every historical FA class is held out, predicted using only prior years, and the error is measured against actual signings. The MAE (mean absolute error) shown in the header tells you how far off the model typically is in percentage points of cap hit.</p>
 
           <h3>Term Sensitivity</h3>
-          <p>The contract-length slider re-prices the estimate for different deal lengths, since AAV isn't independent of term. RFAs tend to see their cap hit % rise on longer deals — the team is buying out more years of a still-developing player at a discount, so it pays a bit more per year for that cost certainty. UFAs tend to see the opposite: a longer term functions as a security blanket for the player, who will often take a slightly lower AAV in exchange for it. These tendencies are fitted from recent signings within each player's pay tier (low / mid / high cap hit %) wherever there's enough data to support a reliable trend; otherwise a conservative estimate is used as a fallback.</p>
+          <p>The contract-length slider re-prices the estimate based on two distinct economic regimes for RFAs. Bridge deals — contracts that expire before a player reaches UFA eligibility — carry a discount, as the player retains the right to re-hit the open market in their prime. Once a deal crosses into UFA years, a premium is applied for each UFA year the team is purchasing, reflecting the cost of locking up those prime earning years. The crossover point is calculated from each player's UFA eligibility year. Both the bridge discount and UFA premium are fitted from historical signings. For UFAs, a simpler linear adjustment applies — longer term typically means a modest AAV reduction as the player trades earning potential for security.</p>
 
           <h3>Tracking Signings</h3>
           <p>The Pending / Signed filter shows who's still on the open market versus who has already signed this offseason, with the Signed view listing every player in that FA-status/position group along with how their actual deal compared to the model's prediction. Entry-level contracts (the standard rookie deal every drafted player signs before reaching free agency) are intentionally excluded from this tracker — they're capped by league rules at a flat rate regardless of talent, so they aren't representative open-market signings and would only add noise to the comparison.</p>
@@ -1042,11 +1047,33 @@ function renderTermSlider(p) {
   const entry = p.termTable.find(r => r.term === term);
   if (!entry) { resultDiv.innerHTML = ''; return; }
   const total = entry.aav * term;
+
+  // Regime badge — only for RFA players with regime data
+  let regimeBadge = '';
+  let crossoverNote = '';
+  if (p.signingStatus === 'RFA' && entry.regime) {
+    const crossoverTerm = p.termTable.find(r => r.regime === 'crossover')?.term;
+    if (entry.regime === 'bridge') {
+      const yrsToUFA = crossoverTerm ? crossoverTerm - term : '?';
+      regimeBadge = `<span class="term-regime-badge bridge">Bridge Deal</span>`;
+      crossoverNote = `<div class="term-crossover-marker">Player reaches UFA in ${yrsToUFA} yr${yrsToUFA !== 1 ? 's' : ''} — not buying UFA years</div>`;
+    } else if (entry.regime === 'crossover') {
+      regimeBadge = `<span class="term-regime-badge crossover">UFA Threshold</span>`;
+      crossoverNote = `<div class="term-crossover-marker">Contract expires exactly at UFA eligibility</div>`;
+    } else if (entry.regime === 'ufa') {
+      const ufaYrs = entry.ufaYrsBought || (crossoverTerm ? term - crossoverTerm : '?');
+      regimeBadge = `<span class="term-regime-badge ufa">Buying ${ufaYrs} UFA Yr${ufaYrs !== 1 ? 's' : ''}</span>`;
+      crossoverNote = `<div class="term-crossover-marker">Team acquiring ${ufaYrs} year${ufaYrs !== 1 ? 's' : ''} of UFA-eligible production</div>`;
+    }
+  }
+
   resultDiv.innerHTML = `
+    ${regimeBadge}
     <div class="term-result-item"><div class="term-result-label">Term</div><div class="term-result-value term">${term} yr</div></div>
     <div class="term-result-item"><div class="term-result-label">Est. AAV</div><div class="term-result-value money">${fmtMoney(entry.aav)}</div></div>
     <div class="term-result-item"><div class="term-result-label">Cap Hit %</div><div class="term-result-value pct">${fmtPct(entry.capHitPct)}</div></div>
     <div class="term-result-item"><div class="term-result-label">Total Value</div><div class="term-result-value money">${fmtMoney(total)}</div></div>
+    ${crossoverNote}
   `;
 }
 

@@ -527,36 +527,159 @@ def derive_term_slopes(merged: pd.DataFrame, cap_limits: dict) -> dict:
     return slopes
 
 
+def fit_ufa_adjustments(merged: pd.DataFrame, cap_limits: dict) -> dict:
+    """Fit bridge-discount and UFA-premium factors from historical RFA signings.
+
+    For each historical RFA contract, compute how many UFA years were purchased
+    (end_age - ufa_eligibility_age, floored at 0). Then fit a log-linear regression
+    of cap_hit_pct on ufa_years_bought within each cap-hit tier.
+
+    Returns:
+        {tier: {"bridge_factor": float, "ufa_slope": float, "n_bridge": int, "n_ufa": int}}
+    """
+    rfa = merged[
+        (merged["signing_status"] == "RFA") &
+        (merged["is_pending_fa"] != True)  # noqa: E712
+    ].copy()
+
+    rfa["length"] = pd.to_numeric(rfa["length"], errors="coerce")
+    rfa["value"]  = pd.to_numeric(rfa["value"],  errors="coerce")
+    rfa = rfa[rfa["length"].notna() & rfa["value"].notna() & (rfa["length"] >= 1)].copy()
+    rfa["aav"]         = rfa["value"] / rfa["length"]
+    rfa["cap_limit"]   = rfa["contract_year"].astype(int).map(lambda cy: cap_limits.get(cy, 95_500_000))
+    rfa["cap_hit_pct"] = rfa["aav"] / rfa["cap_limit"] * 100
+
+    def _ufa_yrs(row):
+        age  = int(row.get("july_1_age", 0))
+        term = int(row.get("length", 1))
+        cy   = int(row.get("contract_year", CURRENT_SEASON))
+        signing_year = cy // 10000
+        ufa_yr = row.get("ufa_year")
+        try:
+            ufa_age = int(ufa_yr) - signing_year + age if pd.notna(ufa_yr) else 27
+        except (ValueError, TypeError):
+            ufa_age = 27
+        return max(0, age + term - ufa_age), age + term < ufa_age
+
+    rfa[["ufa_yrs_bought", "is_bridge"]] = rfa.apply(
+        lambda r: pd.Series(_ufa_yrs(r)), axis=1
+    )
+
+    results = {}
+    for tier_name, lo, hi in TERM_SLOPE_TIERS:
+        tier = rfa[(rfa["cap_hit_pct"] >= lo) & (rfa["cap_hit_pct"] < hi)]
+        bridge  = tier[tier["is_bridge"]]
+        ufa_buy = tier[~tier["is_bridge"]]
+
+        # Bridge discount: median ratio of bridge cap% to 1-UFA-yr cap%
+        one_ufa = ufa_buy[ufa_buy["ufa_yrs_bought"] == 1]
+        if len(bridge) >= 3 and len(one_ufa) >= 3:
+            bridge_factor = float(np.median(bridge["cap_hit_pct"]) / np.median(one_ufa["cap_hit_pct"]))
+        else:
+            bridge_factor = 0.55  # conservative fallback
+
+        # UFA slope: log-linear regression of cap_hit_pct on ufa_years_bought
+        if len(ufa_buy) >= 5:
+            try:
+                ufa_slope, _ = np.polyfit(ufa_buy["ufa_yrs_bought"], ufa_buy["cap_hit_pct"], 1)
+                ufa_slope = max(0.0, round(float(ufa_slope), 4))  # must be positive
+            except Exception:
+                ufa_slope = 0.5
+        else:
+            ufa_slope = 0.5
+
+        results[tier_name] = {
+            "bridge_factor": round(bridge_factor, 4),
+            "ufa_slope":     round(ufa_slope, 4),
+            "n_bridge":      int(len(bridge)),
+            "n_ufa":         int(len(ufa_buy)),
+        }
+        print(f"  UFA adj {tier_name}: bridge_factor={bridge_factor:.3f}, "
+              f"ufa_slope={ufa_slope:.3f} (n_bridge={len(bridge)}, n_ufa={len(ufa_buy)})")
+
+    return results
+
+
 def compute_term_table(
     base_cap_pct: float,
     fa_status: str,
     comp_records: list[dict],
     current_cap: int,
     term_slopes: dict,
+    ufa_adjustments: dict | None = None,
+    player_age: int = 0,
+    player_ufa_year: int | None = None,
 ) -> list[dict]:
     """Compute adjusted AAV estimate at each term length (1–8 years).
 
-    RFA economics: longer term → higher AAV % (team extracts value).
-    UFA economics: longer term → lower AAV % (player accepts security discount).
-    Slope magnitude is fit from historical signings (see derive_term_slopes);
-    clamped to ±35% of base estimate.
+    RFA: two-regime model anchored at the UFA crossover term.
+      - Bridge years (expire before UFA eligibility): apply fitted bridge discount.
+      - UFA-buying years: apply fitted premium per UFA year purchased.
+    UFA: linear slope (player trades term for AAV security).
     """
     comp_terms = [
         c["term"] for c in comp_records
         if c.get("term") and isinstance(c.get("term"), (int, float)) and c["term"] >= 1
     ]
     ref_term = float(np.mean(comp_terms)) if comp_terms else 4.0
-
     tier_name = "high" if base_cap_pct >= 8.0 else "mid" if base_cap_pct >= 5.0 else "low"
-    fallback = TERM_SLOPE_FALLBACKS[fa_status][tier_name]
-    slope = term_slopes.get(fa_status, {}).get(tier_name, {}).get("slope", fallback)
+
+    # ── UFA: keep existing linear slope logic ────────────────────────────────
+    if fa_status != "RFA" or ufa_adjustments is None:
+        fallback = TERM_SLOPE_FALLBACKS[fa_status][tier_name]
+        slope = term_slopes.get(fa_status, {}).get(tier_name, {}).get("slope", fallback)
+        table = []
+        for t in range(1, 9):
+            adj = base_cap_pct + slope * (t - ref_term)
+            adj = max(base_cap_pct * 0.65, min(base_cap_pct * 1.35, adj))
+            adj = round(max(0.0, adj), 2)
+            table.append({"term": t, "capHitPct": adj, "aav": round(adj * current_cap / 100)})
+        return table
+
+    # ── RFA: two-regime model ─────────────────────────────────────────────────
+    adj_params  = ufa_adjustments.get(tier_name, {})
+    bridge_factor = adj_params.get("bridge_factor", 0.55)
+    ufa_slope     = adj_params.get("ufa_slope", 0.5)
+
+    # Determine how many years from now the player hits UFA
+    # ufa_crossover_term = number of years until UFA eligibility
+    if player_ufa_year and player_age:
+        ufa_crossover_term = max(1, player_ufa_year - CURRENT_YEAR)
+    else:
+        ufa_crossover_term = max(1, 27 - player_age) if player_age else 4
+
+    # Anchor: base estimate is calibrated at the crossover term (or avg comp term)
+    # Use the crossover term as the anchor so the model estimate is exactly right
+    # when the slider is at the UFA threshold.
+    anchor_term = ufa_crossover_term
 
     table = []
     for t in range(1, 9):
-        adj = base_cap_pct + slope * (t - ref_term)
-        adj = max(base_cap_pct * 0.65, min(base_cap_pct * 1.35, adj))
+        ufa_yrs = max(0, t - anchor_term)
+        is_bridge = t < anchor_term
+
+        if is_bridge:
+            # Scale bridge discount: deeper discount for shorter bridge
+            # bridge_factor is the discount at a 1yr bridge; scale linearly toward 1.0 at crossover
+            years_from_crossover = anchor_term - t
+            bridge_depth = bridge_factor + (1.0 - bridge_factor) * (1 - years_from_crossover / max(anchor_term - 1, 1))
+            adj = base_cap_pct * bridge_depth
+        elif ufa_yrs == 0:
+            # Crossover term — base estimate
+            adj = base_cap_pct
+        else:
+            # UFA-buying: add premium per UFA year purchased
+            adj = base_cap_pct + ufa_slope * ufa_yrs
+
         adj = round(max(0.0, adj), 2)
-        table.append({"term": t, "capHitPct": adj, "aav": round(adj * current_cap / 100)})
+        ufa_yrs_label = ufa_yrs if not is_bridge else 0
+        table.append({
+            "term": t,
+            "capHitPct": adj,
+            "aav": round(adj * current_cap / 100),
+            "regime": "bridge" if is_bridge else ("crossover" if ufa_yrs == 0 else "ufa"),
+            "ufaYrsBought": int(ufa_yrs_label),
+        })
     return table
 
 
@@ -767,6 +890,12 @@ def build_player_record(row, cap_limits: dict) -> dict:
     aav = round(value / length) if length > 0 else 0
     cap_hit_pct = round((aav / upper_limit) * 100, 2) if upper_limit > 0 else 0
 
+    ufa_yr = row.get("ufa_year")
+    try:
+        ufa_year_out = int(ufa_yr) if pd.notna(ufa_yr) else None
+    except (ValueError, TypeError):
+        ufa_year_out = None
+
     return {
         "playerId": int(row["playerId"]),
         "name": str(row.get("skaterFullName", "")),
@@ -775,6 +904,7 @@ def build_player_record(row, cap_limits: dict) -> dict:
         "signingStatus": str(row.get("signing_status", "")),
         "contractYear": contract_year,
         "age": int(row.get("july_1_age", 0)),
+        "ufaYear": ufa_year_out,
         "height": str(row.get("height", "")),
         "weight": str(row.get("weight", "")),
         "shoots": str(row.get("shootsCatches", "")),
@@ -868,8 +998,10 @@ def main():
     merged = merge_stats_contracts(stats, contracts)
     print(f"  Merged to {len(merged)} player-seasons")
 
-    # 6. Derive term-vs-cap-hit% slopes from real signings (replaces hardcoded constants)
+    # 6. Derive term-vs-cap-hit% slopes and UFA adjustment factors
     term_slopes = derive_term_slopes(merged, CAP_LIMITS)
+    print("Fitting UFA premium adjustments for RFA term table...")
+    ufa_adjustments = fit_ufa_adjustments(merged, CAP_LIMITS)
     for fa_status, tiers in term_slopes.items():
         for tier_name, info in tiers.items():
             if info["fitted"]:
@@ -986,7 +1118,19 @@ def main():
 
         # --- Term sensitivity table ---
         fa_status = str(row.get("signing_status", "UFA"))
-        term_table = compute_term_table(est["estimate"], fa_status, comp_records, current_cap, term_slopes)
+        p_age      = int(row.get("july_1_age", 0))
+        p_ufa_year = None
+        try:
+            raw_ufa = row.get("ufa_year")
+            p_ufa_year = int(raw_ufa) if pd.notna(raw_ufa) else None
+        except (ValueError, TypeError):
+            pass
+        term_table = compute_term_table(
+            est["estimate"], fa_status, comp_records, current_cap, term_slopes,
+            ufa_adjustments=ufa_adjustments if fa_status == "RFA" else None,
+            player_age=p_age,
+            player_ufa_year=p_ufa_year,
+        )
         comp_terms = [c["term"] for c in comp_records if c.get("term") and c["term"] >= 1]
         avg_comp_term = round(float(np.mean(comp_terms)), 1) if comp_terms else 4.0
 

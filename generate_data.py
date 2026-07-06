@@ -387,15 +387,34 @@ BASE_FEATURES = [
     "july_1_age", "ctd_gamesPlayed", "ctd_p_pg", "ctd_ev_p_pg",
     "pct_gp", "ctd_toi_avg",
 ]
-# Additional features for UFA models (platform-year stats matter more)
+# Recent-form features. See docs/model_review_2026-07.md for validation.
 UFA_EXTRA_FEATURES = [
+    "gamesPlayed_L2", "pointsPerGame_L2", "evPointsPerGame_L2",
     "gamesPlayed_L3", "pointsPerGame_L3", "evPointsPerGame_L3",
 ]
-# Feature weights for UFAs (emphasize age & career stats)
 UFA_WEIGHTS = {
-    "july_1_age": 30, "ctd_gamesPlayed": 10, "ctd_p_pg": 10,
-    "gamesPlayed_L3": 0.25, "pointsPerGame_L3": 0.25, "evPointsPerGame_L3": 0.25,
+    "july_1_age": 15, "ctd_gamesPlayed": 6, "ctd_p_pg": 6,
+    "pointsPerGame_L2": 8, "evPointsPerGame_L2": 7,
+    "pointsPerGame_L3": 3, "evPointsPerGame_L3": 3, "gamesPlayed_L3": 1,
 }
+# RFA Forwards are platform-year driven; RFA Defense stays on career baseline
+# (reweighting degraded its backtest — see review doc).
+RFA_FWD_EXTRA_FEATURES = [
+    "pointsPerGame_L2", "evPointsPerGame_L2", "gamesPlayed_L2",
+]
+RFA_FWD_WEIGHTS = {
+    "pointsPerGame_L2": 10, "evPointsPerGame_L2": 8,
+    "ctd_p_pg": 4, "july_1_age": 3, "pct_gp": 2,
+}
+
+
+def model_config(fa_status: str, pos_group: str) -> tuple[list[str], dict | None]:
+    """Return (features, feature_weights) for a given model cell."""
+    if fa_status == "UFA":
+        return BASE_FEATURES + UFA_EXTRA_FEATURES, UFA_WEIGHTS
+    if fa_status == "RFA" and pos_group == "Forward":
+        return BASE_FEATURES + RFA_FWD_EXTRA_FEATURES, RFA_FWD_WEIGHTS
+    return BASE_FEATURES, None
 
 
 def run_knn_model(
@@ -1025,12 +1044,7 @@ def main():
                 & (merged["position_group"] == pos_group)
             ].reset_index(drop=True)
 
-            if fa_status == "UFA":
-                features = BASE_FEATURES + UFA_EXTRA_FEATURES
-                weights = UFA_WEIGHTS
-            else:
-                features = BASE_FEATURES
-                weights = None
+            features, weights = model_config(fa_status, pos_group)
 
             # Only include features that exist
             features = [f for f in features if f in subset.columns]

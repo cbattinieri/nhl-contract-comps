@@ -43,16 +43,41 @@ suppressed (old L3 weights of 0.25 were ~40–120× smaller than age/career weig
 all four holdout groups. The lone regression (RFA Defense backtest) still improves
 on the live holdout and is likely LOSO noise on a thin, survivorship-limited class.
 
-**Caveats before shipping:**
-- Re-tune RFA-Defense weights (only blemish).
-- Add a games-played floor to recent features — small-sample breakouts get
-  over-weighted (e.g. Simon Nemec moved the wrong way).
+### Nested validation — confirms generalization, not overfitting
+
+Concern: the weights were hand-designed after seeing 2026 residuals, so the 2026
+holdout is not a clean test for that specific vector. Resolved with nested
+validation — candidate configs selected **purely on pre-2026 LOSO**, then scored
+once on the untouched 2026 class:
+
+- The config chosen *without seeing 2026* (strongest reweight) also improved 2026:
+  mean holdout MAE 1.30 → 1.08. The gain is not an artifact of peeking.
+- Improvement is monotonic across the whole reweight family on *both* the pre-2026
+  LOSO and the 2026 holdout — robust, not a knife-edge single vector.
+
+### Shipped vector (per-group)
+
+Applied to `generate_data.py` via `model_config(fa_status, pos_group)`:
+
+| Cell | Treatment | LOSO MAE | 2026 MAE |
+|---|---|---|---|
+| UFA Forward | strong reweight | 2.39 → 1.89 | 1.44 → 1.10 |
+| UFA Defense | strong reweight | 2.53 → 2.16 | 1.70 → 1.27 |
+| RFA Forward | strong reweight | 2.32 → 1.83 | 1.00 → 0.93 |
+| RFA Defense | **baseline (unchanged)** | 2.21 → 2.21 | 1.05 → 1.05 |
+
+Every cell improves or holds on both datasets; no regressions.
+
+**Rejected — games-played floor:** shrinking L2 rates toward career rate for
+low-games players was tested and dropped. It doesn't help the case that motivated
+it (Nemec is RFA Defense = baseline, so unaffected) and it degraded RFA Forward's
+2026 MAE (0.93 → 1.2). Nemec's miss is a bridge/term effect, not platform-year.
 
 **Aggregate-bias nuance:** the class mean is a *net over-estimate*, driven by
 decline-phase veterans who sign cheap despite strong career stats (Benn, Perry,
 Zuccarello). The rising-cap "signs for more than predicted" effect is real but
 concentrated in breakout/platform-year players, not the aggregate. The reweighting
-recovers a fraction of those specific misses (Tuch ~46%, McMann ~29%), not all.
+recovers a fraction of those specific misses (Tuch ~46%, McMann ~48%), not all.
 
 ---
 

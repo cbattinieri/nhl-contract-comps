@@ -346,6 +346,7 @@ def build_contracts(raw_contracts: pd.DataFrame) -> pd.DataFrame:
     pending = df["is_pending_fa"] == True
     df.loc[pending, "contract_year"] = LAST_STATS_SEASON
 
+    df = df.dropna(subset=["nhl_id"])
     df["nhl_id"] = df["nhl_id"].astype(int)
 
     # Drop ELC slides for active contracts only
@@ -1093,7 +1094,8 @@ def main():
         # Exclude any player in the current FA class to prevent leakage from
         # retro-signed players whose new contract is dated to the current/prior season.
         comp_records = []
-        for comp_pid in comp_info["comps"]:
+        comp_dists = []
+        for comp_pid, dist in zip(comp_info["comps"], comp_info["distances"]):
             if comp_pid in pending_fa_player_ids:
                 continue
             comp_rows = merged[
@@ -1105,10 +1107,10 @@ def main():
             # Use the most recent signed contract record
             comp_row = comp_rows.sort_values("contract_year").iloc[-1]
             comp_records.append(build_player_record(comp_row, CAP_LIMITS))
+            comp_dists.append(dist)
 
         # --- IDW cap hit estimate with confidence interval ---
         comp_pcts = [c["capHitPct"] for c in comp_records]
-        comp_dists = comp_info["distances"]
         est = idw_estimate(comp_pcts, comp_dists)
 
         current_cap = CAP_LIMITS.get(CURRENT_SEASON, 95_500_000)

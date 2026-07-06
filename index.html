@@ -582,7 +582,7 @@
               <th>Player</th><th>Pos</th><th>Age</th>
               <th>Predicted AAV</th><th>Actual AAV</th>
               <th>Predicted %</th><th>Actual %</th>
-              <th>Error</th><th>Term</th><th>Team</th><th>Signed</th>
+              <th>Error</th><th>Abs Error</th><th>% Error</th><th>Term</th><th>Team</th><th>Signed</th>
             </tr>
           </thead>
           <tbody id="signedListBody"></tbody>
@@ -816,7 +816,7 @@ function renderSignedList() {
 
   if (!players.length) {
     $('#signedListBody').innerHTML =
-      `<tr><td colspan="11" style="text-align:center;padding:2rem;color:var(--text-muted);">No ${state.faFilter} ${state.posFilter.toLowerCase()}s have signed yet this offseason.</td></tr>`;
+      `<tr><td colspan="13" style="text-align:center;padding:2rem;color:var(--text-muted);">No ${state.faFilter} ${state.posFilter.toLowerCase()}s have signed yet this offseason.</td></tr>`;
     return;
   }
 
@@ -824,11 +824,14 @@ function renderSignedList() {
     (b.actualContract?.signingDate ?? '').localeCompare(a.actualContract?.signingDate ?? '')
   );
 
-  $('#signedListBody').innerHTML = sorted.map(p => {
+  const rows = sorted.map(p => {
     const ac = p.actualContract;
     const err = ac.capHitPct - p.estimatedCapHitPct;
-    const errCls = Math.abs(err) < 0.5 ? 'err-zero' : err > 0 ? 'err-positive' : 'err-negative';
+    const absErr = Math.abs(err);
+    const pctErr = p.estimatedCapHitPct > 0 ? (err / p.estimatedCapHitPct) * 100 : 0;
+    const errCls = absErr < 0.5 ? 'err-zero' : err > 0 ? 'err-positive' : 'err-negative';
     const errStr = (err > 0 ? '+' : '') + err.toFixed(2) + '%';
+    const pctErrStr = (pctErr > 0 ? '+' : '') + pctErr.toFixed(1) + '%';
     return `<tr class="player-row" style="cursor:pointer;" data-pid="${p.playerId}">
       <td class="name-cell">${p.name}</td>
       <td>${p.position}</td>
@@ -838,11 +841,33 @@ function renderSignedList() {
       <td>${fmtPct(p.estimatedCapHitPct)}</td>
       <td style="color:#10b981;">${fmtPct(ac.capHitPct)}</td>
       <td class="${errCls}" style="font-weight:600;">${errStr}</td>
+      <td class="${errCls}">${absErr.toFixed(2)}%</td>
+      <td class="${errCls}">${pctErrStr}</td>
       <td>${ac.term} yr</td>
       <td>${ac.team || '—'}</td>
       <td style="font-size:0.78rem;">${ac.signingDate || '—'}</td>
     </tr>`;
-  }).join('');
+  });
+
+  // Aggregate footer
+  const n = sorted.length;
+  const meanErr = sorted.reduce((s, p) => s + (p.actualContract.capHitPct - p.estimatedCapHitPct), 0) / n;
+  const mae = sorted.reduce((s, p) => s + Math.abs(p.actualContract.capHitPct - p.estimatedCapHitPct), 0) / n;
+  const meanPctErr = sorted.reduce((p_acc, p) => {
+    const err = p.actualContract.capHitPct - p.estimatedCapHitPct;
+    return p_acc + (p.estimatedCapHitPct > 0 ? (err / p.estimatedCapHitPct) * 100 : 0);
+  }, 0) / n;
+  const footerErrStr = (meanErr > 0 ? '+' : '') + meanErr.toFixed(2) + '%';
+  const footerPctStr = (meanPctErr > 0 ? '+' : '') + meanPctErr.toFixed(1) + '%';
+  const footerRow = `<tr style="border-top:2px solid var(--border);font-weight:700;background:rgba(255,255,255,0.03);">
+    <td colspan="7" style="text-align:right;padding-right:1rem;color:var(--text-muted);font-size:0.8rem;">Avg (n=${n})</td>
+    <td>${footerErrStr}</td>
+    <td>${mae.toFixed(2)}%</td>
+    <td>${footerPctStr}</td>
+    <td colspan="3"></td>
+  </tr>`;
+
+  $('#signedListBody').innerHTML = rows.join('') + footerRow;
 
   $$('#signedListBody tr[data-pid]').forEach(tr => {
     tr.addEventListener('click', () => {

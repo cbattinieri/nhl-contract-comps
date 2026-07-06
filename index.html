@@ -578,11 +578,12 @@
       <div class="card-body table-wrap">
         <table>
           <thead>
-            <tr>
-              <th>Player</th><th>Pos</th><th>Age</th>
-              <th>Predicted AAV</th><th>Actual AAV</th>
-              <th>Predicted %</th><th>Actual %</th>
-              <th>Error</th><th>Abs Error</th><th>% Error</th><th>Term</th><th>Team</th><th>Signed</th>
+            <tr id="signedListHead">
+              <th data-sort="name">Player</th><th data-sort="position">Pos</th><th data-sort="age">Age</th>
+              <th data-sort="estimatedAAV">Predicted AAV</th><th data-sort="actualAAV">Actual AAV</th>
+              <th data-sort="estimatedCapHitPct">Predicted %</th><th data-sort="actualCapHitPct">Actual %</th>
+              <th data-sort="error">Error</th><th data-sort="absError">Abs Error</th><th data-sort="pctError">% Error</th>
+              <th data-sort="term">Term</th><th data-sort="team">Team</th><th data-sort="signingDate">Signed</th>
             </tr>
           </thead>
           <tbody id="signedListBody"></tbody>
@@ -760,6 +761,7 @@ const state = {
   statusFilter: 'All',
   selectedPlayer: null,
   charts: {},
+  signedSort: { key: 'signingDate', dir: 'desc' },
 };
 
 // ─── UTILS ────────────────────────────────────────────────────────────
@@ -820,9 +822,33 @@ function renderSignedList() {
     return;
   }
 
-  const sorted = [...players].sort((a, b) =>
-    (b.actualContract?.signingDate ?? '').localeCompare(a.actualContract?.signingDate ?? '')
-  );
+  const sortVal = (p, key) => {
+    const ac = p.actualContract || {};
+    const err = ac.capHitPct - p.estimatedCapHitPct;
+    switch (key) {
+      case 'name':               return p.name ?? '';
+      case 'position':           return p.position ?? '';
+      case 'age':                return p.age ?? 0;
+      case 'estimatedAAV':       return p.estimatedAAV ?? 0;
+      case 'actualAAV':          return ac.aav ?? 0;
+      case 'estimatedCapHitPct': return p.estimatedCapHitPct ?? 0;
+      case 'actualCapHitPct':    return ac.capHitPct ?? 0;
+      case 'error':              return err;
+      case 'absError':           return Math.abs(err);
+      case 'pctError':           return p.estimatedCapHitPct > 0 ? (err / p.estimatedCapHitPct) * 100 : 0;
+      case 'term':               return ac.term ?? 0;
+      case 'team':               return ac.team ?? '';
+      case 'signingDate':        return ac.signingDate ?? '';
+      default:                   return 0;
+    }
+  };
+  const { key: sortKey, dir } = state.signedSort;
+  const mult = dir === 'asc' ? 1 : -1;
+  const sorted = [...players].sort((a, b) => {
+    const av = sortVal(a, sortKey), bv = sortVal(b, sortKey);
+    if (typeof av === 'string' || typeof bv === 'string') return mult * String(av).localeCompare(String(bv));
+    return mult * (av - bv);
+  });
 
   const rows = sorted.map(p => {
     const ac = p.actualContract;
@@ -881,6 +907,25 @@ function renderSignedList() {
       selectPlayer(player);
       $('#searchInput').value = player.name;
     });
+  });
+
+  // Header sort indicators + click handling
+  $$('#signedListHead th').forEach(th => {
+    const key = th.dataset.sort;
+    if (!key) return;
+    th.style.cursor = 'pointer';
+    th.style.userSelect = 'none';
+    const base = th.textContent.replace(/[ ▲▼]+$/, '');
+    th.textContent = base + (key === sortKey ? (dir === 'asc' ? ' ▲' : ' ▼') : '');
+    th.onclick = () => {
+      if (state.signedSort.key === key) {
+        state.signedSort.dir = state.signedSort.dir === 'asc' ? 'desc' : 'asc';
+      } else {
+        // Default: text columns ascending, numeric/date columns descending
+        state.signedSort = { key, dir: ['name', 'position', 'team'].includes(key) ? 'asc' : 'desc' };
+      }
+      renderSignedList();
+    };
   });
 }
 

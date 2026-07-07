@@ -1,6 +1,12 @@
 name: Update Data & Deploy
 
 on:
+  push:
+    branches: [main]
+    # UI/model changes should propagate to the embeds promptly, not just daily.
+    paths:
+      - 'index.html'
+      - 'generate_data.py'
   schedule:
     # Run daily at 8 AM UTC (during NHL season)
     - cron: '0 8 * * *'
@@ -40,18 +46,34 @@ jobs:
           git pull --rebase origin main
           git push
 
-      # Mirror the refreshed data into the gated battanalytics-app embed
-      # and regenerate its redacted public preview sample.
+      # Mirror data AND UI into battanalytics-app. index.html is single-sourced
+      # here: the preview gets it verbatim; the gated build gets the same file
+      # with only its data-source URL rewritten to the authenticated API route.
       - name: Sync to battanalytics-app
         env:
           BATTANALYTICS_PAT: ${{ secrets.BATTANALYTICS_PAT }}
         run: |
           git clone https://x-access-token:${BATTANALYTICS_PAT}@github.com/cbattinieri/battanalytics.git /tmp/battanalytics
+
+          # Data
           cp data/comps.json /tmp/battanalytics/app-embeds/nhl-contract-comps/data/comps.json
           python3 /tmp/battanalytics/scripts/sync_nhl_comps.py /tmp/battanalytics
+
+          # UI — public preview: verbatim copy
+          cp index.html /tmp/battanalytics/public/apps/nhl-contract-comps/index.html
+          # UI — gated build: same file, data URL swapped to the auth API route
+          sed "s|const COMPS_DATA_URL = 'data/comps.json';|const COMPS_DATA_URL = '/api/embed/nhl-contract-comps/data/comps.json';|" \
+            index.html > /tmp/battanalytics/app-embeds/nhl-contract-comps/index.html
+          # Safety: never ship a gated build that points at the public data path
+          grep -q "/api/embed/nhl-contract-comps/data/comps.json" \
+            /tmp/battanalytics/app-embeds/nhl-contract-comps/index.html \
+            || { echo "ERROR: gated data-URL rewrite failed (anchor line changed?)"; exit 1; }
+
           cd /tmp/battanalytics
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add app-embeds/nhl-contract-comps/data/comps.json public/apps/nhl-contract-comps/data/comps.json
-          git diff --cached --quiet || git commit -m "chore: sync nhl-contract-comps data $(date -u '+%Y-%m-%d')"
+          git add app-embeds/nhl-contract-comps/data/comps.json public/apps/nhl-contract-comps/data/comps.json \
+                  app-embeds/nhl-contract-comps/index.html public/apps/nhl-contract-comps/index.html
+          git diff --cached --quiet || git commit -m "chore: sync nhl-contract-comps data + UI $(date -u '+%Y-%m-%d')"
+          git pull --rebase origin main
           git push

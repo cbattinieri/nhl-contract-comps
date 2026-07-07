@@ -777,9 +777,13 @@ const seasonLabel = (s) => {
 };
 
 // ─── DATA LOADING ─────────────────────────────────────────────────────
+// Single per-deployment data source. The battanalytics sync rewrites the
+// URL below for the gated build; do not add other per-target edits here.
+const COMPS_DATA_URL = 'data/comps.json';
+
 async function loadData() {
   try {
-    const resp = await fetch('data/comps.json');
+    const resp = await fetch(`${COMPS_DATA_URL}?t=${Date.now()}`);
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     state.data = await resp.json();
     $('#seasonBadge').textContent = seasonLabel(state.data.meta.currentSeason);

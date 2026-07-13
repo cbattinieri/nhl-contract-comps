@@ -434,6 +434,39 @@
   .term-regime-badge.bridge { background:rgba(245,158,11,0.12); color:#f59e0b; border:1px solid rgba(245,158,11,0.25); }
   .term-regime-badge.crossover { background:rgba(59,130,246,0.12); color:#60a5fa; border:1px solid rgba(59,130,246,0.25); }
   .term-regime-badge.ufa { background:rgba(16,185,129,0.12); color:#10b981; border:1px solid rgba(16,185,129,0.25); }
+
+  /* ── PROJECTION VERDICT CHIPS ── */
+  .verdict-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 1rem 1.25rem 0.75rem;
+  }
+  .verdict-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.4rem 0.7rem;
+    border-radius: var(--radius);
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    font-size: 0.75rem;
+    min-width: 52px;
+    text-align: center;
+    border: 1px solid transparent;
+  }
+  .verdict-chip .chip-yr {
+    font-size: 0.65rem;
+    font-weight: 500;
+    opacity: 0.75;
+    text-transform: uppercase;
+  }
+  .verdict-chip.bargain { background: rgba(16,185,129,0.15); color: var(--green); border-color: rgba(16,185,129,0.3); }
+  .verdict-chip.fair    { background: rgba(96,165,250,0.12); color: var(--accent-bright); border-color: rgba(96,165,250,0.25); }
+  .verdict-chip.watch   { background: rgba(245,158,11,0.13); color: var(--orange); border-color: rgba(245,158,11,0.28); }
+  .verdict-chip.risk    { background: rgba(239,68,68,0.13);  color: var(--red); border-color: rgba(239,68,68,0.28); }
   .term-crossover-marker { font-family:var(--font-display); font-size:0.72rem; color:var(--text-muted); text-align:center; margin-top:0.25rem; letter-spacing:0.03em; }
   .term-result-item { text-align:center; }
   .term-result-label { font-family:var(--font-display); font-size:0.68rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.2rem; }
@@ -593,10 +626,33 @@
     </div>
   </div>
 
+  <div id="unsignedListView" style="display:none;">
+    <div class="card">
+      <div class="card-header">
+        <span class="dot" style="background:#f59e0b;"></span> Unsigned Players
+        <span id="unsignedListMeta" style="margin-left:0.5rem;color:var(--text-muted);font-weight:400;"></span>
+      </div>
+      <div class="card-body table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Player</th><th>Pos</th><th>Age</th>
+              <th>Est. AAV</th><th>Est. %</th>
+              <th>Est. Term</th><th>Career GP</th><th>Career Pts</th>
+            </tr>
+          </thead>
+          <tbody id="unsignedListBody"></tbody>
+        </table>
+      </div>
+      <div class="card-footer">Model estimates for players still on the open market. Click a player to view their full comp breakdown.</div>
+    </div>
+  </div>
+
   <div id="appContent" style="display:none;">
     <!-- TABS -->
     <div class="tab-bar">
       <button class="tab-btn active" data-tab="overview">Contract & Stats</button>
+      <button class="tab-btn" data-tab="projections">Career Projections</button>
       <button class="tab-btn" data-tab="stats">Stats Detail</button>
       <button class="tab-btn" data-tab="contract">Contract</button>
       <button class="tab-btn" data-tab="bio">Bio</button>
@@ -661,6 +717,26 @@
           <div class="card-header"><span class="dot"></span> Cap Hit % — Future Projection</div>
           <div class="card-body"><div class="chart-container"><canvas id="capFutureChart"></canvas></div></div>
         </div>
+      </div>
+    </div>
+
+    <!-- TAB: PROJECTIONS -->
+    <div class="tab-panel" id="tab-projections">
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> Year-by-Year Contract Value</div>
+        <div class="verdict-row" id="verdictChips"></div>
+        <div class="card-body"><div class="chart-container" style="height:400px;"><canvas id="projectionChart"></canvas></div></div>
+        <div class="card-footer" id="capProjFooter">Projected market cap hit % applies the aging curve to the current KNN estimate. Contracted % holds estimated AAV fixed against rising caps.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> <span id="productionChartTitle">Projected On-Ice Production</span></div>
+        <div class="card-body"><div class="chart-container" style="height:380px;"><canvas id="productionChart"></canvas></div></div>
+        <div class="card-footer" id="productionChartFooter"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="dot"></span> AAV vs Rising Market Value</div>
+        <div class="card-body"><div class="chart-container" style="height:380px;"><canvas id="curvesCapChart"></canvas></div></div>
+        <div class="card-footer">Estimated AAV held fixed; cap hit % declines each season as the salary cap rises. Known caps through the latest confirmed season; projections beyond use the cap ladder in the dataset.</div>
       </div>
     </div>
 
@@ -756,6 +832,7 @@
 // ─── APP STATE ────────────────────────────────────────────────────────
 const state = {
   data: null,
+  agingCurves: null,   // within-player aging retention table (data/aging_curves.json)
   faFilter: 'UFA',
   posFilter: 'Forward',
   statusFilter: 'All',
@@ -786,6 +863,12 @@ async function loadData() {
     const resp = await fetch(`${COMPS_DATA_URL}?t=${Date.now()}`);
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     state.data = await resp.json();
+    // Optional: within-player aging retention table. If absent, the projection
+    // charts fall back to the built-in research-based curve.
+    try {
+      const ar = await fetch('data/aging_curves.json');
+      if (ar.ok) state.agingCurves = await ar.json();
+    } catch (_) { /* fallback to heuristic */ }
     $('#seasonBadge').textContent = seasonLabel(state.data.meta.currentSeason);
     initApp();
   } catch (e) {
@@ -933,16 +1016,75 @@ function renderSignedList() {
   });
 }
 
+// ─── UNSIGNED LIST VIEW ───────────────────────────────────────────────
+// Mirrors the signed list view for the "Unsigned" filter — a sortable list of
+// everyone still on the market in the current FA-status/position category,
+// minus the actual-contract columns we don't have yet.
+function renderUnsignedList() {
+  const players = getFilteredPlayers().filter(p => !p.signed);
+
+  $('#appContent').style.display = 'none';
+  $('#emptyState').style.display = 'none';
+  $('#signedListView').style.display = 'none';
+  $('#unsignedListView').style.display = 'block';
+
+  $('#unsignedListMeta').textContent =
+    `${players.length} ${state.faFilter} ${state.posFilter === 'Forward' ? 'forward' : 'defenseman'}${players.length === 1 ? '' : 's'} unsigned`;
+
+  if (!players.length) {
+    $('#unsignedListBody').innerHTML =
+      `<tr><td colspan="8" style="text-align:center;padding:2rem;color:var(--text-muted);">No ${state.faFilter} ${state.posFilter.toLowerCase()}s are currently unsigned.</td></tr>`;
+    return;
+  }
+
+  // Sort by model estimate — biggest projected deals first.
+  const sorted = [...players].sort((a, b) => (b.estimatedAAV ?? 0) - (a.estimatedAAV ?? 0));
+
+  $('#unsignedListBody').innerHTML = sorted.map(p => {
+    const term = p.avgCompTerm ? `${Math.round(p.avgCompTerm)} yr` : '—';
+    return `<tr class="player-row" style="cursor:pointer;" data-pid="${p.playerId}">
+      <td class="name-cell">${p.name}</td>
+      <td>${p.position}</td>
+      <td>${p.age}</td>
+      <td style="font-weight:600;">${fmtMoney(p.estimatedAAV)}</td>
+      <td>${fmtPct(p.estimatedCapHitPct)}</td>
+      <td>${term}</td>
+      <td>${p.careerGP ?? '—'}</td>
+      <td>${p.careerPoints ?? '—'}</td>
+    </tr>`;
+  }).join('');
+
+  $$('#unsignedListBody tr[data-pid]').forEach(tr => {
+    tr.addEventListener('click', () => {
+      const player = sorted.find(p => p.playerId === parseInt(tr.dataset.pid));
+      if (!player) return;
+      // Drill into the player's full comp breakdown via the normal detail view.
+      $('#unsignedListView').style.display = 'none';
+      selectPlayer(player);
+      $('#searchInput').value = player.name;
+    });
+  });
+}
+
 // ─── SEARCH ───────────────────────────────────────────────────────────
 function populateSearch() {
   if (state.statusFilter === 'Signed') {
     $('#searchInput').value = '';
     $('#searchDropdown').innerHTML = '';
     $('#searchDropdown').classList.remove('open');
+    $('#unsignedListView').style.display = 'none';
     renderSignedList();
     return;
   }
+  if (state.statusFilter === 'Pending') {
+    $('#searchInput').value = '';
+    $('#searchDropdown').innerHTML = '';
+    $('#searchDropdown').classList.remove('open');
+    renderUnsignedList();
+    return;
+  }
   $('#signedListView').style.display = 'none';
+  $('#unsignedListView').style.display = 'none';
 
   const players = getFilteredPlayers();
   const dropdown = $('#searchDropdown');
@@ -1041,6 +1183,14 @@ function setupTabs() {
       $$('.tab-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
       $(`#tab-${btn.dataset.tab}`).classList.add('active');
+      // The projection charts live in a hidden panel during the initial render,
+      // so Chart.js sizes their canvas to 0. Re-render them once the panel is
+      // visible so they lay out against the real container width.
+      if (btn.dataset.tab === 'projections' && state.selectedPlayer) {
+        renderProjectionChart();
+        renderProductionChart();
+        renderCurvesCapChart();
+      }
     });
   });
 }
@@ -1333,6 +1483,9 @@ function renderAll() {
   renderCapFutureChart();
   renderScatterChart();
   renderCapBarChart();
+  renderProjectionChart();
+  renderProductionChart();
+  renderCurvesCapChart();
 }
 
 // ─── CHARTS ───────────────────────────────────────────────────────────
@@ -1557,6 +1710,349 @@ function renderCapBarChart() {
 }
 
 function round2(n) { return Math.round(n * 100) / 100; }
+
+// ─── PROJECTIONS TAB ──────────────────────────────────────────────────
+// Preferred source: the within-player aging model (data/aging_curves.json),
+// a per-position/per-age retention table fit in aging_model.py. If that file
+// is missing, fall back to the research-based curve below (forwards plateau
+// 26-28 and decline after 30; defensemen peak ~26 and hold minutes longer).
+const AGING_CURVE = {
+  Forward: { 18:0.78, 20:0.87, 22:0.94, 24:0.98, 26:1.00, 28:1.00, 30:0.94, 32:0.85, 34:0.74, 36:0.62, 38:0.50, 40:0.40 },
+  Defense: { 18:0.82, 20:0.90, 22:0.95, 24:0.99, 26:1.00, 28:0.99, 30:0.96, 32:0.92, 34:0.86, 36:0.79, 38:0.71, 40:0.62 },
+};
+
+// Whether the projection charts are running on the fitted model vs the fallback.
+function usingAgingModel(posGroup) {
+  return !!(state.agingCurves && state.agingCurves[posGroup]);
+}
+function agingSourceLabel(posGroup) {
+  return usingAgingModel(posGroup)
+    ? 'within-player aging model'
+    : 'research-based aging curve (forwards peak 26-28, defensemen ~26)';
+}
+
+// Relative production factor at a given age (linear interp between anchors).
+function agingFactor(age, posGroup) {
+  const tbl  = AGING_CURVE[posGroup] ?? AGING_CURVE.Forward;
+  const ages = Object.keys(tbl).map(Number).sort((a, b) => a - b);
+  if (age <= ages[0]) return tbl[ages[0]];
+  if (age >= ages[ages.length - 1]) return tbl[ages[ages.length - 1]];
+  for (let i = 0; i < ages.length - 1; i++) {
+    if (age >= ages[i] && age <= ages[i + 1]) {
+      const t = (age - ages[i]) / (ages[i + 1] - ages[i]);
+      return tbl[ages[i]] * (1 - t) + tbl[ages[i + 1]] * t;
+    }
+  }
+  return tbl[ages[ages.length - 1]];
+}
+
+function agingRetention(currentAge, posGroup, years) {
+  // Prefer the fitted model's retention table when available.
+  const model = state.agingCurves && state.agingCurves[posGroup];
+  if (model) {
+    const ages = Object.keys(model).map(Number).sort((a, b) => a - b);
+    const clamped = Math.min(ages[ages.length - 1], Math.max(ages[0], Math.round(currentAge)));
+    const entry = model[String(clamped)];
+    if (entry && entry.base) {
+      const last = entry.base.length - 1;
+      return Array.from({ length: years }, (_, i) => {
+        const j = Math.min(i, last);
+        return { base: entry.base[j], best: entry.best[j], downside: entry.downside[j] };
+      });
+    }
+  }
+  // Fallback: research-based curve.
+  const fNow = agingFactor(currentAge, posGroup) || 1;
+  return Array.from({ length: years }, (_, i) => {
+    const yr     = i + 1;
+    const base   = Math.max(0.05, agingFactor(currentAge + yr, posGroup) / fNow);
+    const spread = 0.03 + 0.01 * yr; // uncertainty widens further out
+    return {
+      base,
+      best:     Math.min(1.40, base * (1 + spread)),
+      downside: Math.max(0.05, base * (1 - spread)),
+    };
+  });
+}
+
+function verdictLabel(projPct, contractedPct) {
+  const diff = projPct - contractedPct;
+  if (diff >  1.0) return { label: 'Bargain', cls: 'bargain' };
+  if (diff > -0.5) return { label: 'Fair',    cls: 'fair'    };
+  if (diff > -1.5) return { label: 'Watch',   cls: 'watch'   };
+  return                  { label: 'Risk',    cls: 'risk'    };
+}
+
+// Projected on-ice production: apply the same aging retention curve to the
+// player's current platform-year rate stat. Forwards → Pts/Game, Defense →
+// TOI/Game — the exact metrics the Bayesian aging model is fit on
+// (PRIMARY_METRIC = {Forward: "ppg", Defense: "toi_per_game"}).
+const PROD_METRIC = {
+  Forward: { base: p => p.ppg, label: 'Pts/Game', axis: 'Pts/Game', unit: '',    dp: 2 },
+  Defense: { base: p => p.toi, label: 'TOI/Game', axis: 'Minutes',  unit: ' min', dp: 1 },
+};
+
+function renderProductionChart() {
+  destroyChart('production');
+  const p = state.selectedPlayer;
+  if (!p || !state.data) return;
+
+  const metric  = PROD_METRIC[p.positionGroup] ?? PROD_METRIC.Forward;
+  const base0   = metric.base(p) ?? 0;
+  const age     = p.age;
+  const N_YEARS = 8;
+  const fmtStat = v => v.toFixed(metric.dp) + metric.unit;
+
+  $('#productionChartTitle').textContent = `Projected On-Ice Production — ${metric.label}`;
+  $('#productionChartFooter').innerHTML =
+    `Current ${metric.label} (${fmtStat(base0)}) aged forward with the ${agingSourceLabel(p.positionGroup)}. ` +
+    `${p.positionGroup === 'Defense' ? 'Defensemen are projected on ice time; forwards on scoring rate.' : 'Forwards are projected on scoring rate; defensemen on ice time.'} Shaded band = best/downside.`;
+
+  const retentions = agingRetention(age, p.positionGroup, N_YEARS);
+  // Anchor at the current (platform) season, then years 1..N.
+  const labels   = [`Now\n(age ${age})`, ...retentions.map((_, i) => `Yr ${i + 1}\n(age ${age + i + 1})`)];
+  const baseLine = [base0, ...retentions.map(r => round2(base0 * r.base))];
+  const bestLine = [base0, ...retentions.map(r => round2(base0 * r.best))];
+  const downLine = [base0, ...retentions.map(r => round2(base0 * r.downside))];
+
+  state.charts.production = new Chart($('#productionChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: metric.label + ' — best',
+          data: bestLine,
+          borderColor: 'rgba(96,165,250,0.4)',
+          backgroundColor: 'rgba(96,165,250,0.08)',
+          borderWidth: 1, pointRadius: 0, tension: 0.3, fill: '+1',
+        },
+        {
+          label: metric.label + ' — projected',
+          data: baseLine,
+          borderColor: '#60a5fa',
+          backgroundColor: 'rgba(148,163,184,0.16)',
+          borderWidth: 2.5, pointRadius: 5, pointBackgroundColor: '#60a5fa', tension: 0.3, fill: '+1',
+        },
+        {
+          label: metric.label + ' — downside',
+          data: downLine,
+          borderColor: 'rgba(96,165,250,0.4)',
+          backgroundColor: 'rgba(96,165,250,0.08)',
+          borderWidth: 1, pointRadius: 0, tension: 0.3, fill: false,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { labels: { color: '#94a3b8', font: { family: 'Barlow', size: 12 }, boxWidth: 12 } },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmtStat(ctx.parsed.y) } },
+      },
+      scales: {
+        x: {
+          ticks: { color: '#64748b', font: { family: 'Barlow', size: 11 } },
+          grid: { display: false },
+        },
+        y: {
+          title: { display: true, text: metric.axis, color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
+          ticks: { color: '#64748b', callback: v => v.toFixed(metric.dp), font: { family: 'Barlow' } },
+          grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+      },
+    },
+  });
+}
+
+function renderProjectionChart() {
+  destroyChart('projection');
+  const p = state.selectedPlayer;
+  if (!p || !state.data) return;
+
+  const capFooter = $('#capProjFooter');
+  if (capFooter) capFooter.textContent =
+    `Projected market cap hit % applies the ${agingSourceLabel(p.positionGroup)} to the current KNN estimate. Contracted % holds estimated AAV fixed against rising caps.`;
+
+  const meta     = state.data.meta;
+  const estPct   = p.estimatedCapHitPct;
+  const estAAV   = p.estimatedAAV;
+  const posGroup = p.positionGroup;
+  const age      = p.age;
+  const N_YEARS  = 8;
+
+  // Build cap ladder: current + all future seasons sorted
+  const capLadder = [[meta.currentSeason, meta.currentCap],
+    ...Object.entries(meta.futureCaps).map(([s, c]) => [parseInt(s), c])
+  ].sort((a, b) => a[0] - b[0]);
+
+  const getCap = (yr) => {
+    const idx = Math.min(yr, capLadder.length - 1);
+    return capLadder[idx]?.[1] ?? capLadder[capLadder.length - 1][1];
+  };
+
+  const retentions    = agingRetention(age, posGroup, N_YEARS);
+  const labels        = retentions.map((_, i) => `Yr ${i + 1}\n(age ${age + i + 1})`);
+  const contractedPct = retentions.map((_, i) => round2((estAAV / getCap(i + 1)) * 100));
+  const basePct       = retentions.map((r) => round2(estPct * r.base));
+  const bestPct       = retentions.map((r) => round2(estPct * r.best));
+  const downPct       = retentions.map((r) => round2(estPct * r.downside));
+
+  // Verdict chips
+  $('#verdictChips').innerHTML = retentions.map((_, i) => {
+    const v = verdictLabel(basePct[i], contractedPct[i]);
+    return `<div class="verdict-chip ${v.cls}">
+      <span class="chip-yr">Yr ${i + 1}</span>
+      <span>${v.label}</span>
+    </div>`;
+  }).join('');
+
+  state.charts.projection = new Chart($('#projectionChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Projected market — best',
+          data: bestPct,
+          borderColor: 'rgba(16,185,129,0.4)',
+          backgroundColor: 'rgba(16,185,129,0.08)',
+          borderWidth: 1, pointRadius: 0, tension: 0.3, fill: '+1',
+        },
+        {
+          label: 'Projected market — base',
+          data: basePct,
+          borderColor: '#10b981',
+          backgroundColor: 'rgba(148,163,184,0.16)',
+          borderWidth: 2.5, pointRadius: 5, pointBackgroundColor: '#10b981', tension: 0.3, fill: '+1',
+        },
+        {
+          label: 'Projected market — downside',
+          data: downPct,
+          borderColor: 'rgba(16,185,129,0.4)',
+          backgroundColor: 'rgba(16,185,129,0.08)',
+          borderWidth: 1, pointRadius: 0, tension: 0.3, fill: false,
+        },
+        {
+          label: 'Contracted cap hit %',
+          data: contractedPct,
+          borderColor: '#f59e0b',
+          backgroundColor: 'rgba(245,158,11,0.06)',
+          borderWidth: 2.5, pointRadius: 5, pointBackgroundColor: '#f59e0b', borderDash: [6, 3], tension: 0, fill: false,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { labels: { color: '#94a3b8', font: { family: 'Barlow', size: 12 }, boxWidth: 12 } },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%' } },
+      },
+      scales: {
+        x: {
+          ticks: { color: '#64748b', font: { family: 'Barlow', size: 11 } },
+          grid: { display: false },
+        },
+        y: {
+          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
+          ticks: { color: '#64748b', callback: v => v.toFixed(1) + '%', font: { family: 'Barlow' } },
+          grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+      },
+    },
+  });
+}
+
+function renderCurvesCapChart() {
+  destroyChart('curvesCap');
+  const p = state.selectedPlayer;
+  if (!p || !state.data) return;
+
+  const meta   = state.data.meta;
+  const estAAV = p.estimatedAAV;
+  const estPct = p.estimatedCapHitPct;
+
+  const MC_CAPS = {
+    [meta.currentSeason]: meta.currentCap,
+    ...Object.fromEntries(Object.entries(meta.futureCaps).map(([s, c]) => [parseInt(s), c])),
+  };
+  const seasonCaps = Object.entries(MC_CAPS)
+    .map(([s, c]) => [parseInt(s), c])
+    .sort((a, b) => a[0] - b[0]);
+
+  const labels   = seasonCaps.map(([s]) => seasonLabel(s));
+  const fixedAAV = seasonCaps.map(() => round2(estAAV / 1_000_000));
+  const marketEq = seasonCaps.map(([, c]) => round2((estPct * c / 100) / 1_000_000));
+  const capPcts  = seasonCaps.map(([, c]) => round2((estAAV / c) * 100));
+
+  state.charts.curvesCap = new Chart($('#curvesCapChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: p.name + ' AAV (fixed)',
+          data: fixedAAV,
+          borderColor: '#f59e0b',
+          backgroundColor: 'rgba(245,158,11,0.05)',
+          borderWidth: 2.5, pointRadius: 5, tension: 0, fill: false, yAxisID: 'yAAV',
+        },
+        {
+          label: 'Market value at ' + fmtPct(estPct) + ' cap hit',
+          data: marketEq,
+          borderColor: '#10b981',
+          backgroundColor: 'rgba(16,185,129,0.08)',
+          borderWidth: 2.5, pointRadius: 5, tension: 0.3, fill: true, yAxisID: 'yAAV',
+        },
+        {
+          label: 'Contracted cap hit %',
+          data: capPcts,
+          borderColor: '#60a5fa',
+          backgroundColor: 'rgba(96,165,250,0.08)',
+          borderWidth: 2, pointRadius: 4, borderDash: [5, 3], tension: 0.3, fill: false, yAxisID: 'yPct',
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { labels: { color: '#94a3b8', font: { family: 'Barlow', size: 12 }, boxWidth: 12 } },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              if (ctx.datasetIndex === 2) return ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%';
+              return ctx.dataset.label + ': $' + ctx.parsed.y.toFixed(2) + 'M';
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Season', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
+          ticks: { color: '#64748b', font: { family: 'Barlow' } },
+          grid: { display: false },
+        },
+        yAAV: {
+          position: 'left',
+          title: { display: true, text: 'AAV ($M)', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
+          ticks: { color: '#64748b', callback: v => '$' + v.toFixed(1) + 'M', font: { family: 'Barlow' } },
+          grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+        yPct: {
+          position: 'right',
+          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
+          ticks: { color: '#64748b', callback: v => v.toFixed(1) + '%', font: { family: 'Barlow' } },
+          grid: { display: false },
+        },
+      },
+    },
+  });
+}
 
 // ─── INIT ─────────────────────────────────────────────────────────────
 function initApp() {

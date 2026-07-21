@@ -1,8 +1,8 @@
 {
   "meta": {
     "faClassYear": 2026,
-    "generatedAt": "2026-07-20T10:49:33.584627",
-    "signedCount": 206,
+    "generatedAt": "2026-07-21T10:23:10.725520",
+    "signedCount": 208,
     "pendingCount": 77,
     "currentCap": 104000000
   },
@@ -3319,8 +3319,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.32,
-          "aav": 332800,
+          "capHitPct": 0.31,
+          "aav": 322400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -11306,8 +11306,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 1.2,
-          "aav": 1248000,
+          "capHitPct": 1.18,
+          "aav": 1227200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -20442,8 +20442,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.49,
-          "aav": 509600,
+          "capHitPct": 0.48,
+          "aav": 499200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -20456,8 +20456,8 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.36,
-          "aav": 1414400,
+          "capHitPct": 1.35,
+          "aav": 1404000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -25689,8 +25689,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.26,
-          "aav": 270400,
+          "capHitPct": 0.25,
+          "aav": 260000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -37289,15 +37289,15 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.75,
-          "aav": 780000,
+          "capHitPct": 0.74,
+          "aav": 769600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 1.42,
-          "aav": 1476800,
+          "capHitPct": 1.41,
+          "aav": 1466400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -58471,22 +58471,22 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 1.35,
-          "aav": 1404000,
+          "capHitPct": 1.34,
+          "aav": 1393600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 2.57,
-          "aav": 2672800,
+          "capHitPct": 2.55,
+          "aav": 2652000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 3.78,
-          "aav": 3931200,
+          "capHitPct": 3.77,
+          "aav": 3920800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -62913,8 +62913,8 @@
         },
         {
           "term": 2,
-          "capHitPct": 0.59,
-          "aav": 613600,
+          "capHitPct": 0.58,
+          "aav": 603200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -64520,15 +64520,15 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 1.19,
-          "aav": 1237600,
+          "capHitPct": 1.18,
+          "aav": 1227200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 2.26,
-          "aav": 2350400,
+          "capHitPct": 2.25,
+          "aav": 2340000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -75327,8 +75327,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.38,
-          "aav": 395200,
+          "capHitPct": 0.37,
+          "aav": 384800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -82473,15 +82473,15 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 1.29,
-          "aav": 1341600,
+          "capHitPct": 1.28,
+          "aav": 1331200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 2.45,
-          "aav": 2548000,
+          "capHitPct": 2.44,
+          "aav": 2537600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -88561,8 +88561,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.26,
-          "aav": 270400,
+          "capHitPct": 0.25,
+          "aav": 260000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -92438,8 +92438,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.27,
-          "aav": 280800,
+          "capHitPct": 0.26,
+          "aav": 270400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -94703,15 +94703,15 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.3,
-          "aav": 312000,
+          "capHitPct": 0.29,
+          "aav": 301600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 0.57,
-          "aav": 592800,
+          "capHitPct": 0.56,
+          "aav": 582400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -104203,8 +104203,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.27,
-          "aav": 280800,
+          "capHitPct": 0.26,
+          "aav": 270400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -105449,15 +105449,15 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.56,
-          "aav": 582400,
+          "capHitPct": 0.55,
+          "aav": 572000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 1.06,
-          "aav": 1102400,
+          "capHitPct": 1.05,
+          "aav": 1092000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -106008,8 +106008,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.26,
-          "aav": 270400,
+          "capHitPct": 0.25,
+          "aav": 260000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -109935,8 +109935,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 1.31,
-          "aav": 1362400,
+          "capHitPct": 1.3,
+          "aav": 1352000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -110510,8 +110510,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.62,
-          "aav": 644800,
+          "capHitPct": 0.61,
+          "aav": 634400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -114298,15 +114298,15 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.29,
-          "aav": 301600,
+          "capHitPct": 0.28,
+          "aav": 291200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 0.55,
-          "aav": 572000,
+          "capHitPct": 0.54,
+          "aav": 561600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -116082,6 +116082,486 @@
       }
     },
     {
+      "playerId": 8483567,
+      "name": "Georgii Merkulov",
+      "position": "Center",
+      "positionGroup": "Forward",
+      "signingStatus": "RFA",
+      "contractYear": 20252026,
+      "age": 25,
+      "ufaYear": 2028,
+      "height": "71",
+      "weight": "174",
+      "shoots": "L",
+      "draftOverall": 999,
+      "draftBucket": 6,
+      "term": 1,
+      "value": 0,
+      "aav": 0,
+      "capHitPct": 0.0,
+      "gp": 1,
+      "goals": 0,
+      "assists": 0,
+      "points": 0,
+      "ppg": 0.0,
+      "evPoints": 0,
+      "toi": 10.58,
+      "careerGP": 11,
+      "careerPoints": 1,
+      "careerEVPoints": 1,
+      "careerPPG": 0.1,
+      "careerEVPPG": 0.1,
+      "careerTOI": 12.16,
+      "careerGPPct": 4.47,
+      "seasonNo": 3,
+      "signed": true,
+      "actualContract": {
+        "term": 1,
+        "value": 850000,
+        "aav": 850000,
+        "capHitPct": 0.82,
+        "signingDate": "2026-07-20",
+        "team": "Avalanche",
+        "signingStatus": "RFA"
+      },
+      "estimatedCapHitPct": 0.93,
+      "estimatedAAV": 967200,
+      "ciLow": 0.91,
+      "ciHigh": 0.95,
+      "aavLow": 946400,
+      "aavHigh": 988000,
+      "estimateStd": 0.02,
+      "compWeights": [
+        0.2186,
+        0.2173,
+        0.2067,
+        0.1883,
+        0.1691
+      ],
+      "avgCompTerm": 2.2,
+      "termTable": [
+        {
+          "term": 1,
+          "capHitPct": 0.25,
+          "aav": 260000,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 2,
+          "capHitPct": 0.93,
+          "aav": 967200,
+          "regime": "crossover",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 3,
+          "capHitPct": 1.71,
+          "aav": 1778400,
+          "regime": "ufa",
+          "ufaYrsBought": 1
+        },
+        {
+          "term": 4,
+          "capHitPct": 2.49,
+          "aav": 2589600,
+          "regime": "ufa",
+          "ufaYrsBought": 2
+        },
+        {
+          "term": 5,
+          "capHitPct": 3.27,
+          "aav": 3400800,
+          "regime": "ufa",
+          "ufaYrsBought": 3
+        },
+        {
+          "term": 6,
+          "capHitPct": 4.05,
+          "aav": 4212000,
+          "regime": "ufa",
+          "ufaYrsBought": 4
+        },
+        {
+          "term": 7,
+          "capHitPct": 4.83,
+          "aav": 5023200,
+          "regime": "ufa",
+          "ufaYrsBought": 5
+        },
+        {
+          "term": 8,
+          "capHitPct": 5.61,
+          "aav": 5834400,
+          "regime": "ufa",
+          "ufaYrsBought": 6
+        }
+      ],
+      "comps": [
+        {
+          "playerId": 8481732,
+          "name": "Andre Lee",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "ufaYear": 2028,
+          "height": "76",
+          "weight": "205",
+          "shoots": "L",
+          "draftOverall": 188,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 19,
+          "goals": 1,
+          "assists": 2,
+          "points": 3,
+          "ppg": 0.16,
+          "evPoints": 3,
+          "toi": 9.17,
+          "careerGP": 19,
+          "careerPoints": 3,
+          "careerEVPoints": 3,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 23.17,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8485511,
+          "name": "Quinn Hutson",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 24,
+          "ufaYear": 2029,
+          "height": "71",
+          "weight": "176",
+          "shoots": "R",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 2,
+          "value": 1750000,
+          "aav": 875000,
+          "capHitPct": 0.92,
+          "gp": 4,
+          "goals": 1,
+          "assists": 0,
+          "points": 1,
+          "ppg": 0.25,
+          "evPoints": 1,
+          "toi": 8.0,
+          "careerGP": 6,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 13.43,
+          "careerGPPct": 3.66,
+          "seasonNo": 2
+        },
+        {
+          "playerId": 8483395,
+          "name": "Arshdeep Bains",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "ufaYear": 2028,
+          "height": "72",
+          "weight": "183",
+          "shoots": "L",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 13,
+          "goals": 1,
+          "assists": 0,
+          "points": 1,
+          "ppg": 0.08,
+          "evPoints": 1,
+          "toi": 10.5,
+          "careerGP": 21,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 11.81,
+          "careerGPPct": 12.8,
+          "seasonNo": 2
+        },
+        {
+          "playerId": 8481532,
+          "name": "Alex Turcotte",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20232024,
+          "age": 23,
+          "ufaYear": 2028,
+          "height": "71",
+          "weight": "185",
+          "shoots": "L",
+          "draftOverall": 5,
+          "draftBucket": 1,
+          "term": 3,
+          "value": 2400000,
+          "aav": 800000,
+          "capHitPct": 0.96,
+          "gp": 20,
+          "goals": 1,
+          "assists": 3,
+          "points": 4,
+          "ppg": 0.2,
+          "evPoints": 4,
+          "toi": 9.28,
+          "careerGP": 32,
+          "careerPoints": 4,
+          "careerEVPoints": 4,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 9.12,
+          "careerGPPct": 13.01,
+          "seasonNo": 3
+        },
+        {
+          "playerId": 8482103,
+          "name": "Ozzy Wiesblatt",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 23,
+          "ufaYear": 2029,
+          "height": "70",
+          "weight": "183",
+          "shoots": "R",
+          "draftOverall": 31,
+          "draftBucket": 3,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 5,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "ppg": 0.2,
+          "evPoints": 1,
+          "toi": 11.1,
+          "careerGP": 5,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 6.1,
+          "seasonNo": 1
+        }
+      ],
+      "compDistances": [
+        3.771,
+        3.7933,
+        3.9873,
+        4.3762,
+        4.8739
+      ],
+      "career": [
+        {
+          "season": 20232024,
+          "age": 23,
+          "gp": 4,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "evPPG": 0.0,
+          "toi": 10.58
+        },
+        {
+          "season": 20242025,
+          "age": 24,
+          "gp": 6,
+          "points": 1,
+          "ppg": 0.17,
+          "evPoints": 1,
+          "evPPG": 0.17,
+          "toi": 13.73
+        },
+        {
+          "season": 20252026,
+          "age": 25,
+          "gp": 1,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "evPPG": 0.0,
+          "toi": 10.58
+        }
+      ],
+      "compCareers": {
+        "8481732": [
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 19,
+            "points": 3,
+            "ppg": 0.16,
+            "evPoints": 3,
+            "evPPG": 0.16,
+            "toi": 9.17
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 7,
+            "points": 2,
+            "ppg": 0.29,
+            "evPoints": 2,
+            "evPPG": 0.29,
+            "toi": 10.28
+          }
+        ],
+        "8485511": [
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 2,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 13.43
+          },
+          {
+            "season": 20252026,
+            "age": 24,
+            "gp": 4,
+            "points": 1,
+            "ppg": 0.25,
+            "evPoints": 1,
+            "evPPG": 0.25,
+            "toi": 8.0
+          }
+        ],
+        "8483395": [
+          {
+            "season": 20232024,
+            "age": 23,
+            "gp": 8,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 11.81
+          },
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 13,
+            "points": 1,
+            "ppg": 0.08,
+            "evPoints": 1,
+            "evPPG": 0.08,
+            "toi": 10.5
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 28,
+            "points": 5,
+            "ppg": 0.18,
+            "evPoints": 4,
+            "evPPG": 0.14,
+            "toi": 9.21
+          }
+        ],
+        "8481532": [
+          {
+            "season": 20212022,
+            "age": 21,
+            "gp": 8,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 11.27
+          },
+          {
+            "season": 20222023,
+            "age": 22,
+            "gp": 4,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 6.97
+          },
+          {
+            "season": 20232024,
+            "age": 23,
+            "gp": 20,
+            "points": 4,
+            "ppg": 0.2,
+            "evPoints": 4,
+            "evPPG": 0.2,
+            "toi": 9.28
+          },
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 68,
+            "points": 25,
+            "ppg": 0.37,
+            "evPoints": 24,
+            "evPPG": 0.35,
+            "toi": 11.74
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 62,
+            "points": 14,
+            "ppg": 0.23,
+            "evPoints": 14,
+            "evPPG": 0.23,
+            "toi": 10.83
+          }
+        ],
+        "8482103": [
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 5,
+            "points": 1,
+            "ppg": 0.2,
+            "evPoints": 1,
+            "evPPG": 0.2,
+            "toi": 11.1
+          },
+          {
+            "season": 20252026,
+            "age": 24,
+            "gp": 40,
+            "points": 5,
+            "ppg": 0.12,
+            "evPoints": 5,
+            "evPPG": 0.12,
+            "toi": 10.18
+          }
+        ]
+      }
+    },
+    {
       "playerId": 8482148,
       "name": "Hendrix Lapierre",
       "position": "Center",
@@ -116636,8 +117116,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.27,
-          "aav": 280800,
+          "capHitPct": 0.26,
+          "aav": 270400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -118206,8 +118686,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.58,
-          "aav": 603200,
+          "capHitPct": 0.57,
+          "aav": 592800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -120087,8 +120567,8 @@
         },
         {
           "term": 2,
-          "capHitPct": 0.59,
-          "aav": 613600,
+          "capHitPct": 0.58,
+          "aav": 603200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -120560,8 +121040,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.3,
-          "aav": 312000,
+          "capHitPct": 0.29,
+          "aav": 301600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -120574,8 +121054,8 @@
         },
         {
           "term": 3,
-          "capHitPct": 0.83,
-          "aav": 863200,
+          "capHitPct": 0.82,
+          "aav": 852800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -131311,6 +131791,466 @@
             "evPoints": 0,
             "evPPG": 0.0,
             "toi": 10.08
+          }
+        ]
+      }
+    },
+    {
+      "playerId": 8483728,
+      "name": "Jared Davidson",
+      "position": "Center",
+      "positionGroup": "Forward",
+      "signingStatus": "RFA",
+      "contractYear": 20252026,
+      "age": 23,
+      "ufaYear": 2030,
+      "height": "72",
+      "weight": "183",
+      "shoots": "L",
+      "draftOverall": 130,
+      "draftBucket": 5,
+      "term": 1,
+      "value": 0,
+      "aav": 0,
+      "capHitPct": 0.0,
+      "gp": 10,
+      "goals": 0,
+      "assists": 1,
+      "points": 1,
+      "ppg": 0.1,
+      "evPoints": 1,
+      "toi": 8.72,
+      "careerGP": 10,
+      "careerPoints": 1,
+      "careerEVPoints": 1,
+      "careerPPG": 0.0,
+      "careerEVPPG": 0.0,
+      "careerTOI": 0.0,
+      "careerGPPct": 12.2,
+      "seasonNo": 1,
+      "signed": true,
+      "actualContract": {
+        "term": 1,
+        "value": 850000,
+        "aav": 850000,
+        "capHitPct": 0.82,
+        "signingDate": "2026-07-20",
+        "team": "Canadiens",
+        "signingStatus": "RFA"
+      },
+      "estimatedCapHitPct": 0.93,
+      "estimatedAAV": 967200,
+      "ciLow": 0.91,
+      "ciHigh": 0.94,
+      "aavLow": 946400,
+      "aavHigh": 977600,
+      "estimateStd": 0.02,
+      "compWeights": [
+        0.2316,
+        0.2111,
+        0.194,
+        0.1914,
+        0.1719
+      ],
+      "avgCompTerm": 2.2,
+      "termTable": [
+        {
+          "term": 1,
+          "capHitPct": 0.25,
+          "aav": 260000,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 2,
+          "capHitPct": 0.48,
+          "aav": 499200,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 3,
+          "capHitPct": 0.7,
+          "aav": 728000,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 4,
+          "capHitPct": 0.93,
+          "aav": 967200,
+          "regime": "crossover",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 5,
+          "capHitPct": 1.71,
+          "aav": 1778400,
+          "regime": "ufa",
+          "ufaYrsBought": 1
+        },
+        {
+          "term": 6,
+          "capHitPct": 2.49,
+          "aav": 2589600,
+          "regime": "ufa",
+          "ufaYrsBought": 2
+        },
+        {
+          "term": 7,
+          "capHitPct": 3.27,
+          "aav": 3400800,
+          "regime": "ufa",
+          "ufaYrsBought": 3
+        },
+        {
+          "term": 8,
+          "capHitPct": 4.05,
+          "aav": 4212000,
+          "regime": "ufa",
+          "ufaYrsBought": 4
+        }
+      ],
+      "comps": [
+        {
+          "playerId": 8481732,
+          "name": "Andre Lee",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "ufaYear": 2028,
+          "height": "76",
+          "weight": "205",
+          "shoots": "L",
+          "draftOverall": 188,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 19,
+          "goals": 1,
+          "assists": 2,
+          "points": 3,
+          "ppg": 0.16,
+          "evPoints": 3,
+          "toi": 9.17,
+          "careerGP": 19,
+          "careerPoints": 3,
+          "careerEVPoints": 3,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 23.17,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8483395,
+          "name": "Arshdeep Bains",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "ufaYear": 2028,
+          "height": "72",
+          "weight": "183",
+          "shoots": "L",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 13,
+          "goals": 1,
+          "assists": 0,
+          "points": 1,
+          "ppg": 0.08,
+          "evPoints": 1,
+          "toi": 10.5,
+          "careerGP": 21,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 11.81,
+          "careerGPPct": 12.8,
+          "seasonNo": 2
+        },
+        {
+          "playerId": 8482103,
+          "name": "Ozzy Wiesblatt",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 23,
+          "ufaYear": 2029,
+          "height": "70",
+          "weight": "183",
+          "shoots": "R",
+          "draftOverall": 31,
+          "draftBucket": 3,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 5,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "ppg": 0.2,
+          "evPoints": 1,
+          "toi": 11.1,
+          "careerGP": 5,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 6.1,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8485512,
+          "name": "Tim Washe",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 23,
+          "ufaYear": 2029,
+          "height": "75",
+          "weight": "212",
+          "shoots": "L",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 2,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 7.73,
+          "careerGP": 2,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 2.44,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8481532,
+          "name": "Alex Turcotte",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20232024,
+          "age": 23,
+          "ufaYear": 2028,
+          "height": "71",
+          "weight": "185",
+          "shoots": "L",
+          "draftOverall": 5,
+          "draftBucket": 1,
+          "term": 3,
+          "value": 2400000,
+          "aav": 800000,
+          "capHitPct": 0.96,
+          "gp": 20,
+          "goals": 1,
+          "assists": 3,
+          "points": 4,
+          "ppg": 0.2,
+          "evPoints": 4,
+          "toi": 9.28,
+          "careerGP": 32,
+          "careerPoints": 4,
+          "careerEVPoints": 4,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 9.12,
+          "careerGPPct": 13.01,
+          "seasonNo": 3
+        }
+      ],
+      "compDistances": [
+        2.7532,
+        3.0194,
+        3.2857,
+        3.3314,
+        3.7089
+      ],
+      "career": [
+        {
+          "season": 20252026,
+          "age": 23,
+          "gp": 10,
+          "points": 1,
+          "ppg": 0.1,
+          "evPoints": 1,
+          "evPPG": 0.1,
+          "toi": 8.72
+        }
+      ],
+      "compCareers": {
+        "8481732": [
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 19,
+            "points": 3,
+            "ppg": 0.16,
+            "evPoints": 3,
+            "evPPG": 0.16,
+            "toi": 9.17
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 7,
+            "points": 2,
+            "ppg": 0.29,
+            "evPoints": 2,
+            "evPPG": 0.29,
+            "toi": 10.28
+          }
+        ],
+        "8483395": [
+          {
+            "season": 20232024,
+            "age": 23,
+            "gp": 8,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 11.81
+          },
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 13,
+            "points": 1,
+            "ppg": 0.08,
+            "evPoints": 1,
+            "evPPG": 0.08,
+            "toi": 10.5
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 28,
+            "points": 5,
+            "ppg": 0.18,
+            "evPoints": 4,
+            "evPPG": 0.14,
+            "toi": 9.21
+          }
+        ],
+        "8482103": [
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 5,
+            "points": 1,
+            "ppg": 0.2,
+            "evPoints": 1,
+            "evPPG": 0.2,
+            "toi": 11.1
+          },
+          {
+            "season": 20252026,
+            "age": 24,
+            "gp": 40,
+            "points": 5,
+            "ppg": 0.12,
+            "evPoints": 5,
+            "evPPG": 0.12,
+            "toi": 10.18
+          }
+        ],
+        "8485512": [
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 2,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 7.73
+          },
+          {
+            "season": 20252026,
+            "age": 24,
+            "gp": 39,
+            "points": 5,
+            "ppg": 0.13,
+            "evPoints": 5,
+            "evPPG": 0.13,
+            "toi": 12.05
+          }
+        ],
+        "8481532": [
+          {
+            "season": 20212022,
+            "age": 21,
+            "gp": 8,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 11.27
+          },
+          {
+            "season": 20222023,
+            "age": 22,
+            "gp": 4,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 6.97
+          },
+          {
+            "season": 20232024,
+            "age": 23,
+            "gp": 20,
+            "points": 4,
+            "ppg": 0.2,
+            "evPoints": 4,
+            "evPPG": 0.2,
+            "toi": 9.28
+          },
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 68,
+            "points": 25,
+            "ppg": 0.37,
+            "evPoints": 24,
+            "evPPG": 0.35,
+            "toi": 11.74
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 62,
+            "points": 14,
+            "ppg": 0.23,
+            "evPoints": 14,
+            "evPPG": 0.23,
+            "toi": 10.83
           }
         ]
       }
@@ -142534,8 +143474,8 @@
         },
         {
           "term": 3,
-          "capHitPct": 0.62,
-          "aav": 644800,
+          "capHitPct": 0.61,
+          "aav": 634400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -151727,15 +152667,15 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.45,
-          "aav": 468000,
+          "capHitPct": 0.44,
+          "aav": 457600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 1.06,
-          "aav": 1102400,
+          "capHitPct": 1.05,
+          "aav": 1092000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -153510,22 +154450,22 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 1.32,
-          "aav": 1372800,
+          "capHitPct": 1.3,
+          "aav": 1352000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 2.5,
-          "aav": 2600000,
+          "capHitPct": 2.49,
+          "aav": 2589600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 3.69,
-          "aav": 3837600,
+          "capHitPct": 3.68,
+          "aav": 3827200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -156648,8 +157588,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.27,
-          "aav": 280800,
+          "capHitPct": 0.26,
+          "aav": 270400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -161880,15 +162820,15 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 1.18,
-          "aav": 1227200,
+          "capHitPct": 1.16,
+          "aav": 1206400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 2.75,
-          "aav": 2860000,
+          "capHitPct": 2.74,
+          "aav": 2849600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -165263,8 +166203,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.33,
-          "aav": 343200,
+          "capHitPct": 0.32,
+          "aav": 332800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -166376,8 +167316,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.91,
-          "aav": 946400,
+          "capHitPct": 0.9,
+          "aav": 936000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -175514,15 +176454,15 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 1.25,
-          "aav": 1300000,
+          "capHitPct": 1.23,
+          "aav": 1279200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 2.09,
-          "aav": 2173600,
+          "capHitPct": 2.07,
+          "aav": 2152800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -180217,8 +181157,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 1.13,
-          "aav": 1175200,
+          "capHitPct": 1.11,
+          "aav": 1154400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -183895,8 +184835,8 @@
         },
         {
           "term": 2,
-          "capHitPct": 0.92,
-          "aav": 956800,
+          "capHitPct": 0.91,
+          "aav": 946400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -186656,8 +187596,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.26,
-          "aav": 270400,
+          "capHitPct": 0.25,
+          "aav": 260000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -191431,15 +192371,15 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.68,
-          "aav": 707200,
+          "capHitPct": 0.67,
+          "aav": 696800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 1.59,
-          "aav": 1653600,
+          "capHitPct": 1.58,
+          "aav": 1643200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -191927,8 +192867,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.72,
-          "aav": 748800,
+          "capHitPct": 0.71,
+          "aav": 738400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -192942,8 +193882,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.32,
-          "aav": 332800,
+          "capHitPct": 0.31,
+          "aav": 322400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -192956,8 +193896,8 @@
         },
         {
           "term": 3,
-          "capHitPct": 0.89,
-          "aav": 925600,
+          "capHitPct": 0.88,
+          "aav": 915200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -196111,8 +197051,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.37,
-          "aav": 384800,
+          "capHitPct": 0.36,
+          "aav": 374400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -211098,8 +212038,8 @@
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.28,
-          "aav": 291200,
+          "capHitPct": 0.27,
+          "aav": 280800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },

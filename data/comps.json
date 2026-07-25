@@ -7,13 +7,13 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-07-24T10:13:55.641046",
+    "generatedAt": "2026-07-25T09:43:53.296629",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
         "mae": 1.77,
-        "median_ae": 1.06,
-        "n": 219
+        "median_ae": 1.03,
+        "n": 220
       },
       "RFA_Defense": {
         "mae": 2.05,
@@ -46,8 +46,8 @@
           "fitted": true
         },
         "low": {
-          "slope": 0.7405,
-          "n": 161,
+          "slope": 0.7548,
+          "n": 162,
           "fitted": true
         }
       },
@@ -3413,36 +3413,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 1.95,
-          "aav": 2028000,
+          "capHitPct": 1.88,
+          "aav": 1955200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 2.73,
-          "aav": 2839200,
+          "capHitPct": 2.59,
+          "aav": 2693600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.51,
-          "aav": 3650400,
+          "capHitPct": 3.31,
+          "aav": 3442400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.29,
-          "aav": 4461600,
+          "capHitPct": 4.02,
+          "aav": 4180800,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 5.07,
-          "aav": 5272800,
+          "capHitPct": 4.73,
+          "aav": 4919200,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -5696,43 +5696,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 2.3,
-          "aav": 2392000,
+          "capHitPct": 2.23,
+          "aav": 2319200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 3.08,
-          "aav": 3203200,
+          "capHitPct": 2.94,
+          "aav": 3057600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.86,
-          "aav": 4014400,
+          "capHitPct": 3.66,
+          "aav": 3806400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.64,
-          "aav": 4825600,
+          "capHitPct": 4.37,
+          "aav": 4544800,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 5.42,
-          "aav": 5636800,
+          "capHitPct": 5.08,
+          "aav": 5283200,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 6.2,
-          "aav": 6448000,
+          "capHitPct": 5.79,
+          "aav": 6021600,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -11323,563 +11323,6 @@
             "evPoints": 1,
             "evPPG": 0.1,
             "toi": 12.61
-          }
-        ]
-      }
-    },
-    {
-      "playerId": 8482705,
-      "name": "Cole Sillinger",
-      "position": "Center",
-      "positionGroup": "Forward",
-      "signingStatus": "RFA",
-      "contractYear": 20252026,
-      "age": 23,
-      "ufaYear": 2028,
-      "height": "72",
-      "weight": "203",
-      "shoots": "L",
-      "draftOverall": 12,
-      "draftBucket": 2,
-      "term": 1,
-      "value": 0,
-      "aav": 0,
-      "capHitPct": 0.0,
-      "gp": 81,
-      "goals": 8,
-      "assists": 25,
-      "points": 33,
-      "ppg": 0.41,
-      "evPoints": 32,
-      "toi": 15.22,
-      "careerGP": 367,
-      "careerPoints": 140,
-      "careerEVPoints": 127,
-      "careerPPG": 0.37,
-      "careerEVPPG": 0.33,
-      "careerTOI": 15.01,
-      "careerGPPct": 89.51,
-      "seasonNo": 5,
-      "signed": false,
-      "actualContract": null,
-      "estimatedCapHitPct": 4.42,
-      "estimatedAAV": 4596800,
-      "ciLow": 3.67,
-      "ciHigh": 5.17,
-      "aavLow": 3816800,
-      "aavHigh": 5376800,
-      "estimateStd": 0.75,
-      "compWeights": [
-        0.3048,
-        0.239,
-        0.2286,
-        0.2276
-      ],
-      "avgCompTerm": 2.8,
-      "termTable": [
-        {
-          "term": 1,
-          "capHitPct": 1.18,
-          "aav": 1227200,
-          "regime": "bridge",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 2,
-          "capHitPct": 4.42,
-          "aav": 4596800,
-          "regime": "crossover",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 3,
-          "capHitPct": 5.2,
-          "aav": 5408000,
-          "regime": "ufa",
-          "ufaYrsBought": 1
-        },
-        {
-          "term": 4,
-          "capHitPct": 5.98,
-          "aav": 6219200,
-          "regime": "ufa",
-          "ufaYrsBought": 2
-        },
-        {
-          "term": 5,
-          "capHitPct": 6.76,
-          "aav": 7030400,
-          "regime": "ufa",
-          "ufaYrsBought": 3
-        },
-        {
-          "term": 6,
-          "capHitPct": 7.54,
-          "aav": 7841600,
-          "regime": "ufa",
-          "ufaYrsBought": 4
-        },
-        {
-          "term": 7,
-          "capHitPct": 8.32,
-          "aav": 8652800,
-          "regime": "ufa",
-          "ufaYrsBought": 5
-        },
-        {
-          "term": 8,
-          "capHitPct": 9.1,
-          "aav": 9464000,
-          "regime": "ufa",
-          "ufaYrsBought": 6
-        }
-      ],
-      "comps": [
-        {
-          "playerId": 8481554,
-          "name": "Kaapo Kakko",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 24,
-          "ufaYear": 2026,
-          "height": "74",
-          "weight": "216",
-          "shoots": "L",
-          "draftOverall": 2,
-          "draftBucket": 1,
-          "term": 3,
-          "value": 13575000,
-          "aav": 4525000,
-          "capHitPct": 5.14,
-          "gp": 79,
-          "goals": 14,
-          "assists": 30,
-          "points": 44,
-          "ppg": 0.56,
-          "evPoints": 36,
-          "toi": 15.62,
-          "careerGP": 379,
-          "careerPoints": 161,
-          "careerEVPoints": 131,
-          "careerPPG": 0.39,
-          "careerEVPPG": 0.32,
-          "careerTOI": 14.53,
-          "careerGPPct": 77.03,
-          "seasonNo": 6
-        },
-        {
-          "playerId": 8481535,
-          "name": "Nils Hoglander",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 24,
-          "ufaYear": 2028,
-          "height": "69",
-          "weight": "185",
-          "shoots": "L",
-          "draftOverall": 40,
-          "draftBucket": 4,
-          "term": 3,
-          "value": 9000000,
-          "aav": 3000000,
-          "capHitPct": 3.41,
-          "gp": 72,
-          "goals": 8,
-          "assists": 17,
-          "points": 25,
-          "ppg": 0.35,
-          "evPoints": 24,
-          "toi": 12.13,
-          "careerGP": 293,
-          "careerPoints": 115,
-          "careerEVPoints": 110,
-          "careerPPG": 0.41,
-          "careerEVPPG": 0.39,
-          "careerTOI": 13.17,
-          "careerGPPct": 71.46,
-          "seasonNo": 5
-        },
-        {
-          "playerId": 8482155,
-          "name": "Alex Laferriere",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 23,
-          "ufaYear": 2029,
-          "height": "73",
-          "weight": "205",
-          "shoots": "R",
-          "draftOverall": 83,
-          "draftBucket": 5,
-          "term": 3,
-          "value": 12300000,
-          "aav": 4100000,
-          "capHitPct": 4.66,
-          "gp": 77,
-          "goals": 19,
-          "assists": 23,
-          "points": 42,
-          "ppg": 0.55,
-          "evPoints": 38,
-          "toi": 16.53,
-          "careerGP": 158,
-          "careerPoints": 65,
-          "careerEVPoints": 58,
-          "careerPPG": 0.28,
-          "careerEVPPG": 0.25,
-          "careerTOI": 13.22,
-          "careerGPPct": 96.34,
-          "seasonNo": 2
-        },
-        {
-          "playerId": 8482159,
-          "name": "Tyson Foerster",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 23,
-          "ufaYear": 2029,
-          "height": "74",
-          "weight": "214",
-          "shoots": "R",
-          "draftOverall": 23,
-          "draftBucket": 3,
-          "term": 2,
-          "value": 7500000,
-          "aav": 3750000,
-          "capHitPct": 4.26,
-          "gp": 81,
-          "goals": 25,
-          "assists": 18,
-          "points": 43,
-          "ppg": 0.53,
-          "evPoints": 35,
-          "toi": 16.86,
-          "careerGP": 166,
-          "careerPoints": 83,
-          "careerEVPoints": 65,
-          "careerPPG": 0.47,
-          "careerEVPPG": 0.35,
-          "careerTOI": 16.92,
-          "careerGPPct": 67.48,
-          "seasonNo": 3
-        }
-      ],
-      "compDistances": [
-        2.7858,
-        3.5521,
-        3.5678,
-        3.7147,
-        3.73
-      ],
-      "career": [
-        {
-          "season": 20212022,
-          "age": 19,
-          "gp": 79,
-          "points": 31,
-          "ppg": 0.39,
-          "evPoints": 29,
-          "evPPG": 0.37,
-          "toi": 13.7
-        },
-        {
-          "season": 20222023,
-          "age": 20,
-          "gp": 64,
-          "points": 11,
-          "ppg": 0.17,
-          "evPoints": 8,
-          "evPPG": 0.12,
-          "toi": 13.31
-        },
-        {
-          "season": 20232024,
-          "age": 21,
-          "gp": 77,
-          "points": 32,
-          "ppg": 0.42,
-          "evPoints": 30,
-          "evPPG": 0.39,
-          "toi": 16.12
-        },
-        {
-          "season": 20242025,
-          "age": 22,
-          "gp": 66,
-          "points": 33,
-          "ppg": 0.5,
-          "evPoints": 28,
-          "evPPG": 0.42,
-          "toi": 16.91
-        },
-        {
-          "season": 20252026,
-          "age": 23,
-          "gp": 81,
-          "points": 33,
-          "ppg": 0.41,
-          "evPoints": 32,
-          "evPPG": 0.4,
-          "toi": 15.22
-        }
-      ],
-      "compCareers": {
-        "8481554": [
-          {
-            "season": 20192020,
-            "age": 19,
-            "gp": 66,
-            "points": 23,
-            "ppg": 0.35,
-            "evPoints": 10,
-            "evPPG": 0.15,
-            "toi": 14.28
-          },
-          {
-            "season": 20202021,
-            "age": 20,
-            "gp": 48,
-            "points": 17,
-            "ppg": 0.35,
-            "evPoints": 14,
-            "evPPG": 0.29,
-            "toi": 14.35
-          },
-          {
-            "season": 20212022,
-            "age": 21,
-            "gp": 43,
-            "points": 18,
-            "ppg": 0.42,
-            "evPoints": 16,
-            "evPPG": 0.37,
-            "toi": 15.45
-          },
-          {
-            "season": 20222023,
-            "age": 22,
-            "gp": 82,
-            "points": 40,
-            "ppg": 0.49,
-            "evPoints": 37,
-            "evPPG": 0.45,
-            "toi": 15.31
-          },
-          {
-            "season": 20232024,
-            "age": 23,
-            "gp": 61,
-            "points": 19,
-            "ppg": 0.31,
-            "evPoints": 18,
-            "evPPG": 0.3,
-            "toi": 13.28
-          },
-          {
-            "season": 20242025,
-            "age": 24,
-            "gp": 79,
-            "points": 44,
-            "ppg": 0.56,
-            "evPoints": 36,
-            "evPPG": 0.46,
-            "toi": 15.62
-          },
-          {
-            "season": 20252026,
-            "age": 25,
-            "gp": 65,
-            "points": 40,
-            "ppg": 0.62,
-            "evPoints": 32,
-            "evPPG": 0.49,
-            "toi": 14.26
-          }
-        ],
-        "8481535": [
-          {
-            "season": 20202021,
-            "age": 20,
-            "gp": 56,
-            "points": 27,
-            "ppg": 0.48,
-            "evPoints": 26,
-            "evPPG": 0.46,
-            "toi": 15.44
-          },
-          {
-            "season": 20212022,
-            "age": 21,
-            "gp": 60,
-            "points": 18,
-            "ppg": 0.3,
-            "evPoints": 15,
-            "evPPG": 0.25,
-            "toi": 13.09
-          },
-          {
-            "season": 20222023,
-            "age": 22,
-            "gp": 25,
-            "points": 9,
-            "ppg": 0.36,
-            "evPoints": 9,
-            "evPPG": 0.36,
-            "toi": 12.06
-          },
-          {
-            "season": 20232024,
-            "age": 23,
-            "gp": 80,
-            "points": 36,
-            "ppg": 0.45,
-            "evPoints": 36,
-            "evPPG": 0.45,
-            "toi": 12.11
-          },
-          {
-            "season": 20242025,
-            "age": 24,
-            "gp": 72,
-            "points": 25,
-            "ppg": 0.35,
-            "evPoints": 24,
-            "evPPG": 0.33,
-            "toi": 12.13
-          },
-          {
-            "season": 20252026,
-            "age": 25,
-            "gp": 38,
-            "points": 5,
-            "ppg": 0.13,
-            "evPoints": 5,
-            "evPPG": 0.13,
-            "toi": 11.52
-          }
-        ],
-        "8481553": [
-          {
-            "season": 20212022,
-            "age": 20,
-            "gp": 10,
-            "points": 4,
-            "ppg": 0.4,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 15.45
-          },
-          {
-            "season": 20232024,
-            "age": 22,
-            "gp": 57,
-            "points": 23,
-            "ppg": 0.4,
-            "evPoints": 18,
-            "evPPG": 0.32,
-            "toi": 13.79
-          },
-          {
-            "season": 20242025,
-            "age": 23,
-            "gp": 79,
-            "points": 41,
-            "ppg": 0.52,
-            "evPoints": 37,
-            "evPPG": 0.47,
-            "toi": 14.83
-          },
-          {
-            "season": 20252026,
-            "age": 24,
-            "gp": 68,
-            "points": 30,
-            "ppg": 0.44,
-            "evPoints": 23,
-            "evPPG": 0.34,
-            "toi": 15.16
-          }
-        ],
-        "8482155": [
-          {
-            "season": 20232024,
-            "age": 22,
-            "gp": 81,
-            "points": 23,
-            "ppg": 0.28,
-            "evPoints": 20,
-            "evPPG": 0.25,
-            "toi": 13.22
-          },
-          {
-            "season": 20242025,
-            "age": 23,
-            "gp": 77,
-            "points": 42,
-            "ppg": 0.55,
-            "evPoints": 38,
-            "evPPG": 0.49,
-            "toi": 16.53
-          },
-          {
-            "season": 20252026,
-            "age": 24,
-            "gp": 82,
-            "points": 44,
-            "ppg": 0.54,
-            "evPoints": 37,
-            "evPPG": 0.45,
-            "toi": 18.31
-          }
-        ],
-        "8482159": [
-          {
-            "season": 20222023,
-            "age": 21,
-            "gp": 8,
-            "points": 7,
-            "ppg": 0.88,
-            "evPoints": 6,
-            "evPPG": 0.75,
-            "toi": 16.57
-          },
-          {
-            "season": 20232024,
-            "age": 22,
-            "gp": 77,
-            "points": 33,
-            "ppg": 0.43,
-            "evPoints": 24,
-            "evPPG": 0.31,
-            "toi": 17.27
-          },
-          {
-            "season": 20242025,
-            "age": 23,
-            "gp": 81,
-            "points": 43,
-            "ppg": 0.53,
-            "evPoints": 35,
-            "evPPG": 0.43,
-            "toi": 16.86
-          },
-          {
-            "season": 20252026,
-            "age": 24,
-            "gp": 29,
-            "points": 17,
-            "ppg": 0.59,
-            "evPoints": 13,
-            "evPPG": 0.45,
-            "toi": 17.3
           }
         ]
       }
@@ -19072,50 +18515,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.98,
+          "aav": 4139200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.69,
+          "aav": 4877600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 5.61,
-          "aav": 5834400,
+          "capHitPct": 5.41,
+          "aav": 5626400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 6.39,
-          "aav": 6645600,
+          "capHitPct": 6.12,
+          "aav": 6364800,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 7.17,
-          "aav": 7456800,
+          "capHitPct": 6.83,
+          "aav": 7103200,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 7.95,
-          "aav": 8268000,
+          "capHitPct": 7.54,
+          "aav": 7841600,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 8.72,
-          "aav": 9068800,
+          "capHitPct": 8.25,
+          "aav": 8580000,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -34848,29 +34291,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 3.54,
-          "aav": 3681600,
+          "capHitPct": 3.47,
+          "aav": 3608800,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 4.32,
-          "aav": 4492800,
+          "capHitPct": 4.18,
+          "aav": 4347200,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 5.1,
-          "aav": 5304000,
+          "capHitPct": 4.9,
+          "aav": 5096000,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 5.88,
-          "aav": 6115200,
+          "capHitPct": 5.61,
+          "aav": 5834400,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -36181,43 +35624,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.81,
-          "aav": 1882400,
+          "capHitPct": 1.74,
+          "aav": 1809600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.59,
-          "aav": 2693600,
+          "capHitPct": 2.45,
+          "aav": 2548000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.37,
-          "aav": 3504800,
+          "capHitPct": 3.17,
+          "aav": 3296800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.15,
-          "aav": 4316000,
+          "capHitPct": 3.88,
+          "aav": 4035200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.93,
-          "aav": 5127200,
+          "capHitPct": 4.59,
+          "aav": 4773600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.71,
-          "aav": 5938400,
+          "capHitPct": 5.3,
+          "aav": 5512000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -46789,29 +46232,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.93,
-          "aav": 2007200,
+          "capHitPct": 1.86,
+          "aav": 1934400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.71,
-          "aav": 2818400,
+          "capHitPct": 2.57,
+          "aav": 2672800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.49,
-          "aav": 3629600,
+          "capHitPct": 3.29,
+          "aav": 3421600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.27,
-          "aav": 4440800,
+          "capHitPct": 4.0,
+          "aav": 4160000,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -48670,50 +48113,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 2.31,
-          "aav": 2402400,
+          "capHitPct": 2.24,
+          "aav": 2329600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 3.09,
-          "aav": 3213600,
+          "capHitPct": 2.95,
+          "aav": 3068000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 3.87,
-          "aav": 4024800,
+          "capHitPct": 3.67,
+          "aav": 3816800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 4.65,
-          "aav": 4836000,
+          "capHitPct": 4.38,
+          "aav": 4555200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 5.43,
-          "aav": 5647200,
+          "capHitPct": 5.09,
+          "aav": 5293600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 6.21,
-          "aav": 6458400,
+          "capHitPct": 5.8,
+          "aav": 6032000,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 6.98,
-          "aav": 7259200,
+          "capHitPct": 6.51,
+          "aav": 6770400,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -49113,50 +48556,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 4.58,
-          "aav": 4763200,
+          "capHitPct": 4.51,
+          "aav": 4690400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 5.36,
-          "aav": 5574400,
+          "capHitPct": 5.22,
+          "aav": 5428800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 6.14,
-          "aav": 6385600,
+          "capHitPct": 5.94,
+          "aav": 6177600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 6.92,
-          "aav": 7196800,
+          "capHitPct": 6.65,
+          "aav": 6916000,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 7.7,
-          "aav": 8008000,
+          "capHitPct": 7.36,
+          "aav": 7654400,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 8.48,
-          "aav": 8819200,
+          "capHitPct": 8.07,
+          "aav": 8392800,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 9.25,
-          "aav": 9620000,
+          "capHitPct": 8.78,
+          "aav": 9131200,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -54654,29 +54097,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 5.77,
-          "aav": 6000800,
+          "capHitPct": 5.7,
+          "aav": 5928000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 6.55,
-          "aav": 6812000,
+          "capHitPct": 6.41,
+          "aav": 6666400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 7.33,
-          "aav": 7623200,
+          "capHitPct": 7.13,
+          "aav": 7415200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 8.11,
-          "aav": 8434400,
+          "capHitPct": 7.84,
+          "aav": 8153600,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -59089,29 +58532,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.92,
-          "aav": 1996800,
+          "capHitPct": 1.85,
+          "aav": 1924000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.7,
-          "aav": 2808000,
+          "capHitPct": 2.56,
+          "aav": 2662400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.48,
-          "aav": 3619200,
+          "capHitPct": 3.28,
+          "aav": 3411200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.26,
-          "aav": 4430400,
+          "capHitPct": 3.99,
+          "aav": 4149600,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -60703,29 +60146,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 5.17,
-          "aav": 5376800,
+          "capHitPct": 5.1,
+          "aav": 5304000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 5.95,
-          "aav": 6188000,
+          "capHitPct": 5.81,
+          "aav": 6042400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 6.73,
-          "aav": 6999200,
+          "capHitPct": 6.53,
+          "aav": 6791200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 7.51,
-          "aav": 7810400,
+          "capHitPct": 7.24,
+          "aav": 7529600,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -61229,50 +60672,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 1.76,
-          "aav": 1830400,
+          "capHitPct": 1.69,
+          "aav": 1757600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 2.54,
-          "aav": 2641600,
+          "capHitPct": 2.4,
+          "aav": 2496000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 3.32,
-          "aav": 3452800,
+          "capHitPct": 3.12,
+          "aav": 3244800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 4.1,
-          "aav": 4264000,
+          "capHitPct": 3.83,
+          "aav": 3983200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 4.88,
-          "aav": 5075200,
+          "capHitPct": 4.54,
+          "aav": 4721600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 5.66,
-          "aav": 5886400,
+          "capHitPct": 5.25,
+          "aav": 5460000,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 6.43,
-          "aav": 6687200,
+          "capHitPct": 5.96,
+          "aav": 6198400,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -71496,43 +70939,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 2.18,
-          "aav": 2267200,
+          "capHitPct": 2.11,
+          "aav": 2194400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.96,
-          "aav": 3078400,
+          "capHitPct": 2.82,
+          "aav": 2932800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.74,
-          "aav": 3889600,
+          "capHitPct": 3.54,
+          "aav": 3681600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.52,
-          "aav": 4700800,
+          "capHitPct": 4.25,
+          "aav": 4420000,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 5.3,
-          "aav": 5512000,
+          "capHitPct": 4.96,
+          "aav": 5158400,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 6.08,
-          "aav": 6323200,
+          "capHitPct": 5.67,
+          "aav": 5896800,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -71888,43 +71331,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.92,
-          "aav": 1996800,
+          "capHitPct": 1.85,
+          "aav": 1924000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.7,
-          "aav": 2808000,
+          "capHitPct": 2.56,
+          "aav": 2662400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.48,
-          "aav": 3619200,
+          "capHitPct": 3.28,
+          "aav": 3411200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.26,
-          "aav": 4430400,
+          "capHitPct": 3.99,
+          "aav": 4149600,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 5.04,
-          "aav": 5241600,
+          "capHitPct": 4.7,
+          "aav": 4888000,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.82,
-          "aav": 6052800,
+          "capHitPct": 5.41,
+          "aav": 5626400,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -72340,50 +71783,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 5.08,
-          "aav": 5283200,
+          "capHitPct": 5.01,
+          "aav": 5210400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 5.86,
-          "aav": 6094400,
+          "capHitPct": 5.72,
+          "aav": 5948800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 6.64,
-          "aav": 6905600,
+          "capHitPct": 6.44,
+          "aav": 6697600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 7.42,
-          "aav": 7716800,
+          "capHitPct": 7.15,
+          "aav": 7436000,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 8.2,
-          "aav": 8528000,
+          "capHitPct": 7.86,
+          "aav": 8174400,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 8.98,
-          "aav": 9339200,
+          "capHitPct": 8.57,
+          "aav": 8912800,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 9.75,
-          "aav": 10140000,
+          "capHitPct": 9.28,
+          "aav": 9651200,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -78656,29 +78099,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 5.55,
-          "aav": 5772000,
+          "capHitPct": 5.48,
+          "aav": 5699200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 6.33,
-          "aav": 6583200,
+          "capHitPct": 6.19,
+          "aav": 6437600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 7.11,
-          "aav": 7394400,
+          "capHitPct": 6.91,
+          "aav": 7186400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 7.89,
-          "aav": 8205600,
+          "capHitPct": 7.62,
+          "aav": 7924800,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -81334,29 +80777,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.81,
-          "aav": 1882400,
+          "capHitPct": 1.74,
+          "aav": 1809600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.59,
-          "aav": 2693600,
+          "capHitPct": 2.45,
+          "aav": 2548000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.37,
-          "aav": 3504800,
+          "capHitPct": 3.17,
+          "aav": 3296800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.15,
-          "aav": 4316000,
+          "capHitPct": 3.88,
+          "aav": 4035200,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -84744,29 +84187,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.73,
-          "aav": 1799200,
+          "capHitPct": 1.66,
+          "aav": 1726400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.51,
-          "aav": 2610400,
+          "capHitPct": 2.37,
+          "aav": 2464800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.29,
-          "aav": 3421600,
+          "capHitPct": 3.09,
+          "aav": 3213600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.07,
-          "aav": 4232800,
+          "capHitPct": 3.8,
+          "aav": 3952000,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -88607,43 +88050,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.76,
-          "aav": 1830400,
+          "capHitPct": 1.69,
+          "aav": 1757600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.54,
-          "aav": 2641600,
+          "capHitPct": 2.4,
+          "aav": 2496000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.32,
-          "aav": 3452800,
+          "capHitPct": 3.12,
+          "aav": 3244800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.1,
-          "aav": 4264000,
+          "capHitPct": 3.83,
+          "aav": 3983200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.88,
-          "aav": 5075200,
+          "capHitPct": 4.54,
+          "aav": 4721600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.66,
-          "aav": 5886400,
+          "capHitPct": 5.25,
+          "aav": 5460000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -90034,6 +89477,571 @@
       }
     },
     {
+      "playerId": 8482705,
+      "name": "Cole Sillinger",
+      "position": "Center",
+      "positionGroup": "Forward",
+      "signingStatus": "RFA",
+      "contractYear": 20252026,
+      "age": 23,
+      "ufaYear": 2028,
+      "height": "72",
+      "weight": "203",
+      "shoots": "L",
+      "draftOverall": 12,
+      "draftBucket": 2,
+      "term": 1,
+      "value": 0,
+      "aav": 0,
+      "capHitPct": 0.0,
+      "gp": 81,
+      "goals": 8,
+      "assists": 25,
+      "points": 33,
+      "ppg": 0.41,
+      "evPoints": 32,
+      "toi": 15.22,
+      "careerGP": 367,
+      "careerPoints": 140,
+      "careerEVPoints": 127,
+      "careerPPG": 0.37,
+      "careerEVPPG": 0.33,
+      "careerTOI": 15.01,
+      "careerGPPct": 89.51,
+      "seasonNo": 5,
+      "signed": true,
+      "actualContract": {
+        "term": 3,
+        "value": 13875000,
+        "aav": 4625000,
+        "capHitPct": 4.45,
+        "signingDate": "2026-07-24",
+        "team": "Blue Jackets",
+        "signingStatus": "RFA"
+      },
+      "estimatedCapHitPct": 4.42,
+      "estimatedAAV": 4596800,
+      "ciLow": 3.67,
+      "ciHigh": 5.17,
+      "aavLow": 3816800,
+      "aavHigh": 5376800,
+      "estimateStd": 0.75,
+      "compWeights": [
+        0.3048,
+        0.239,
+        0.2286,
+        0.2276
+      ],
+      "avgCompTerm": 2.8,
+      "termTable": [
+        {
+          "term": 1,
+          "capHitPct": 1.18,
+          "aav": 1227200,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 2,
+          "capHitPct": 4.42,
+          "aav": 4596800,
+          "regime": "crossover",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 3,
+          "capHitPct": 5.13,
+          "aav": 5335200,
+          "regime": "ufa",
+          "ufaYrsBought": 1
+        },
+        {
+          "term": 4,
+          "capHitPct": 5.84,
+          "aav": 6073600,
+          "regime": "ufa",
+          "ufaYrsBought": 2
+        },
+        {
+          "term": 5,
+          "capHitPct": 6.56,
+          "aav": 6822400,
+          "regime": "ufa",
+          "ufaYrsBought": 3
+        },
+        {
+          "term": 6,
+          "capHitPct": 7.27,
+          "aav": 7560800,
+          "regime": "ufa",
+          "ufaYrsBought": 4
+        },
+        {
+          "term": 7,
+          "capHitPct": 7.98,
+          "aav": 8299200,
+          "regime": "ufa",
+          "ufaYrsBought": 5
+        },
+        {
+          "term": 8,
+          "capHitPct": 8.69,
+          "aav": 9037600,
+          "regime": "ufa",
+          "ufaYrsBought": 6
+        }
+      ],
+      "comps": [
+        {
+          "playerId": 8481554,
+          "name": "Kaapo Kakko",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "ufaYear": 2026,
+          "height": "74",
+          "weight": "216",
+          "shoots": "L",
+          "draftOverall": 2,
+          "draftBucket": 1,
+          "term": 3,
+          "value": 13575000,
+          "aav": 4525000,
+          "capHitPct": 5.14,
+          "gp": 79,
+          "goals": 14,
+          "assists": 30,
+          "points": 44,
+          "ppg": 0.56,
+          "evPoints": 36,
+          "toi": 15.62,
+          "careerGP": 379,
+          "careerPoints": 161,
+          "careerEVPoints": 131,
+          "careerPPG": 0.39,
+          "careerEVPPG": 0.32,
+          "careerTOI": 14.53,
+          "careerGPPct": 77.03,
+          "seasonNo": 6
+        },
+        {
+          "playerId": 8481535,
+          "name": "Nils Hoglander",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "ufaYear": 2028,
+          "height": "69",
+          "weight": "185",
+          "shoots": "L",
+          "draftOverall": 40,
+          "draftBucket": 4,
+          "term": 3,
+          "value": 9000000,
+          "aav": 3000000,
+          "capHitPct": 3.41,
+          "gp": 72,
+          "goals": 8,
+          "assists": 17,
+          "points": 25,
+          "ppg": 0.35,
+          "evPoints": 24,
+          "toi": 12.13,
+          "careerGP": 293,
+          "careerPoints": 115,
+          "careerEVPoints": 110,
+          "careerPPG": 0.41,
+          "careerEVPPG": 0.39,
+          "careerTOI": 13.17,
+          "careerGPPct": 71.46,
+          "seasonNo": 5
+        },
+        {
+          "playerId": 8482155,
+          "name": "Alex Laferriere",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 23,
+          "ufaYear": 2029,
+          "height": "73",
+          "weight": "205",
+          "shoots": "R",
+          "draftOverall": 83,
+          "draftBucket": 5,
+          "term": 3,
+          "value": 12300000,
+          "aav": 4100000,
+          "capHitPct": 4.66,
+          "gp": 77,
+          "goals": 19,
+          "assists": 23,
+          "points": 42,
+          "ppg": 0.55,
+          "evPoints": 38,
+          "toi": 16.53,
+          "careerGP": 158,
+          "careerPoints": 65,
+          "careerEVPoints": 58,
+          "careerPPG": 0.28,
+          "careerEVPPG": 0.25,
+          "careerTOI": 13.22,
+          "careerGPPct": 96.34,
+          "seasonNo": 2
+        },
+        {
+          "playerId": 8482159,
+          "name": "Tyson Foerster",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 23,
+          "ufaYear": 2029,
+          "height": "74",
+          "weight": "214",
+          "shoots": "R",
+          "draftOverall": 23,
+          "draftBucket": 3,
+          "term": 2,
+          "value": 7500000,
+          "aav": 3750000,
+          "capHitPct": 4.26,
+          "gp": 81,
+          "goals": 25,
+          "assists": 18,
+          "points": 43,
+          "ppg": 0.53,
+          "evPoints": 35,
+          "toi": 16.86,
+          "careerGP": 166,
+          "careerPoints": 83,
+          "careerEVPoints": 65,
+          "careerPPG": 0.47,
+          "careerEVPPG": 0.35,
+          "careerTOI": 16.92,
+          "careerGPPct": 67.48,
+          "seasonNo": 3
+        }
+      ],
+      "compDistances": [
+        2.7858,
+        3.5521,
+        3.5678,
+        3.7147,
+        3.73
+      ],
+      "career": [
+        {
+          "season": 20212022,
+          "age": 19,
+          "gp": 79,
+          "points": 31,
+          "ppg": 0.39,
+          "evPoints": 29,
+          "evPPG": 0.37,
+          "toi": 13.7
+        },
+        {
+          "season": 20222023,
+          "age": 20,
+          "gp": 64,
+          "points": 11,
+          "ppg": 0.17,
+          "evPoints": 8,
+          "evPPG": 0.12,
+          "toi": 13.31
+        },
+        {
+          "season": 20232024,
+          "age": 21,
+          "gp": 77,
+          "points": 32,
+          "ppg": 0.42,
+          "evPoints": 30,
+          "evPPG": 0.39,
+          "toi": 16.12
+        },
+        {
+          "season": 20242025,
+          "age": 22,
+          "gp": 66,
+          "points": 33,
+          "ppg": 0.5,
+          "evPoints": 28,
+          "evPPG": 0.42,
+          "toi": 16.91
+        },
+        {
+          "season": 20252026,
+          "age": 23,
+          "gp": 81,
+          "points": 33,
+          "ppg": 0.41,
+          "evPoints": 32,
+          "evPPG": 0.4,
+          "toi": 15.22
+        }
+      ],
+      "compCareers": {
+        "8481554": [
+          {
+            "season": 20192020,
+            "age": 19,
+            "gp": 66,
+            "points": 23,
+            "ppg": 0.35,
+            "evPoints": 10,
+            "evPPG": 0.15,
+            "toi": 14.28
+          },
+          {
+            "season": 20202021,
+            "age": 20,
+            "gp": 48,
+            "points": 17,
+            "ppg": 0.35,
+            "evPoints": 14,
+            "evPPG": 0.29,
+            "toi": 14.35
+          },
+          {
+            "season": 20212022,
+            "age": 21,
+            "gp": 43,
+            "points": 18,
+            "ppg": 0.42,
+            "evPoints": 16,
+            "evPPG": 0.37,
+            "toi": 15.45
+          },
+          {
+            "season": 20222023,
+            "age": 22,
+            "gp": 82,
+            "points": 40,
+            "ppg": 0.49,
+            "evPoints": 37,
+            "evPPG": 0.45,
+            "toi": 15.31
+          },
+          {
+            "season": 20232024,
+            "age": 23,
+            "gp": 61,
+            "points": 19,
+            "ppg": 0.31,
+            "evPoints": 18,
+            "evPPG": 0.3,
+            "toi": 13.28
+          },
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 79,
+            "points": 44,
+            "ppg": 0.56,
+            "evPoints": 36,
+            "evPPG": 0.46,
+            "toi": 15.62
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 65,
+            "points": 40,
+            "ppg": 0.62,
+            "evPoints": 32,
+            "evPPG": 0.49,
+            "toi": 14.26
+          }
+        ],
+        "8481535": [
+          {
+            "season": 20202021,
+            "age": 20,
+            "gp": 56,
+            "points": 27,
+            "ppg": 0.48,
+            "evPoints": 26,
+            "evPPG": 0.46,
+            "toi": 15.44
+          },
+          {
+            "season": 20212022,
+            "age": 21,
+            "gp": 60,
+            "points": 18,
+            "ppg": 0.3,
+            "evPoints": 15,
+            "evPPG": 0.25,
+            "toi": 13.09
+          },
+          {
+            "season": 20222023,
+            "age": 22,
+            "gp": 25,
+            "points": 9,
+            "ppg": 0.36,
+            "evPoints": 9,
+            "evPPG": 0.36,
+            "toi": 12.06
+          },
+          {
+            "season": 20232024,
+            "age": 23,
+            "gp": 80,
+            "points": 36,
+            "ppg": 0.45,
+            "evPoints": 36,
+            "evPPG": 0.45,
+            "toi": 12.11
+          },
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 72,
+            "points": 25,
+            "ppg": 0.35,
+            "evPoints": 24,
+            "evPPG": 0.33,
+            "toi": 12.13
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 38,
+            "points": 5,
+            "ppg": 0.13,
+            "evPoints": 5,
+            "evPPG": 0.13,
+            "toi": 11.52
+          }
+        ],
+        "8481553": [
+          {
+            "season": 20212022,
+            "age": 20,
+            "gp": 10,
+            "points": 4,
+            "ppg": 0.4,
+            "evPoints": 3,
+            "evPPG": 0.3,
+            "toi": 15.45
+          },
+          {
+            "season": 20232024,
+            "age": 22,
+            "gp": 57,
+            "points": 23,
+            "ppg": 0.4,
+            "evPoints": 18,
+            "evPPG": 0.32,
+            "toi": 13.79
+          },
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 79,
+            "points": 41,
+            "ppg": 0.52,
+            "evPoints": 37,
+            "evPPG": 0.47,
+            "toi": 14.83
+          },
+          {
+            "season": 20252026,
+            "age": 24,
+            "gp": 68,
+            "points": 30,
+            "ppg": 0.44,
+            "evPoints": 23,
+            "evPPG": 0.34,
+            "toi": 15.16
+          }
+        ],
+        "8482155": [
+          {
+            "season": 20232024,
+            "age": 22,
+            "gp": 81,
+            "points": 23,
+            "ppg": 0.28,
+            "evPoints": 20,
+            "evPPG": 0.25,
+            "toi": 13.22
+          },
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 77,
+            "points": 42,
+            "ppg": 0.55,
+            "evPoints": 38,
+            "evPPG": 0.49,
+            "toi": 16.53
+          },
+          {
+            "season": 20252026,
+            "age": 24,
+            "gp": 82,
+            "points": 44,
+            "ppg": 0.54,
+            "evPoints": 37,
+            "evPPG": 0.45,
+            "toi": 18.31
+          }
+        ],
+        "8482159": [
+          {
+            "season": 20222023,
+            "age": 21,
+            "gp": 8,
+            "points": 7,
+            "ppg": 0.88,
+            "evPoints": 6,
+            "evPPG": 0.75,
+            "toi": 16.57
+          },
+          {
+            "season": 20232024,
+            "age": 22,
+            "gp": 77,
+            "points": 33,
+            "ppg": 0.43,
+            "evPoints": 24,
+            "evPPG": 0.31,
+            "toi": 17.27
+          },
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 81,
+            "points": 43,
+            "ppg": 0.53,
+            "evPoints": 35,
+            "evPPG": 0.43,
+            "toi": 16.86
+          },
+          {
+            "season": 20252026,
+            "age": 24,
+            "gp": 29,
+            "points": 17,
+            "ppg": 0.59,
+            "evPoints": 13,
+            "evPPG": 0.45,
+            "toi": 17.3
+          }
+        ]
+      }
+    },
+    {
       "playerId": 8482062,
       "name": "Cole Smith",
       "position": "Winger",
@@ -90886,29 +90894,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.88,
-          "aav": 1955200,
+          "capHitPct": 1.81,
+          "aav": 1882400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.66,
-          "aav": 2766400,
+          "capHitPct": 2.52,
+          "aav": 2620800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.44,
-          "aav": 3577600,
+          "capHitPct": 3.24,
+          "aav": 3369600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.22,
-          "aav": 4388800,
+          "capHitPct": 3.95,
+          "aav": 4108000,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -99917,50 +99925,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 5.61,
-          "aav": 5834400,
+          "capHitPct": 5.2,
+          "aav": 5408000,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 6.38,
-          "aav": 6635200,
+          "capHitPct": 5.91,
+          "aav": 6146400,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -100379,36 +100387,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 1.76,
-          "aav": 1830400,
+          "capHitPct": 1.69,
+          "aav": 1757600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 2.54,
-          "aav": 2641600,
+          "capHitPct": 2.4,
+          "aav": 2496000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.32,
-          "aav": 3452800,
+          "capHitPct": 3.12,
+          "aav": 3244800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.1,
-          "aav": 4264000,
+          "capHitPct": 3.83,
+          "aav": 3983200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 4.88,
-          "aav": 5075200,
+          "capHitPct": 4.54,
+          "aav": 4721600,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -102536,29 +102544,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 2.84,
-          "aav": 2953600,
+          "capHitPct": 2.77,
+          "aav": 2880800,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 3.62,
-          "aav": 3764800,
+          "capHitPct": 3.48,
+          "aav": 3619200,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 4.4,
-          "aav": 4576000,
+          "capHitPct": 4.2,
+          "aav": 4368000,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 5.18,
-          "aav": 5387200,
+          "capHitPct": 4.91,
+          "aav": 5106400,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -103095,29 +103103,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.72,
-          "aav": 1788800,
+          "capHitPct": 1.65,
+          "aav": 1716000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.5,
-          "aav": 2600000,
+          "capHitPct": 2.36,
+          "aav": 2454400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.28,
-          "aav": 3411200,
+          "capHitPct": 3.08,
+          "aav": 3203200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.06,
-          "aav": 4222400,
+          "capHitPct": 3.79,
+          "aav": 3941600,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -103428,50 +103436,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 2.52,
-          "aav": 2620800,
+          "capHitPct": 2.45,
+          "aav": 2548000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 3.3,
-          "aav": 3432000,
+          "capHitPct": 3.16,
+          "aav": 3286400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 4.08,
-          "aav": 4243200,
+          "capHitPct": 3.88,
+          "aav": 4035200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 4.86,
-          "aav": 5054400,
+          "capHitPct": 4.59,
+          "aav": 4773600,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 5.64,
-          "aav": 5865600,
+          "capHitPct": 5.3,
+          "aav": 5512000,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 6.42,
-          "aav": 6676800,
+          "capHitPct": 6.01,
+          "aav": 6250400,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 7.19,
-          "aav": 7477600,
+          "capHitPct": 6.72,
+          "aav": 6988800,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -107008,43 +107016,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 5.62,
-          "aav": 5844800,
+          "capHitPct": 5.55,
+          "aav": 5772000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 6.4,
-          "aav": 6656000,
+          "capHitPct": 6.26,
+          "aav": 6510400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 7.18,
-          "aav": 7467200,
+          "capHitPct": 6.98,
+          "aav": 7259200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 7.96,
-          "aav": 8278400,
+          "capHitPct": 7.69,
+          "aav": 7997600,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 8.74,
-          "aav": 9089600,
+          "capHitPct": 8.4,
+          "aav": 8736000,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 9.52,
-          "aav": 9900800,
+          "capHitPct": 9.11,
+          "aav": 9474400,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -107590,36 +107598,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 3.05,
-          "aav": 3172000,
+          "capHitPct": 2.98,
+          "aav": 3099200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 3.83,
-          "aav": 3983200,
+          "capHitPct": 3.69,
+          "aav": 3837600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 4.61,
-          "aav": 4794400,
+          "capHitPct": 4.41,
+          "aav": 4586400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 5.39,
-          "aav": 5605600,
+          "capHitPct": 5.12,
+          "aav": 5324800,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 6.17,
-          "aav": 6416800,
+          "capHitPct": 5.83,
+          "aav": 6063200,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -111385,29 +111393,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.84,
-          "aav": 1913600,
+          "capHitPct": 1.77,
+          "aav": 1840800,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.62,
-          "aav": 2724800,
+          "capHitPct": 2.48,
+          "aav": 2579200,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.4,
-          "aav": 3536000,
+          "capHitPct": 3.2,
+          "aav": 3328000,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.18,
-          "aav": 4347200,
+          "capHitPct": 3.91,
+          "aav": 4066400,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -113215,43 +113223,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.61,
-          "aav": 5834400,
+          "capHitPct": 5.2,
+          "aav": 5408000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -113701,36 +113709,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 1.96,
-          "aav": 2038400,
+          "capHitPct": 1.89,
+          "aav": 1965600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 2.74,
-          "aav": 2849600,
+          "capHitPct": 2.6,
+          "aav": 2704000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.52,
-          "aav": 3660800,
+          "capHitPct": 3.32,
+          "aav": 3452800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.3,
-          "aav": 4472000,
+          "capHitPct": 4.03,
+          "aav": 4191200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 5.08,
-          "aav": 5283200,
+          "capHitPct": 4.74,
+          "aav": 4929600,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -114189,43 +114197,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.76,
-          "aav": 1830400,
+          "capHitPct": 1.69,
+          "aav": 1757600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.54,
-          "aav": 2641600,
+          "capHitPct": 2.4,
+          "aav": 2496000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.32,
-          "aav": 3452800,
+          "capHitPct": 3.12,
+          "aav": 3244800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.1,
-          "aav": 4264000,
+          "capHitPct": 3.83,
+          "aav": 3983200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.88,
-          "aav": 5075200,
+          "capHitPct": 4.54,
+          "aav": 4721600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.66,
-          "aav": 5886400,
+          "capHitPct": 5.25,
+          "aav": 5460000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -115766,36 +115774,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 2.91,
-          "aav": 3026400,
+          "capHitPct": 2.84,
+          "aav": 2953600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 3.69,
-          "aav": 3837600,
+          "capHitPct": 3.55,
+          "aav": 3692000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 4.47,
-          "aav": 4648800,
+          "capHitPct": 4.27,
+          "aav": 4440800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 5.25,
-          "aav": 5460000,
+          "capHitPct": 4.98,
+          "aav": 5179200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 6.03,
-          "aav": 6271200,
+          "capHitPct": 5.69,
+          "aav": 5917600,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -117171,43 +117179,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 2.41,
-          "aav": 2506400,
+          "capHitPct": 2.34,
+          "aav": 2433600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 3.19,
-          "aav": 3317600,
+          "capHitPct": 3.05,
+          "aav": 3172000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.97,
-          "aav": 4128800,
+          "capHitPct": 3.77,
+          "aav": 3920800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.75,
-          "aav": 4940000,
+          "capHitPct": 4.48,
+          "aav": 4659200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 5.53,
-          "aav": 5751200,
+          "capHitPct": 5.19,
+          "aav": 5397600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 6.31,
-          "aav": 6562400,
+          "capHitPct": 5.9,
+          "aav": 6136000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -117647,29 +117655,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.92,
-          "aav": 1996800,
+          "capHitPct": 1.85,
+          "aav": 1924000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.7,
-          "aav": 2808000,
+          "capHitPct": 2.56,
+          "aav": 2662400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.48,
-          "aav": 3619200,
+          "capHitPct": 3.28,
+          "aav": 3411200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.26,
-          "aav": 4430400,
+          "capHitPct": 3.99,
+          "aav": 4149600,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -118127,29 +118135,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.87,
-          "aav": 1944800,
+          "capHitPct": 1.8,
+          "aav": 1872000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.65,
-          "aav": 2756000,
+          "capHitPct": 2.51,
+          "aav": 2610400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.43,
-          "aav": 3567200,
+          "capHitPct": 3.23,
+          "aav": 3359200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.21,
-          "aav": 4378400,
+          "capHitPct": 3.94,
+          "aav": 4097600,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -119279,50 +119287,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 2.21,
-          "aav": 2298400,
+          "capHitPct": 2.14,
+          "aav": 2225600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 2.99,
-          "aav": 3109600,
+          "capHitPct": 2.85,
+          "aav": 2964000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 3.77,
-          "aav": 3920800,
+          "capHitPct": 3.57,
+          "aav": 3712800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 4.55,
-          "aav": 4732000,
+          "capHitPct": 4.28,
+          "aav": 4451200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 5.33,
-          "aav": 5543200,
+          "capHitPct": 4.99,
+          "aav": 5189600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 6.11,
-          "aav": 6354400,
+          "capHitPct": 5.7,
+          "aav": 5928000,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 6.88,
-          "aav": 7155200,
+          "capHitPct": 6.41,
+          "aav": 6666400,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -121839,43 +121847,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.61,
-          "aav": 5834400,
+          "capHitPct": 5.2,
+          "aav": 5408000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -122276,36 +122284,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -128943,29 +128951,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -141224,22 +141232,22 @@
         },
         {
           "term": 6,
-          "capHitPct": 1.75,
-          "aav": 1820000,
+          "capHitPct": 1.68,
+          "aav": 1747200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 7,
-          "capHitPct": 2.53,
-          "aav": 2631200,
+          "capHitPct": 2.39,
+          "aav": 2485600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 8,
-          "capHitPct": 3.31,
-          "aav": 3442400,
+          "capHitPct": 3.11,
+          "aav": 3234400,
           "regime": "ufa",
           "ufaYrsBought": 3
         }
@@ -146269,50 +146277,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 4.68,
-          "aav": 4867200,
+          "capHitPct": 4.61,
+          "aav": 4794400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 5.46,
-          "aav": 5678400,
+          "capHitPct": 5.32,
+          "aav": 5532800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 6.24,
-          "aav": 6489600,
+          "capHitPct": 6.04,
+          "aav": 6281600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 7.02,
-          "aav": 7300800,
+          "capHitPct": 6.75,
+          "aav": 7020000,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 7.8,
-          "aav": 8112000,
+          "capHitPct": 7.46,
+          "aav": 7758400,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 8.58,
-          "aav": 8923200,
+          "capHitPct": 8.17,
+          "aav": 8496800,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 9.35,
-          "aav": 9724000,
+          "capHitPct": 8.88,
+          "aav": 9235200,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -149923,50 +149931,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 5.61,
-          "aav": 5834400,
+          "capHitPct": 5.2,
+          "aav": 5408000,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 6.38,
-          "aav": 6635200,
+          "capHitPct": 5.91,
+          "aav": 6146400,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -150417,36 +150425,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 2.44,
-          "aav": 2537600,
+          "capHitPct": 2.37,
+          "aav": 2464800,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 3.22,
-          "aav": 3348800,
+          "capHitPct": 3.08,
+          "aav": 3203200,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 4.0,
-          "aav": 4160000,
+          "capHitPct": 3.8,
+          "aav": 3952000,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.78,
-          "aav": 4971200,
+          "capHitPct": 4.51,
+          "aav": 4690400,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 5.56,
-          "aav": 5782400,
+          "capHitPct": 5.22,
+          "aav": 5428800,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -152207,29 +152215,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 5.65,
-          "aav": 5876000,
+          "capHitPct": 5.58,
+          "aav": 5803200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 6.43,
-          "aav": 6687200,
+          "capHitPct": 6.29,
+          "aav": 6541600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 7.21,
-          "aav": 7498400,
+          "capHitPct": 7.01,
+          "aav": 7290400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 7.99,
-          "aav": 8309600,
+          "capHitPct": 7.72,
+          "aav": 8028800,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -153171,50 +153179,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 1.95,
-          "aav": 2028000,
+          "capHitPct": 1.88,
+          "aav": 1955200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 2.73,
-          "aav": 2839200,
+          "capHitPct": 2.59,
+          "aav": 2693600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 3.51,
-          "aav": 3650400,
+          "capHitPct": 3.31,
+          "aav": 3442400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 4.29,
-          "aav": 4461600,
+          "capHitPct": 4.02,
+          "aav": 4180800,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 5.07,
-          "aav": 5272800,
+          "capHitPct": 4.73,
+          "aav": 4919200,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 5.85,
-          "aav": 6084000,
+          "capHitPct": 5.44,
+          "aav": 5657600,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 6.62,
-          "aav": 6884800,
+          "capHitPct": 6.15,
+          "aav": 6396000,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -155331,43 +155339,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.76,
-          "aav": 1830400,
+          "capHitPct": 1.69,
+          "aav": 1757600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.54,
-          "aav": 2641600,
+          "capHitPct": 2.4,
+          "aav": 2496000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.32,
-          "aav": 3452800,
+          "capHitPct": 3.12,
+          "aav": 3244800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.1,
-          "aav": 4264000,
+          "capHitPct": 3.83,
+          "aav": 3983200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.88,
-          "aav": 5075200,
+          "capHitPct": 4.54,
+          "aav": 4721600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.66,
-          "aav": 5886400,
+          "capHitPct": 5.25,
+          "aav": 5460000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -160570,36 +160578,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 5.11,
-          "aav": 5314400,
+          "capHitPct": 5.04,
+          "aav": 5241600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 5.89,
-          "aav": 6125600,
+          "capHitPct": 5.75,
+          "aav": 5980000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 6.67,
-          "aav": 6936800,
+          "capHitPct": 6.47,
+          "aav": 6728800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 7.45,
-          "aav": 7748000,
+          "capHitPct": 7.18,
+          "aav": 7467200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 8.23,
-          "aav": 8559200,
+          "capHitPct": 7.89,
+          "aav": 8205600,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -161843,36 +161851,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 1.7,
-          "aav": 1768000,
+          "capHitPct": 1.63,
+          "aav": 1695200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 2.48,
-          "aav": 2579200,
+          "capHitPct": 2.34,
+          "aav": 2433600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.26,
-          "aav": 3390400,
+          "capHitPct": 3.06,
+          "aav": 3182400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.04,
-          "aav": 4201600,
+          "capHitPct": 3.77,
+          "aav": 3920800,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 4.82,
-          "aav": 5012800,
+          "capHitPct": 4.48,
+          "aav": 4659200,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -162182,50 +162190,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 1.76,
-          "aav": 1830400,
+          "capHitPct": 1.69,
+          "aav": 1757600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 2.54,
-          "aav": 2641600,
+          "capHitPct": 2.4,
+          "aav": 2496000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 3.32,
-          "aav": 3452800,
+          "capHitPct": 3.12,
+          "aav": 3244800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 4.1,
-          "aav": 4264000,
+          "capHitPct": 3.83,
+          "aav": 3983200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 4.88,
-          "aav": 5075200,
+          "capHitPct": 4.54,
+          "aav": 4721600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 5.66,
-          "aav": 5886400,
+          "capHitPct": 5.25,
+          "aav": 5460000,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 6.43,
-          "aav": 6687200,
+          "capHitPct": 5.96,
+          "aav": 6198400,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -163973,36 +163981,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 1.99,
-          "aav": 2069600,
+          "capHitPct": 1.92,
+          "aav": 1996800,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 2.77,
-          "aav": 2880800,
+          "capHitPct": 2.63,
+          "aav": 2735200,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.55,
-          "aav": 3692000,
+          "capHitPct": 3.35,
+          "aav": 3484000,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.33,
-          "aav": 4503200,
+          "capHitPct": 4.06,
+          "aav": 4222400,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 5.11,
-          "aav": 5314400,
+          "capHitPct": 4.77,
+          "aav": 4960800,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -164492,36 +164500,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 1.72,
-          "aav": 1788800,
+          "capHitPct": 1.65,
+          "aav": 1716000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 2.5,
-          "aav": 2600000,
+          "capHitPct": 2.36,
+          "aav": 2454400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.28,
-          "aav": 3411200,
+          "capHitPct": 3.08,
+          "aav": 3203200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.06,
-          "aav": 4222400,
+          "capHitPct": 3.79,
+          "aav": 3941600,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 4.84,
-          "aav": 5033600,
+          "capHitPct": 4.5,
+          "aav": 4680000,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -165441,36 +165449,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 4.15,
-          "aav": 4316000,
+          "capHitPct": 4.08,
+          "aav": 4243200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 4.93,
-          "aav": 5127200,
+          "capHitPct": 4.79,
+          "aav": 4981600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 5.71,
-          "aav": 5938400,
+          "capHitPct": 5.51,
+          "aav": 5730400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 6.49,
-          "aav": 6749600,
+          "capHitPct": 6.22,
+          "aav": 6468800,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 7.27,
-          "aav": 7560800,
+          "capHitPct": 6.93,
+          "aav": 7207200,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -174066,43 +174074,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 2.0,
-          "aav": 2080000,
+          "capHitPct": 1.93,
+          "aav": 2007200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.78,
-          "aav": 2891200,
+          "capHitPct": 2.64,
+          "aav": 2745600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.56,
-          "aav": 3702400,
+          "capHitPct": 3.36,
+          "aav": 3494400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.34,
-          "aav": 4513600,
+          "capHitPct": 4.07,
+          "aav": 4232800,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 5.12,
-          "aav": 5324800,
+          "capHitPct": 4.78,
+          "aav": 4971200,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.9,
-          "aav": 6136000,
+          "capHitPct": 5.49,
+          "aav": 5709600,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -174593,22 +174601,22 @@
         },
         {
           "term": 6,
-          "capHitPct": 5.38,
-          "aav": 5595200,
+          "capHitPct": 5.31,
+          "aav": 5522400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 7,
-          "capHitPct": 6.16,
-          "aav": 6406400,
+          "capHitPct": 6.02,
+          "aav": 6260800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 8,
-          "capHitPct": 6.94,
-          "aav": 7217600,
+          "capHitPct": 6.74,
+          "aav": 7009600,
           "regime": "ufa",
           "ufaYrsBought": 3
         }
@@ -176962,50 +176970,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 2.07,
-          "aav": 2152800,
+          "capHitPct": 2.0,
+          "aav": 2080000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 2.85,
-          "aav": 2964000,
+          "capHitPct": 2.71,
+          "aav": 2818400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 3.63,
-          "aav": 3775200,
+          "capHitPct": 3.43,
+          "aav": 3567200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 4.41,
-          "aav": 4586400,
+          "capHitPct": 4.14,
+          "aav": 4305600,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 5.19,
-          "aav": 5397600,
+          "capHitPct": 4.85,
+          "aav": 5044000,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 5.97,
-          "aav": 6208800,
+          "capHitPct": 5.56,
+          "aav": 5782400,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 6.74,
-          "aav": 7009600,
+          "capHitPct": 6.27,
+          "aav": 6520800,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -180649,43 +180657,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 4.94,
-          "aav": 5137600,
+          "capHitPct": 4.87,
+          "aav": 5064800,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 5.72,
-          "aav": 5948800,
+          "capHitPct": 5.58,
+          "aav": 5803200,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 6.5,
-          "aav": 6760000,
+          "capHitPct": 6.3,
+          "aav": 6552000,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 7.28,
-          "aav": 7571200,
+          "capHitPct": 7.01,
+          "aav": 7290400,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 8.06,
-          "aav": 8382400,
+          "capHitPct": 7.72,
+          "aav": 8028800,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 8.84,
-          "aav": 9193600,
+          "capHitPct": 8.43,
+          "aav": 8767200,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -182453,43 +182461,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.61,
-          "aav": 5834400,
+          "capHitPct": 5.2,
+          "aav": 5408000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -184334,29 +184342,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.73,
-          "aav": 1799200,
+          "capHitPct": 1.66,
+          "aav": 1726400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.51,
-          "aav": 2610400,
+          "capHitPct": 2.37,
+          "aav": 2464800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.29,
-          "aav": 3421600,
+          "capHitPct": 3.09,
+          "aav": 3213600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.07,
-          "aav": 4232800,
+          "capHitPct": 3.8,
+          "aav": 3952000,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -184682,36 +184690,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 2.22,
-          "aav": 2308800,
+          "capHitPct": 2.15,
+          "aav": 2236000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 3.0,
-          "aav": 3120000,
+          "capHitPct": 2.86,
+          "aav": 2974400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.78,
-          "aav": 3931200,
+          "capHitPct": 3.58,
+          "aav": 3723200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.56,
-          "aav": 4742400,
+          "capHitPct": 4.29,
+          "aav": 4461600,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 5.34,
-          "aav": 5553600,
+          "capHitPct": 5.0,
+          "aav": 5200000,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -187450,36 +187458,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 1.72,
-          "aav": 1788800,
+          "capHitPct": 1.65,
+          "aav": 1716000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 2.5,
-          "aav": 2600000,
+          "capHitPct": 2.36,
+          "aav": 2454400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.28,
-          "aav": 3411200,
+          "capHitPct": 3.08,
+          "aav": 3203200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.06,
-          "aav": 4222400,
+          "capHitPct": 3.79,
+          "aav": 3941600,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 4.84,
-          "aav": 5033600,
+          "capHitPct": 4.5,
+          "aav": 4680000,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -189961,43 +189969,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.61,
-          "aav": 5834400,
+          "capHitPct": 5.2,
+          "aav": 5408000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -192225,36 +192233,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 3.28,
-          "aav": 3411200,
+          "capHitPct": 3.21,
+          "aav": 3338400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 4.06,
-          "aav": 4222400,
+          "capHitPct": 3.92,
+          "aav": 4076800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 4.84,
-          "aav": 5033600,
+          "capHitPct": 4.64,
+          "aav": 4825600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 5.62,
-          "aav": 5844800,
+          "capHitPct": 5.35,
+          "aav": 5564000,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 6.4,
-          "aav": 6656000,
+          "capHitPct": 6.06,
+          "aav": 6302400,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -192728,29 +192736,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 3.45,
-          "aav": 3588000,
+          "capHitPct": 3.38,
+          "aav": 3515200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 4.23,
-          "aav": 4399200,
+          "capHitPct": 4.09,
+          "aav": 4253600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 5.01,
-          "aav": 5210400,
+          "capHitPct": 4.81,
+          "aav": 5002400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 5.79,
-          "aav": 6021600,
+          "capHitPct": 5.52,
+          "aav": 5740800,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -193224,50 +193232,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 3.17,
-          "aav": 3296800,
+          "capHitPct": 3.1,
+          "aav": 3224000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 3.95,
-          "aav": 4108000,
+          "capHitPct": 3.81,
+          "aav": 3962400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 4.73,
-          "aav": 4919200,
+          "capHitPct": 4.53,
+          "aav": 4711200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 5.51,
-          "aav": 5730400,
+          "capHitPct": 5.24,
+          "aav": 5449600,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 6.29,
-          "aav": 6541600,
+          "capHitPct": 5.95,
+          "aav": 6188000,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 7.07,
-          "aav": 7352800,
+          "capHitPct": 6.66,
+          "aav": 6926400,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 7.84,
-          "aav": 8153600,
+          "capHitPct": 7.37,
+          "aav": 7664800,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -193743,29 +193751,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.95,
-          "aav": 2028000,
+          "capHitPct": 1.88,
+          "aav": 1955200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.73,
-          "aav": 2839200,
+          "capHitPct": 2.59,
+          "aav": 2693600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.51,
-          "aav": 3650400,
+          "capHitPct": 3.31,
+          "aav": 3442400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.29,
-          "aav": 4461600,
+          "capHitPct": 4.02,
+          "aav": 4180800,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -194863,43 +194871,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.61,
-          "aav": 5834400,
+          "capHitPct": 5.2,
+          "aav": 5408000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -196898,43 +196906,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 2.13,
-          "aav": 2215200,
+          "capHitPct": 2.06,
+          "aav": 2142400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.91,
-          "aav": 3026400,
+          "capHitPct": 2.77,
+          "aav": 2880800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.69,
-          "aav": 3837600,
+          "capHitPct": 3.49,
+          "aav": 3629600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.47,
-          "aav": 4648800,
+          "capHitPct": 4.2,
+          "aav": 4368000,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 5.25,
-          "aav": 5460000,
+          "capHitPct": 4.91,
+          "aav": 5106400,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 6.03,
-          "aav": 6271200,
+          "capHitPct": 5.62,
+          "aav": 5844800,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -198302,50 +198310,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 1.78,
-          "aav": 1851200,
+          "capHitPct": 1.71,
+          "aav": 1778400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 3,
-          "capHitPct": 2.56,
-          "aav": 2662400,
+          "capHitPct": 2.42,
+          "aav": 2516800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 4,
-          "capHitPct": 3.34,
-          "aav": 3473600,
+          "capHitPct": 3.14,
+          "aav": 3265600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 5,
-          "capHitPct": 4.12,
-          "aav": 4284800,
+          "capHitPct": 3.85,
+          "aav": 4004000,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 6,
-          "capHitPct": 4.9,
-          "aav": 5096000,
+          "capHitPct": 4.56,
+          "aav": 4742400,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 7,
-          "capHitPct": 5.68,
-          "aav": 5907200,
+          "capHitPct": 5.27,
+          "aav": 5480800,
           "regime": "ufa",
           "ufaYrsBought": 6
         },
         {
           "term": 8,
-          "capHitPct": 6.45,
-          "aav": 6708000,
+          "capHitPct": 5.98,
+          "aav": 6219200,
           "regime": "ufa",
           "ufaYrsBought": 7
         }
@@ -198665,43 +198673,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.61,
-          "aav": 5834400,
+          "capHitPct": 5.2,
+          "aav": 5408000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -201936,29 +201944,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.7,
-          "aav": 1768000,
+          "capHitPct": 1.63,
+          "aav": 1695200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.48,
-          "aav": 2579200,
+          "capHitPct": 2.34,
+          "aav": 2433600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.26,
-          "aav": 3390400,
+          "capHitPct": 3.06,
+          "aav": 3182400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.04,
-          "aav": 4201600,
+          "capHitPct": 3.77,
+          "aav": 3920800,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -204154,43 +204162,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.78,
-          "aav": 1851200,
+          "capHitPct": 1.71,
+          "aav": 1778400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.56,
-          "aav": 2662400,
+          "capHitPct": 2.42,
+          "aav": 2516800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.34,
-          "aav": 3473600,
+          "capHitPct": 3.14,
+          "aav": 3265600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.12,
-          "aav": 4284800,
+          "capHitPct": 3.85,
+          "aav": 4004000,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.9,
-          "aav": 5096000,
+          "capHitPct": 4.56,
+          "aav": 4742400,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.68,
-          "aav": 5907200,
+          "capHitPct": 5.27,
+          "aav": 5480800,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -206832,29 +206840,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.7,
-          "aav": 1768000,
+          "capHitPct": 1.63,
+          "aav": 1695200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.48,
-          "aav": 2579200,
+          "capHitPct": 2.34,
+          "aav": 2433600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.26,
-          "aav": 3390400,
+          "capHitPct": 3.06,
+          "aav": 3182400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.04,
-          "aav": 4201600,
+          "capHitPct": 3.77,
+          "aav": 3920800,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -207254,36 +207262,36 @@
         },
         {
           "term": 4,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -207617,29 +207625,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.7,
-          "aav": 1768000,
+          "capHitPct": 1.63,
+          "aav": 1695200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.48,
-          "aav": 2579200,
+          "capHitPct": 2.34,
+          "aav": 2433600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.26,
-          "aav": 3390400,
+          "capHitPct": 3.06,
+          "aav": 3182400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.04,
-          "aav": 4201600,
+          "capHitPct": 3.77,
+          "aav": 3920800,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -208033,43 +208041,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.71,
-          "aav": 1778400,
+          "capHitPct": 1.64,
+          "aav": 1705600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.49,
-          "aav": 2589600,
+          "capHitPct": 2.35,
+          "aav": 2444000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.27,
-          "aav": 3400800,
+          "capHitPct": 3.07,
+          "aav": 3192800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.05,
-          "aav": 4212000,
+          "capHitPct": 3.78,
+          "aav": 3931200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 4.83,
-          "aav": 5023200,
+          "capHitPct": 4.49,
+          "aav": 4669600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.61,
-          "aav": 5834400,
+          "capHitPct": 5.2,
+          "aav": 5408000,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -211899,29 +211907,29 @@
         },
         {
           "term": 5,
-          "capHitPct": 1.8,
-          "aav": 1872000,
+          "capHitPct": 1.73,
+          "aav": 1799200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.58,
-          "aav": 2683200,
+          "capHitPct": 2.44,
+          "aav": 2537600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.36,
-          "aav": 3494400,
+          "capHitPct": 3.16,
+          "aav": 3286400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.14,
-          "aav": 4305600,
+          "capHitPct": 3.87,
+          "aav": 4024800,
           "regime": "ufa",
           "ufaYrsBought": 4
         }

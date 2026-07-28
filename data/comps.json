@@ -7,7 +7,7 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-07-27T11:17:35.937068",
+    "generatedAt": "2026-07-28T10:31:50.750814",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -207005,19 +207005,19 @@
           "seasonNo": 2
         },
         {
-          "playerId": 8483468,
-          "name": "Jiri Kulich",
+          "playerId": 8483512,
+          "name": "Matt Savoie",
           "position": "Center",
           "positionGroup": "Forward",
           "signingStatus": "RFA",
           "contractYear": 20232024,
           "age": 20,
           "ufaYear": 2031,
-          "height": "73",
-          "weight": "194",
-          "shoots": "L",
-          "draftOverall": 28,
-          "draftBucket": 3,
+          "height": "70",
+          "weight": "179",
+          "shoots": "R",
+          "draftOverall": 9,
+          "draftBucket": 2,
           "term": 3,
           "value": 2659998,
           "aav": 886666,
@@ -207028,7 +207028,7 @@
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
-          "toi": 14.88,
+          "toi": 3.92,
           "careerGP": 1,
           "careerPoints": 0,
           "careerEVPoints": 0,
@@ -207147,7 +207147,7 @@
             "toi": 9.21
           }
         ],
-        "8483468": [
+        "8483512": [
           {
             "season": 20232024,
             "age": 20,
@@ -207156,27 +207156,27 @@
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.88
+            "toi": 3.92
           },
           {
             "season": 20242025,
             "age": 21,
-            "gp": 62,
-            "points": 24,
-            "ppg": 0.39,
-            "evPoints": 24,
-            "evPPG": 0.39,
-            "toi": 14.79
+            "gp": 4,
+            "points": 1,
+            "ppg": 0.25,
+            "evPoints": 1,
+            "evPPG": 0.25,
+            "toi": 12.52
           },
           {
             "season": 20252026,
             "age": 22,
-            "gp": 12,
-            "points": 5,
-            "ppg": 0.42,
-            "evPoints": 5,
-            "evPPG": 0.42,
-            "toi": 16.36
+            "gp": 82,
+            "points": 37,
+            "ppg": 0.45,
+            "evPoints": 28,
+            "evPPG": 0.34,
+            "toi": 14.78
           }
         ]
       }
@@ -207790,19 +207790,19 @@
           "seasonNo": 2
         },
         {
-          "playerId": 8483468,
-          "name": "Jiri Kulich",
+          "playerId": 8483512,
+          "name": "Matt Savoie",
           "position": "Center",
           "positionGroup": "Forward",
           "signingStatus": "RFA",
           "contractYear": 20232024,
           "age": 20,
           "ufaYear": 2031,
-          "height": "73",
-          "weight": "194",
-          "shoots": "L",
-          "draftOverall": 28,
-          "draftBucket": 3,
+          "height": "70",
+          "weight": "179",
+          "shoots": "R",
+          "draftOverall": 9,
+          "draftBucket": 2,
           "term": 3,
           "value": 2659998,
           "aav": 886666,
@@ -207813,7 +207813,7 @@
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
-          "toi": 14.88,
+          "toi": 3.92,
           "careerGP": 1,
           "careerPoints": 0,
           "careerEVPoints": 0,
@@ -207932,7 +207932,7 @@
             "toi": 9.21
           }
         ],
-        "8483468": [
+        "8483512": [
           {
             "season": 20232024,
             "age": 20,
@@ -207941,27 +207941,27 @@
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.88
+            "toi": 3.92
           },
           {
             "season": 20242025,
             "age": 21,
-            "gp": 62,
-            "points": 24,
-            "ppg": 0.39,
-            "evPoints": 24,
-            "evPPG": 0.39,
-            "toi": 14.79
+            "gp": 4,
+            "points": 1,
+            "ppg": 0.25,
+            "evPoints": 1,
+            "evPPG": 0.25,
+            "toi": 12.52
           },
           {
             "season": 20252026,
             "age": 22,
-            "gp": 12,
-            "points": 5,
-            "ppg": 0.42,
-            "evPoints": 5,
-            "evPPG": 0.42,
-            "toi": 16.36
+            "gp": 82,
+            "points": 37,
+            "ppg": 0.45,
+            "evPoints": 28,
+            "evPPG": 0.34,
+            "toi": 14.78
           }
         ]
       }

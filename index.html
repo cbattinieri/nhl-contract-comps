@@ -467,6 +467,24 @@
   .verdict-chip.fair    { background: rgba(96,165,250,0.12); color: var(--accent-bright); border-color: rgba(96,165,250,0.25); }
   .verdict-chip.watch   { background: rgba(245,158,11,0.13); color: var(--orange); border-color: rgba(245,158,11,0.28); }
   .verdict-chip.risk    { background: rgba(239,68,68,0.13);  color: var(--red); border-color: rgba(239,68,68,0.28); }
+
+  /* ── PROJECTION CROSSTAB ── */
+  #projCrosstab th, #projCrosstab td { text-align: center; }
+  #projCrosstab th:first-child, #projCrosstab td:first-child {
+    text-align: left; position: sticky; left: 0; background: var(--bg-card); z-index: 1;
+  }
+  #projCrosstab td.xt-rowlabel { color: var(--text-secondary); font-weight: 500; }
+  #projCrosstab .xt-sub { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--text-muted); font-size: 0.66rem; }
+  #projCrosstab .xt-range { font-size: 0.66rem; color: var(--text-muted); font-weight: 400; margin-top: 1px; }
+  .xt-verdict {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-family: var(--font-display); font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.03em; border: 1px solid transparent;
+  }
+  .xt-verdict.bargain { background: rgba(16,185,129,0.15); color: var(--green); border-color: rgba(16,185,129,0.3); }
+  .xt-verdict.fair    { background: rgba(96,165,250,0.12); color: var(--accent-bright); border-color: rgba(96,165,250,0.25); }
+  .xt-verdict.watch   { background: rgba(245,158,11,0.13); color: var(--orange); border-color: rgba(245,158,11,0.28); }
+  .xt-verdict.risk    { background: rgba(239,68,68,0.13);  color: var(--red); border-color: rgba(239,68,68,0.28); }
   .term-crossover-marker { font-family:var(--font-display); font-size:0.72rem; color:var(--text-muted); text-align:center; margin-top:0.25rem; letter-spacing:0.03em; }
   .term-result-item { text-align:center; }
   .term-result-label { font-family:var(--font-display); font-size:0.68rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.2rem; }
@@ -741,20 +759,15 @@
     <!-- TAB: PROJECTIONS -->
     <div class="tab-panel" id="tab-projections">
       <div class="card">
-        <div class="card-header"><span class="dot"></span> Year-by-Year Contract Value</div>
+        <div class="card-header"><span class="dot"></span> <span id="projectionChartTitle">Contract Cost vs. Production</span></div>
         <div class="verdict-row" id="verdictChips"></div>
-        <div class="card-body"><div class="chart-container" style="height:400px;"><canvas id="projectionChart"></canvas></div></div>
-        <div class="card-footer" id="capProjFooter">Projected market cap hit % applies the aging curve to the current KNN estimate. Contracted % holds estimated AAV fixed against rising caps.</div>
+        <div class="card-body"><div class="chart-container" style="height:420px;"><canvas id="projectionChart"></canvas></div></div>
+        <div class="card-footer" id="capProjFooter"></div>
       </div>
       <div class="card">
-        <div class="card-header"><span class="dot"></span> <span id="productionChartTitle">Projected On-Ice Production</span></div>
-        <div class="card-body"><div class="chart-container" style="height:380px;"><canvas id="productionChart"></canvas></div></div>
-        <div class="card-footer" id="productionChartFooter"></div>
-      </div>
-      <div class="card">
-        <div class="card-header"><span class="dot"></span> AAV vs Rising Market Value</div>
-        <div class="card-body"><div class="chart-container" style="height:380px;"><canvas id="curvesCapChart"></canvas></div></div>
-        <div class="card-footer">Estimated AAV held fixed; cap hit % declines each season as the salary cap rises. Known caps through the latest confirmed season; projections beyond use the cap ladder in the dataset.</div>
+        <div class="card-header"><span class="dot"></span> Year-by-Year Detail</div>
+        <div class="card-body table-wrap" id="projCrosstab"></div>
+        <div class="card-footer" id="projCrosstabFooter"></div>
       </div>
     </div>
 
@@ -1204,8 +1217,6 @@ function setupTabs() {
       // visible so they lay out against the real container width.
       if (btn.dataset.tab === 'projections' && state.selectedPlayer) {
         renderProjectionChart();
-        renderProductionChart();
-        renderCurvesCapChart();
       }
     });
   });
@@ -1500,8 +1511,6 @@ function renderAll() {
   renderScatterChart();
   renderCapBarChart();
   renderProjectionChart();
-  renderProductionChart();
-  renderCurvesCapChart();
 }
 
 // ─── CHARTS ───────────────────────────────────────────────────────────
@@ -1808,121 +1817,81 @@ const PROD_METRIC = {
   Defense: { base: p => p.toi, label: 'TOI/Game', axis: 'Minutes',  unit: ' min', dp: 1 },
 };
 
-function renderProductionChart() {
-  destroyChart('production');
-  const p = state.selectedPlayer;
-  if (!p || !state.data) return;
-
-  const metric  = PROD_METRIC[p.positionGroup] ?? PROD_METRIC.Forward;
-  const base0   = metric.base(p) ?? 0;
-  const age     = p.age;
-  const N_YEARS = 8;
-  const fmtStat = v => v.toFixed(metric.dp) + metric.unit;
-
-  $('#productionChartTitle').textContent = `Projected On-Ice Production — ${metric.label}`;
-  $('#productionChartFooter').innerHTML =
-    `Current ${metric.label} (${fmtStat(base0)}) aged forward with the ${agingSourceLabel(p.positionGroup)}. ` +
-    `${p.positionGroup === 'Defense' ? 'Defensemen are projected on ice time; forwards on scoring rate.' : 'Forwards are projected on scoring rate; defensemen on ice time.'} Shaded band = best/downside.`;
-
-  const retentions = agingRetention(age, p.positionGroup, N_YEARS);
-  // Anchor at the current (platform) season, then years 1..N.
-  const labels   = [`Now\n(age ${age})`, ...retentions.map((_, i) => `Yr ${i + 1}\n(age ${age + i + 1})`)];
-  const baseLine = [base0, ...retentions.map(r => round2(base0 * r.base))];
-  const bestLine = [base0, ...retentions.map(r => round2(base0 * r.best))];
-  const downLine = [base0, ...retentions.map(r => round2(base0 * r.downside))];
-
-  state.charts.production = new Chart($('#productionChart'), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        {
-          label: metric.label + ' — best',
-          data: bestLine,
-          borderColor: 'rgba(96,165,250,0.4)',
-          backgroundColor: 'rgba(96,165,250,0.08)',
-          borderWidth: 1, pointRadius: 0, tension: 0.3, fill: '+1',
-        },
-        {
-          label: metric.label + ' — projected',
-          data: baseLine,
-          borderColor: '#60a5fa',
-          backgroundColor: 'rgba(148,163,184,0.16)',
-          borderWidth: 2.5, pointRadius: 5, pointBackgroundColor: '#60a5fa', tension: 0.3, fill: '+1',
-        },
-        {
-          label: metric.label + ' — downside',
-          data: downLine,
-          borderColor: 'rgba(96,165,250,0.4)',
-          backgroundColor: 'rgba(96,165,250,0.08)',
-          borderWidth: 1, pointRadius: 0, tension: 0.3, fill: false,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: 'index', intersect: false },
-      plugins: {
-        legend: { labels: { color: '#94a3b8', font: { family: 'Barlow', size: 12 }, boxWidth: 12 } },
-        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmtStat(ctx.parsed.y) } },
-      },
-      scales: {
-        x: {
-          ticks: { color: '#64748b', font: { family: 'Barlow', size: 11 } },
-          grid: { display: false },
-        },
-        y: {
-          title: { display: true, text: metric.axis, color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
-          ticks: { color: '#64748b', callback: v => v.toFixed(metric.dp), font: { family: 'Barlow' } },
-          grid: { color: 'rgba(30,58,95,0.3)' },
-        },
-      },
-    },
-  });
-}
+// Assumed annual salary-cap growth beyond the last confirmed season. The NHL cap
+// is only set a couple of years out; past that we grow it so a fixed-dollar AAV
+// shrinks as a share of the cap (see renderProjectionChart / the crosstab).
+const CAP_GROWTH = 0.05;
 
 function renderProjectionChart() {
   destroyChart('projection');
   const p = state.selectedPlayer;
   if (!p || !state.data) return;
 
-  const capFooter = $('#capProjFooter');
-  if (capFooter) capFooter.textContent =
-    `Projected market cap hit % applies the ${agingSourceLabel(p.positionGroup)} to the current KNN estimate. Contracted % holds estimated AAV fixed against rising caps.`;
-
   const meta     = state.data.meta;
-  const estPct   = p.estimatedCapHitPct;
-  const estAAV   = p.estimatedAAV;
+  const estPct   = p.estimatedCapHitPct;   // model-native KNN cap hit %
+  const estAAV   = p.estimatedAAV;          // = estPct × today's cap, held fixed in dollars
   const posGroup = p.positionGroup;
   const age      = p.age;
   const N_YEARS  = 8;
 
-  // Build cap ladder: current + all future seasons sorted
-  const capLadder = [[meta.currentSeason, meta.currentCap],
-    ...Object.entries(meta.futureCaps).map(([s, c]) => [parseInt(s), c])
-  ].sort((a, b) => a[0] - b[0]);
+  // Right axis: projected on-ice production (forwards → Pts/Game, defense → TOI/Game).
+  const metric    = PROD_METRIC[posGroup] ?? PROD_METRIC.Forward;
+  const prodBase0 = metric.base(p) ?? 0;
+  const fmtStat   = v => v.toFixed(metric.dp) + metric.unit;
 
-  const getCap = (yr) => {
-    const idx = Math.min(yr, capLadder.length - 1);
-    return capLadder[idx]?.[1] ?? capLadder[capLadder.length - 1][1];
+  // ── Cap ladder ──
+  // Deal year k (1..N) starts in the current season, so it maps to season year
+  // startYr + (k-1). Confirmed caps come from the dataset; trailing carried-forward
+  // duplicates are treated as placeholders and dropped, then the cap is grown at
+  // CAP_GROWTH/yr beyond the last confirmed step.
+  const startYr = Math.floor(meta.currentSeason / 10000);
+  const known   = [[startYr, meta.currentCap],
+    ...Object.entries(meta.futureCaps).map(([s, c]) => [Math.floor(parseInt(s) / 10000), c])
+  ].sort((a, b) => a[0] - b[0]);
+  while (known.length > 1 && known[known.length - 1][1] === known[known.length - 2][1]) known.pop();
+  const knownMap   = Object.fromEntries(known);
+  const lastAnchor = known[known.length - 1];
+  const dealCap = (k) => {
+    const yr = startYr + (k - 1);
+    if (knownMap[yr] != null) return knownMap[yr];
+    return lastAnchor[1] * Math.pow(1 + CAP_GROWTH, yr - lastAnchor[0]);
   };
 
   const retentions    = agingRetention(age, posGroup, N_YEARS);
   const labels        = retentions.map((_, i) => `Yr ${i + 1}\n(age ${age + i + 1})`);
-  const contractedPct = retentions.map((_, i) => round2((estAAV / getCap(i + 1)) * 100));
-  const basePct       = retentions.map((r) => round2(estPct * r.base));
-  const bestPct       = retentions.map((r) => round2(estPct * r.best));
-  const downPct       = retentions.map((r) => round2(estPct * r.downside));
+  // Contracted cap hit %: fixed-dollar AAV against each season's (rising) cap → shrinks on cap growth.
+  const contractedPct = retentions.map((_, i) => round2((estAAV / dealCap(i + 1)) * 100));
+  // Projected market cap hit % (aging-driven) — crosstab only, not charted.
+  const mktBase       = retentions.map((r) => round2(estPct * r.base));
+  const mktBest       = retentions.map((r) => round2(estPct * r.best));
+  const mktDown       = retentions.map((r) => round2(estPct * r.downside));
+  // Projected production (aging-driven).
+  const prodBase      = retentions.map((r) => round2(prodBase0 * r.base));
+  const prodBest      = retentions.map((r) => round2(prodBase0 * r.best));
+  const prodDown      = retentions.map((r) => round2(prodBase0 * r.downside));
+
+  // Verdict compares the market's aging-projected cap hit % against what the deal costs.
+  const verdicts = retentions.map((_, i) => verdictLabel(mktBase[i], contractedPct[i]));
+
+  const titleEl = $('#projectionChartTitle');
+  if (titleEl) titleEl.textContent = `Contract Cost vs. Production — ${metric.label}`;
+
+  const capFooter = $('#capProjFooter');
+  if (capFooter) capFooter.textContent =
+    `Left axis (amber): contracted cap hit % — estimated AAV held fixed in dollars, shrinking against a cap projected to rise ~${Math.round(CAP_GROWTH * 100)}%/yr beyond the last confirmed season. ` +
+    `Right axis (blue): projected ${metric.label} (current ${fmtStat(prodBase0)}) aged forward with the ${agingSourceLabel(posGroup)}; shaded band = best/downside. Market value vs. cost is broken out in the table below.`;
 
   // Verdict chips
-  $('#verdictChips').innerHTML = retentions.map((_, i) => {
-    const v = verdictLabel(basePct[i], contractedPct[i]);
-    return `<div class="verdict-chip ${v.cls}">
+  $('#verdictChips').innerHTML = retentions.map((_, i) =>
+    `<div class="verdict-chip ${verdicts[i].cls}">
       <span class="chip-yr">Yr ${i + 1}</span>
-      <span>${v.label}</span>
-    </div>`;
-  }).join('');
+      <span>${verdicts[i].label}</span>
+    </div>`).join('');
+
+  renderProjCrosstab({
+    startYr, age, metric, fmtStat, verdicts,
+    contractedPct, mktBase, mktBest, mktDown, prodBase, prodBest, prodDown,
+  });
 
   state.charts.projection = new Chart($('#projectionChart'), {
     type: 'line',
@@ -1930,32 +1899,35 @@ function renderProjectionChart() {
       labels,
       datasets: [
         {
-          label: 'Projected market — best',
-          data: bestPct,
-          borderColor: 'rgba(16,185,129,0.4)',
-          backgroundColor: 'rgba(16,185,129,0.08)',
-          borderWidth: 1, pointRadius: 0, tension: 0.3, fill: '+1',
-        },
-        {
-          label: 'Projected market — base',
-          data: basePct,
-          borderColor: '#10b981',
-          backgroundColor: 'rgba(148,163,184,0.16)',
-          borderWidth: 2.5, pointRadius: 5, pointBackgroundColor: '#10b981', tension: 0.3, fill: '+1',
-        },
-        {
-          label: 'Projected market — downside',
-          data: downPct,
-          borderColor: 'rgba(16,185,129,0.4)',
-          backgroundColor: 'rgba(16,185,129,0.08)',
-          borderWidth: 1, pointRadius: 0, tension: 0.3, fill: false,
-        },
-        {
           label: 'Contracted cap hit %',
           data: contractedPct,
           borderColor: '#f59e0b',
           backgroundColor: 'rgba(245,158,11,0.06)',
           borderWidth: 2.5, pointRadius: 5, pointBackgroundColor: '#f59e0b', borderDash: [6, 3], tension: 0, fill: false,
+        },
+        {
+          label: metric.label + ' — best',
+          data: prodBest,
+          yAxisID: 'y1',
+          borderColor: 'rgba(96,165,250,0.35)',
+          backgroundColor: 'rgba(96,165,250,0.06)',
+          borderWidth: 1, pointRadius: 0, tension: 0.3, fill: '+1',
+        },
+        {
+          label: metric.label + ' — projected',
+          data: prodBase,
+          yAxisID: 'y1',
+          borderColor: '#60a5fa',
+          backgroundColor: 'rgba(96,165,250,0.06)',
+          borderWidth: 2.5, pointRadius: 5, pointBackgroundColor: '#60a5fa', tension: 0.3, fill: '+1',
+        },
+        {
+          label: metric.label + ' — downside',
+          data: prodDown,
+          yAxisID: 'y1',
+          borderColor: 'rgba(96,165,250,0.35)',
+          backgroundColor: 'rgba(96,165,250,0.06)',
+          borderWidth: 1, pointRadius: 0, tension: 0.3, fill: false,
         },
       ],
     },
@@ -1964,8 +1936,17 @@ function renderProjectionChart() {
       maintainAspectRatio: false,
       interaction: { mode: 'index', intersect: false },
       plugins: {
-        legend: { labels: { color: '#94a3b8', font: { family: 'Barlow', size: 12 }, boxWidth: 12 } },
-        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%' } },
+        legend: {
+          labels: {
+            color: '#94a3b8', font: { family: 'Barlow', size: 12 }, boxWidth: 12,
+            // Hide the best/downside band boundaries — keep base, contracted, production.
+            filter: item => !/best|downside/i.test(item.text),
+          },
+        },
+        tooltip: { callbacks: { label: ctx =>
+          ctx.dataset.label + ': ' + (ctx.dataset.yAxisID === 'y1'
+            ? fmtStat(ctx.parsed.y)
+            : ctx.parsed.y.toFixed(2) + '%') } },
       },
       scales: {
         x: {
@@ -1973,101 +1954,55 @@ function renderProjectionChart() {
           grid: { display: false },
         },
         y: {
-          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
+          position: 'left',
+          title: { display: true, text: 'Contracted Cap Hit %', color: '#f59e0b', font: { family: 'Barlow Condensed', size: 13 } },
           ticks: { color: '#64748b', callback: v => v.toFixed(1) + '%', font: { family: 'Barlow' } },
           grid: { color: 'rgba(30,58,95,0.3)' },
+        },
+        y1: {
+          position: 'right',
+          title: { display: true, text: metric.axis, color: '#60a5fa', font: { family: 'Barlow Condensed', size: 13 } },
+          ticks: { color: '#60a5fa', callback: v => v.toFixed(metric.dp), font: { family: 'Barlow' } },
+          grid: { drawOnChartArea: false },
         },
       },
     },
   });
 }
 
-function renderCurvesCapChart() {
-  destroyChart('curvesCap');
-  const p = state.selectedPlayer;
-  if (!p || !state.data) return;
+// Year-by-year detail table: market cap hit % (aging-driven) vs. contracted cap
+// hit % (cap-growth-driven), the verdict between them, and projected production.
+function renderProjCrosstab(d) {
+  const el = $('#projCrosstab');
+  if (!el) return;
+  const n   = d.contractedPct.length;
+  const yrs = Array.from({ length: n }, (_, i) => i);
+  const dp  = d.metric.dp;
+  const seasonId = (y) => y * 10000 + (y + 1);
+  const rangeStat = (lo, hi) => `<div class="xt-range">${lo.toFixed(dp)}–${hi.toFixed(dp)}</div>`;
 
-  const meta   = state.data.meta;
-  const estAAV = p.estimatedAAV;
-  const estPct = p.estimatedCapHitPct;
+  const head = `<tr><th>Season</th>${yrs.map(i =>
+    `<th>Yr ${i + 1}<br><span class="xt-sub">${seasonLabel(seasonId(d.startYr + i))}</span></th>`
+  ).join('')}</tr>`;
 
-  const MC_CAPS = {
-    [meta.currentSeason]: meta.currentCap,
-    ...Object.fromEntries(Object.entries(meta.futureCaps).map(([s, c]) => [parseInt(s), c])),
-  };
-  const seasonCaps = Object.entries(MC_CAPS)
-    .map(([s, c]) => [parseInt(s), c])
-    .sort((a, b) => a[0] - b[0]);
+  const rows = [
+    `<tr><td class="xt-rowlabel">Age</td>${yrs.map(i => `<td>${d.age + i + 1}</td>`).join('')}</tr>`,
+    `<tr><td class="xt-rowlabel">Market cap hit %</td>${yrs.map(i =>
+      `<td>${d.mktBase[i].toFixed(2)}%<div class="xt-range">${d.mktDown[i].toFixed(2)}–${d.mktBest[i].toFixed(2)}</div></td>`).join('')}</tr>`,
+    `<tr><td class="xt-rowlabel" style="color:#f59e0b;">Contracted cap hit %</td>${yrs.map(i =>
+      `<td style="color:#f59e0b;font-weight:600;">${d.contractedPct[i].toFixed(2)}%</td>`).join('')}</tr>`,
+    `<tr><td class="xt-rowlabel">Verdict</td>${yrs.map(i =>
+      `<td><span class="xt-verdict ${d.verdicts[i].cls}">${d.verdicts[i].label}</span></td>`).join('')}</tr>`,
+    `<tr><td class="xt-rowlabel" style="color:#60a5fa;">Proj ${d.metric.label}</td>${yrs.map(i =>
+      `<td style="color:#60a5fa;font-weight:600;">${d.fmtStat(d.prodBase[i])}${rangeStat(d.prodDown[i], d.prodBest[i])}</td>`).join('')}</tr>`,
+  ];
 
-  const labels   = seasonCaps.map(([s]) => seasonLabel(s));
-  const fixedAAV = seasonCaps.map(() => round2(estAAV / 1_000_000));
-  const marketEq = seasonCaps.map(([, c]) => round2((estPct * c / 100) / 1_000_000));
-  const capPcts  = seasonCaps.map(([, c]) => round2((estAAV / c) * 100));
+  el.innerHTML = `<table><thead>${head}</thead><tbody>${rows.join('')}</tbody></table>`;
 
-  state.charts.curvesCap = new Chart($('#curvesCapChart'), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        {
-          label: p.name + ' AAV (fixed)',
-          data: fixedAAV,
-          borderColor: '#f59e0b',
-          backgroundColor: 'rgba(245,158,11,0.05)',
-          borderWidth: 2.5, pointRadius: 5, tension: 0, fill: false, yAxisID: 'yAAV',
-        },
-        {
-          label: 'Market value at ' + fmtPct(estPct) + ' cap hit',
-          data: marketEq,
-          borderColor: '#10b981',
-          backgroundColor: 'rgba(16,185,129,0.08)',
-          borderWidth: 2.5, pointRadius: 5, tension: 0.3, fill: true, yAxisID: 'yAAV',
-        },
-        {
-          label: 'Contracted cap hit %',
-          data: capPcts,
-          borderColor: '#60a5fa',
-          backgroundColor: 'rgba(96,165,250,0.08)',
-          borderWidth: 2, pointRadius: 4, borderDash: [5, 3], tension: 0.3, fill: false, yAxisID: 'yPct',
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: 'index', intersect: false },
-      plugins: {
-        legend: { labels: { color: '#94a3b8', font: { family: 'Barlow', size: 12 }, boxWidth: 12 } },
-        tooltip: {
-          callbacks: {
-            label: ctx => {
-              if (ctx.datasetIndex === 2) return ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%';
-              return ctx.dataset.label + ': $' + ctx.parsed.y.toFixed(2) + 'M';
-            },
-          },
-        },
-      },
-      scales: {
-        x: {
-          title: { display: true, text: 'Season', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
-          ticks: { color: '#64748b', font: { family: 'Barlow' } },
-          grid: { display: false },
-        },
-        yAAV: {
-          position: 'left',
-          title: { display: true, text: 'AAV ($M)', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
-          ticks: { color: '#64748b', callback: v => '$' + v.toFixed(1) + 'M', font: { family: 'Barlow' } },
-          grid: { color: 'rgba(30,58,95,0.3)' },
-        },
-        yPct: {
-          position: 'right',
-          title: { display: true, text: 'Cap Hit %', color: '#94a3b8', font: { family: 'Barlow Condensed', size: 13 } },
-          ticks: { color: '#64748b', callback: v => v.toFixed(1) + '%', font: { family: 'Barlow' } },
-          grid: { display: false },
-        },
-      },
-    },
-  });
+  const foot = $('#projCrosstabFooter');
+  if (foot) foot.textContent =
+    'Market cap hit % is the KNN estimate aged forward (best–downside range shown below each value). ' +
+    'Verdict compares market vs. contracted cost: Bargain = market well above cost, Risk = cost well above market.';
 }
 
 // ─── INIT ─────────────────────────────────────────────────────────────

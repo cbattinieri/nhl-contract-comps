@@ -20,7 +20,7 @@
     --accent: #3b82f6;
     --accent-bright: #60a5fa;
     --accent-glow: rgba(59, 130, 246, 0.15);
-    --green: #10b981;
+    --green: #74a89a;
     --orange: #f59e0b;
     --red: #ef4444;
     --ice-blue: #bfdbfe;
@@ -405,7 +405,7 @@
     padding: 1rem 1.25rem;
     background: rgba(16,185,129,0.08); border-bottom: 1px solid rgba(16,185,129,0.2);
   }
-  .signed-banner .signed-label { font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #10b981; }
+  .signed-banner .signed-label { font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
   .signed-banner .signed-val   { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
   .signed-banner .signed-sub   { font-size: 0.75rem; color: var(--text-muted); }
   .pred-vs-actual {
@@ -416,7 +416,7 @@
   .pva-col:not(:last-child) { border-right: 1px solid var(--border); }
   .pva-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.25rem; }
   .pva-val   { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); }
-  .pva-val.match  { color: #10b981; }
+  .pva-val.match  { color: var(--green); }
   .pva-val.over   { color: var(--orange); }
   .pva-val.under  { color: var(--accent-bright); }
   .search-option .signed-dot { width: 6px; height: 6px; border-radius: 50%; background: #10b981; flex-shrink: 0; margin-left: auto; }
@@ -477,7 +477,25 @@
 
   .err-positive { color: var(--orange); }
   .err-negative { color: var(--accent-bright); }
-  .err-zero     { color: #10b981; }
+  .err-zero     { color: var(--green); }
+
+  /* ── PREDICTED / ACTUAL % HIGHLIGHT ── */
+  /* One outer border wrapping the Predicted % + Actual % pair (no divider between). */
+  .pct-amber {
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--orange);
+    font-weight: 600;
+  }
+  .pct-amber.pa-start {
+    box-shadow: inset 1px 0 0 rgba(245,158,11,0.45), inset 0 1px 0 rgba(245,158,11,0.45), inset 0 -1px 0 rgba(245,158,11,0.45);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  .pct-amber.pa-end {
+    box-shadow: inset -1px 0 0 rgba(245,158,11,0.45), inset 0 1px 0 rgba(245,158,11,0.45), inset 0 -1px 0 rgba(245,158,11,0.45);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
 
   /* ── CONFIDENCE PILL ── */
   .confidence-pill {
@@ -613,7 +631,7 @@
           <thead>
             <tr id="signedListHead">
               <th data-sort="name">Player</th><th data-sort="position">Pos</th><th data-sort="age">Age</th>
-              <th data-sort="estimatedAAV">Predicted AAV</th><th data-sort="actualAAV">Actual AAV</th>
+              <th data-sort="estimatedAAV">Derived AAV</th><th data-sort="actualAAV">Actual AAV</th>
               <th data-sort="estimatedCapHitPct">Predicted %</th><th data-sort="actualCapHitPct">Actual %</th>
               <th data-sort="error">Error</th><th data-sort="absError">Abs Error</th><th data-sort="pctError">% Error</th>
               <th data-sort="term">Term</th><th data-sort="team">Team</th><th data-sort="signingDate">Signed</th>
@@ -900,8 +918,7 @@ function renderSignedList() {
   $('#emptyState').style.display = 'none';
   $('#signedListView').style.display = 'block';
 
-  $('#signedListMeta').textContent =
-    `${players.length} ${state.faFilter} ${state.posFilter === 'Forward' ? 'forward' : 'defenseman'}${players.length === 1 ? '' : 's'} signed so far`;
+  $('#signedListMeta').textContent = '';
 
   if (!players.length) {
     $('#signedListBody').innerHTML =
@@ -950,9 +967,9 @@ function renderSignedList() {
       <td>${p.position}</td>
       <td>${p.age}</td>
       <td>${fmtMoney(p.estimatedAAV)}</td>
-      <td style="color:#10b981;font-weight:600;">${fmtMoney(ac.aav)}</td>
-      <td>${fmtPct(p.estimatedCapHitPct)}</td>
-      <td style="color:#10b981;">${fmtPct(ac.capHitPct)}</td>
+      <td style="color:var(--green);font-weight:600;">${fmtMoney(ac.aav)}</td>
+      <td class="pct-amber pa-start">${fmtPct(p.estimatedCapHitPct)}</td>
+      <td class="pct-amber pa-end">${fmtPct(ac.capHitPct)}</td>
       <td class="${errCls}" style="font-weight:600;">${errStr}</td>
       <td class="${errCls}">${absErr.toFixed(2)}%</td>
       <td class="${errCls}">${pctErrStr}</td>
@@ -1028,8 +1045,7 @@ function renderUnsignedList() {
   $('#signedListView').style.display = 'none';
   $('#unsignedListView').style.display = 'block';
 
-  $('#unsignedListMeta').textContent =
-    `${players.length} ${state.faFilter} ${state.posFilter === 'Forward' ? 'forward' : 'defenseman'}${players.length === 1 ? '' : 's'} unsigned`;
+  $('#unsignedListMeta').textContent = '';
 
   if (!players.length) {
     $('#unsignedListBody').innerHTML =

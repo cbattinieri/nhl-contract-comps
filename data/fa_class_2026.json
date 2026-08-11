@@ -1,7 +1,7 @@
 {
   "meta": {
     "faClassYear": 2026,
-    "generatedAt": "2026-08-10T09:17:02.267570",
+    "generatedAt": "2026-08-11T08:52:01.110211",
     "signedCount": 218,
     "pendingCount": 69,
     "currentCap": 104000000
@@ -1678,7 +1678,7 @@
         },
         {
           "playerId": 8482175,
-          "name": "JJ Peterka",
+          "name": "John-Jason Peterka",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "RFA",
@@ -13407,7 +13407,7 @@
       "comps": [
         {
           "playerId": 8482175,
-          "name": "JJ Peterka",
+          "name": "John-Jason Peterka",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "RFA",
@@ -35559,7 +35559,7 @@
         },
         {
           "playerId": 8478840,
-          "name": "Will Borgen",
+          "name": "William Borgen",
           "position": "Defense",
           "positionGroup": "Defense",
           "signingStatus": "UFA",
@@ -43809,7 +43809,7 @@
       "comps": [
         {
           "playerId": 8478840,
-          "name": "Will Borgen",
+          "name": "William Borgen",
           "position": "Defense",
           "positionGroup": "Defense",
           "signingStatus": "UFA",
@@ -67484,7 +67484,7 @@
         },
         {
           "playerId": 8478840,
-          "name": "Will Borgen",
+          "name": "William Borgen",
           "position": "Defense",
           "positionGroup": "Defense",
           "signingStatus": "UFA",
@@ -105938,7 +105938,7 @@
         },
         {
           "playerId": 8482175,
-          "name": "JJ Peterka",
+          "name": "John-Jason Peterka",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "RFA",
@@ -148977,7 +148977,7 @@
         },
         {
           "playerId": 8482175,
-          "name": "JJ Peterka",
+          "name": "John-Jason Peterka",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "RFA",

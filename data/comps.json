@@ -7,7 +7,7 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-08-10T09:16:57.917544",
+    "generatedAt": "2026-08-11T08:51:56.623198",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -1751,7 +1751,7 @@
         },
         {
           "playerId": 8482175,
-          "name": "JJ Peterka",
+          "name": "John-Jason Peterka",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "RFA",
@@ -13480,7 +13480,7 @@
       "comps": [
         {
           "playerId": 8482175,
-          "name": "JJ Peterka",
+          "name": "John-Jason Peterka",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "RFA",
@@ -35632,7 +35632,7 @@
         },
         {
           "playerId": 8478840,
-          "name": "Will Borgen",
+          "name": "William Borgen",
           "position": "Defense",
           "positionGroup": "Defense",
           "signingStatus": "UFA",
@@ -43882,7 +43882,7 @@
       "comps": [
         {
           "playerId": 8478840,
-          "name": "Will Borgen",
+          "name": "William Borgen",
           "position": "Defense",
           "positionGroup": "Defense",
           "signingStatus": "UFA",
@@ -67557,7 +67557,7 @@
         },
         {
           "playerId": 8478840,
-          "name": "Will Borgen",
+          "name": "William Borgen",
           "position": "Defense",
           "positionGroup": "Defense",
           "signingStatus": "UFA",
@@ -106011,7 +106011,7 @@
         },
         {
           "playerId": 8482175,
-          "name": "JJ Peterka",
+          "name": "John-Jason Peterka",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "RFA",
@@ -149050,7 +149050,7 @@
         },
         {
           "playerId": 8482175,
-          "name": "JJ Peterka",
+          "name": "John-Jason Peterka",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "RFA",

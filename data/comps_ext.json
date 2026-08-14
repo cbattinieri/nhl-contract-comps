@@ -7,7 +7,7 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-08-14T13:23:04.083875",
+    "generatedAt": "2026-08-14T20:20:49.635401",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -673,40 +673,6 @@
       ],
       "comps": [
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -734,6 +700,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -863,18 +863,6 @@
         }
       ],
       "compCareers": {
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -885,6 +873,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482174": [
@@ -1557,40 +1557,6 @@
       ],
       "comps": [
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -1618,6 +1584,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -1747,18 +1747,6 @@
         }
       ],
       "compCareers": {
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -1769,6 +1757,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482174": [
@@ -16695,40 +16695,6 @@
       ],
       "comps": [
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -16756,6 +16722,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -16885,18 +16885,6 @@
         }
       ],
       "compCareers": {
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -16907,6 +16895,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482168": [
@@ -42255,40 +42255,6 @@
       ],
       "comps": [
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -42316,6 +42282,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -42445,18 +42445,6 @@
         }
       ],
       "compCareers": {
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -42467,6 +42455,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482174": [
@@ -66369,40 +66369,6 @@
       ],
       "comps": [
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -66430,6 +66396,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -66559,18 +66559,6 @@
         }
       ],
       "compCareers": {
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -66581,6 +66569,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482911": [
@@ -82153,40 +82153,6 @@
           "seasonNo": 1
         },
         {
-          "playerId": 8482169,
-          "name": "Helge Grans",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 23,
-          "ufaYear": 2029,
-          "height": "75",
-          "weight": "201",
-          "shoots": "R",
-          "draftOverall": 35,
-          "draftBucket": 4,
-          "term": 2,
-          "value": 1625000,
-          "aav": 812500,
-          "capHitPct": 0.92,
-          "gp": 6,
-          "goals": 0,
-          "assists": 1,
-          "points": 1,
-          "ppg": 0.17,
-          "evPoints": 1,
-          "toi": 14.46,
-          "careerGP": 6,
-          "careerPoints": 1,
-          "careerEVPoints": 1,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482731,
           "name": "Tyson Hinds",
           "position": "Defense",
@@ -82214,6 +82180,40 @@
           "careerGP": 6,
           "careerPoints": 0,
           "careerEVPoints": 0,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482169,
+          "name": "Helge Grans",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 23,
+          "ufaYear": 2029,
+          "height": "75",
+          "weight": "201",
+          "shoots": "R",
+          "draftOverall": 35,
+          "draftBucket": 4,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 6,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "ppg": 0.17,
+          "evPoints": 1,
+          "toi": 14.46,
+          "careerGP": 6,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -82299,18 +82299,6 @@
             "toi": 17.33
           }
         ],
-        "8482169": [
-          {
-            "season": 20242025,
-            "age": 23,
-            "gp": 6,
-            "points": 1,
-            "ppg": 0.17,
-            "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 14.46
-          }
-        ],
         "8482731": [
           {
             "season": 20252026,
@@ -82321,6 +82309,18 @@
             "evPoints": 0,
             "evPPG": 0.0,
             "toi": 15.62
+          }
+        ],
+        "8482169": [
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 6,
+            "points": 1,
+            "ppg": 0.17,
+            "evPoints": 1,
+            "evPPG": 0.17,
+            "toi": 14.46
           }
         ],
         "8482911": [
@@ -90217,40 +90217,6 @@
       ],
       "comps": [
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -90278,6 +90244,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -90407,18 +90407,6 @@
         }
       ],
       "compCareers": {
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -90429,6 +90417,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482168": [
@@ -114745,40 +114745,6 @@
       ],
       "comps": [
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -114806,6 +114772,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -114935,18 +114935,6 @@
         }
       ],
       "compCareers": {
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -114957,6 +114945,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482168": [
@@ -129695,40 +129695,6 @@
           "seasonNo": 3
         },
         {
-          "playerId": 8482169,
-          "name": "Helge Grans",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 23,
-          "ufaYear": 2029,
-          "height": "75",
-          "weight": "201",
-          "shoots": "R",
-          "draftOverall": 35,
-          "draftBucket": 4,
-          "term": 2,
-          "value": 1625000,
-          "aav": 812500,
-          "capHitPct": 0.92,
-          "gp": 6,
-          "goals": 0,
-          "assists": 1,
-          "points": 1,
-          "ppg": 0.17,
-          "evPoints": 1,
-          "toi": 14.46,
-          "careerGP": 6,
-          "careerPoints": 1,
-          "careerEVPoints": 1,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482731,
           "name": "Tyson Hinds",
           "position": "Defense",
@@ -129756,6 +129722,40 @@
           "careerGP": 6,
           "careerPoints": 0,
           "careerEVPoints": 0,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482169,
+          "name": "Helge Grans",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 23,
+          "ufaYear": 2029,
+          "height": "75",
+          "weight": "201",
+          "shoots": "R",
+          "draftOverall": 35,
+          "draftBucket": 4,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 6,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "ppg": 0.17,
+          "evPoints": 1,
+          "toi": 14.46,
+          "careerGP": 6,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -129911,18 +129911,6 @@
             "toi": 21.13
           }
         ],
-        "8482169": [
-          {
-            "season": 20242025,
-            "age": 23,
-            "gp": 6,
-            "points": 1,
-            "ppg": 0.17,
-            "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 14.46
-          }
-        ],
         "8482731": [
           {
             "season": 20252026,
@@ -129933,6 +129921,18 @@
             "evPoints": 0,
             "evPPG": 0.0,
             "toi": 15.62
+          }
+        ],
+        "8482169": [
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 6,
+            "points": 1,
+            "ppg": 0.17,
+            "evPoints": 1,
+            "evPPG": 0.17,
+            "toi": 14.46
           }
         ],
         "8482126": [
@@ -145901,40 +145901,6 @@
       ],
       "comps": [
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -145962,6 +145928,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -146091,18 +146091,6 @@
         }
       ],
       "compCareers": {
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -146113,6 +146101,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482174": [
@@ -148073,40 +148073,6 @@
           "seasonNo": 1
         },
         {
-          "playerId": 8482169,
-          "name": "Helge Grans",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 23,
-          "ufaYear": 2029,
-          "height": "75",
-          "weight": "201",
-          "shoots": "R",
-          "draftOverall": 35,
-          "draftBucket": 4,
-          "term": 2,
-          "value": 1625000,
-          "aav": 812500,
-          "capHitPct": 0.92,
-          "gp": 6,
-          "goals": 0,
-          "assists": 1,
-          "points": 1,
-          "ppg": 0.17,
-          "evPoints": 1,
-          "toi": 14.46,
-          "careerGP": 6,
-          "careerPoints": 1,
-          "careerEVPoints": 1,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482731,
           "name": "Tyson Hinds",
           "position": "Defense",
@@ -148134,6 +148100,40 @@
           "careerGP": 6,
           "careerPoints": 0,
           "careerEVPoints": 0,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482169,
+          "name": "Helge Grans",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 23,
+          "ufaYear": 2029,
+          "height": "75",
+          "weight": "201",
+          "shoots": "R",
+          "draftOverall": 35,
+          "draftBucket": 4,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 6,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "ppg": 0.17,
+          "evPoints": 1,
+          "toi": 14.46,
+          "careerGP": 6,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -148219,18 +148219,6 @@
             "toi": 11.5
           }
         ],
-        "8482169": [
-          {
-            "season": 20242025,
-            "age": 23,
-            "gp": 6,
-            "points": 1,
-            "ppg": 0.17,
-            "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 14.46
-          }
-        ],
         "8482731": [
           {
             "season": 20252026,
@@ -148241,6 +148229,18 @@
             "evPoints": 0,
             "evPPG": 0.0,
             "toi": 15.62
+          }
+        ],
+        "8482169": [
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 6,
+            "points": 1,
+            "ppg": 0.17,
+            "evPoints": 1,
+            "evPPG": 0.17,
+            "toi": 14.46
           }
         ],
         "8482911": [
@@ -162781,40 +162781,6 @@
           "seasonNo": 1
         },
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -162842,6 +162808,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -162927,18 +162927,6 @@
             "toi": 11.5
           }
         ],
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -162949,6 +162937,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482911": [
@@ -163143,40 +163143,6 @@
           "seasonNo": 1
         },
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -163204,6 +163170,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -163289,18 +163289,6 @@
             "toi": 11.5
           }
         ],
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -163311,6 +163299,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482911": [
@@ -212955,40 +212955,6 @@
           "seasonNo": 1
         },
         {
-          "playerId": 8482169,
-          "name": "Helge Grans",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 23,
-          "ufaYear": 2029,
-          "height": "75",
-          "weight": "201",
-          "shoots": "R",
-          "draftOverall": 35,
-          "draftBucket": 4,
-          "term": 2,
-          "value": 1625000,
-          "aav": 812500,
-          "capHitPct": 0.92,
-          "gp": 6,
-          "goals": 0,
-          "assists": 1,
-          "points": 1,
-          "ppg": 0.17,
-          "evPoints": 1,
-          "toi": 14.46,
-          "careerGP": 6,
-          "careerPoints": 1,
-          "careerEVPoints": 1,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482731,
           "name": "Tyson Hinds",
           "position": "Defense",
@@ -213016,6 +212982,40 @@
           "careerGP": 6,
           "careerPoints": 0,
           "careerEVPoints": 0,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482169,
+          "name": "Helge Grans",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 23,
+          "ufaYear": 2029,
+          "height": "75",
+          "weight": "201",
+          "shoots": "R",
+          "draftOverall": 35,
+          "draftBucket": 4,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 6,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "ppg": 0.17,
+          "evPoints": 1,
+          "toi": 14.46,
+          "careerGP": 6,
+          "careerPoints": 1,
+          "careerEVPoints": 1,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -213101,18 +213101,6 @@
             "toi": 17.33
           }
         ],
-        "8482169": [
-          {
-            "season": 20242025,
-            "age": 23,
-            "gp": 6,
-            "points": 1,
-            "ppg": 0.17,
-            "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 14.46
-          }
-        ],
         "8482731": [
           {
             "season": 20252026,
@@ -213123,6 +213111,18 @@
             "evPoints": 0,
             "evPPG": 0.0,
             "toi": 15.62
+          }
+        ],
+        "8482169": [
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 6,
+            "points": 1,
+            "ppg": 0.17,
+            "evPoints": 1,
+            "evPPG": 0.17,
+            "toi": 14.46
           }
         ],
         "8482911": [
@@ -228703,40 +228703,6 @@
       ],
       "comps": [
         {
-          "playerId": 8482731,
-          "name": "Tyson Hinds",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "75",
-          "weight": "179",
-          "shoots": "L",
-          "draftOverall": 76,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1800000,
-          "aav": 900000,
-          "capHitPct": 0.94,
-          "gp": 6,
-          "goals": 0,
-          "assists": 0,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "toi": 15.62,
-          "careerGP": 6,
-          "careerPoints": 0,
-          "careerEVPoints": 0,
-          "careerPPG": 0.0,
-          "careerEVPPG": 0.0,
-          "careerTOI": 0.0,
-          "careerGPPct": 7.32,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482169,
           "name": "Helge Grans",
           "position": "Defense",
@@ -228764,6 +228730,40 @@
           "careerGP": 6,
           "careerPoints": 1,
           "careerEVPoints": 1,
+          "careerPPG": 0.0,
+          "careerEVPPG": 0.0,
+          "careerTOI": 0.0,
+          "careerGPPct": 7.32,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482731,
+          "name": "Tyson Hinds",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "75",
+          "weight": "179",
+          "shoots": "L",
+          "draftOverall": 76,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1800000,
+          "aav": 900000,
+          "capHitPct": 0.94,
+          "gp": 6,
+          "goals": 0,
+          "assists": 0,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "toi": 15.62,
+          "careerGP": 6,
+          "careerPoints": 0,
+          "careerEVPoints": 0,
           "careerPPG": 0.0,
           "careerEVPPG": 0.0,
           "careerTOI": 0.0,
@@ -228893,18 +228893,6 @@
         }
       ],
       "compCareers": {
-        "8482731": [
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 15.62
-          }
-        ],
         "8482169": [
           {
             "season": 20242025,
@@ -228915,6 +228903,18 @@
             "evPoints": 1,
             "evPPG": 0.17,
             "toi": 14.46
+          }
+        ],
+        "8482731": [
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 6,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 15.62
           }
         ],
         "8482168": [

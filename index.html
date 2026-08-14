@@ -119,6 +119,17 @@
     background: var(--bg-hover);
     color: var(--text-primary);
   }
+  /* High-level mode switch: visually distinct from the filter toggles. */
+  .control-group.mode-toggle {
+    outline: 1px solid var(--accent);
+    outline-offset: 0;
+    border-radius: inherit;
+    margin-right: 0.25rem;
+  }
+  .control-group.mode-toggle button.active {
+    background: var(--accent);
+    color: white;
+  }
 
   .search-container {
     position: relative;
@@ -598,13 +609,17 @@
 <div class="header">
   <div class="header-inner">
     <h1>
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9.5 3h5a1.5 1.5 0 0 1 1.5 1.5a3.5 3.5 0 0 1 -3.5 3.5h-1a3.5 3.5 0 0 1 -3.5 -3.5a1.5 1.5 0 0 1 1.5 -1.5z"/><path d="M4 17v-1a8 8 0 1 1 16 0v1a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
       </svg>
       NHL <span>Contract Intelligence</span>
       <span class="badge" id="seasonBadge"></span>
     </h1>
     <div class="controls">
+      <div class="control-group mode-toggle" id="modeToggle" style="display:none;">
+        <button class="active" data-val="fa">Free Agents</button>
+        <button data-val="ext">Extension Eligible</button>
+      </div>
       <div class="control-group" id="faToggle">
         <button class="active" data-val="UFA">UFA</button>
         <button data-val="RFA">RFA</button>
@@ -864,6 +879,9 @@
 const state = {
   data: null,
   agingCurves: null,   // within-player aging retention table (data/aging_curves.json)
+  mode: 'fa',          // 'fa' = free-agent class (default), 'ext' = extension-eligible
+  extAvailable: false, // set true when data/comps_ext.json is reachable
+  initialized: false,  // one-time listener binding guard (loadData may run repeatedly)
   faFilter: 'UFA',
   posFilter: 'Forward',
   statusFilter: 'All',
@@ -885,13 +903,19 @@ const seasonLabel = (s) => {
 };
 
 // ─── DATA LOADING ─────────────────────────────────────────────────────
-// Single per-deployment data source. The battanalytics sync rewrites the
+// Primary per-deployment data source. The battanalytics sync rewrites the
 // URL below for the gated build; do not add other per-target edits here.
 const COMPS_DATA_URL = 'data/comps.json';
+// Extension-eligible variant (generate_data_ext.py). Local-only: absent from
+// the gated build, so the mode toggle only appears where this file exists.
+const COMPS_EXT_DATA_URL = 'data/comps_ext.json';
+
+const dataUrlForMode = () => state.mode === 'ext' ? COMPS_EXT_DATA_URL : COMPS_DATA_URL;
 
 async function loadData() {
+  $('#loadingState').style.display = '';
   try {
-    const resp = await fetch(`${COMPS_DATA_URL}?t=${Date.now()}`);
+    const resp = await fetch(`${dataUrlForMode()}?t=${Date.now()}`);
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     state.data = await resp.json();
     // Optional: within-player aging retention table. If absent, the projection
@@ -900,12 +924,47 @@ async function loadData() {
       const ar = await fetch('data/aging_curves.json');
       if (ar.ok) state.agingCurves = await ar.json();
     } catch (_) { /* fallback to heuristic */ }
-    $('#seasonBadge').textContent = seasonLabel(state.data.meta.currentSeason);
+    const seasonTxt = seasonLabel(state.data.meta.currentSeason);
+    $('#seasonBadge').textContent = state.mode === 'ext'
+      ? `${seasonTxt} · Extensions`
+      : seasonTxt;
     initApp();
   } catch (e) {
-    $('#loadingState').innerHTML = `<p style="color:var(--red);">Failed to load data. Run generate_data.py first.</p>`;
+    const script = state.mode === 'ext' ? 'generate_data_ext.py' : 'generate_data.py';
+    $('#loadingState').innerHTML = `<p style="color:var(--red);">Failed to load data. Run ${script} first.</p>`;
     console.error(e);
   }
+}
+
+// Feature-detect the extension-eligible dataset. Only reveal the high-level
+// mode toggle when data/comps_ext.json exists (i.e. locally, after running
+// generate_data_ext.py) — production/gated builds never ship this file.
+async function probeExtMode() {
+  try {
+    const r = await fetch(`${COMPS_EXT_DATA_URL}?t=${Date.now()}`, { method: 'HEAD' });
+    if (r.ok) {
+      state.extAvailable = true;
+      const g = $('#modeToggle');
+      if (g) g.style.display = '';
+    }
+  } catch (_) { /* extension mode unavailable; toggle stays hidden */ }
+}
+
+// High-level switch between the FA class and the extension-eligible cohort.
+// Bound once; on switch it reloads the corresponding dataset and re-renders.
+function setupModeToggle() {
+  const group = $('#modeToggle');
+  if (!group) return;
+  group.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('active')) return;
+      group.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.mode = btn.dataset.val;
+      state.selectedPlayer = null;
+      loadData();
+    });
+  });
 }
 
 // ─── FILTERING ────────────────────────────────────────────────────────
@@ -2009,19 +2068,27 @@ function renderProjCrosstab(d) {
 function initApp() {
   $('#loadingState').style.display = 'none';
 
-  setupToggles();
-  setupTabs();
-  setupSearch();
+  // loadData() can run more than once (mode switch), so bind listeners only once.
+  if (!state.initialized) {
+    setupToggles();
+    setupTabs();
+    setupSearch();
+    setupModeToggle();
+
+    // Re-render career chart when stat dropdown changes
+    $('#careerStatSelect').addEventListener('change', renderCareerChart);
+
+    // Term slider
+    $('#termSlider').addEventListener('input', () => renderTermSlider(state.selectedPlayer));
+
+    state.initialized = true;
+  }
+
   populateSearch();
-
-  // Re-render career chart when stat dropdown changes
-  $('#careerStatSelect').addEventListener('change', renderCareerChart);
-
-  // Term slider
-  $('#termSlider').addEventListener('input', () => renderTermSlider(state.selectedPlayer));
 }
 
 // ─── BOOT ─────────────────────────────────────────────────────────────
+probeExtMode();  // reveal the mode toggle if the ext dataset is present
 loadData();
 </script>
 </body>

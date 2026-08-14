@@ -7,6 +7,7 @@ on:
     paths:
       - 'index.html'
       - 'generate_data.py'
+      - 'generate_data_ext.py'
   schedule:
     # Run daily at 8 AM UTC (during NHL season)
     - cron: '0 8 * * *'
@@ -37,6 +38,14 @@ jobs:
           PUCKPEDIA_API_KEY: ${{ secrets.PUCKPEDIA_API_KEY }}
         run: python generate_data.py
 
+      # Extension-eligible cohort (players in the final year of their deal).
+      # Separate pipeline, separate output (data/comps_ext.json); powers the
+      # "Extension Eligible" UI toggle.
+      - name: Generate extension-eligible data
+        env:
+          PUCKPEDIA_API_KEY: ${{ secrets.PUCKPEDIA_API_KEY }}
+        run: python generate_data_ext.py
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
@@ -55,19 +64,25 @@ jobs:
         run: |
           git clone https://x-access-token:${BATTANALYTICS_PAT}@github.com/cbattinieri/battanalytics.git /tmp/battanalytics
 
-          # Data
+          # Data — full datasets into the gated embed; sync_nhl_comps.py then
+          # writes the redacted (sampled) public-preview copies of both.
           cp data/comps.json /tmp/battanalytics/app-embeds/nhl-contract-comps/data/comps.json
+          cp data/comps_ext.json /tmp/battanalytics/app-embeds/nhl-contract-comps/data/comps_ext.json
           python3 /tmp/battanalytics/scripts/sync_nhl_comps.py /tmp/battanalytics
 
           # UI — public preview: verbatim copy
           cp index.html /tmp/battanalytics/public/apps/nhl-contract-comps/index.html
-          # UI — gated build: same file, data URL swapped to the auth API route
-          sed "s|const COMPS_DATA_URL = 'data/comps.json';|const COMPS_DATA_URL = '/api/embed/nhl-contract-comps/data/comps.json';|" \
+          # UI — gated build: same file, both data URLs swapped to the auth API routes
+          sed -e "s|const COMPS_DATA_URL = 'data/comps.json';|const COMPS_DATA_URL = '/api/embed/nhl-contract-comps/data/comps.json';|" \
+              -e "s|const COMPS_EXT_DATA_URL = 'data/comps_ext.json';|const COMPS_EXT_DATA_URL = '/api/embed/nhl-contract-comps/data/comps_ext.json';|" \
             index.html > /tmp/battanalytics/app-embeds/nhl-contract-comps/index.html
-          # Safety: never ship a gated build that points at the public data path
-          grep -q "/api/embed/nhl-contract-comps/data/comps.json" \
-            /tmp/battanalytics/app-embeds/nhl-contract-comps/index.html \
-            || { echo "ERROR: gated data-URL rewrite failed (anchor line changed?)"; exit 1; }
+          # Safety: never ship a gated build that points at a public data path
+          for u in \
+            "/api/embed/nhl-contract-comps/data/comps.json" \
+            "/api/embed/nhl-contract-comps/data/comps_ext.json"; do
+            grep -q "$u" /tmp/battanalytics/app-embeds/nhl-contract-comps/index.html \
+              || { echo "ERROR: gated data-URL rewrite failed for $u (anchor line changed?)"; exit 1; }
+          done
 
           cd /tmp/battanalytics
           git config user.name "github-actions[bot]"

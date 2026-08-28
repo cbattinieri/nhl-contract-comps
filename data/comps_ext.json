@@ -7,7 +7,7 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-08-27T18:49:50.334398",
+    "generatedAt": "2026-08-28T19:53:29.677988",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {

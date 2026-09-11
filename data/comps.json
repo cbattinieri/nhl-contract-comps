@@ -7,7 +7,7 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-09-10T12:41:55.113646",
+    "generatedAt": "2026-09-11T12:36:56.783668",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -21,14 +21,14 @@
         "n": 135
       },
       "UFA_Forward": {
-        "mae": 1.88,
-        "median_ae": 1.44,
+        "mae": 1.89,
+        "median_ae": 1.45,
         "n": 400
       },
       "UFA_Defense": {
         "mae": 2.15,
         "median_ae": 1.94,
-        "n": 208
+        "n": 209
       }
     },
     "termSlopes": {
@@ -61,16 +61,16 @@
         },
         "mid": {
           "slope": -0.12,
-          "n": 101,
+          "n": 100,
           "fitted": false,
-          "rejected_fit": 0.2694,
+          "rejected_fit": 0.2643,
           "reject_reason": "wrong_sign"
         },
         "low": {
           "slope": -0.06,
-          "n": 275,
+          "n": 276,
           "fitted": false,
-          "rejected_fit": 0.5752,
+          "rejected_fit": 0.5767,
           "reject_reason": "wrong_sign"
         }
       }
@@ -11795,6 +11795,1202 @@
             "evPoints": 1,
             "evPPG": 0.1,
             "toi": 12.61
+          }
+        ]
+      }
+    },
+    {
+      "playerId": 8475184,
+      "name": "Chris Kreider",
+      "position": "Winger",
+      "positionGroup": "Forward",
+      "signingStatus": "UFA",
+      "contractYear": 20252026,
+      "age": 35,
+      "ufaYear": 2018,
+      "height": "75",
+      "weight": "231",
+      "shoots": "L",
+      "draftOverall": 19,
+      "draftBucket": 3,
+      "term": 1,
+      "value": 0,
+      "aav": 0,
+      "capHitPct": 0.0,
+      "gp": 75,
+      "goals": 22,
+      "assists": 28,
+      "points": 50,
+      "ppg": 0.67,
+      "evPoints": 33,
+      "toi": 17.05,
+      "careerGP": 958,
+      "careerPoints": 632,
+      "careerEVPoints": 419,
+      "careerPPG": 0.66,
+      "careerEVPPG": 0.44,
+      "careerTOI": 16.53,
+      "careerGPPct": 83.45,
+      "seasonNo": 14,
+      "signed": false,
+      "actualContract": null,
+      "estimatedCapHitPct": 5.14,
+      "estimatedAAV": 5345600,
+      "ciLow": 4.34,
+      "ciHigh": 5.94,
+      "aavLow": 4513600,
+      "aavHigh": 6177600,
+      "estimateStd": 0.8,
+      "compWeights": [
+        0.2886,
+        0.2269,
+        0.1621,
+        0.1619,
+        0.1606
+      ],
+      "avgCompTerm": 2.4,
+      "termTable": [
+        {
+          "term": 1,
+          "capHitPct": 5.31,
+          "aav": 5522400
+        },
+        {
+          "term": 2,
+          "capHitPct": 5.19,
+          "aav": 5397600
+        },
+        {
+          "term": 3,
+          "capHitPct": 5.07,
+          "aav": 5272800
+        },
+        {
+          "term": 4,
+          "capHitPct": 4.95,
+          "aav": 5148000
+        },
+        {
+          "term": 5,
+          "capHitPct": 4.83,
+          "aav": 5023200
+        },
+        {
+          "term": 6,
+          "capHitPct": 4.71,
+          "aav": 4898400
+        },
+        {
+          "term": 7,
+          "capHitPct": 4.59,
+          "aav": 4773600
+        },
+        {
+          "term": 8,
+          "capHitPct": 4.47,
+          "aav": 4648800
+        }
+      ],
+      "comps": [
+        {
+          "playerId": 8475151,
+          "name": "Kyle Palmieri",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "UFA",
+          "contractYear": 20242025,
+          "age": 34,
+          "ufaYear": 2018,
+          "height": "71",
+          "weight": "185",
+          "shoots": "R",
+          "draftOverall": 26,
+          "draftBucket": 3,
+          "term": 2,
+          "value": 9500000,
+          "aav": 4750000,
+          "capHitPct": 5.4,
+          "gp": 82,
+          "goals": 24,
+          "assists": 24,
+          "points": 48,
+          "ppg": 0.59,
+          "evPoints": 38,
+          "toi": 18.52,
+          "careerGP": 900,
+          "careerPoints": 527,
+          "careerEVPoints": 363,
+          "careerPPG": 0.59,
+          "careerEVPPG": 0.4,
+          "careerTOI": 15.2,
+          "careerGPPct": 73.17,
+          "seasonNo": 15
+        },
+        {
+          "playerId": 8474586,
+          "name": "Jordan Eberle",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "UFA",
+          "contractYear": 20252026,
+          "age": 36,
+          "ufaYear": 2017,
+          "height": "71",
+          "weight": "190",
+          "shoots": "R",
+          "draftOverall": 22,
+          "draftBucket": 3,
+          "term": 2,
+          "value": 11000000,
+          "aav": 5500000,
+          "capHitPct": 5.76,
+          "gp": 80,
+          "goals": 26,
+          "assists": 29,
+          "points": 55,
+          "ppg": 0.69,
+          "evPoints": 39,
+          "toi": 18.48,
+          "careerGP": 1140,
+          "careerPoints": 783,
+          "careerEVPoints": 579,
+          "careerPPG": 0.69,
+          "careerEVPPG": 0.51,
+          "careerTOI": 17.53,
+          "careerGPPct": 86.89,
+          "seasonNo": 16
+        },
+        {
+          "playerId": 8475791,
+          "name": "Taylor Hall",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "UFA",
+          "contractYear": 20242025,
+          "age": 33,
+          "ufaYear": 2017,
+          "height": "73",
+          "weight": "209",
+          "shoots": "L",
+          "draftOverall": 1,
+          "draftBucket": 1,
+          "term": 3,
+          "value": 9500001,
+          "aav": 3166667,
+          "capHitPct": 3.6,
+          "gp": 77,
+          "goals": 18,
+          "assists": 24,
+          "points": 42,
+          "ppg": 0.55,
+          "evPoints": 33,
+          "toi": 15.17,
+          "careerGP": 909,
+          "careerPoints": 739,
+          "careerEVPoints": 533,
+          "careerPPG": 0.84,
+          "careerEVPPG": 0.6,
+          "careerTOI": 18.38,
+          "careerGPPct": 73.9,
+          "seasonNo": 15
+        },
+        {
+          "playerId": 8475722,
+          "name": "Jason Zucker",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "UFA",
+          "contractYear": 20242025,
+          "age": 33,
+          "ufaYear": 2019,
+          "height": "71",
+          "weight": "198",
+          "shoots": "L",
+          "draftOverall": 59,
+          "draftBucket": 4,
+          "term": 2,
+          "value": 9500000,
+          "aav": 4750000,
+          "capHitPct": 5.4,
+          "gp": 73,
+          "goals": 21,
+          "assists": 32,
+          "points": 53,
+          "ppg": 0.73,
+          "evPoints": 32,
+          "toi": 15.99,
+          "careerGP": 770,
+          "careerPoints": 423,
+          "careerEVPoints": 324,
+          "careerPPG": 0.53,
+          "careerEVPPG": 0.42,
+          "careerTOI": 14.74,
+          "careerGPPct": 67.07,
+          "seasonNo": 14
+        },
+        {
+          "playerId": 8476419,
+          "name": "Jean-Gabriel Pageau",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "UFA",
+          "contractYear": 20252026,
+          "age": 33,
+          "ufaYear": 2020,
+          "height": "71",
+          "weight": "181",
+          "shoots": "R",
+          "draftOverall": 96,
+          "draftBucket": 5,
+          "term": 3,
+          "value": 14550000,
+          "aav": 4850000,
+          "capHitPct": 5.08,
+          "gp": 74,
+          "goals": 17,
+          "assists": 18,
+          "points": 35,
+          "ppg": 0.47,
+          "evPoints": 27,
+          "toi": 15.67,
+          "careerGP": 871,
+          "careerPoints": 401,
+          "careerEVPoints": 309,
+          "careerPPG": 0.46,
+          "careerEVPPG": 0.35,
+          "careerTOI": 15.96,
+          "careerGPPct": 75.87,
+          "seasonNo": 14
+        }
+      ],
+      "compDistances": [
+        6.6976,
+        8.5203,
+        11.927,
+        11.9406,
+        12.0334
+      ],
+      "career": [
+        {
+          "season": 20122013,
+          "age": 22,
+          "gp": 23,
+          "points": 3,
+          "ppg": 0.13,
+          "evPoints": 3,
+          "evPPG": 0.13,
+          "toi": 10.11
+        },
+        {
+          "season": 20132014,
+          "age": 23,
+          "gp": 66,
+          "points": 37,
+          "ppg": 0.56,
+          "evPoints": 25,
+          "evPPG": 0.38,
+          "toi": 15.73
+        },
+        {
+          "season": 20142015,
+          "age": 24,
+          "gp": 80,
+          "points": 46,
+          "ppg": 0.57,
+          "evPoints": 38,
+          "evPPG": 0.47,
+          "toi": 15.71
+        },
+        {
+          "season": 20152016,
+          "age": 25,
+          "gp": 79,
+          "points": 43,
+          "ppg": 0.54,
+          "evPoints": 35,
+          "evPPG": 0.44,
+          "toi": 15.96
+        },
+        {
+          "season": 20162017,
+          "age": 26,
+          "gp": 75,
+          "points": 53,
+          "ppg": 0.71,
+          "evPoints": 40,
+          "evPPG": 0.53,
+          "toi": 17.0
+        },
+        {
+          "season": 20172018,
+          "age": 27,
+          "gp": 58,
+          "points": 37,
+          "ppg": 0.64,
+          "evPoints": 25,
+          "evPPG": 0.43,
+          "toi": 15.62
+        },
+        {
+          "season": 20182019,
+          "age": 28,
+          "gp": 79,
+          "points": 52,
+          "ppg": 0.66,
+          "evPoints": 40,
+          "evPPG": 0.51,
+          "toi": 17.41
+        },
+        {
+          "season": 20192020,
+          "age": 29,
+          "gp": 63,
+          "points": 45,
+          "ppg": 0.71,
+          "evPoints": 32,
+          "evPPG": 0.51,
+          "toi": 17.25
+        },
+        {
+          "season": 20202021,
+          "age": 30,
+          "gp": 50,
+          "points": 30,
+          "ppg": 0.6,
+          "evPoints": 16,
+          "evPPG": 0.32,
+          "toi": 17.4
+        },
+        {
+          "season": 20212022,
+          "age": 31,
+          "gp": 81,
+          "points": 77,
+          "ppg": 0.95,
+          "evPoints": 39,
+          "evPPG": 0.48,
+          "toi": 18.73
+        },
+        {
+          "season": 20222023,
+          "age": 32,
+          "gp": 79,
+          "points": 54,
+          "ppg": 0.68,
+          "evPoints": 33,
+          "evPPG": 0.42,
+          "toi": 18.41
+        },
+        {
+          "season": 20232024,
+          "age": 33,
+          "gp": 82,
+          "points": 75,
+          "ppg": 0.91,
+          "evPoints": 41,
+          "evPPG": 0.5,
+          "toi": 18.78
+        },
+        {
+          "season": 20242025,
+          "age": 34,
+          "gp": 68,
+          "points": 30,
+          "ppg": 0.44,
+          "evPoints": 19,
+          "evPPG": 0.28,
+          "toi": 16.75
+        },
+        {
+          "season": 20252026,
+          "age": 35,
+          "gp": 75,
+          "points": 50,
+          "ppg": 0.67,
+          "evPoints": 33,
+          "evPPG": 0.44,
+          "toi": 17.05
+        }
+      ],
+      "compCareers": {
+        "8475151": [
+          {
+            "season": 20102011,
+            "age": 20,
+            "gp": 10,
+            "points": 1,
+            "ppg": 0.1,
+            "evPoints": 1,
+            "evPPG": 0.1,
+            "toi": 8.69
+          },
+          {
+            "season": 20112012,
+            "age": 21,
+            "gp": 18,
+            "points": 7,
+            "ppg": 0.39,
+            "evPoints": 7,
+            "evPPG": 0.39,
+            "toi": 11.52
+          },
+          {
+            "season": 20122013,
+            "age": 22,
+            "gp": 42,
+            "points": 21,
+            "ppg": 0.5,
+            "evPoints": 18,
+            "evPPG": 0.43,
+            "toi": 12.33
+          },
+          {
+            "season": 20132014,
+            "age": 23,
+            "gp": 71,
+            "points": 31,
+            "ppg": 0.44,
+            "evPoints": 31,
+            "evPPG": 0.44,
+            "toi": 11.94
+          },
+          {
+            "season": 20142015,
+            "age": 24,
+            "gp": 57,
+            "points": 29,
+            "ppg": 0.51,
+            "evPoints": 18,
+            "evPPG": 0.32,
+            "toi": 14.1
+          },
+          {
+            "season": 20152016,
+            "age": 25,
+            "gp": 82,
+            "points": 57,
+            "ppg": 0.7,
+            "evPoints": 34,
+            "evPPG": 0.41,
+            "toi": 17.8
+          },
+          {
+            "season": 20162017,
+            "age": 26,
+            "gp": 80,
+            "points": 53,
+            "ppg": 0.66,
+            "evPoints": 33,
+            "evPPG": 0.41,
+            "toi": 17.35
+          },
+          {
+            "season": 20172018,
+            "age": 27,
+            "gp": 62,
+            "points": 44,
+            "ppg": 0.71,
+            "evPoints": 21,
+            "evPPG": 0.34,
+            "toi": 17.31
+          },
+          {
+            "season": 20182019,
+            "age": 28,
+            "gp": 74,
+            "points": 50,
+            "ppg": 0.68,
+            "evPoints": 32,
+            "evPPG": 0.43,
+            "toi": 18.16
+          },
+          {
+            "season": 20192020,
+            "age": 29,
+            "gp": 65,
+            "points": 45,
+            "ppg": 0.69,
+            "evPoints": 27,
+            "evPPG": 0.42,
+            "toi": 17.11
+          },
+          {
+            "season": 20202021,
+            "age": 30,
+            "gp": 51,
+            "points": 21,
+            "ppg": 0.41,
+            "evPoints": 14,
+            "evPPG": 0.27,
+            "toi": 16.57
+          },
+          {
+            "season": 20212022,
+            "age": 31,
+            "gp": 69,
+            "points": 33,
+            "ppg": 0.48,
+            "evPoints": 27,
+            "evPPG": 0.39,
+            "toi": 15.62
+          },
+          {
+            "season": 20222023,
+            "age": 32,
+            "gp": 55,
+            "points": 33,
+            "ppg": 0.6,
+            "evPoints": 28,
+            "evPPG": 0.51,
+            "toi": 17.1
+          },
+          {
+            "season": 20232024,
+            "age": 33,
+            "gp": 82,
+            "points": 54,
+            "ppg": 0.66,
+            "evPoints": 34,
+            "evPPG": 0.41,
+            "toi": 17.22
+          },
+          {
+            "season": 20242025,
+            "age": 34,
+            "gp": 82,
+            "points": 48,
+            "ppg": 0.59,
+            "evPoints": 38,
+            "evPPG": 0.46,
+            "toi": 18.52
+          },
+          {
+            "season": 20252026,
+            "age": 35,
+            "gp": 25,
+            "points": 18,
+            "ppg": 0.72,
+            "evPoints": 12,
+            "evPPG": 0.48,
+            "toi": 18.88
+          }
+        ],
+        "8474586": [
+          {
+            "season": 20102011,
+            "age": 21,
+            "gp": 69,
+            "points": 43,
+            "ppg": 0.62,
+            "evPoints": 30,
+            "evPPG": 0.43,
+            "toi": 17.68
+          },
+          {
+            "season": 20112012,
+            "age": 22,
+            "gp": 78,
+            "points": 76,
+            "ppg": 0.97,
+            "evPoints": 56,
+            "evPPG": 0.72,
+            "toi": 17.6
+          },
+          {
+            "season": 20122013,
+            "age": 23,
+            "gp": 48,
+            "points": 37,
+            "ppg": 0.77,
+            "evPoints": 28,
+            "evPPG": 0.58,
+            "toi": 19.0
+          },
+          {
+            "season": 20132014,
+            "age": 24,
+            "gp": 80,
+            "points": 65,
+            "ppg": 0.81,
+            "evPoints": 44,
+            "evPPG": 0.55,
+            "toi": 19.55
+          },
+          {
+            "season": 20142015,
+            "age": 25,
+            "gp": 81,
+            "points": 63,
+            "ppg": 0.78,
+            "evPoints": 42,
+            "evPPG": 0.52,
+            "toi": 19.04
+          },
+          {
+            "season": 20152016,
+            "age": 26,
+            "gp": 69,
+            "points": 47,
+            "ppg": 0.68,
+            "evPoints": 36,
+            "evPPG": 0.52,
+            "toi": 17.86
+          },
+          {
+            "season": 20162017,
+            "age": 27,
+            "gp": 82,
+            "points": 51,
+            "ppg": 0.62,
+            "evPoints": 37,
+            "evPPG": 0.45,
+            "toi": 16.77
+          },
+          {
+            "season": 20172018,
+            "age": 28,
+            "gp": 81,
+            "points": 59,
+            "ppg": 0.73,
+            "evPoints": 49,
+            "evPPG": 0.6,
+            "toi": 16.07
+          },
+          {
+            "season": 20182019,
+            "age": 29,
+            "gp": 78,
+            "points": 37,
+            "ppg": 0.47,
+            "evPoints": 25,
+            "evPPG": 0.32,
+            "toi": 16.53
+          },
+          {
+            "season": 20192020,
+            "age": 30,
+            "gp": 58,
+            "points": 40,
+            "ppg": 0.69,
+            "evPoints": 29,
+            "evPPG": 0.5,
+            "toi": 17.81
+          },
+          {
+            "season": 20202021,
+            "age": 31,
+            "gp": 55,
+            "points": 33,
+            "ppg": 0.6,
+            "evPoints": 28,
+            "evPPG": 0.51,
+            "toi": 16.76
+          },
+          {
+            "season": 20212022,
+            "age": 32,
+            "gp": 79,
+            "points": 44,
+            "ppg": 0.56,
+            "evPoints": 35,
+            "evPPG": 0.44,
+            "toi": 17.95
+          },
+          {
+            "season": 20222023,
+            "age": 33,
+            "gp": 82,
+            "points": 63,
+            "ppg": 0.77,
+            "evPoints": 48,
+            "evPPG": 0.59,
+            "toi": 16.68
+          },
+          {
+            "season": 20232024,
+            "age": 34,
+            "gp": 78,
+            "points": 44,
+            "ppg": 0.56,
+            "evPoints": 32,
+            "evPPG": 0.41,
+            "toi": 17.44
+          },
+          {
+            "season": 20242025,
+            "age": 35,
+            "gp": 42,
+            "points": 26,
+            "ppg": 0.62,
+            "evPoints": 21,
+            "evPPG": 0.5,
+            "toi": 16.26
+          },
+          {
+            "season": 20252026,
+            "age": 36,
+            "gp": 80,
+            "points": 55,
+            "ppg": 0.69,
+            "evPoints": 39,
+            "evPPG": 0.49,
+            "toi": 18.48
+          }
+        ],
+        "8475791": [
+          {
+            "season": 20102011,
+            "age": 19,
+            "gp": 65,
+            "points": 42,
+            "ppg": 0.65,
+            "evPoints": 31,
+            "evPPG": 0.48,
+            "toi": 18.21
+          },
+          {
+            "season": 20112012,
+            "age": 20,
+            "gp": 61,
+            "points": 53,
+            "ppg": 0.87,
+            "evPoints": 32,
+            "evPPG": 0.52,
+            "toi": 18.22
+          },
+          {
+            "season": 20122013,
+            "age": 21,
+            "gp": 45,
+            "points": 50,
+            "ppg": 1.11,
+            "evPoints": 36,
+            "evPPG": 0.8,
+            "toi": 18.62
+          },
+          {
+            "season": 20132014,
+            "age": 22,
+            "gp": 75,
+            "points": 80,
+            "ppg": 1.07,
+            "evPoints": 62,
+            "evPPG": 0.83,
+            "toi": 20.01
+          },
+          {
+            "season": 20142015,
+            "age": 23,
+            "gp": 53,
+            "points": 38,
+            "ppg": 0.72,
+            "evPoints": 32,
+            "evPPG": 0.6,
+            "toi": 19.22
+          },
+          {
+            "season": 20152016,
+            "age": 24,
+            "gp": 82,
+            "points": 65,
+            "ppg": 0.79,
+            "evPoints": 53,
+            "evPPG": 0.65,
+            "toi": 19.2
+          },
+          {
+            "season": 20162017,
+            "age": 25,
+            "gp": 72,
+            "points": 53,
+            "ppg": 0.74,
+            "evPoints": 38,
+            "evPPG": 0.53,
+            "toi": 19.33
+          },
+          {
+            "season": 20172018,
+            "age": 26,
+            "gp": 76,
+            "points": 93,
+            "ppg": 1.22,
+            "evPoints": 55,
+            "evPPG": 0.72,
+            "toi": 19.14
+          },
+          {
+            "season": 20182019,
+            "age": 27,
+            "gp": 33,
+            "points": 37,
+            "ppg": 1.12,
+            "evPoints": 25,
+            "evPPG": 0.76,
+            "toi": 19.69
+          },
+          {
+            "season": 20192020,
+            "age": 28,
+            "gp": 65,
+            "points": 52,
+            "ppg": 0.8,
+            "evPoints": 34,
+            "evPPG": 0.52,
+            "toi": 19.17
+          },
+          {
+            "season": 20202021,
+            "age": 29,
+            "gp": 53,
+            "points": 33,
+            "ppg": 0.62,
+            "evPoints": 25,
+            "evPPG": 0.47,
+            "toi": 17.86
+          },
+          {
+            "season": 20212022,
+            "age": 30,
+            "gp": 81,
+            "points": 61,
+            "ppg": 0.75,
+            "evPoints": 46,
+            "evPPG": 0.57,
+            "toi": 16.41
+          },
+          {
+            "season": 20222023,
+            "age": 31,
+            "gp": 61,
+            "points": 36,
+            "ppg": 0.59,
+            "evPoints": 28,
+            "evPPG": 0.46,
+            "toi": 15.93
+          },
+          {
+            "season": 20232024,
+            "age": 32,
+            "gp": 10,
+            "points": 4,
+            "ppg": 0.4,
+            "evPoints": 3,
+            "evPPG": 0.3,
+            "toi": 16.33
+          },
+          {
+            "season": 20242025,
+            "age": 33,
+            "gp": 77,
+            "points": 42,
+            "ppg": 0.55,
+            "evPoints": 33,
+            "evPPG": 0.43,
+            "toi": 15.17
+          },
+          {
+            "season": 20252026,
+            "age": 34,
+            "gp": 80,
+            "points": 48,
+            "ppg": 0.6,
+            "evPoints": 41,
+            "evPPG": 0.51,
+            "toi": 14.53
+          }
+        ],
+        "8475722": [
+          {
+            "season": 20112012,
+            "age": 20,
+            "gp": 6,
+            "points": 2,
+            "ppg": 0.33,
+            "evPoints": 2,
+            "evPPG": 0.33,
+            "toi": 11.03
+          },
+          {
+            "season": 20122013,
+            "age": 21,
+            "gp": 20,
+            "points": 5,
+            "ppg": 0.25,
+            "evPoints": 5,
+            "evPPG": 0.25,
+            "toi": 11.26
+          },
+          {
+            "season": 20132014,
+            "age": 22,
+            "gp": 21,
+            "points": 5,
+            "ppg": 0.24,
+            "evPoints": 3,
+            "evPPG": 0.14,
+            "toi": 12.99
+          },
+          {
+            "season": 20142015,
+            "age": 23,
+            "gp": 51,
+            "points": 26,
+            "ppg": 0.51,
+            "evPoints": 24,
+            "evPPG": 0.47,
+            "toi": 15.06
+          },
+          {
+            "season": 20152016,
+            "age": 24,
+            "gp": 71,
+            "points": 23,
+            "ppg": 0.32,
+            "evPoints": 19,
+            "evPPG": 0.27,
+            "toi": 15.58
+          },
+          {
+            "season": 20162017,
+            "age": 25,
+            "gp": 79,
+            "points": 47,
+            "ppg": 0.59,
+            "evPoints": 46,
+            "evPPG": 0.58,
+            "toi": 15.29
+          },
+          {
+            "season": 20172018,
+            "age": 26,
+            "gp": 82,
+            "points": 64,
+            "ppg": 0.78,
+            "evPoints": 46,
+            "evPPG": 0.56,
+            "toi": 16.96
+          },
+          {
+            "season": 20182019,
+            "age": 27,
+            "gp": 81,
+            "points": 42,
+            "ppg": 0.52,
+            "evPoints": 28,
+            "evPPG": 0.35,
+            "toi": 17.08
+          },
+          {
+            "season": 20192020,
+            "age": 28,
+            "gp": 60,
+            "points": 41,
+            "ppg": 0.68,
+            "evPoints": 29,
+            "evPPG": 0.48,
+            "toi": 16.34
+          },
+          {
+            "season": 20202021,
+            "age": 29,
+            "gp": 38,
+            "points": 18,
+            "ppg": 0.47,
+            "evPoints": 14,
+            "evPPG": 0.37,
+            "toi": 15.69
+          },
+          {
+            "season": 20212022,
+            "age": 30,
+            "gp": 41,
+            "points": 17,
+            "ppg": 0.41,
+            "evPoints": 15,
+            "evPPG": 0.37,
+            "toi": 14.82
+          },
+          {
+            "season": 20222023,
+            "age": 31,
+            "gp": 78,
+            "points": 48,
+            "ppg": 0.62,
+            "evPoints": 39,
+            "evPPG": 0.5,
+            "toi": 15.66
+          },
+          {
+            "season": 20232024,
+            "age": 32,
+            "gp": 69,
+            "points": 32,
+            "ppg": 0.46,
+            "evPoints": 22,
+            "evPPG": 0.32,
+            "toi": 13.82
+          },
+          {
+            "season": 20242025,
+            "age": 33,
+            "gp": 73,
+            "points": 53,
+            "ppg": 0.73,
+            "evPoints": 32,
+            "evPPG": 0.44,
+            "toi": 15.99
+          },
+          {
+            "season": 20252026,
+            "age": 34,
+            "gp": 62,
+            "points": 45,
+            "ppg": 0.73,
+            "evPoints": 29,
+            "evPPG": 0.47,
+            "toi": 15.62
+          }
+        ],
+        "8476419": [
+          {
+            "season": 20122013,
+            "age": 20,
+            "gp": 9,
+            "points": 4,
+            "ppg": 0.44,
+            "evPoints": 4,
+            "evPPG": 0.44,
+            "toi": 11.5
+          },
+          {
+            "season": 20132014,
+            "age": 21,
+            "gp": 28,
+            "points": 2,
+            "ppg": 0.07,
+            "evPoints": 2,
+            "evPPG": 0.07,
+            "toi": 10.25
+          },
+          {
+            "season": 20142015,
+            "age": 22,
+            "gp": 50,
+            "points": 19,
+            "ppg": 0.38,
+            "evPoints": 17,
+            "evPPG": 0.34,
+            "toi": 14.19
+          },
+          {
+            "season": 20152016,
+            "age": 23,
+            "gp": 82,
+            "points": 43,
+            "ppg": 0.52,
+            "evPoints": 32,
+            "evPPG": 0.39,
+            "toi": 16.7
+          },
+          {
+            "season": 20162017,
+            "age": 24,
+            "gp": 82,
+            "points": 33,
+            "ppg": 0.4,
+            "evPoints": 31,
+            "evPPG": 0.38,
+            "toi": 16.13
+          },
+          {
+            "season": 20172018,
+            "age": 25,
+            "gp": 78,
+            "points": 29,
+            "ppg": 0.37,
+            "evPoints": 26,
+            "evPPG": 0.33,
+            "toi": 16.74
+          },
+          {
+            "season": 20182019,
+            "age": 26,
+            "gp": 39,
+            "points": 12,
+            "ppg": 0.31,
+            "evPoints": 12,
+            "evPPG": 0.31,
+            "toi": 17.84
+          },
+          {
+            "season": 20192020,
+            "age": 27,
+            "gp": 67,
+            "points": 42,
+            "ppg": 0.63,
+            "evPoints": 26,
+            "evPPG": 0.39,
+            "toi": 19.16
+          },
+          {
+            "season": 20202021,
+            "age": 28,
+            "gp": 54,
+            "points": 28,
+            "ppg": 0.52,
+            "evPoints": 18,
+            "evPPG": 0.33,
+            "toi": 16.79
+          },
+          {
+            "season": 20212022,
+            "age": 29,
+            "gp": 77,
+            "points": 39,
+            "ppg": 0.51,
+            "evPoints": 28,
+            "evPPG": 0.36,
+            "toi": 17.67
+          },
+          {
+            "season": 20222023,
+            "age": 30,
+            "gp": 70,
+            "points": 40,
+            "ppg": 0.57,
+            "evPoints": 28,
+            "evPPG": 0.4,
+            "toi": 17.62
+          },
+          {
+            "season": 20232024,
+            "age": 31,
+            "gp": 82,
+            "points": 33,
+            "ppg": 0.4,
+            "evPoints": 25,
+            "evPPG": 0.3,
+            "toi": 15.91
+          },
+          {
+            "season": 20242025,
+            "age": 32,
+            "gp": 79,
+            "points": 42,
+            "ppg": 0.53,
+            "evPoints": 33,
+            "evPPG": 0.42,
+            "toi": 17.0
+          },
+          {
+            "season": 20252026,
+            "age": 33,
+            "gp": 74,
+            "points": 35,
+            "ppg": 0.47,
+            "evPoints": 27,
+            "evPPG": 0.36,
+            "toi": 15.67
           }
         ]
       }
@@ -41345,942 +42541,6 @@
             "evPoints": 37,
             "evPPG": 0.47,
             "toi": 18.45
-          }
-        ]
-      }
-    },
-    {
-      "playerId": 8476422,
-      "name": "Mike Reilly",
-      "position": "Defense",
-      "positionGroup": "Defense",
-      "signingStatus": "UFA",
-      "contractYear": 20252026,
-      "age": 32,
-      "ufaYear": 2021,
-      "height": "74",
-      "weight": "192",
-      "shoots": "L",
-      "draftOverall": 98,
-      "draftBucket": 5,
-      "term": 1,
-      "value": 0,
-      "aav": 0,
-      "capHitPct": 0.0,
-      "gp": 42,
-      "goals": 1,
-      "assists": 8,
-      "points": 9,
-      "ppg": 0.21,
-      "evPoints": 8,
-      "toi": 14.97,
-      "careerGP": 460,
-      "careerPoints": 133,
-      "careerEVPoints": 99,
-      "careerPPG": 0.3,
-      "careerEVPPG": 0.22,
-      "careerTOI": 16.34,
-      "careerGPPct": 51.0,
-      "seasonNo": 11,
-      "signed": false,
-      "actualContract": null,
-      "estimatedCapHitPct": 3.65,
-      "estimatedAAV": 3796000,
-      "ciLow": 2.22,
-      "ciHigh": 5.07,
-      "aavLow": 2308800,
-      "aavHigh": 5272800,
-      "estimateStd": 1.42,
-      "compWeights": [
-        0.2791,
-        0.2025,
-        0.1889,
-        0.1762,
-        0.1533
-      ],
-      "avgCompTerm": 3.2,
-      "termTable": [
-        {
-          "term": 1,
-          "capHitPct": 3.78,
-          "aav": 3931200
-        },
-        {
-          "term": 2,
-          "capHitPct": 3.72,
-          "aav": 3868800
-        },
-        {
-          "term": 3,
-          "capHitPct": 3.66,
-          "aav": 3806400
-        },
-        {
-          "term": 4,
-          "capHitPct": 3.6,
-          "aav": 3744000
-        },
-        {
-          "term": 5,
-          "capHitPct": 3.54,
-          "aav": 3681600
-        },
-        {
-          "term": 6,
-          "capHitPct": 3.48,
-          "aav": 3619200
-        },
-        {
-          "term": 7,
-          "capHitPct": 3.42,
-          "aav": 3556800
-        },
-        {
-          "term": 8,
-          "capHitPct": 3.36,
-          "aav": 3494400
-        }
-      ],
-      "comps": [
-        {
-          "playerId": 8476441,
-          "name": "Joel Edmundson",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "UFA",
-          "contractYear": 20232024,
-          "age": 31,
-          "ufaYear": 2020,
-          "height": "77",
-          "weight": "220",
-          "shoots": "L",
-          "draftOverall": 46,
-          "draftBucket": 4,
-          "term": 4,
-          "value": 15400000,
-          "aav": 3850000,
-          "capHitPct": 4.61,
-          "gp": 53,
-          "goals": 1,
-          "assists": 5,
-          "points": 6,
-          "ppg": 0.11,
-          "evPoints": 6,
-          "toi": 16.67,
-          "careerGP": 530,
-          "careerPoints": 110,
-          "careerEVPoints": 109,
-          "careerPPG": 0.22,
-          "careerEVPPG": 0.22,
-          "careerTOI": 18.81,
-          "careerGPPct": 71.82,
-          "seasonNo": 9
-        },
-        {
-          "playerId": 8477220,
-          "name": "Nate Schmidt",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "UFA",
-          "contractYear": 20242025,
-          "age": 33,
-          "ufaYear": 2019,
-          "height": "72",
-          "weight": "196",
-          "shoots": "L",
-          "draftOverall": 999,
-          "draftBucket": 6,
-          "term": 3,
-          "value": 10500000,
-          "aav": 3500000,
-          "capHitPct": 3.98,
-          "gp": 80,
-          "goals": 5,
-          "assists": 14,
-          "points": 19,
-          "ppg": 0.24,
-          "evPoints": 15,
-          "toi": 16.53,
-          "careerGP": 741,
-          "careerPoints": 239,
-          "careerEVPoints": 186,
-          "careerPPG": 0.33,
-          "careerEVPPG": 0.26,
-          "careerTOI": 18.87,
-          "careerGPPct": 75.3,
-          "seasonNo": 12
-        },
-        {
-          "playerId": 8476372,
-          "name": "Nick Seeler",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "UFA",
-          "contractYear": 20232024,
-          "age": 31,
-          "ufaYear": 2020,
-          "height": "74",
-          "weight": "201",
-          "shoots": "L",
-          "draftOverall": 131,
-          "draftBucket": 5,
-          "term": 4,
-          "value": 10800000,
-          "aav": 2700000,
-          "capHitPct": 3.23,
-          "gp": 71,
-          "goals": 1,
-          "assists": 12,
-          "points": 13,
-          "ppg": 0.18,
-          "evPoints": 9,
-          "toi": 16.95,
-          "careerGP": 296,
-          "careerPoints": 42,
-          "careerEVPoints": 37,
-          "careerPPG": 0.13,
-          "careerEVPPG": 0.12,
-          "careerTOI": 13.27,
-          "careerGPPct": 60.16,
-          "seasonNo": 6
-        },
-        {
-          "playerId": 8475208,
-          "name": "Brian Dumoulin",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "UFA",
-          "contractYear": 20242025,
-          "age": 33,
-          "ufaYear": 2019,
-          "height": "76",
-          "weight": "214",
-          "shoots": "L",
-          "draftOverall": 51,
-          "draftBucket": 4,
-          "term": 3,
-          "value": 12000000,
-          "aav": 4000000,
-          "capHitPct": 4.55,
-          "gp": 80,
-          "goals": 3,
-          "assists": 19,
-          "points": 22,
-          "ppg": 0.28,
-          "evPoints": 22,
-          "toi": 19.54,
-          "careerGP": 706,
-          "careerPoints": 177,
-          "careerEVPoints": 164,
-          "careerPPG": 0.25,
-          "careerEVPPG": 0.23,
-          "careerTOI": 19.9,
-          "careerGPPct": 71.75,
-          "seasonNo": 12
-        },
-        {
-          "playerId": 8477541,
-          "name": "Dakota Mermis",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "UFA",
-          "contractYear": 20242025,
-          "age": 31,
-          "ufaYear": 2021,
-          "height": "72",
-          "weight": "196",
-          "shoots": "L",
-          "draftOverall": 999,
-          "draftBucket": 6,
-          "term": 2,
-          "value": 1625000,
-          "aav": 812500,
-          "capHitPct": 0.92,
-          "gp": 4,
-          "goals": 0,
-          "assists": 1,
-          "points": 1,
-          "ppg": 0.25,
-          "evPoints": 1,
-          "toi": 15.2,
-          "careerGP": 78,
-          "careerPoints": 13,
-          "careerEVPoints": 13,
-          "careerPPG": 0.16,
-          "careerEVPPG": 0.16,
-          "careerTOI": 14.34,
-          "careerGPPct": 11.89,
-          "seasonNo": 8
-        }
-      ],
-      "compDistances": [
-        6.2226,
-        8.5765,
-        9.1933,
-        9.8572,
-        11.332
-      ],
-      "career": [
-        {
-          "season": 20152016,
-          "age": 22,
-          "gp": 29,
-          "points": 7,
-          "ppg": 0.24,
-          "evPoints": 5,
-          "evPPG": 0.17,
-          "toi": 12.08
-        },
-        {
-          "season": 20162017,
-          "age": 23,
-          "gp": 17,
-          "points": 1,
-          "ppg": 0.06,
-          "evPoints": 1,
-          "evPPG": 0.06,
-          "toi": 12.38
-        },
-        {
-          "season": 20172018,
-          "age": 24,
-          "gp": 57,
-          "points": 18,
-          "ppg": 0.32,
-          "evPoints": 12,
-          "evPPG": 0.21,
-          "toi": 14.96
-        },
-        {
-          "season": 20182019,
-          "age": 25,
-          "gp": 57,
-          "points": 11,
-          "ppg": 0.19,
-          "evPoints": 10,
-          "evPPG": 0.18,
-          "toi": 18.68
-        },
-        {
-          "season": 20192020,
-          "age": 26,
-          "gp": 44,
-          "points": 16,
-          "ppg": 0.36,
-          "evPoints": 6,
-          "evPPG": 0.14,
-          "toi": 18.02
-        },
-        {
-          "season": 20202021,
-          "age": 27,
-          "gp": 55,
-          "points": 27,
-          "ppg": 0.49,
-          "evPoints": 23,
-          "evPPG": 0.42,
-          "toi": 19.28
-        },
-        {
-          "season": 20212022,
-          "age": 28,
-          "gp": 70,
-          "points": 17,
-          "ppg": 0.24,
-          "evPoints": 13,
-          "evPPG": 0.19,
-          "toi": 18.96
-        },
-        {
-          "season": 20222023,
-          "age": 29,
-          "gp": 10,
-          "points": 1,
-          "ppg": 0.1,
-          "evPoints": 1,
-          "evPPG": 0.1,
-          "toi": 16.73
-        },
-        {
-          "season": 20232024,
-          "age": 30,
-          "gp": 61,
-          "points": 24,
-          "ppg": 0.39,
-          "evPoints": 18,
-          "evPPG": 0.3,
-          "toi": 17.16
-        },
-        {
-          "season": 20242025,
-          "age": 31,
-          "gp": 18,
-          "points": 2,
-          "ppg": 0.11,
-          "evPoints": 2,
-          "evPPG": 0.11,
-          "toi": 15.17
-        },
-        {
-          "season": 20252026,
-          "age": 32,
-          "gp": 42,
-          "points": 9,
-          "ppg": 0.21,
-          "evPoints": 8,
-          "evPPG": 0.19,
-          "toi": 14.97
-        }
-      ],
-      "compCareers": {
-        "8476441": [
-          {
-            "season": 20152016,
-            "age": 23,
-            "gp": 67,
-            "points": 9,
-            "ppg": 0.13,
-            "evPoints": 9,
-            "evPPG": 0.13,
-            "toi": 14.93
-          },
-          {
-            "season": 20162017,
-            "age": 24,
-            "gp": 69,
-            "points": 15,
-            "ppg": 0.22,
-            "evPoints": 15,
-            "evPPG": 0.22,
-            "toi": 17.77
-          },
-          {
-            "season": 20172018,
-            "age": 25,
-            "gp": 69,
-            "points": 17,
-            "ppg": 0.25,
-            "evPoints": 17,
-            "evPPG": 0.25,
-            "toi": 20.74
-          },
-          {
-            "season": 20182019,
-            "age": 26,
-            "gp": 64,
-            "points": 11,
-            "ppg": 0.17,
-            "evPoints": 11,
-            "evPPG": 0.17,
-            "toi": 19.39
-          },
-          {
-            "season": 20192020,
-            "age": 27,
-            "gp": 68,
-            "points": 20,
-            "ppg": 0.29,
-            "evPoints": 20,
-            "evPPG": 0.29,
-            "toi": 18.45
-          },
-          {
-            "season": 20202021,
-            "age": 28,
-            "gp": 55,
-            "points": 13,
-            "ppg": 0.24,
-            "evPoints": 13,
-            "evPPG": 0.24,
-            "toi": 20.05
-          },
-          {
-            "season": 20212022,
-            "age": 29,
-            "gp": 24,
-            "points": 6,
-            "ppg": 0.25,
-            "evPoints": 6,
-            "evPPG": 0.25,
-            "toi": 19.58
-          },
-          {
-            "season": 20222023,
-            "age": 30,
-            "gp": 61,
-            "points": 13,
-            "ppg": 0.21,
-            "evPoints": 12,
-            "evPPG": 0.2,
-            "toi": 19.57
-          },
-          {
-            "season": 20232024,
-            "age": 31,
-            "gp": 53,
-            "points": 6,
-            "ppg": 0.11,
-            "evPoints": 6,
-            "evPPG": 0.11,
-            "toi": 16.67
-          },
-          {
-            "season": 20242025,
-            "age": 32,
-            "gp": 73,
-            "points": 20,
-            "ppg": 0.27,
-            "evPoints": 19,
-            "evPPG": 0.26,
-            "toi": 20.59
-          },
-          {
-            "season": 20252026,
-            "age": 33,
-            "gp": 82,
-            "points": 23,
-            "ppg": 0.28,
-            "evPoints": 19,
-            "evPPG": 0.23,
-            "toi": 18.48
-          }
-        ],
-        "8477220": [
-          {
-            "season": 20132014,
-            "age": 22,
-            "gp": 29,
-            "points": 6,
-            "ppg": 0.21,
-            "evPoints": 6,
-            "evPPG": 0.21,
-            "toi": 18.69
-          },
-          {
-            "season": 20142015,
-            "age": 23,
-            "gp": 39,
-            "points": 4,
-            "ppg": 0.1,
-            "evPoints": 4,
-            "evPPG": 0.1,
-            "toi": 13.89
-          },
-          {
-            "season": 20152016,
-            "age": 24,
-            "gp": 72,
-            "points": 16,
-            "ppg": 0.22,
-            "evPoints": 16,
-            "evPPG": 0.22,
-            "toi": 18.07
-          },
-          {
-            "season": 20162017,
-            "age": 25,
-            "gp": 60,
-            "points": 17,
-            "ppg": 0.28,
-            "evPoints": 16,
-            "evPPG": 0.27,
-            "toi": 15.48
-          },
-          {
-            "season": 20172018,
-            "age": 26,
-            "gp": 76,
-            "points": 36,
-            "ppg": 0.47,
-            "evPoints": 25,
-            "evPPG": 0.33,
-            "toi": 22.24
-          },
-          {
-            "season": 20182019,
-            "age": 27,
-            "gp": 61,
-            "points": 30,
-            "ppg": 0.49,
-            "evPoints": 22,
-            "evPPG": 0.36,
-            "toi": 21.95
-          },
-          {
-            "season": 20192020,
-            "age": 28,
-            "gp": 59,
-            "points": 31,
-            "ppg": 0.53,
-            "evPoints": 24,
-            "evPPG": 0.41,
-            "toi": 21.68
-          },
-          {
-            "season": 20202021,
-            "age": 29,
-            "gp": 54,
-            "points": 15,
-            "ppg": 0.28,
-            "evPoints": 14,
-            "evPPG": 0.26,
-            "toi": 20.1
-          },
-          {
-            "season": 20212022,
-            "age": 30,
-            "gp": 77,
-            "points": 32,
-            "ppg": 0.42,
-            "evPoints": 20,
-            "evPPG": 0.26,
-            "toi": 20.21
-          },
-          {
-            "season": 20222023,
-            "age": 31,
-            "gp": 71,
-            "points": 19,
-            "ppg": 0.27,
-            "evPoints": 14,
-            "evPPG": 0.2,
-            "toi": 18.47
-          },
-          {
-            "season": 20232024,
-            "age": 32,
-            "gp": 63,
-            "points": 14,
-            "ppg": 0.22,
-            "evPoints": 10,
-            "evPPG": 0.16,
-            "toi": 16.82
-          },
-          {
-            "season": 20242025,
-            "age": 33,
-            "gp": 80,
-            "points": 19,
-            "ppg": 0.24,
-            "evPoints": 15,
-            "evPPG": 0.19,
-            "toi": 16.53
-          },
-          {
-            "season": 20252026,
-            "age": 34,
-            "gp": 82,
-            "points": 22,
-            "ppg": 0.27,
-            "evPoints": 22,
-            "evPPG": 0.27,
-            "toi": 19.7
-          }
-        ],
-        "8476372": [
-          {
-            "season": 20172018,
-            "age": 25,
-            "gp": 22,
-            "points": 4,
-            "ppg": 0.18,
-            "evPoints": 4,
-            "evPPG": 0.18,
-            "toi": 14.53
-          },
-          {
-            "season": 20182019,
-            "age": 26,
-            "gp": 71,
-            "points": 7,
-            "ppg": 0.1,
-            "evPoints": 7,
-            "evPPG": 0.1,
-            "toi": 12.33
-          },
-          {
-            "season": 20192020,
-            "age": 27,
-            "gp": 12,
-            "points": 1,
-            "ppg": 0.08,
-            "evPoints": 1,
-            "evPPG": 0.08,
-            "toi": 11.93
-          },
-          {
-            "season": 20212022,
-            "age": 29,
-            "gp": 43,
-            "points": 3,
-            "ppg": 0.07,
-            "evPoints": 3,
-            "evPPG": 0.07,
-            "toi": 13.08
-          },
-          {
-            "season": 20222023,
-            "age": 30,
-            "gp": 77,
-            "points": 14,
-            "ppg": 0.18,
-            "evPoints": 13,
-            "evPPG": 0.17,
-            "toi": 14.49
-          },
-          {
-            "season": 20232024,
-            "age": 31,
-            "gp": 71,
-            "points": 13,
-            "ppg": 0.18,
-            "evPoints": 9,
-            "evPPG": 0.13,
-            "toi": 16.95
-          },
-          {
-            "season": 20242025,
-            "age": 32,
-            "gp": 77,
-            "points": 20,
-            "ppg": 0.26,
-            "evPoints": 20,
-            "evPPG": 0.26,
-            "toi": 17.28
-          },
-          {
-            "season": 20252026,
-            "age": 33,
-            "gp": 80,
-            "points": 10,
-            "ppg": 0.12,
-            "evPoints": 10,
-            "evPPG": 0.12,
-            "toi": 17.69
-          }
-        ],
-        "8475208": [
-          {
-            "season": 20132014,
-            "age": 22,
-            "gp": 6,
-            "points": 1,
-            "ppg": 0.17,
-            "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 19.23
-          },
-          {
-            "season": 20142015,
-            "age": 23,
-            "gp": 8,
-            "points": 1,
-            "ppg": 0.12,
-            "evPoints": 1,
-            "evPPG": 0.12,
-            "toi": 15.67
-          },
-          {
-            "season": 20152016,
-            "age": 24,
-            "gp": 79,
-            "points": 16,
-            "ppg": 0.2,
-            "evPoints": 16,
-            "evPPG": 0.2,
-            "toi": 18.89
-          },
-          {
-            "season": 20162017,
-            "age": 25,
-            "gp": 70,
-            "points": 15,
-            "ppg": 0.21,
-            "evPoints": 11,
-            "evPPG": 0.16,
-            "toi": 20.55
-          },
-          {
-            "season": 20172018,
-            "age": 26,
-            "gp": 80,
-            "points": 18,
-            "ppg": 0.23,
-            "evPoints": 18,
-            "evPPG": 0.23,
-            "toi": 20.62
-          },
-          {
-            "season": 20182019,
-            "age": 27,
-            "gp": 76,
-            "points": 23,
-            "ppg": 0.3,
-            "evPoints": 19,
-            "evPPG": 0.25,
-            "toi": 21.03
-          },
-          {
-            "season": 20192020,
-            "age": 28,
-            "gp": 28,
-            "points": 8,
-            "ppg": 0.29,
-            "evPoints": 6,
-            "evPPG": 0.21,
-            "toi": 21.06
-          },
-          {
-            "season": 20202021,
-            "age": 29,
-            "gp": 41,
-            "points": 14,
-            "ppg": 0.34,
-            "evPoints": 13,
-            "evPPG": 0.32,
-            "toi": 22.35
-          },
-          {
-            "season": 20212022,
-            "age": 30,
-            "gp": 76,
-            "points": 18,
-            "ppg": 0.24,
-            "evPoints": 18,
-            "evPPG": 0.24,
-            "toi": 21.82
-          },
-          {
-            "season": 20222023,
-            "age": 31,
-            "gp": 82,
-            "points": 25,
-            "ppg": 0.3,
-            "evPoints": 23,
-            "evPPG": 0.28,
-            "toi": 20.64
-          },
-          {
-            "season": 20232024,
-            "age": 32,
-            "gp": 80,
-            "points": 16,
-            "ppg": 0.2,
-            "evPoints": 16,
-            "evPPG": 0.2,
-            "toi": 17.02
-          },
-          {
-            "season": 20242025,
-            "age": 33,
-            "gp": 80,
-            "points": 22,
-            "ppg": 0.28,
-            "evPoints": 22,
-            "evPPG": 0.28,
-            "toi": 19.54
-          },
-          {
-            "season": 20252026,
-            "age": 34,
-            "gp": 82,
-            "points": 17,
-            "ppg": 0.21,
-            "evPoints": 16,
-            "evPPG": 0.2,
-            "toi": 17.75
-          }
-        ],
-        "8477541": [
-          {
-            "season": 20172018,
-            "age": 24,
-            "gp": 9,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 10.99
-          },
-          {
-            "season": 20182019,
-            "age": 25,
-            "gp": 1,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 11.33
-          },
-          {
-            "season": 20192020,
-            "age": 26,
-            "gp": 10,
-            "points": 4,
-            "ppg": 0.4,
-            "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.22
-          },
-          {
-            "season": 20202021,
-            "age": 27,
-            "gp": 3,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 16.4
-          },
-          {
-            "season": 20212022,
-            "age": 28,
-            "gp": 2,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 13.9
-          },
-          {
-            "season": 20222023,
-            "age": 29,
-            "gp": 2,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 14.46
-          },
-          {
-            "season": 20232024,
-            "age": 30,
-            "gp": 47,
-            "points": 8,
-            "ppg": 0.17,
-            "evPoints": 8,
-            "evPPG": 0.17,
-            "toi": 14.09
-          },
-          {
-            "season": 20242025,
-            "age": 31,
-            "gp": 4,
-            "points": 1,
-            "ppg": 0.25,
-            "evPoints": 1,
-            "evPPG": 0.25,
-            "toi": 15.2
-          },
-          {
-            "season": 20252026,
-            "age": 32,
-            "gp": 11,
-            "points": 1,
-            "ppg": 0.09,
-            "evPoints": 1,
-            "evPPG": 0.09,
-            "toi": 13.03
           }
         ]
       }
@@ -164485,6 +164745,950 @@
             "evPoints": 9,
             "evPPG": 0.17,
             "toi": 7.98
+          }
+        ]
+      }
+    },
+    {
+      "playerId": 8476422,
+      "name": "Mike Reilly",
+      "position": "Defense",
+      "positionGroup": "Defense",
+      "signingStatus": "UFA",
+      "contractYear": 20252026,
+      "age": 32,
+      "ufaYear": 2021,
+      "height": "74",
+      "weight": "192",
+      "shoots": "L",
+      "draftOverall": 98,
+      "draftBucket": 5,
+      "term": 1,
+      "value": 0,
+      "aav": 0,
+      "capHitPct": 0.0,
+      "gp": 42,
+      "goals": 1,
+      "assists": 8,
+      "points": 9,
+      "ppg": 0.21,
+      "evPoints": 8,
+      "toi": 14.97,
+      "careerGP": 460,
+      "careerPoints": 133,
+      "careerEVPoints": 99,
+      "careerPPG": 0.3,
+      "careerEVPPG": 0.22,
+      "careerTOI": 16.34,
+      "careerGPPct": 51.0,
+      "seasonNo": 11,
+      "signed": true,
+      "actualContract": {
+        "term": 1,
+        "value": 850000,
+        "aav": 850000,
+        "capHitPct": 0.82,
+        "signingDate": "2026-09-10",
+        "team": "Hurricanes",
+        "signingStatus": "UFA"
+      },
+      "estimatedCapHitPct": 3.65,
+      "estimatedAAV": 3796000,
+      "ciLow": 2.22,
+      "ciHigh": 5.07,
+      "aavLow": 2308800,
+      "aavHigh": 5272800,
+      "estimateStd": 1.42,
+      "compWeights": [
+        0.2791,
+        0.2025,
+        0.1889,
+        0.1762,
+        0.1533
+      ],
+      "avgCompTerm": 3.2,
+      "termTable": [
+        {
+          "term": 1,
+          "capHitPct": 3.78,
+          "aav": 3931200
+        },
+        {
+          "term": 2,
+          "capHitPct": 3.72,
+          "aav": 3868800
+        },
+        {
+          "term": 3,
+          "capHitPct": 3.66,
+          "aav": 3806400
+        },
+        {
+          "term": 4,
+          "capHitPct": 3.6,
+          "aav": 3744000
+        },
+        {
+          "term": 5,
+          "capHitPct": 3.54,
+          "aav": 3681600
+        },
+        {
+          "term": 6,
+          "capHitPct": 3.48,
+          "aav": 3619200
+        },
+        {
+          "term": 7,
+          "capHitPct": 3.42,
+          "aav": 3556800
+        },
+        {
+          "term": 8,
+          "capHitPct": 3.36,
+          "aav": 3494400
+        }
+      ],
+      "comps": [
+        {
+          "playerId": 8476441,
+          "name": "Joel Edmundson",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "UFA",
+          "contractYear": 20232024,
+          "age": 31,
+          "ufaYear": 2020,
+          "height": "77",
+          "weight": "220",
+          "shoots": "L",
+          "draftOverall": 46,
+          "draftBucket": 4,
+          "term": 4,
+          "value": 15400000,
+          "aav": 3850000,
+          "capHitPct": 4.61,
+          "gp": 53,
+          "goals": 1,
+          "assists": 5,
+          "points": 6,
+          "ppg": 0.11,
+          "evPoints": 6,
+          "toi": 16.67,
+          "careerGP": 530,
+          "careerPoints": 110,
+          "careerEVPoints": 109,
+          "careerPPG": 0.22,
+          "careerEVPPG": 0.22,
+          "careerTOI": 18.81,
+          "careerGPPct": 71.82,
+          "seasonNo": 9
+        },
+        {
+          "playerId": 8477220,
+          "name": "Nate Schmidt",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "UFA",
+          "contractYear": 20242025,
+          "age": 33,
+          "ufaYear": 2019,
+          "height": "72",
+          "weight": "196",
+          "shoots": "L",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 3,
+          "value": 10500000,
+          "aav": 3500000,
+          "capHitPct": 3.98,
+          "gp": 80,
+          "goals": 5,
+          "assists": 14,
+          "points": 19,
+          "ppg": 0.24,
+          "evPoints": 15,
+          "toi": 16.53,
+          "careerGP": 741,
+          "careerPoints": 239,
+          "careerEVPoints": 186,
+          "careerPPG": 0.33,
+          "careerEVPPG": 0.26,
+          "careerTOI": 18.87,
+          "careerGPPct": 75.3,
+          "seasonNo": 12
+        },
+        {
+          "playerId": 8476372,
+          "name": "Nick Seeler",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "UFA",
+          "contractYear": 20232024,
+          "age": 31,
+          "ufaYear": 2020,
+          "height": "74",
+          "weight": "201",
+          "shoots": "L",
+          "draftOverall": 131,
+          "draftBucket": 5,
+          "term": 4,
+          "value": 10800000,
+          "aav": 2700000,
+          "capHitPct": 3.23,
+          "gp": 71,
+          "goals": 1,
+          "assists": 12,
+          "points": 13,
+          "ppg": 0.18,
+          "evPoints": 9,
+          "toi": 16.95,
+          "careerGP": 296,
+          "careerPoints": 42,
+          "careerEVPoints": 37,
+          "careerPPG": 0.13,
+          "careerEVPPG": 0.12,
+          "careerTOI": 13.27,
+          "careerGPPct": 60.16,
+          "seasonNo": 6
+        },
+        {
+          "playerId": 8475208,
+          "name": "Brian Dumoulin",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "UFA",
+          "contractYear": 20242025,
+          "age": 33,
+          "ufaYear": 2019,
+          "height": "76",
+          "weight": "214",
+          "shoots": "L",
+          "draftOverall": 51,
+          "draftBucket": 4,
+          "term": 3,
+          "value": 12000000,
+          "aav": 4000000,
+          "capHitPct": 4.55,
+          "gp": 80,
+          "goals": 3,
+          "assists": 19,
+          "points": 22,
+          "ppg": 0.28,
+          "evPoints": 22,
+          "toi": 19.54,
+          "careerGP": 706,
+          "careerPoints": 177,
+          "careerEVPoints": 164,
+          "careerPPG": 0.25,
+          "careerEVPPG": 0.23,
+          "careerTOI": 19.9,
+          "careerGPPct": 71.75,
+          "seasonNo": 12
+        },
+        {
+          "playerId": 8477541,
+          "name": "Dakota Mermis",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "UFA",
+          "contractYear": 20242025,
+          "age": 31,
+          "ufaYear": 2021,
+          "height": "72",
+          "weight": "196",
+          "shoots": "L",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 4,
+          "goals": 0,
+          "assists": 1,
+          "points": 1,
+          "ppg": 0.25,
+          "evPoints": 1,
+          "toi": 15.2,
+          "careerGP": 78,
+          "careerPoints": 13,
+          "careerEVPoints": 13,
+          "careerPPG": 0.16,
+          "careerEVPPG": 0.16,
+          "careerTOI": 14.34,
+          "careerGPPct": 11.89,
+          "seasonNo": 8
+        }
+      ],
+      "compDistances": [
+        6.2226,
+        8.5765,
+        9.1933,
+        9.8572,
+        11.332
+      ],
+      "career": [
+        {
+          "season": 20152016,
+          "age": 22,
+          "gp": 29,
+          "points": 7,
+          "ppg": 0.24,
+          "evPoints": 5,
+          "evPPG": 0.17,
+          "toi": 12.08
+        },
+        {
+          "season": 20162017,
+          "age": 23,
+          "gp": 17,
+          "points": 1,
+          "ppg": 0.06,
+          "evPoints": 1,
+          "evPPG": 0.06,
+          "toi": 12.38
+        },
+        {
+          "season": 20172018,
+          "age": 24,
+          "gp": 57,
+          "points": 18,
+          "ppg": 0.32,
+          "evPoints": 12,
+          "evPPG": 0.21,
+          "toi": 14.96
+        },
+        {
+          "season": 20182019,
+          "age": 25,
+          "gp": 57,
+          "points": 11,
+          "ppg": 0.19,
+          "evPoints": 10,
+          "evPPG": 0.18,
+          "toi": 18.68
+        },
+        {
+          "season": 20192020,
+          "age": 26,
+          "gp": 44,
+          "points": 16,
+          "ppg": 0.36,
+          "evPoints": 6,
+          "evPPG": 0.14,
+          "toi": 18.02
+        },
+        {
+          "season": 20202021,
+          "age": 27,
+          "gp": 55,
+          "points": 27,
+          "ppg": 0.49,
+          "evPoints": 23,
+          "evPPG": 0.42,
+          "toi": 19.28
+        },
+        {
+          "season": 20212022,
+          "age": 28,
+          "gp": 70,
+          "points": 17,
+          "ppg": 0.24,
+          "evPoints": 13,
+          "evPPG": 0.19,
+          "toi": 18.96
+        },
+        {
+          "season": 20222023,
+          "age": 29,
+          "gp": 10,
+          "points": 1,
+          "ppg": 0.1,
+          "evPoints": 1,
+          "evPPG": 0.1,
+          "toi": 16.73
+        },
+        {
+          "season": 20232024,
+          "age": 30,
+          "gp": 61,
+          "points": 24,
+          "ppg": 0.39,
+          "evPoints": 18,
+          "evPPG": 0.3,
+          "toi": 17.16
+        },
+        {
+          "season": 20242025,
+          "age": 31,
+          "gp": 18,
+          "points": 2,
+          "ppg": 0.11,
+          "evPoints": 2,
+          "evPPG": 0.11,
+          "toi": 15.17
+        },
+        {
+          "season": 20252026,
+          "age": 32,
+          "gp": 42,
+          "points": 9,
+          "ppg": 0.21,
+          "evPoints": 8,
+          "evPPG": 0.19,
+          "toi": 14.97
+        }
+      ],
+      "compCareers": {
+        "8476441": [
+          {
+            "season": 20152016,
+            "age": 23,
+            "gp": 67,
+            "points": 9,
+            "ppg": 0.13,
+            "evPoints": 9,
+            "evPPG": 0.13,
+            "toi": 14.93
+          },
+          {
+            "season": 20162017,
+            "age": 24,
+            "gp": 69,
+            "points": 15,
+            "ppg": 0.22,
+            "evPoints": 15,
+            "evPPG": 0.22,
+            "toi": 17.77
+          },
+          {
+            "season": 20172018,
+            "age": 25,
+            "gp": 69,
+            "points": 17,
+            "ppg": 0.25,
+            "evPoints": 17,
+            "evPPG": 0.25,
+            "toi": 20.74
+          },
+          {
+            "season": 20182019,
+            "age": 26,
+            "gp": 64,
+            "points": 11,
+            "ppg": 0.17,
+            "evPoints": 11,
+            "evPPG": 0.17,
+            "toi": 19.39
+          },
+          {
+            "season": 20192020,
+            "age": 27,
+            "gp": 68,
+            "points": 20,
+            "ppg": 0.29,
+            "evPoints": 20,
+            "evPPG": 0.29,
+            "toi": 18.45
+          },
+          {
+            "season": 20202021,
+            "age": 28,
+            "gp": 55,
+            "points": 13,
+            "ppg": 0.24,
+            "evPoints": 13,
+            "evPPG": 0.24,
+            "toi": 20.05
+          },
+          {
+            "season": 20212022,
+            "age": 29,
+            "gp": 24,
+            "points": 6,
+            "ppg": 0.25,
+            "evPoints": 6,
+            "evPPG": 0.25,
+            "toi": 19.58
+          },
+          {
+            "season": 20222023,
+            "age": 30,
+            "gp": 61,
+            "points": 13,
+            "ppg": 0.21,
+            "evPoints": 12,
+            "evPPG": 0.2,
+            "toi": 19.57
+          },
+          {
+            "season": 20232024,
+            "age": 31,
+            "gp": 53,
+            "points": 6,
+            "ppg": 0.11,
+            "evPoints": 6,
+            "evPPG": 0.11,
+            "toi": 16.67
+          },
+          {
+            "season": 20242025,
+            "age": 32,
+            "gp": 73,
+            "points": 20,
+            "ppg": 0.27,
+            "evPoints": 19,
+            "evPPG": 0.26,
+            "toi": 20.59
+          },
+          {
+            "season": 20252026,
+            "age": 33,
+            "gp": 82,
+            "points": 23,
+            "ppg": 0.28,
+            "evPoints": 19,
+            "evPPG": 0.23,
+            "toi": 18.48
+          }
+        ],
+        "8477220": [
+          {
+            "season": 20132014,
+            "age": 22,
+            "gp": 29,
+            "points": 6,
+            "ppg": 0.21,
+            "evPoints": 6,
+            "evPPG": 0.21,
+            "toi": 18.69
+          },
+          {
+            "season": 20142015,
+            "age": 23,
+            "gp": 39,
+            "points": 4,
+            "ppg": 0.1,
+            "evPoints": 4,
+            "evPPG": 0.1,
+            "toi": 13.89
+          },
+          {
+            "season": 20152016,
+            "age": 24,
+            "gp": 72,
+            "points": 16,
+            "ppg": 0.22,
+            "evPoints": 16,
+            "evPPG": 0.22,
+            "toi": 18.07
+          },
+          {
+            "season": 20162017,
+            "age": 25,
+            "gp": 60,
+            "points": 17,
+            "ppg": 0.28,
+            "evPoints": 16,
+            "evPPG": 0.27,
+            "toi": 15.48
+          },
+          {
+            "season": 20172018,
+            "age": 26,
+            "gp": 76,
+            "points": 36,
+            "ppg": 0.47,
+            "evPoints": 25,
+            "evPPG": 0.33,
+            "toi": 22.24
+          },
+          {
+            "season": 20182019,
+            "age": 27,
+            "gp": 61,
+            "points": 30,
+            "ppg": 0.49,
+            "evPoints": 22,
+            "evPPG": 0.36,
+            "toi": 21.95
+          },
+          {
+            "season": 20192020,
+            "age": 28,
+            "gp": 59,
+            "points": 31,
+            "ppg": 0.53,
+            "evPoints": 24,
+            "evPPG": 0.41,
+            "toi": 21.68
+          },
+          {
+            "season": 20202021,
+            "age": 29,
+            "gp": 54,
+            "points": 15,
+            "ppg": 0.28,
+            "evPoints": 14,
+            "evPPG": 0.26,
+            "toi": 20.1
+          },
+          {
+            "season": 20212022,
+            "age": 30,
+            "gp": 77,
+            "points": 32,
+            "ppg": 0.42,
+            "evPoints": 20,
+            "evPPG": 0.26,
+            "toi": 20.21
+          },
+          {
+            "season": 20222023,
+            "age": 31,
+            "gp": 71,
+            "points": 19,
+            "ppg": 0.27,
+            "evPoints": 14,
+            "evPPG": 0.2,
+            "toi": 18.47
+          },
+          {
+            "season": 20232024,
+            "age": 32,
+            "gp": 63,
+            "points": 14,
+            "ppg": 0.22,
+            "evPoints": 10,
+            "evPPG": 0.16,
+            "toi": 16.82
+          },
+          {
+            "season": 20242025,
+            "age": 33,
+            "gp": 80,
+            "points": 19,
+            "ppg": 0.24,
+            "evPoints": 15,
+            "evPPG": 0.19,
+            "toi": 16.53
+          },
+          {
+            "season": 20252026,
+            "age": 34,
+            "gp": 82,
+            "points": 22,
+            "ppg": 0.27,
+            "evPoints": 22,
+            "evPPG": 0.27,
+            "toi": 19.7
+          }
+        ],
+        "8476372": [
+          {
+            "season": 20172018,
+            "age": 25,
+            "gp": 22,
+            "points": 4,
+            "ppg": 0.18,
+            "evPoints": 4,
+            "evPPG": 0.18,
+            "toi": 14.53
+          },
+          {
+            "season": 20182019,
+            "age": 26,
+            "gp": 71,
+            "points": 7,
+            "ppg": 0.1,
+            "evPoints": 7,
+            "evPPG": 0.1,
+            "toi": 12.33
+          },
+          {
+            "season": 20192020,
+            "age": 27,
+            "gp": 12,
+            "points": 1,
+            "ppg": 0.08,
+            "evPoints": 1,
+            "evPPG": 0.08,
+            "toi": 11.93
+          },
+          {
+            "season": 20212022,
+            "age": 29,
+            "gp": 43,
+            "points": 3,
+            "ppg": 0.07,
+            "evPoints": 3,
+            "evPPG": 0.07,
+            "toi": 13.08
+          },
+          {
+            "season": 20222023,
+            "age": 30,
+            "gp": 77,
+            "points": 14,
+            "ppg": 0.18,
+            "evPoints": 13,
+            "evPPG": 0.17,
+            "toi": 14.49
+          },
+          {
+            "season": 20232024,
+            "age": 31,
+            "gp": 71,
+            "points": 13,
+            "ppg": 0.18,
+            "evPoints": 9,
+            "evPPG": 0.13,
+            "toi": 16.95
+          },
+          {
+            "season": 20242025,
+            "age": 32,
+            "gp": 77,
+            "points": 20,
+            "ppg": 0.26,
+            "evPoints": 20,
+            "evPPG": 0.26,
+            "toi": 17.28
+          },
+          {
+            "season": 20252026,
+            "age": 33,
+            "gp": 80,
+            "points": 10,
+            "ppg": 0.12,
+            "evPoints": 10,
+            "evPPG": 0.12,
+            "toi": 17.69
+          }
+        ],
+        "8475208": [
+          {
+            "season": 20132014,
+            "age": 22,
+            "gp": 6,
+            "points": 1,
+            "ppg": 0.17,
+            "evPoints": 1,
+            "evPPG": 0.17,
+            "toi": 19.23
+          },
+          {
+            "season": 20142015,
+            "age": 23,
+            "gp": 8,
+            "points": 1,
+            "ppg": 0.12,
+            "evPoints": 1,
+            "evPPG": 0.12,
+            "toi": 15.67
+          },
+          {
+            "season": 20152016,
+            "age": 24,
+            "gp": 79,
+            "points": 16,
+            "ppg": 0.2,
+            "evPoints": 16,
+            "evPPG": 0.2,
+            "toi": 18.89
+          },
+          {
+            "season": 20162017,
+            "age": 25,
+            "gp": 70,
+            "points": 15,
+            "ppg": 0.21,
+            "evPoints": 11,
+            "evPPG": 0.16,
+            "toi": 20.55
+          },
+          {
+            "season": 20172018,
+            "age": 26,
+            "gp": 80,
+            "points": 18,
+            "ppg": 0.23,
+            "evPoints": 18,
+            "evPPG": 0.23,
+            "toi": 20.62
+          },
+          {
+            "season": 20182019,
+            "age": 27,
+            "gp": 76,
+            "points": 23,
+            "ppg": 0.3,
+            "evPoints": 19,
+            "evPPG": 0.25,
+            "toi": 21.03
+          },
+          {
+            "season": 20192020,
+            "age": 28,
+            "gp": 28,
+            "points": 8,
+            "ppg": 0.29,
+            "evPoints": 6,
+            "evPPG": 0.21,
+            "toi": 21.06
+          },
+          {
+            "season": 20202021,
+            "age": 29,
+            "gp": 41,
+            "points": 14,
+            "ppg": 0.34,
+            "evPoints": 13,
+            "evPPG": 0.32,
+            "toi": 22.35
+          },
+          {
+            "season": 20212022,
+            "age": 30,
+            "gp": 76,
+            "points": 18,
+            "ppg": 0.24,
+            "evPoints": 18,
+            "evPPG": 0.24,
+            "toi": 21.82
+          },
+          {
+            "season": 20222023,
+            "age": 31,
+            "gp": 82,
+            "points": 25,
+            "ppg": 0.3,
+            "evPoints": 23,
+            "evPPG": 0.28,
+            "toi": 20.64
+          },
+          {
+            "season": 20232024,
+            "age": 32,
+            "gp": 80,
+            "points": 16,
+            "ppg": 0.2,
+            "evPoints": 16,
+            "evPPG": 0.2,
+            "toi": 17.02
+          },
+          {
+            "season": 20242025,
+            "age": 33,
+            "gp": 80,
+            "points": 22,
+            "ppg": 0.28,
+            "evPoints": 22,
+            "evPPG": 0.28,
+            "toi": 19.54
+          },
+          {
+            "season": 20252026,
+            "age": 34,
+            "gp": 82,
+            "points": 17,
+            "ppg": 0.21,
+            "evPoints": 16,
+            "evPPG": 0.2,
+            "toi": 17.75
+          }
+        ],
+        "8477541": [
+          {
+            "season": 20172018,
+            "age": 24,
+            "gp": 9,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 10.99
+          },
+          {
+            "season": 20182019,
+            "age": 25,
+            "gp": 1,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 11.33
+          },
+          {
+            "season": 20192020,
+            "age": 26,
+            "gp": 10,
+            "points": 4,
+            "ppg": 0.4,
+            "evPoints": 4,
+            "evPPG": 0.4,
+            "toi": 19.22
+          },
+          {
+            "season": 20202021,
+            "age": 27,
+            "gp": 3,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 16.4
+          },
+          {
+            "season": 20212022,
+            "age": 28,
+            "gp": 2,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 13.9
+          },
+          {
+            "season": 20222023,
+            "age": 29,
+            "gp": 2,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 14.46
+          },
+          {
+            "season": 20232024,
+            "age": 30,
+            "gp": 47,
+            "points": 8,
+            "ppg": 0.17,
+            "evPoints": 8,
+            "evPPG": 0.17,
+            "toi": 14.09
+          },
+          {
+            "season": 20242025,
+            "age": 31,
+            "gp": 4,
+            "points": 1,
+            "ppg": 0.25,
+            "evPoints": 1,
+            "evPPG": 0.25,
+            "toi": 15.2
+          },
+          {
+            "season": 20252026,
+            "age": 32,
+            "gp": 11,
+            "points": 1,
+            "ppg": 0.09,
+            "evPoints": 1,
+            "evPPG": 0.09,
+            "toi": 13.03
           }
         ]
       }

@@ -339,6 +339,17 @@ def build_stats(raw_stats: pd.DataFrame) -> pd.DataFrame:
         / (df["szn_no"] - 1)
     ).fillna(0).round(2)
 
+    # Career-to-date INCLUSIVE rates (through the current season) — display only.
+    # careerGP/careerPoints already include the platform season, so the on-card
+    # career rates must too, or they read as if the latest season is missing.
+    # The exclusive rates above (ctd_p_pg / ctd_ev_p_pg / ctd_toi_avg) are KNN
+    # features that deliberately exclude the platform/walk year and are unchanged.
+    df["ctd_p_pg_all"] = (df["ctd_points"] / df["ctd_gamesPlayed"]).fillna(0).round(4)
+    df["ctd_ev_p_pg_all"] = (df["ctd_evPoints"] / df["ctd_gamesPlayed"]).fillna(0).round(4)
+    df["ctd_toi_avg_all"] = (
+        df.groupby("playerId")["timeOnIcePerGame"].cumsum() / df["szn_no"]
+    ).fillna(0).round(2)
+
     df["pct_gp"] = (df["ctd_gamesPlayed"] / (df["szn_no"] * 82)).round(4)
 
     # ── Candidate features (additive; validated in validate_features.py) ──
@@ -1010,9 +1021,9 @@ def build_player_record(row, cap_limits: dict) -> dict:
         "careerGP": int(row.get("ctd_gamesPlayed", 0)),
         "careerPoints": int(row.get("ctd_points", 0)),
         "careerEVPoints": int(row.get("ctd_evPoints", 0)),
-        "careerPPG": round(float(row.get("ctd_p_pg", 0)), 2),
-        "careerEVPPG": round(float(row.get("ctd_ev_p_pg", 0)), 2),
-        "careerTOI": round(float(row.get("ctd_toi_avg", 0)) / 60, 2),
+        "careerPPG": round(float(row.get("ctd_p_pg_all", 0)), 2),
+        "careerEVPPG": round(float(row.get("ctd_ev_p_pg_all", 0)), 2),
+        "careerTOI": round(float(row.get("ctd_toi_avg_all", 0)) / 60, 2),
         "careerGPPct": round(float(row.get("pct_gp", 0)) * 100, 2),
         "seasonNo": int(row.get("szn_no", 0)),
     }

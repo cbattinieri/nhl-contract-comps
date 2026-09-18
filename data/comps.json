@@ -7,7 +7,7 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-09-17T13:02:10.659409",
+    "generatedAt": "2026-09-18T12:41:20.896562",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -131533,7 +131533,7 @@
     },
     {
       "playerId": 8479705,
-      "name": "Jeffrey Truchon-Viel",
+      "name": "Jeffrey Viel",
       "position": "Winger",
       "positionGroup": "Forward",
       "signingStatus": "UFA",

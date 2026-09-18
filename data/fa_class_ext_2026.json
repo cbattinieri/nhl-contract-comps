@@ -2,7 +2,7 @@
   "meta": {
     "faClassYear": 2026,
     "mode": "extension_eligible",
-    "generatedAt": "2026-09-17T13:02:35.092314",
+    "generatedAt": "2026-09-18T12:41:45.315418",
     "signedCount": 22,
     "pendingCount": 356,
     "currentCap": 104000000
@@ -26909,7 +26909,7 @@
       "comps": [
         {
           "playerId": 8479705,
-          "name": "Jeffrey Truchon-Viel",
+          "name": "Jeffrey Viel",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "UFA",
@@ -37543,7 +37543,7 @@
         },
         {
           "playerId": 8479705,
-          "name": "Jeffrey Truchon-Viel",
+          "name": "Jeffrey Viel",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "UFA",
@@ -77865,7 +77865,7 @@
         },
         {
           "playerId": 8479705,
-          "name": "Jeffrey Truchon-Viel",
+          "name": "Jeffrey Viel",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "UFA",
@@ -92261,7 +92261,7 @@
         },
         {
           "playerId": 8479705,
-          "name": "Jeffrey Truchon-Viel",
+          "name": "Jeffrey Viel",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "UFA",
@@ -121137,7 +121137,7 @@
         },
         {
           "playerId": 8479705,
-          "name": "Jeffrey Truchon-Viel",
+          "name": "Jeffrey Viel",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "UFA",
@@ -149099,7 +149099,7 @@
         },
         {
           "playerId": 8479705,
-          "name": "Jeffrey Truchon-Viel",
+          "name": "Jeffrey Viel",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "UFA",
@@ -189675,7 +189675,7 @@
         },
         {
           "playerId": 8479705,
-          "name": "Jeffrey Truchon-Viel",
+          "name": "Jeffrey Viel",
           "position": "Winger",
           "positionGroup": "Forward",
           "signingStatus": "UFA",
@@ -249322,7 +249322,7 @@
       "age": 22,
       "ufaYear": 2031,
       "height": "71",
-      "weight": "179",
+      "weight": "183",
       "shoots": "L",
       "draftOverall": 16,
       "draftBucket": 3,

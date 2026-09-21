@@ -7,7 +7,7 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-09-20T12:51:35.297699",
+    "generatedAt": "2026-09-21T14:50:13.253614",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -154219,7 +154219,7 @@
       "age": 21,
       "ufaYear": 2031,
       "height": "70",
-      "weight": "176",
+      "weight": "172",
       "shoots": "L",
       "draftOverall": 7,
       "draftBucket": 2,

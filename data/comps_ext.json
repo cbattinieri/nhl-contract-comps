@@ -7,13 +7,13 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-09-24T13:11:33.825598",
+    "generatedAt": "2026-09-25T13:15:07.050157",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
-        "mae": 1.71,
+        "mae": 1.73,
         "median_ae": 1.06,
-        "n": 283
+        "n": 284
       },
       "RFA_Defense": {
         "mae": 2.01,
@@ -35,9 +35,9 @@
       "RFA": {
         "high": {
           "slope": 0.25,
-          "n": 60,
+          "n": 61,
           "fitted": false,
-          "rejected_fit": -0.3599,
+          "rejected_fit": -0.4194,
           "reject_reason": "wrong_sign"
         },
         "mid": {
@@ -124,11 +124,11 @@
       "aavHigh": 2922400,
       "estimateStd": 1.15,
       "compWeights": [
-        0.2964,
-        0.2175,
-        0.1909,
-        0.152,
-        0.1431
+        0.2961,
+        0.2182,
+        0.1907,
+        0.1519,
+        0.143
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -362,11 +362,11 @@
         }
       ],
       "compDistances": [
-        1.8912,
-        2.5772,
-        2.9369,
-        3.6878,
-        3.9182
+        1.8869,
+        2.5605,
+        2.9296,
+        3.6784,
+        3.9065
       ],
       "career": [
         {
@@ -968,11 +968,11 @@
       "aavHigh": 1809600,
       "estimateStd": 0.46,
       "compWeights": [
-        0.2642,
-        0.2375,
-        0.1822,
-        0.1648,
-        0.1513
+        0.263,
+        0.2381,
+        0.1823,
+        0.1645,
+        0.1521
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -1206,11 +1206,11 @@
         }
       ],
       "compDistances": [
-        2.5653,
-        2.8531,
-        3.7198,
-        4.1114,
-        4.4792
+        2.568,
+        2.8372,
+        3.7049,
+        4.1051,
+        4.4417
       ],
       "career": [
         {
@@ -2618,10 +2618,10 @@
       "aavHigh": 3369600,
       "estimateStd": 1.46,
       "compWeights": [
-        0.3086,
-        0.2402,
-        0.1886,
-        0.1466,
+        0.3082,
+        0.2399,
+        0.1892,
+        0.1467,
         0.116
       ],
       "avgCompTerm": 2.6,
@@ -2856,11 +2856,11 @@
         }
       ],
       "compDistances": [
-        1.5785,
-        2.0279,
-        2.5835,
-        3.3226,
-        4.2005
+        1.5759,
+        2.0242,
+        2.5673,
+        3.3116,
+        4.1872
       ],
       "career": [
         {
@@ -3110,11 +3110,11 @@
       "aavHigh": 1206400,
       "estimateStd": 0.12,
       "compWeights": [
-        0.2431,
-        0.1979,
-        0.1949,
-        0.1823,
-        0.1819
+        0.2426,
+        0.1984,
+        0.1955,
+        0.1822,
+        0.1813
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -3348,11 +3348,11 @@
         }
       ],
       "compDistances": [
-        3.9839,
-        4.8935,
-        4.9696,
-        5.3132,
-        5.3255
+        3.9727,
+        4.8598,
+        4.9314,
+        5.2907,
+        5.3164
       ],
       "career": [
         {
@@ -5128,11 +5128,11 @@
       "aavHigh": 1237600,
       "estimateStd": 0.21,
       "compWeights": [
-        0.7573,
-        0.0794,
-        0.0577,
-        0.053,
-        0.0527
+        0.7561,
+        0.0799,
+        0.0576,
+        0.0533,
+        0.053
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -5366,11 +5366,11 @@
         }
       ],
       "compDistances": [
-        0.4153,
-        3.961,
-        5.4528,
-        5.9377,
-        5.9675
+        0.4144,
+        3.9211,
+        5.436,
+        5.8778,
+        5.9078
       ],
       "career": [
         {
@@ -8933,16 +8933,16 @@
       "estimatedCapHitPct": 2.04,
       "estimatedAAV": 2121600,
       "ciLow": 0.48,
-      "ciHigh": 3.59,
+      "ciHigh": 3.6,
       "aavLow": 499200,
-      "aavHigh": 3733600,
+      "aavHigh": 3744000,
       "estimateStd": 1.56,
       "compWeights": [
-        0.2224,
-        0.2191,
-        0.1923,
-        0.1838,
-        0.1824
+        0.2221,
+        0.2188,
+        0.1925,
+        0.1839,
+        0.1826
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -9176,11 +9176,11 @@
         }
       ],
       "compDistances": [
-        2.8455,
-        2.8883,
-        3.2907,
-        3.443,
-        3.4696
+        2.8399,
+        2.8821,
+        3.2763,
+        3.4292,
+        3.4533
       ],
       "career": [
         {
@@ -9450,11 +9450,11 @@
       "aavHigh": 1424800,
       "estimateStd": 0.17,
       "compWeights": [
-        0.2755,
-        0.2065,
-        0.187,
-        0.1838,
-        0.1471
+        0.2749,
+        0.2069,
+        0.1872,
+        0.1839,
+        0.1472
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -9688,11 +9688,11 @@
         }
       ],
       "compDistances": [
-        1.9021,
-        2.5377,
-        2.8028,
-        2.8515,
-        3.5628
+        1.8989,
+        2.5226,
+        2.7878,
+        2.8382,
+        3.5468
       ],
       "career": [
         {
@@ -11635,10 +11635,10 @@
       "estimateStd": 0.05,
       "compWeights": [
         0.4369,
-        0.1798,
-        0.1397,
-        0.1247,
-        0.1189
+        0.1801,
+        0.1399,
+        0.1245,
+        0.1187
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -11872,11 +11872,11 @@
         }
       ],
       "compDistances": [
-        1.3007,
-        3.1614,
-        4.0672,
-        4.5568,
-        4.7817
+        1.296,
+        3.1444,
+        4.0489,
+        4.5494,
+        4.7723
       ],
       "career": [
         {
@@ -19128,10 +19128,10 @@
       "aavHigh": 1996800,
       "estimateStd": 0.62,
       "compWeights": [
-        0.2941,
-        0.1963,
-        0.1865,
-        0.163,
+        0.294,
+        0.1959,
+        0.187,
+        0.1631,
         0.1601
       ],
       "avgCompTerm": 2.6,
@@ -19366,11 +19366,11 @@
         }
       ],
       "compDistances": [
-        2.8172,
-        4.2209,
-        4.4413,
-        5.0833,
-        5.1749
+        2.8007,
+        4.203,
+        4.4036,
+        5.0483,
+        5.1416
       ],
       "career": [
         {
@@ -21724,11 +21724,11 @@
       "aavHigh": 1227200,
       "estimateStd": 0.1,
       "compWeights": [
-        0.2879,
-        0.2048,
-        0.1901,
-        0.1589,
-        0.1583
+        0.288,
+        0.2043,
+        0.1899,
+        0.1594,
+        0.1584
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -21962,11 +21962,11 @@
         }
       ],
       "compDistances": [
-        2.1198,
-        2.9809,
-        3.2106,
-        3.8406,
-        3.8562
+        2.1149,
+        2.9804,
+        3.2071,
+        3.8202,
+        3.8449
       ],
       "career": [
         {
@@ -22146,10 +22146,10 @@
       "aavHigh": 1996800,
       "estimateStd": 0.59,
       "compWeights": [
-        0.27,
-        0.2093,
+        0.2694,
+        0.2096,
         0.2088,
-        0.1609,
+        0.1611,
         0.1511
       ],
       "avgCompTerm": 2.8,
@@ -22247,40 +22247,6 @@
           "seasonNo": 2
         },
         {
-          "playerId": 8482896,
-          "name": "Tyson Kozak",
-          "position": "Center",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 22,
-          "ufaYear": 2030,
-          "height": "71",
-          "weight": "185",
-          "shoots": "L",
-          "draftOverall": 193,
-          "draftBucket": 5,
-          "term": 3,
-          "value": 2525000,
-          "aav": 841667,
-          "capHitPct": 0.96,
-          "gp": 21,
-          "goals": 3,
-          "assists": 2,
-          "points": 5,
-          "ppg": 0.24,
-          "evPoints": 4,
-          "toi": 10.49,
-          "careerGP": 21,
-          "careerPoints": 5,
-          "careerEVPoints": 4,
-          "careerPPG": 0.24,
-          "careerEVPPG": 0.19,
-          "careerTOI": 10.49,
-          "careerGPPct": 25.61,
-          "seasonNo": 1
-        },
-        {
           "playerId": 8482874,
           "name": "Jacob Melanson",
           "position": "Winger",
@@ -22313,6 +22279,40 @@
           "careerTOI": 9.62,
           "careerGPPct": 22.56,
           "seasonNo": 2
+        },
+        {
+          "playerId": 8482896,
+          "name": "Tyson Kozak",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 22,
+          "ufaYear": 2030,
+          "height": "71",
+          "weight": "185",
+          "shoots": "L",
+          "draftOverall": 193,
+          "draftBucket": 5,
+          "term": 3,
+          "value": 2525000,
+          "aav": 841667,
+          "capHitPct": 0.96,
+          "gp": 21,
+          "goals": 3,
+          "assists": 2,
+          "points": 5,
+          "ppg": 0.24,
+          "evPoints": 4,
+          "toi": 10.49,
+          "careerGP": 21,
+          "careerPoints": 5,
+          "careerEVPoints": 4,
+          "careerPPG": 0.24,
+          "careerEVPPG": 0.19,
+          "careerTOI": 10.49,
+          "careerGPPct": 25.61,
+          "seasonNo": 1
         },
         {
           "playerId": 8483733,
@@ -22384,11 +22384,11 @@
         }
       ],
       "compDistances": [
-        3.4809,
-        4.4903,
-        4.5017,
-        5.842,
-        6.2216
+        3.4737,
+        4.4653,
+        4.4808,
+        5.8089,
+        6.1914
       ],
       "career": [
         {
@@ -22435,28 +22435,6 @@
             "toi": 9.55
           }
         ],
-        "8482896": [
-          {
-            "season": 20242025,
-            "age": 22,
-            "gp": 21,
-            "points": 5,
-            "ppg": 0.24,
-            "evPoints": 4,
-            "evPPG": 0.19,
-            "toi": 10.49
-          },
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 46,
-            "points": 6,
-            "ppg": 0.13,
-            "evPoints": 5,
-            "evPPG": 0.11,
-            "toi": 11.28
-          }
-        ],
         "8482874": [
           {
             "season": 20242025,
@@ -22477,6 +22455,28 @@
             "evPoints": 5,
             "evPPG": 0.14,
             "toi": 9.37
+          }
+        ],
+        "8482896": [
+          {
+            "season": 20242025,
+            "age": 22,
+            "gp": 21,
+            "points": 5,
+            "ppg": 0.24,
+            "evPoints": 4,
+            "evPPG": 0.19,
+            "toi": 10.49
+          },
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 46,
+            "points": 6,
+            "ppg": 0.13,
+            "evPoints": 5,
+            "evPPG": 0.11,
+            "toi": 11.28
           }
         ],
         "8483733": [
@@ -26398,10 +26398,10 @@
       "aavHigh": 7384000,
       "estimateStd": 1.21,
       "compWeights": [
-        0.2343,
-        0.2127,
-        0.1854,
-        0.1849,
+        0.2341,
+        0.2131,
+        0.1858,
+        0.1842,
         0.1827
       ],
       "avgCompTerm": 5.2,
@@ -26636,11 +26636,11 @@
         }
       ],
       "compDistances": [
-        2.4592,
-        2.7098,
-        3.1074,
-        3.117,
-        3.1544
+        2.4521,
+        2.6943,
+        3.0895,
+        3.1158,
+        3.1415
       ],
       "career": [
         {
@@ -27516,10 +27516,10 @@
       "aavHigh": 1185600,
       "estimateStd": 0.13,
       "compWeights": [
-        0.4143,
+        0.414,
         0.1674,
         0.1647,
-        0.1268,
+        0.1271,
         0.1268
       ],
       "avgCompTerm": 2.0,
@@ -27685,40 +27685,6 @@
           "seasonNo": 2
         },
         {
-          "playerId": 8482765,
-          "name": "Isak Rosen",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "72",
-          "weight": "185",
-          "shoots": "L",
-          "draftOverall": 14,
-          "draftBucket": 2,
-          "term": 2,
-          "value": 1850000,
-          "aav": 925000,
-          "capHitPct": 0.97,
-          "gp": 37,
-          "goals": 6,
-          "assists": 4,
-          "points": 10,
-          "ppg": 0.27,
-          "evPoints": 7,
-          "toi": 11.5,
-          "careerGP": 52,
-          "careerPoints": 11,
-          "careerEVPoints": 8,
-          "careerPPG": 0.21,
-          "careerEVPPG": 0.15,
-          "careerTOI": 9.91,
-          "careerGPPct": 21.14,
-          "seasonNo": 3
-        },
-        {
           "playerId": 8482451,
           "name": "Mikael Pyyhtia",
           "position": "Winger",
@@ -27751,14 +27717,48 @@
           "careerTOI": 12.26,
           "careerGPPct": 21.65,
           "seasonNo": 4
+        },
+        {
+          "playerId": 8482765,
+          "name": "Isak Rosen",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "72",
+          "weight": "185",
+          "shoots": "L",
+          "draftOverall": 14,
+          "draftBucket": 2,
+          "term": 2,
+          "value": 1850000,
+          "aav": 925000,
+          "capHitPct": 0.97,
+          "gp": 37,
+          "goals": 6,
+          "assists": 4,
+          "points": 10,
+          "ppg": 0.27,
+          "evPoints": 7,
+          "toi": 11.5,
+          "careerGP": 52,
+          "careerPoints": 11,
+          "careerEVPoints": 8,
+          "careerPPG": 0.21,
+          "careerEVPPG": 0.15,
+          "careerTOI": 9.91,
+          "careerGPPct": 21.14,
+          "seasonNo": 3
         }
       ],
       "compDistances": [
-        1.8044,
-        4.4657,
-        4.5394,
-        5.8935,
-        5.8969
+        1.7998,
+        4.4497,
+        4.5228,
+        5.8631,
+        5.875
       ],
       "career": [
         {
@@ -27869,38 +27869,6 @@
             "toi": 11.48
           }
         ],
-        "8482765": [
-          {
-            "season": 20232024,
-            "age": 21,
-            "gp": 7,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 8.59
-          },
-          {
-            "season": 20242025,
-            "age": 22,
-            "gp": 8,
-            "points": 1,
-            "ppg": 0.12,
-            "evPoints": 1,
-            "evPPG": 0.12,
-            "toi": 9.64
-          },
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 37,
-            "points": 10,
-            "ppg": 0.27,
-            "evPoints": 7,
-            "evPPG": 0.19,
-            "toi": 11.5
-          }
-        ],
         "8482451": [
           {
             "season": 20222023,
@@ -27941,6 +27909,38 @@
             "evPoints": 1,
             "evPPG": 0.2,
             "toi": 10.26
+          }
+        ],
+        "8482765": [
+          {
+            "season": 20232024,
+            "age": 21,
+            "gp": 7,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 8.59
+          },
+          {
+            "season": 20242025,
+            "age": 22,
+            "gp": 8,
+            "points": 1,
+            "ppg": 0.12,
+            "evPoints": 1,
+            "evPPG": 0.12,
+            "toi": 9.64
+          },
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 37,
+            "points": 10,
+            "ppg": 0.27,
+            "evPoints": 7,
+            "evPPG": 0.19,
+            "toi": 11.5
           }
         ]
       }
@@ -28650,11 +28650,11 @@
       "aavHigh": 6770400,
       "estimateStd": 1.73,
       "compWeights": [
-        0.2498,
-        0.2018,
-        0.1986,
-        0.1757,
-        0.174
+        0.2495,
+        0.2019,
+        0.1983,
+        0.1758,
+        0.1744
       ],
       "avgCompTerm": 3.8,
       "termTable": [
@@ -28888,11 +28888,11 @@
         }
       ],
       "compDistances": [
-        5.3937,
-        6.6779,
-        6.7848,
-        7.6686,
-        7.7437
+        5.3803,
+        6.6486,
+        6.7688,
+        7.6383,
+        7.6971
       ],
       "career": [
         {
@@ -30684,11 +30684,11 @@
       "aavHigh": 998400,
       "estimateStd": 0.03,
       "compWeights": [
-        0.2594,
-        0.2179,
-        0.1791,
-        0.1755,
-        0.168
+        0.259,
+        0.218,
+        0.1797,
+        0.1754,
+        0.1679
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -30922,11 +30922,11 @@
         }
       ],
       "compDistances": [
-        3.5665,
-        4.2453,
-        5.1645,
-        5.2728,
-        5.506
+        3.5611,
+        4.231,
+        5.1307,
+        5.258,
+        5.4914
       ],
       "career": [
         {
@@ -33389,10 +33389,10 @@
       "estimateStd": 0.62,
       "compWeights": [
         0.2332,
-        0.2041,
-        0.1918,
-        0.1857,
-        0.1852
+        0.2038,
+        0.1923,
+        0.1858,
+        0.1849
       ],
       "avgCompTerm": 2.8,
       "termTable": [
@@ -33626,11 +33626,11 @@
         }
       ],
       "compDistances": [
-        2.6628,
-        3.0435,
-        3.2373,
-        3.3449,
-        3.3541
+        2.6556,
+        3.0386,
+        3.2208,
+        3.3323,
+        3.3499
       ],
       "career": [
         {
@@ -35056,11 +35056,11 @@
       "aavHigh": 1008800,
       "estimateStd": 0.03,
       "compWeights": [
-        0.2356,
-        0.21,
-        0.1901,
-        0.184,
-        0.1803
+        0.236,
+        0.2099,
+        0.1899,
+        0.1838,
+        0.1804
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -35294,11 +35294,11 @@
         }
       ],
       "compDistances": [
-        3.7176,
-        4.1693,
-        4.6065,
-        4.7599,
-        4.8564
+        3.7013,
+        4.1614,
+        4.5981,
+        4.7518,
+        4.8403
       ],
       "career": [
         {
@@ -45424,11 +45424,11 @@
       "aavHigh": 7477600,
       "estimateStd": 1.35,
       "compWeights": [
-        0.207,
+        0.2068,
         0.1993,
-        0.1989,
-        0.1987,
-        0.1962
+        0.1992,
+        0.1986,
+        0.1961
       ],
       "avgCompTerm": 3.8,
       "termTable": [
@@ -45525,40 +45525,6 @@
           "seasonNo": 5
         },
         {
-          "playerId": 8479992,
-          "name": "Michael Rasmussen",
-          "position": "Center",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20232024,
-          "age": 25,
-          "ufaYear": 2026,
-          "height": "78",
-          "weight": "223",
-          "shoots": "L",
-          "draftOverall": 9,
-          "draftBucket": 2,
-          "term": 4,
-          "value": 12800000,
-          "aav": 3200000,
-          "capHitPct": 3.83,
-          "gp": 75,
-          "goals": 13,
-          "assists": 20,
-          "points": 33,
-          "ppg": 0.44,
-          "evPoints": 29,
-          "toi": 15.19,
-          "careerGP": 313,
-          "careerPoints": 119,
-          "careerEVPoints": 106,
-          "careerPPG": 0.38,
-          "careerEVPPG": 0.34,
-          "careerTOI": 14.34,
-          "careerGPPct": 76.34,
-          "seasonNo": 5
-        },
-        {
           "playerId": 8482124,
           "name": "Quinton Byfield",
           "position": "Winger",
@@ -45591,6 +45557,40 @@
           "careerTOI": 14.43,
           "careerGPPct": 54.57,
           "seasonNo": 4
+        },
+        {
+          "playerId": 8479992,
+          "name": "Michael Rasmussen",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20232024,
+          "age": 25,
+          "ufaYear": 2026,
+          "height": "78",
+          "weight": "223",
+          "shoots": "L",
+          "draftOverall": 9,
+          "draftBucket": 2,
+          "term": 4,
+          "value": 12800000,
+          "aav": 3200000,
+          "capHitPct": 3.83,
+          "gp": 75,
+          "goals": 13,
+          "assists": 20,
+          "points": 33,
+          "ppg": 0.44,
+          "evPoints": 29,
+          "toi": 15.19,
+          "careerGP": 313,
+          "careerPoints": 119,
+          "careerEVPoints": 106,
+          "careerPPG": 0.38,
+          "careerEVPPG": 0.34,
+          "careerTOI": 14.34,
+          "careerGPPct": 76.34,
+          "seasonNo": 5
         },
         {
           "playerId": 8482475,
@@ -45662,11 +45662,11 @@
         }
       ],
       "compDistances": [
-        10.5634,
-        10.9709,
-        10.989,
-        11.0042,
-        11.143
+        10.5469,
+        10.9455,
+        10.9528,
+        10.9827,
+        11.1271
       ],
       "career": [
         {
@@ -45743,6 +45743,68 @@
             "toi": 17.61
           }
         ],
+        "8482124": [
+          {
+            "season": 20202021,
+            "age": 18,
+            "gp": 6,
+            "points": 1,
+            "ppg": 0.17,
+            "evPoints": 1,
+            "evPPG": 0.17,
+            "toi": 15.01
+          },
+          {
+            "season": 20212022,
+            "age": 19,
+            "gp": 40,
+            "points": 10,
+            "ppg": 0.25,
+            "evPoints": 9,
+            "evPPG": 0.23,
+            "toi": 12.16
+          },
+          {
+            "season": 20222023,
+            "age": 20,
+            "gp": 53,
+            "points": 22,
+            "ppg": 0.42,
+            "evPoints": 21,
+            "evPPG": 0.4,
+            "toi": 14.06
+          },
+          {
+            "season": 20232024,
+            "age": 21,
+            "gp": 80,
+            "points": 55,
+            "ppg": 0.69,
+            "evPoints": 41,
+            "evPPG": 0.51,
+            "toi": 16.48
+          },
+          {
+            "season": 20242025,
+            "age": 22,
+            "gp": 81,
+            "points": 54,
+            "ppg": 0.67,
+            "evPoints": 46,
+            "evPPG": 0.57,
+            "toi": 18.62
+          },
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 79,
+            "points": 49,
+            "ppg": 0.62,
+            "evPoints": 37,
+            "evPPG": 0.47,
+            "toi": 20.02
+          }
+        ],
         "8479992": [
           {
             "season": 20182019,
@@ -45813,68 +45875,6 @@
             "evPoints": 13,
             "evPPG": 0.2,
             "toi": 12.65
-          }
-        ],
-        "8482124": [
-          {
-            "season": 20202021,
-            "age": 18,
-            "gp": 6,
-            "points": 1,
-            "ppg": 0.17,
-            "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 15.01
-          },
-          {
-            "season": 20212022,
-            "age": 19,
-            "gp": 40,
-            "points": 10,
-            "ppg": 0.25,
-            "evPoints": 9,
-            "evPPG": 0.23,
-            "toi": 12.16
-          },
-          {
-            "season": 20222023,
-            "age": 20,
-            "gp": 53,
-            "points": 22,
-            "ppg": 0.42,
-            "evPoints": 21,
-            "evPPG": 0.4,
-            "toi": 14.06
-          },
-          {
-            "season": 20232024,
-            "age": 21,
-            "gp": 80,
-            "points": 55,
-            "ppg": 0.69,
-            "evPoints": 41,
-            "evPPG": 0.51,
-            "toi": 16.48
-          },
-          {
-            "season": 20242025,
-            "age": 22,
-            "gp": 81,
-            "points": 54,
-            "ppg": 0.67,
-            "evPoints": 46,
-            "evPPG": 0.57,
-            "toi": 18.62
-          },
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 79,
-            "points": 49,
-            "ppg": 0.62,
-            "evPoints": 37,
-            "evPPG": 0.47,
-            "toi": 20.02
           }
         ],
         "8482475": [
@@ -47438,11 +47438,11 @@
       "aavHigh": 1383200,
       "estimateStd": 0.2,
       "compWeights": [
-        0.2703,
-        0.2567,
-        0.2091,
-        0.1418,
-        0.1221
+        0.2695,
+        0.2573,
+        0.2093,
+        0.1415,
+        0.1224
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -47676,11 +47676,11 @@
         }
       ],
       "compDistances": [
-        2.2101,
-        2.3278,
-        2.8577,
-        4.213,
-        4.8911
+        2.2047,
+        2.3093,
+        2.8398,
+        4.1989,
+        4.8555
       ],
       "career": [
         {
@@ -52196,11 +52196,11 @@
       "aavHigh": 1424800,
       "estimateStd": 0.26,
       "compWeights": [
-        0.3328,
-        0.217,
-        0.1568,
-        0.1528,
-        0.1405
+        0.3325,
+        0.2172,
+        0.1569,
+        0.1529,
+        0.1406
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -52434,11 +52434,11 @@
         }
       ],
       "compDistances": [
-        2.2052,
-        3.383,
-        4.6794,
-        4.8028,
-        5.2222
+        2.2019,
+        3.3705,
+        4.6671,
+        4.7879,
+        5.2079
       ],
       "career": [
         {
@@ -53846,10 +53846,10 @@
       "aavHigh": 6396000,
       "estimateStd": 0.72,
       "compWeights": [
-        0.2307,
-        0.2167,
-        0.1951,
-        0.1816,
+        0.2305,
+        0.2168,
+        0.1954,
+        0.1814,
         0.1759
       ],
       "avgCompTerm": 4.4,
@@ -54084,11 +54084,11 @@
         }
       ],
       "compDistances": [
-        3.5173,
-        3.7454,
-        4.1607,
-        4.4691,
-        4.6125
+        3.5118,
+        3.7344,
+        4.1427,
+        4.4622,
+        4.6013
       ],
       "career": [
         {
@@ -56272,11 +56272,11 @@
       "aavHigh": 7758400,
       "estimateStd": 1.11,
       "compWeights": [
-        0.2399,
+        0.2404,
         0.2297,
-        0.2008,
+        0.2006,
         0.1704,
-        0.1591
+        0.1589
       ],
       "avgCompTerm": 3.8,
       "termTable": [
@@ -56510,11 +56510,11 @@
         }
       ],
       "compDistances": [
-        3.1116,
-        3.2491,
-        3.7169,
-        4.3799,
-        4.6904
+        3.0965,
+        3.2401,
+        3.7111,
+        4.369,
+        4.6845
       ],
       "career": [
         {
@@ -58472,11 +58472,11 @@
       "aavHigh": 1237600,
       "estimateStd": 0.11,
       "compWeights": [
-        0.2786,
-        0.1905,
-        0.1782,
-        0.1775,
-        0.1751
+        0.2789,
+        0.1907,
+        0.1781,
+        0.1774,
+        0.1749
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -58710,11 +58710,11 @@
         }
       ],
       "compDistances": [
-        2.3853,
-        3.4878,
-        3.728,
-        3.7428,
-        3.7943
+        2.3765,
+        3.4759,
+        3.7227,
+        3.7361,
+        3.7901
       ],
       "career": [
         {
@@ -63212,11 +63212,11 @@
       "aavHigh": 1362400,
       "estimateStd": 0.21,
       "compWeights": [
-        0.2303,
-        0.2157,
-        0.205,
-        0.1748,
-        0.1741
+        0.2302,
+        0.2158,
+        0.2048,
+        0.1747,
+        0.1744
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -63450,11 +63450,11 @@
         }
       ],
       "compDistances": [
-        5.6043,
-        5.9828,
-        6.2953,
-        7.3828,
-        7.4127
+        5.5904,
+        5.9625,
+        6.2832,
+        7.3663,
+        7.379
       ],
       "career": [
         {
@@ -66238,13 +66238,13 @@
       "ciHigh": 4.57,
       "aavLow": 2080000,
       "aavHigh": 4752800,
-      "estimateStd": 1.28,
+      "estimateStd": 1.29,
       "compWeights": [
-        0.2898,
-        0.1881,
-        0.185,
+        0.289,
+        0.1883,
+        0.1851,
         0.1842,
-        0.1529
+        0.1534
       ],
       "avgCompTerm": 3.2,
       "termTable": [
@@ -66478,11 +66478,11 @@
         }
       ],
       "compDistances": [
-        2.6988,
-        4.1592,
-        4.2269,
-        4.2461,
-        5.1172
+        2.7001,
+        4.1436,
+        4.2145,
+        4.2352,
+        5.0877
       ],
       "career": [
         {
@@ -66842,10 +66842,10 @@
       "aavHigh": 3889600,
       "estimateStd": 1.49,
       "compWeights": [
-        0.2369,
-        0.1974,
-        0.1941,
-        0.187,
+        0.2375,
+        0.1972,
+        0.1939,
+        0.1868,
         0.1846
       ],
       "avgCompTerm": 2.6,
@@ -67080,11 +67080,11 @@
         }
       ],
       "compDistances": [
-        2.9488,
-        3.5397,
-        3.5989,
-        3.7355,
-        3.7836
+        2.9294,
+        3.5273,
+        3.5882,
+        3.7239,
+        3.7674
       ],
       "career": [
         {
@@ -71374,11 +71374,11 @@
       "aavHigh": 1175200,
       "estimateStd": 0.12,
       "compWeights": [
-        0.2643,
-        0.242,
-        0.1703,
-        0.1661,
-        0.1572
+        0.265,
+        0.2415,
+        0.1704,
+        0.1662,
+        0.157
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -71612,11 +71612,11 @@
         }
       ],
       "compDistances": [
-        2.6804,
-        2.9273,
-        4.1606,
-        4.2643,
-        4.5062
+        2.6645,
+        2.9239,
+        4.1441,
+        4.2494,
+        4.4972
       ],
       "career": [
         {
@@ -75410,11 +75410,11 @@
       "aavHigh": 1404000,
       "estimateStd": 0.24,
       "compWeights": [
-        0.3705,
-        0.1789,
-        0.1569,
+        0.3703,
+        0.179,
+        0.157,
         0.156,
-        0.1377
+        0.1378
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -75648,11 +75648,11 @@
         }
       ],
       "compDistances": [
-        1.8466,
-        3.8255,
-        4.3612,
-        4.3874,
-        4.9682
+        1.8431,
+        3.8123,
+        4.3475,
+        4.376,
+        4.9543
       ],
       "career": [
         {
@@ -75812,11 +75812,11 @@
       "aavHigh": 1258400,
       "estimateStd": 0.15,
       "compWeights": [
-        0.2334,
-        0.2132,
-        0.1991,
-        0.1799,
-        0.1743
+        0.2331,
+        0.213,
+        0.1994,
+        0.1801,
+        0.1745
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -76050,11 +76050,11 @@
         }
       ],
       "compDistances": [
-        5.1811,
-        5.6722,
-        6.074,
-        6.7213,
-        6.9366
+        5.1692,
+        5.6574,
+        6.0413,
+        6.6902,
+        6.9047
       ],
       "career": [
         {
@@ -76264,11 +76264,11 @@
       "aavHigh": 5553600,
       "estimateStd": 1.32,
       "compWeights": [
-        0.2188,
-        0.2144,
-        0.2127,
-        0.1782,
-        0.1758
+        0.2184,
+        0.2151,
+        0.2119,
+        0.1786,
+        0.1759
       ],
       "avgCompTerm": 3.6,
       "termTable": [
@@ -76502,11 +76502,11 @@
         }
       ],
       "compDistances": [
-        2.5119,
-        2.564,
-        2.5847,
-        3.0841,
-        3.1266
+        2.5097,
+        2.5476,
+        2.5865,
+        3.0679,
+        3.115
       ],
       "career": [
         {
@@ -77853,10 +77853,10 @@
       "estimateStd": 0.27,
       "compWeights": [
         0.2725,
-        0.2155,
-        0.1707,
-        0.1707,
-        0.1706
+        0.2161,
+        0.1708,
+        0.1705,
+        0.1702
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -77987,40 +77987,6 @@
           "seasonNo": 2
         },
         {
-          "playerId": 8482451,
-          "name": "Mikael Pyyhtia",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 24,
-          "ufaYear": 2029,
-          "height": "72",
-          "weight": "176",
-          "shoots": "L",
-          "draftOverall": 114,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1750000,
-          "aav": 875000,
-          "capHitPct": 0.92,
-          "gp": 5,
-          "goals": 1,
-          "assists": 0,
-          "points": 1,
-          "ppg": 0.2,
-          "evPoints": 1,
-          "toi": 10.26,
-          "careerGP": 71,
-          "careerPoints": 11,
-          "careerEVPoints": 9,
-          "careerPPG": 0.15,
-          "careerEVPPG": 0.13,
-          "careerTOI": 12.26,
-          "careerGPPct": 21.65,
-          "seasonNo": 4
-        },
-        {
           "playerId": 8483733,
           "name": "Nikita Grebenkin",
           "position": "Winger",
@@ -78053,6 +78019,40 @@
           "careerTOI": 10.02,
           "careerGPPct": 37.8,
           "seasonNo": 2
+        },
+        {
+          "playerId": 8482451,
+          "name": "Mikael Pyyhtia",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 24,
+          "ufaYear": 2029,
+          "height": "72",
+          "weight": "176",
+          "shoots": "L",
+          "draftOverall": 114,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1750000,
+          "aav": 875000,
+          "capHitPct": 0.92,
+          "gp": 5,
+          "goals": 1,
+          "assists": 0,
+          "points": 1,
+          "ppg": 0.2,
+          "evPoints": 1,
+          "toi": 10.26,
+          "careerGP": 71,
+          "careerPoints": 11,
+          "careerEVPoints": 9,
+          "careerPPG": 0.15,
+          "careerEVPPG": 0.13,
+          "careerTOI": 12.26,
+          "careerGPPct": 21.65,
+          "seasonNo": 4
         },
         {
           "playerId": 8480876,
@@ -78090,11 +78090,11 @@
         }
       ],
       "compDistances": [
-        3.7705,
-        4.769,
-        6.0184,
-        6.0213,
-        6.0241
+        3.7533,
+        4.733,
+        5.9879,
+        5.9995,
+        6.0086
       ],
       "career": [
         {
@@ -78173,6 +78173,28 @@
             "toi": 9.37
           }
         ],
+        "8483733": [
+          {
+            "season": 20242025,
+            "age": 22,
+            "gp": 7,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 8.75
+          },
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 55,
+            "points": 14,
+            "ppg": 0.25,
+            "evPoints": 14,
+            "evPPG": 0.25,
+            "toi": 11.29
+          }
+        ],
         "8482451": [
           {
             "season": 20222023,
@@ -78213,28 +78235,6 @@
             "evPoints": 1,
             "evPPG": 0.2,
             "toi": 10.26
-          }
-        ],
-        "8483733": [
-          {
-            "season": 20242025,
-            "age": 22,
-            "gp": 7,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 8.75
-          },
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 55,
-            "points": 14,
-            "ppg": 0.25,
-            "evPoints": 14,
-            "evPPG": 0.25,
-            "toi": 11.29
           }
         ],
         "8480876": [
@@ -80680,10 +80680,10 @@
       "aavHigh": 1372800,
       "estimateStd": 0.23,
       "compWeights": [
-        0.4059,
-        0.1562,
+        0.4058,
+        0.1563,
         0.1493,
-        0.1479,
+        0.148,
         0.1407
       ],
       "avgCompTerm": 2.4,
@@ -80918,11 +80918,11 @@
         }
       ],
       "compDistances": [
-        1.4888,
-        3.8674,
-        4.047,
-        4.0858,
-        4.295
+        1.4847,
+        3.8543,
+        4.0362,
+        4.0719,
+        4.2816
       ],
       "career": [
         {
@@ -85568,11 +85568,11 @@
       "aavHigh": 1944800,
       "estimateStd": 0.63,
       "compWeights": [
-        0.2245,
-        0.2085,
+        0.2252,
+        0.2083,
         0.2034,
-        0.1901,
-        0.1734
+        0.1899,
+        0.1732
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -85806,11 +85806,11 @@
         }
       ],
       "compDistances": [
-        3.2872,
-        3.5408,
-        3.6279,
-        3.8821,
-        4.2555
+        3.2682,
+        3.5335,
+        3.6193,
+        3.8761,
+        4.2508
       ],
       "career": [
         {
@@ -86030,11 +86030,11 @@
       "aavHigh": 7758400,
       "estimateStd": 1.19,
       "compWeights": [
-        0.3317,
-        0.1764,
-        0.1683,
+        0.331,
+        0.177,
+        0.1684,
         0.1637,
-        0.1598
+        0.1599
       ],
       "avgCompTerm": 4.6,
       "termTable": [
@@ -86268,11 +86268,11 @@
         }
       ],
       "compDistances": [
-        1.7437,
-        3.2785,
-        3.4358,
-        3.5324,
-        3.6205
+        1.7417,
+        3.258,
+        3.4235,
+        3.5221,
+        3.6069
       ],
       "career": [
         {
@@ -87809,16 +87809,16 @@
       "estimatedCapHitPct": 1.01,
       "estimatedAAV": 1050400,
       "ciLow": 0.79,
-      "ciHigh": 1.23,
+      "ciHigh": 1.24,
       "aavLow": 821600,
-      "aavHigh": 1279200,
+      "aavHigh": 1289600,
       "estimateStd": 0.22,
       "compWeights": [
-        0.3203,
-        0.2922,
-        0.2062,
-        0.0947,
-        0.0866
+        0.3196,
+        0.2917,
+        0.2071,
+        0.0948,
+        0.0869
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -88052,11 +88052,11 @@
         }
       ],
       "compDistances": [
-        1.6493,
+        1.6501,
         1.8079,
-        2.5614,
-        5.5814,
-        6.1008
+        2.5465,
+        5.5641,
+        6.0658
       ],
       "career": [
         {
@@ -88196,11 +88196,11 @@
       "aavHigh": 2059200,
       "estimateStd": 0.62,
       "compWeights": [
-        0.3247,
-        0.1788,
-        0.1735,
-        0.1624,
-        0.1606
+        0.3257,
+        0.1785,
+        0.1732,
+        0.1623,
+        0.1603
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -88434,11 +88434,11 @@
         }
       ],
       "compDistances": [
-        2.3403,
-        4.2492,
-        4.3805,
-        4.6791,
-        4.7332
+        2.3232,
+        4.2403,
+        4.3699,
+        4.6612,
+        4.7192
       ],
       "career": [
         {
@@ -89596,11 +89596,11 @@
       "aavHigh": 7040800,
       "estimateStd": 0.86,
       "compWeights": [
-        0.2592,
-        0.2192,
-        0.1967,
-        0.1626,
-        0.1623
+        0.2586,
+        0.2197,
+        0.1969,
+        0.1625,
+        0.1624
       ],
       "avgCompTerm": 4.6,
       "termTable": [
@@ -89834,11 +89834,11 @@
         }
       ],
       "compDistances": [
-        2.1077,
-        2.4925,
-        2.7777,
-        3.3594,
-        3.3663
+        2.1033,
+        2.476,
+        2.7631,
+        3.3476,
+        3.3495
       ],
       "career": [
         {
@@ -92132,18 +92132,18 @@
       "seasonNo": 2,
       "signed": false,
       "actualContract": null,
-      "estimatedCapHitPct": 3.49,
-      "estimatedAAV": 3629600,
+      "estimatedCapHitPct": 3.48,
+      "estimatedAAV": 3619200,
       "ciLow": 0.93,
-      "ciHigh": 6.04,
+      "ciHigh": 6.03,
       "aavLow": 967200,
-      "aavHigh": 6281600,
+      "aavHigh": 6271200,
       "estimateStd": 2.55,
       "compWeights": [
-        0.218,
-        0.2046,
-        0.1969,
-        0.1935,
+        0.2179,
+        0.2048,
+        0.197,
+        0.1933,
         0.187
       ],
       "avgCompTerm": 3.6,
@@ -92157,50 +92157,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 1.45,
-          "aav": 1508000,
+          "capHitPct": 1.44,
+          "aav": 1497600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 1.96,
-          "aav": 2038400,
+          "capHitPct": 1.95,
+          "aav": 2028000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 4,
-          "capHitPct": 2.47,
-          "aav": 2568800,
+          "capHitPct": 2.46,
+          "aav": 2558400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 5,
-          "capHitPct": 2.98,
-          "aav": 3099200,
+          "capHitPct": 2.97,
+          "aav": 3088800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 6,
-          "capHitPct": 3.49,
-          "aav": 3629600,
+          "capHitPct": 3.48,
+          "aav": 3619200,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 7,
-          "capHitPct": 4.17,
-          "aav": 4336800,
+          "capHitPct": 4.16,
+          "aav": 4326400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 8,
-          "capHitPct": 4.85,
-          "aav": 5044000,
+          "capHitPct": 4.84,
+          "aav": 5033600,
           "regime": "ufa",
           "ufaYrsBought": 2
         }
@@ -92378,11 +92378,11 @@
         }
       ],
       "compDistances": [
-        6.62,
-        7.052,
-        7.3302,
-        7.4593,
-        7.7178
+        6.5994,
+        7.0197,
+        7.2963,
+        7.4369,
+        7.6902
       ],
       "career": [
         {
@@ -93243,16 +93243,16 @@
       "estimatedCapHitPct": 1.11,
       "estimatedAAV": 1154400,
       "ciLow": 0.82,
-      "ciHigh": 1.4,
+      "ciHigh": 1.39,
       "aavLow": 852800,
-      "aavHigh": 1456000,
+      "aavHigh": 1445600,
       "estimateStd": 0.29,
       "compWeights": [
-        0.2778,
-        0.1981,
-        0.1969,
+        0.2769,
+        0.1983,
+        0.1971,
         0.1783,
-        0.1489
+        0.1494
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -93486,11 +93486,11 @@
         }
       ],
       "compDistances": [
-        2.6985,
-        3.7837,
-        3.8079,
-        4.2052,
-        5.0363
+        2.6975,
+        3.7659,
+        3.79,
+        4.1896,
+        4.9996
       ],
       "career": [
         {
@@ -95712,11 +95712,11 @@
       "aavHigh": 2069600,
       "estimateStd": 0.58,
       "compWeights": [
-        0.2596,
-        0.2505,
-        0.1852,
-        0.1676,
-        0.1371
+        0.2608,
+        0.2499,
+        0.185,
+        0.1673,
+        0.137
       ],
       "avgCompTerm": 2.8,
       "termTable": [
@@ -95950,11 +95950,11 @@
         }
       ],
       "compDistances": [
-        2.408,
-        2.4956,
-        3.3764,
-        3.7299,
-        4.5586
+        2.3911,
+        2.4952,
+        3.3717,
+        3.7288,
+        4.5525
       ],
       "career": [
         {
@@ -96124,8 +96124,8 @@
       "aavHigh": 1352000,
       "estimateStd": 0.22,
       "compWeights": [
-        0.4611,
-        0.1532,
+        0.4609,
+        0.1534,
         0.1388,
         0.1235,
         0.1234
@@ -96362,11 +96362,11 @@
         }
       ],
       "compDistances": [
-        1.0414,
-        3.1341,
-        3.4594,
-        3.89,
-        3.8924
+        1.0388,
+        3.1209,
+        3.4491,
+        3.8761,
+        3.8797
       ],
       "career": [
         {
@@ -101138,11 +101138,11 @@
       "aavHigh": 12448800,
       "estimateStd": 2.97,
       "compWeights": [
-        0.2861,
+        0.2856,
         0.185,
-        0.1781,
+        0.1782,
         0.1771,
-        0.1737
+        0.174
       ],
       "avgCompTerm": 5.8,
       "termTable": [
@@ -101376,11 +101376,11 @@
         }
       ],
       "compDistances": [
-        2.834,
-        4.3817,
-        4.5512,
-        4.5778,
-        4.6669
+        2.8346,
+        4.3754,
+        4.5428,
+        4.5719,
+        4.6524
       ],
       "career": [
         {
@@ -101671,10 +101671,10 @@
       "estimateStd": 1.53,
       "compWeights": [
         0.2428,
-        0.2044,
-        0.1955,
+        0.2042,
+        0.1958,
         0.1834,
-        0.1739
+        0.1737
       ],
       "avgCompTerm": 4.6,
       "termTable": [
@@ -101908,11 +101908,11 @@
         }
       ],
       "compDistances": [
-        4.4415,
-        5.2773,
-        5.5169,
-        5.8812,
-        6.202
+        4.422,
+        5.2587,
+        5.4834,
+        5.8532,
+        6.1807
       ],
       "career": [
         {
@@ -102192,11 +102192,11 @@
       "aavHigh": 1445600,
       "estimateStd": 0.27,
       "compWeights": [
-        0.2427,
-        0.2365,
-        0.2011,
-        0.1738,
-        0.1459
+        0.2431,
+        0.2355,
+        0.2012,
+        0.1737,
+        0.1464
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -102430,11 +102430,11 @@
         }
       ],
       "compDistances": [
-        2.7072,
-        2.7773,
-        3.2663,
-        3.7807,
-        4.5034
+        2.6895,
+        2.777,
+        3.2501,
+        3.7643,
+        4.466
       ],
       "career": [
         {
@@ -105434,17 +105434,17 @@
       "seasonNo": 3,
       "signed": false,
       "actualContract": null,
-      "estimatedCapHitPct": 1.6,
-      "estimatedAAV": 1664000,
+      "estimatedCapHitPct": 1.59,
+      "estimatedAAV": 1653600,
       "ciLow": 0.98,
       "ciHigh": 2.21,
       "aavLow": 1019200,
       "aavHigh": 2298400,
       "estimateStd": 0.62,
       "compWeights": [
-        0.3501,
-        0.2029,
-        0.1655,
+        0.3489,
+        0.2033,
+        0.1664,
         0.1474,
         0.1341
       ],
@@ -105459,50 +105459,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 1.6,
-          "aav": 1664000,
+          "capHitPct": 1.59,
+          "aav": 1653600,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 2.28,
-          "aav": 2371200,
+          "capHitPct": 2.27,
+          "aav": 2360800,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 2.96,
-          "aav": 3078400,
+          "capHitPct": 2.95,
+          "aav": 3068000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 3.65,
-          "aav": 3796000,
+          "capHitPct": 3.64,
+          "aav": 3785600,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 4.33,
-          "aav": 4503200,
+          "capHitPct": 4.32,
+          "aav": 4492800,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 5.01,
-          "aav": 5210400,
+          "capHitPct": 5.0,
+          "aav": 5200000,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 5.69,
-          "aav": 5917600,
+          "capHitPct": 5.68,
+          "aav": 5907200,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -105680,11 +105680,11 @@
         }
       ],
       "compDistances": [
-        1.9668,
-        3.3943,
-        4.1598,
-        4.6707,
-        5.135
+        1.9663,
+        3.3746,
+        4.1217,
+        4.6548,
+        5.1171
       ],
       "career": [
         {
@@ -107927,16 +107927,16 @@
       "estimatedCapHitPct": 3.79,
       "estimatedAAV": 3941600,
       "ciLow": 2.82,
-      "ciHigh": 4.77,
+      "ciHigh": 4.76,
       "aavLow": 2932800,
-      "aavHigh": 4960800,
+      "aavHigh": 4950400,
       "estimateStd": 0.97,
       "compWeights": [
-        0.2701,
-        0.2073,
-        0.1799,
-        0.1719,
-        0.1709
+        0.2696,
+        0.2077,
+        0.1801,
+        0.1721,
+        0.1704
       ],
       "avgCompTerm": 3.2,
       "termTable": [
@@ -108170,11 +108170,11 @@
         }
       ],
       "compDistances": [
-        1.9543,
-        2.5469,
-        2.9342,
-        3.0711,
-        3.0889
+        1.9489,
+        2.5294,
+        2.9176,
+        3.0521,
+        3.0826
       ],
       "career": [
         {
@@ -108554,11 +108554,11 @@
       "aavHigh": 1227200,
       "estimateStd": 0.14,
       "compWeights": [
-        0.3833,
+        0.3841,
         0.1654,
         0.1593,
-        0.1525,
-        0.1395
+        0.1518,
+        0.1393
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -108792,11 +108792,11 @@
         }
       ],
       "compDistances": [
-        2.1184,
-        4.91,
-        5.097,
-        5.3245,
-        5.82
+        2.0996,
+        4.8747,
+        5.0606,
+        5.3113,
+        5.7869
       ],
       "career": [
         {
@@ -115177,10 +115177,10 @@
       "estimateStd": 0.62,
       "compWeights": [
         0.2534,
-        0.196,
-        0.1884,
-        0.1859,
-        0.1763
+        0.1959,
+        0.1881,
+        0.1868,
+        0.1758
       ],
       "avgCompTerm": 2.8,
       "termTable": [
@@ -115414,11 +115414,11 @@
         }
       ],
       "compDistances": [
-        3.1245,
-        4.0396,
-        4.2012,
-        4.2579,
-        4.4906
+        3.1119,
+        4.0252,
+        4.1909,
+        4.2203,
+        4.4852
       ],
       "career": [
         {
@@ -116135,8 +116135,8 @@
       "estimateStd": 0.65,
       "compWeights": [
         0.2109,
-        0.2095,
-        0.1989,
+        0.2096,
+        0.1987,
         0.1951,
         0.1856
       ],
@@ -116372,11 +116372,11 @@
         }
       ],
       "compDistances": [
-        6.2487,
-        6.291,
-        6.627,
-        6.7569,
-        7.1014
+        6.2326,
+        6.2732,
+        6.6165,
+        6.7382,
+        7.0821
       ],
       "career": [
         {
@@ -122026,26 +122026,26 @@
       "seasonNo": 2,
       "signed": false,
       "actualContract": null,
-      "estimatedCapHitPct": 9.75,
-      "estimatedAAV": 10140000,
+      "estimatedCapHitPct": 9.76,
+      "estimatedAAV": 10150400,
       "ciLow": 7.18,
-      "ciHigh": 12.32,
+      "ciHigh": 12.33,
       "aavLow": 7467200,
-      "aavHigh": 12812800,
+      "aavHigh": 12823200,
       "estimateStd": 2.57,
       "compWeights": [
-        0.2194,
-        0.2064,
-        0.1999,
+        0.2193,
+        0.2062,
+        0.2,
         0.1882,
-        0.1862
+        0.1863
       ],
       "avgCompTerm": 6.4,
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 5.36,
-          "aav": 5574400,
+          "capHitPct": 5.37,
+          "aav": 5584800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
@@ -122058,43 +122058,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 8.29,
-          "aav": 8621600,
+          "capHitPct": 8.3,
+          "aav": 8632000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 4,
-          "capHitPct": 9.75,
-          "aav": 10140000,
+          "capHitPct": 9.76,
+          "aav": 10150400,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 5,
-          "capHitPct": 9.75,
-          "aav": 10140000,
+          "capHitPct": 9.76,
+          "aav": 10150400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 9.75,
-          "aav": 10140000,
+          "capHitPct": 9.76,
+          "aav": 10150400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 9.75,
-          "aav": 10140000,
+          "capHitPct": 9.76,
+          "aav": 10150400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 9.75,
-          "aav": 10140000,
+          "capHitPct": 9.76,
+          "aav": 10150400,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -122272,11 +122272,11 @@
         }
       ],
       "compDistances": [
-        11.981,
-        12.7367,
-        13.1474,
-        13.9664,
-        14.118
+        11.9505,
+        12.7097,
+        13.1075,
+        13.9293,
+        14.0738
       ],
       "career": [
         {
@@ -122576,11 +122576,11 @@
       "aavHigh": 2246400,
       "estimateStd": 0.67,
       "compWeights": [
-        0.2658,
-        0.209,
-        0.2083,
-        0.1634,
-        0.1534
+        0.2664,
+        0.2085,
+        0.2084,
+        0.1629,
+        0.1539
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -122677,40 +122677,6 @@
           "seasonNo": 4
         },
         {
-          "playerId": 8484136,
-          "name": "Max Sasson",
-          "position": "Center",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 25,
-          "ufaYear": 2028,
-          "height": "73",
-          "weight": "181",
-          "shoots": "L",
-          "draftOverall": 999,
-          "draftBucket": 6,
-          "term": 2,
-          "value": 2000000,
-          "aav": 1000000,
-          "capHitPct": 1.05,
-          "gp": 66,
-          "goals": 13,
-          "assists": 6,
-          "points": 19,
-          "ppg": 0.29,
-          "evPoints": 18,
-          "toi": 11.72,
-          "careerGP": 95,
-          "careerPoints": 26,
-          "careerEVPoints": 25,
-          "careerPPG": 0.27,
-          "careerEVPPG": 0.26,
-          "careerTOI": 11.03,
-          "careerGPPct": 57.93,
-          "seasonNo": 2
-        },
-        {
           "playerId": 8481028,
           "name": "Martin Pospisil",
           "position": "Center",
@@ -122743,6 +122709,40 @@
           "careerTOI": 12.23,
           "careerGPPct": 67.48,
           "seasonNo": 3
+        },
+        {
+          "playerId": 8484136,
+          "name": "Max Sasson",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 25,
+          "ufaYear": 2028,
+          "height": "73",
+          "weight": "181",
+          "shoots": "L",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 2,
+          "value": 2000000,
+          "aav": 1000000,
+          "capHitPct": 1.05,
+          "gp": 66,
+          "goals": 13,
+          "assists": 6,
+          "points": 19,
+          "ppg": 0.29,
+          "evPoints": 18,
+          "toi": 11.72,
+          "careerGP": 95,
+          "careerPoints": 26,
+          "careerEVPoints": 25,
+          "careerPPG": 0.27,
+          "careerEVPPG": 0.26,
+          "careerTOI": 11.03,
+          "careerGPPct": 57.93,
+          "seasonNo": 2
         },
         {
           "playerId": 8484829,
@@ -122814,11 +122814,11 @@
         }
       ],
       "compDistances": [
-        2.5791,
-        3.279,
-        3.2901,
-        4.1941,
-        4.4686
+        2.5611,
+        3.2725,
+        3.2741,
+        4.1891,
+        4.4327
       ],
       "career": [
         {
@@ -122905,28 +122905,6 @@
             "toi": 8.83
           }
         ],
-        "8484136": [
-          {
-            "season": 20242025,
-            "age": 24,
-            "gp": 29,
-            "points": 7,
-            "ppg": 0.24,
-            "evPoints": 7,
-            "evPPG": 0.24,
-            "toi": 10.33
-          },
-          {
-            "season": 20252026,
-            "age": 25,
-            "gp": 66,
-            "points": 19,
-            "ppg": 0.29,
-            "evPoints": 18,
-            "evPPG": 0.27,
-            "toi": 11.72
-          }
-        ],
         "8481028": [
           {
             "season": 20232024,
@@ -122957,6 +122935,28 @@
             "evPoints": 3,
             "evPPG": 0.14,
             "toi": 10.15
+          }
+        ],
+        "8484136": [
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 29,
+            "points": 7,
+            "ppg": 0.24,
+            "evPoints": 7,
+            "evPPG": 0.24,
+            "toi": 10.33
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 66,
+            "points": 19,
+            "ppg": 0.29,
+            "evPoints": 18,
+            "evPPG": 0.27,
+            "toi": 11.72
           }
         ],
         "8484829": [
@@ -123048,11 +123048,11 @@
       "aavHigh": 1268800,
       "estimateStd": 0.21,
       "compWeights": [
-        0.297,
-        0.2958,
-        0.1485,
-        0.1447,
-        0.1141
+        0.2973,
+        0.296,
+        0.1486,
+        0.1448,
+        0.1133
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -123286,11 +123286,11 @@
         }
       ],
       "compDistances": [
-        1.9771,
-        1.9853,
-        3.9542,
-        4.0576,
-        5.1474
+        1.9571,
+        1.9653,
+        3.9143,
+        4.0183,
+        5.137
       ],
       "career": [
         {
@@ -124812,11 +124812,11 @@
       "aavHigh": 1268800,
       "estimateStd": 0.21,
       "compWeights": [
-        0.2974,
-        0.2969,
-        0.1486,
-        0.1438,
-        0.1133
+        0.2976,
+        0.2972,
+        0.1488,
+        0.1439,
+        0.1125
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -125050,11 +125050,11 @@
         }
       ],
       "compDistances": [
-        1.9744,
-        1.9771,
-        3.9501,
-        4.0828,
-        5.1826
+        1.9544,
+        1.9571,
+        3.9102,
+        4.0435,
+        5.172
       ],
       "career": [
         {
@@ -125194,11 +125194,11 @@
       "aavHigh": 7113600,
       "estimateStd": 1.03,
       "compWeights": [
-        0.2481,
-        0.2189,
-        0.2177,
-        0.1643,
-        0.1509
+        0.2493,
+        0.2182,
+        0.2172,
+        0.1644,
+        0.151
       ],
       "avgCompTerm": 6.2,
       "termTable": [
@@ -125432,11 +125432,11 @@
         }
       ],
       "compDistances": [
-        2.357,
-        2.6704,
-        2.6855,
-        3.5577,
-        3.8737
+        2.3391,
+        2.6726,
+        2.6848,
+        3.5459,
+        3.8614
       ],
       "career": [
         {
@@ -127635,16 +127635,16 @@
       "estimatedCapHitPct": 8.73,
       "estimatedAAV": 9079200,
       "ciLow": 7.61,
-      "ciHigh": 9.85,
+      "ciHigh": 9.86,
       "aavLow": 7914400,
-      "aavHigh": 10244000,
+      "aavHigh": 10254400,
       "estimateStd": 1.12,
       "compWeights": [
-        0.2909,
-        0.219,
-        0.1737,
-        0.1704,
-        0.1458
+        0.2905,
+        0.2187,
+        0.1743,
+        0.1709,
+        0.1457
       ],
       "avgCompTerm": 6.4,
       "termTable": [
@@ -127878,11 +127878,11 @@
         }
       ],
       "compDistances": [
-        4.2606,
-        5.6588,
-        7.1341,
-        7.273,
-        8.499
+        4.2481,
+        5.6424,
+        7.0814,
+        7.2198,
+        8.4713
       ],
       "career": [
         {
@@ -130810,9 +130810,9 @@
       "aavHigh": 1497600,
       "estimateStd": 0.35,
       "compWeights": [
-        0.2759,
+        0.2754,
         0.209,
-        0.206,
+        0.2064,
         0.16,
         0.1492
       ],
@@ -131048,11 +131048,11 @@
         }
       ],
       "compDistances": [
-        2.2494,
-        2.9689,
-        3.0125,
-        3.8787,
-        4.1597
+        2.2451,
+        2.9584,
+        2.9961,
+        3.8639,
+        4.1456
       ],
       "career": [
         {
@@ -134746,11 +134746,11 @@
       "aavHigh": 1320800,
       "estimateStd": 0.18,
       "compWeights": [
-        0.2789,
-        0.2418,
-        0.2229,
-        0.1323,
-        0.1241
+        0.278,
+        0.2425,
+        0.2235,
+        0.1322,
+        0.1238
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -134984,11 +134984,11 @@
         }
       ],
       "compDistances": [
-        2.1208,
-        2.4461,
-        2.6534,
-        4.4702,
-        4.7642
+        2.1185,
+        2.428,
+        2.6347,
+        4.455,
+        4.7563
       ],
       "career": [
         {
@@ -137288,75 +137288,75 @@
       "seasonNo": 3,
       "signed": false,
       "actualContract": null,
-      "estimatedCapHitPct": 1.58,
-      "estimatedAAV": 1643200,
-      "ciLow": 0.46,
-      "ciHigh": 2.69,
-      "aavLow": 478400,
-      "aavHigh": 2797600,
-      "estimateStd": 1.12,
+      "estimatedCapHitPct": 1.15,
+      "estimatedAAV": 1196000,
+      "ciLow": 0.94,
+      "ciHigh": 1.36,
+      "aavLow": 977600,
+      "aavHigh": 1414400,
+      "estimateStd": 0.21,
       "compWeights": [
         0.2422,
-        0.204,
-        0.1895,
-        0.1863,
-        0.178
+        0.2044,
+        0.1894,
+        0.1862,
+        0.1778
       ],
-      "avgCompTerm": 2.4,
+      "avgCompTerm": 2.0,
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.42,
-          "aav": 436800,
+          "capHitPct": 0.31,
+          "aav": 322400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 0.71,
-          "aav": 738400,
+          "capHitPct": 0.52,
+          "aav": 540800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 1.0,
-          "aav": 1040000,
+          "capHitPct": 0.73,
+          "aav": 759200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 4,
-          "capHitPct": 1.29,
-          "aav": 1341600,
+          "capHitPct": 0.94,
+          "aav": 977600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 5,
-          "capHitPct": 1.58,
-          "aav": 1643200,
+          "capHitPct": 1.15,
+          "aav": 1196000,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 6,
-          "capHitPct": 2.26,
-          "aav": 2350400,
+          "capHitPct": 1.83,
+          "aav": 1903200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 7,
-          "capHitPct": 2.94,
-          "aav": 3057600,
+          "capHitPct": 2.51,
+          "aav": 2610400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 8,
-          "capHitPct": 3.63,
-          "aav": 3775200,
+          "capHitPct": 3.2,
+          "aav": 3328000,
           "regime": "ufa",
           "ufaYrsBought": 3
         }
@@ -137499,46 +137499,46 @@
           "seasonNo": 3
         },
         {
-          "playerId": 8482092,
-          "name": "Ridly Greig",
+          "playerId": 8482768,
+          "name": "Fedor Svechkov",
           "position": "Center",
           "positionGroup": "Forward",
           "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 22,
+          "contractYear": 20252026,
+          "age": 23,
           "ufaYear": 2030,
           "height": "72",
-          "weight": "185",
+          "weight": "187",
           "shoots": "L",
-          "draftOverall": 28,
+          "draftOverall": 19,
           "draftBucket": 3,
-          "term": 4,
-          "value": 13000000,
-          "aav": 3250000,
-          "capHitPct": 3.69,
-          "gp": 78,
-          "goals": 13,
-          "assists": 21,
-          "points": 34,
-          "ppg": 0.44,
-          "evPoints": 21,
-          "toi": 17.08,
-          "careerGP": 170,
-          "careerPoints": 69,
-          "careerEVPoints": 50,
-          "careerPPG": 0.41,
-          "careerEVPPG": 0.29,
-          "careerTOI": 14.91,
-          "careerGPPct": 69.11,
-          "seasonNo": 3
+          "term": 2,
+          "value": 2500000,
+          "aav": 1250000,
+          "capHitPct": 1.31,
+          "gp": 70,
+          "goals": 4,
+          "assists": 13,
+          "points": 17,
+          "ppg": 0.24,
+          "evPoints": 16,
+          "toi": 12.08,
+          "careerGP": 122,
+          "careerPoints": 34,
+          "careerEVPoints": 28,
+          "careerPPG": 0.28,
+          "careerEVPPG": 0.23,
+          "careerTOI": 12.48,
+          "careerGPPct": 74.39,
+          "seasonNo": 2
         }
       ],
       "compDistances": [
-        5.624,
-        6.678,
-        7.1908,
-        7.312,
-        7.6547
+        5.6112,
+        6.6486,
+        7.1731,
+        7.2959,
+        7.6442
       ],
       "career": [
         {
@@ -137701,46 +137701,26 @@
             "toi": 9.64
           }
         ],
-        "8482092": [
-          {
-            "season": 20222023,
-            "age": 20,
-            "gp": 20,
-            "points": 9,
-            "ppg": 0.45,
-            "evPoints": 6,
-            "evPPG": 0.3,
-            "toi": 12.9
-          },
-          {
-            "season": 20232024,
-            "age": 21,
-            "gp": 72,
-            "points": 26,
-            "ppg": 0.36,
-            "evPoints": 23,
-            "evPPG": 0.32,
-            "toi": 14.74
-          },
+        "8482768": [
           {
             "season": 20242025,
             "age": 22,
-            "gp": 78,
-            "points": 34,
-            "ppg": 0.44,
-            "evPoints": 21,
-            "evPPG": 0.27,
-            "toi": 17.08
+            "gp": 52,
+            "points": 17,
+            "ppg": 0.33,
+            "evPoints": 12,
+            "evPPG": 0.23,
+            "toi": 12.88
           },
           {
             "season": 20252026,
             "age": 23,
-            "gp": 77,
-            "points": 35,
-            "ppg": 0.45,
-            "evPoints": 31,
-            "evPPG": 0.4,
-            "toi": 16.69
+            "gp": 70,
+            "points": 17,
+            "ppg": 0.24,
+            "evPoints": 16,
+            "evPPG": 0.23,
+            "toi": 12.08
           }
         ]
       }
@@ -137780,19 +137760,19 @@
       "seasonNo": 5,
       "signed": false,
       "actualContract": null,
-      "estimatedCapHitPct": 2.09,
-      "estimatedAAV": 2173600,
+      "estimatedCapHitPct": 2.1,
+      "estimatedAAV": 2184000,
       "ciLow": 0.68,
       "ciHigh": 3.51,
       "aavLow": 707200,
       "aavHigh": 3650400,
       "estimateStd": 1.41,
       "compWeights": [
-        0.2705,
-        0.1937,
-        0.1923,
-        0.1748,
-        0.1687
+        0.2701,
+        0.1939,
+        0.1926,
+        0.1749,
+        0.1685
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -137805,50 +137785,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 1.32,
-          "aav": 1372800,
+          "capHitPct": 1.33,
+          "aav": 1383200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 2.09,
-          "aav": 2173600,
+          "capHitPct": 2.1,
+          "aav": 2184000,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 4,
-          "capHitPct": 2.77,
-          "aav": 2880800,
+          "capHitPct": 2.78,
+          "aav": 2891200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 3.45,
-          "aav": 3588000,
+          "capHitPct": 3.46,
+          "aav": 3598400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 4.14,
-          "aav": 4305600,
+          "capHitPct": 4.15,
+          "aav": 4316000,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.82,
-          "aav": 5012800,
+          "capHitPct": 4.83,
+          "aav": 5023200,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 5.5,
-          "aav": 5720000,
+          "capHitPct": 5.51,
+          "aav": 5730400,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -138026,11 +138006,11 @@
         }
       ],
       "compDistances": [
-        2.3618,
-        3.2989,
-        3.3229,
-        3.6543,
-        3.7862
+        2.3583,
+        3.2853,
+        3.3063,
+        3.6412,
+        3.7803
       ],
       "career": [
         {
@@ -138331,10 +138311,10 @@
       "estimateStd": 0.1,
       "compWeights": [
         0.3232,
-        0.1791,
-        0.1778,
-        0.1678,
-        0.1521
+        0.1792,
+        0.1779,
+        0.1677,
+        0.152
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -138568,11 +138548,11 @@
         }
       ],
       "compDistances": [
-        2.2687,
-        4.093,
-        4.1237,
-        4.371,
-        4.8209
+        2.2617,
+        4.08,
+        4.1097,
+        4.3597,
+        4.8091
       ],
       "career": [
         {
@@ -141310,11 +141290,11 @@
       "aavHigh": 3629600,
       "estimateStd": 1.48,
       "compWeights": [
-        0.2945,
-        0.2073,
-        0.1834,
-        0.1576,
-        0.1572
+        0.2941,
+        0.207,
+        0.183,
+        0.1581,
+        0.1577
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -141548,11 +141528,11 @@
         }
       ],
       "compDistances": [
-        2.516,
-        3.5736,
-        4.0397,
-        4.7015,
-        4.713
+        2.5085,
+        3.5648,
+        4.0317,
+        4.6668,
+        4.6779
       ],
       "career": [
         {
@@ -142338,11 +142318,11 @@
       "aavHigh": 4440800,
       "estimateStd": 0.37,
       "compWeights": [
-        0.2952,
-        0.1911,
-        0.1895,
+        0.2947,
+        0.1912,
+        0.1894,
         0.1643,
-        0.1598
+        0.1604
       ],
       "avgCompTerm": 3.6,
       "termTable": [
@@ -142576,11 +142556,11 @@
         }
       ],
       "compDistances": [
-        2.6493,
-        4.0936,
-        4.1268,
-        4.7598,
-        4.8941
+        2.6449,
+        4.0782,
+        4.1155,
+        4.7457,
+        4.8596
       ],
       "career": [
         {
@@ -146980,10 +146960,10 @@
       "aavHigh": 6666400,
       "estimateStd": 1.38,
       "compWeights": [
-        0.2155,
-        0.2029,
-        0.2008,
-        0.1915,
+        0.2151,
+        0.203,
+        0.201,
+        0.1917,
         0.1893
       ],
       "avgCompTerm": 4.0,
@@ -147218,11 +147198,11 @@
         }
       ],
       "compDistances": [
-        3.9142,
-        4.1564,
-        4.1999,
-        4.4035,
-        4.4541
+        3.9108,
+        4.1434,
+        4.1854,
+        4.3883,
+        4.4446
       ],
       "career": [
         {
@@ -150090,11 +150070,11 @@
       "aavHigh": 2090400,
       "estimateStd": 0.7,
       "compWeights": [
-        0.2248,
-        0.2064,
-        0.2048,
-        0.1925,
-        0.1715
+        0.2251,
+        0.2062,
+        0.2049,
+        0.1926,
+        0.1712
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -150328,11 +150308,11 @@
         }
       ],
       "compDistances": [
-        3.4993,
-        3.8112,
-        3.8422,
-        4.0874,
-        4.587
+        3.4838,
+        3.8035,
+        3.8263,
+        4.0703,
+        4.5798
       ],
       "career": [
         {
@@ -150552,11 +150532,11 @@
       "aavHigh": 6635200,
       "estimateStd": 1.73,
       "compWeights": [
-        0.2371,
-        0.2308,
-        0.1897,
-        0.174,
-        0.1684
+        0.2366,
+        0.231,
+        0.1895,
+        0.1745,
+        0.1683
       ],
       "avgCompTerm": 4.2,
       "termTable": [
@@ -150790,11 +150770,11 @@
         }
       ],
       "compDistances": [
-        4.0836,
-        4.1943,
-        5.1027,
-        5.5648,
-        5.7498
+        4.0814,
+        4.1803,
+        5.0963,
+        5.5336,
+        5.7377
       ],
       "career": [
         {
@@ -151720,11 +151700,11 @@
       "aavHigh": 6437600,
       "estimateStd": 1.62,
       "compWeights": [
-        0.2071,
-        0.2066,
-        0.2056,
-        0.1995,
-        0.1811
+        0.2072,
+        0.2072,
+        0.2054,
+        0.1992,
+        0.181
       ],
       "avgCompTerm": 4.2,
       "termTable": [
@@ -151787,40 +151767,6 @@
       ],
       "comps": [
         {
-          "playerId": 8481656,
-          "name": "Aliaksei Protas",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20232024,
-          "age": 23,
-          "ufaYear": 2028,
-          "height": "78",
-          "weight": "251",
-          "shoots": "L",
-          "draftOverall": 91,
-          "draftBucket": 5,
-          "term": 5,
-          "value": 16875000,
-          "aav": 3375000,
-          "capHitPct": 4.04,
-          "gp": 78,
-          "goals": 6,
-          "assists": 23,
-          "points": 29,
-          "ppg": 0.37,
-          "evPoints": 28,
-          "toi": 13.75,
-          "careerGP": 169,
-          "careerPoints": 53,
-          "careerEVPoints": 51,
-          "careerPPG": 0.31,
-          "careerEVPPG": 0.3,
-          "careerTOI": 12.37,
-          "careerGPPct": 68.7,
-          "seasonNo": 3
-        },
-        {
           "playerId": 8481582,
           "name": "Nick Robertson",
           "position": "Winger",
@@ -151853,6 +151799,40 @@
           "careerTOI": 11.1,
           "careerGPPct": 47.56,
           "seasonNo": 6
+        },
+        {
+          "playerId": 8481656,
+          "name": "Aliaksei Protas",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20232024,
+          "age": 23,
+          "ufaYear": 2028,
+          "height": "78",
+          "weight": "251",
+          "shoots": "L",
+          "draftOverall": 91,
+          "draftBucket": 5,
+          "term": 5,
+          "value": 16875000,
+          "aav": 3375000,
+          "capHitPct": 4.04,
+          "gp": 78,
+          "goals": 6,
+          "assists": 23,
+          "points": 29,
+          "ppg": 0.37,
+          "evPoints": 28,
+          "toi": 13.75,
+          "careerGP": 169,
+          "careerPoints": 53,
+          "careerEVPoints": 51,
+          "careerPPG": 0.31,
+          "careerEVPPG": 0.3,
+          "careerTOI": 12.37,
+          "careerGPPct": 68.7,
+          "seasonNo": 3
         },
         {
           "playerId": 8482092,
@@ -151958,11 +151938,11 @@
         }
       ],
       "compDistances": [
-        5.2966,
-        5.3098,
-        5.3345,
-        5.4987,
-        6.0571
+        5.2809,
+        5.2817,
+        5.3268,
+        5.4935,
+        6.0456
       ],
       "career": [
         {
@@ -151997,58 +151977,6 @@
         }
       ],
       "compCareers": {
-        "8481656": [
-          {
-            "season": 20212022,
-            "age": 21,
-            "gp": 33,
-            "points": 9,
-            "ppg": 0.27,
-            "evPoints": 8,
-            "evPPG": 0.24,
-            "toi": 11.83
-          },
-          {
-            "season": 20222023,
-            "age": 22,
-            "gp": 58,
-            "points": 15,
-            "ppg": 0.26,
-            "evPoints": 15,
-            "evPPG": 0.26,
-            "toi": 11.52
-          },
-          {
-            "season": 20232024,
-            "age": 23,
-            "gp": 78,
-            "points": 29,
-            "ppg": 0.37,
-            "evPoints": 28,
-            "evPPG": 0.36,
-            "toi": 13.75
-          },
-          {
-            "season": 20242025,
-            "age": 24,
-            "gp": 76,
-            "points": 66,
-            "ppg": 0.87,
-            "evPoints": 60,
-            "evPPG": 0.79,
-            "toi": 16.46
-          },
-          {
-            "season": 20252026,
-            "age": 25,
-            "gp": 76,
-            "points": 52,
-            "ppg": 0.68,
-            "evPoints": 48,
-            "evPPG": 0.63,
-            "toi": 18.24
-          }
-        ],
         "8481582": [
           {
             "season": 20202021,
@@ -152109,6 +152037,58 @@
             "evPoints": 28,
             "evPPG": 0.36,
             "toi": 12.66
+          }
+        ],
+        "8481656": [
+          {
+            "season": 20212022,
+            "age": 21,
+            "gp": 33,
+            "points": 9,
+            "ppg": 0.27,
+            "evPoints": 8,
+            "evPPG": 0.24,
+            "toi": 11.83
+          },
+          {
+            "season": 20222023,
+            "age": 22,
+            "gp": 58,
+            "points": 15,
+            "ppg": 0.26,
+            "evPoints": 15,
+            "evPPG": 0.26,
+            "toi": 11.52
+          },
+          {
+            "season": 20232024,
+            "age": 23,
+            "gp": 78,
+            "points": 29,
+            "ppg": 0.37,
+            "evPoints": 28,
+            "evPPG": 0.36,
+            "toi": 13.75
+          },
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 76,
+            "points": 66,
+            "ppg": 0.87,
+            "evPoints": 60,
+            "evPPG": 0.79,
+            "toi": 16.46
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 76,
+            "points": 52,
+            "ppg": 0.68,
+            "evPoints": 48,
+            "evPPG": 0.63,
+            "toi": 18.24
           }
         ],
         "8482092": [
@@ -152826,19 +152806,19 @@
       "seasonNo": 2,
       "signed": false,
       "actualContract": null,
-      "estimatedCapHitPct": 1.61,
-      "estimatedAAV": 1674400,
+      "estimatedCapHitPct": 1.62,
+      "estimatedAAV": 1684800,
       "ciLow": 0.37,
       "ciHigh": 2.86,
       "aavLow": 384800,
       "aavHigh": 2974400,
       "estimateStd": 1.25,
       "compWeights": [
-        0.2259,
-        0.2159,
+        0.2253,
+        0.2162,
+        0.1935,
         0.1934,
-        0.1933,
-        0.1714
+        0.1715
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -152858,43 +152838,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 0.9,
-          "aav": 936000,
+          "capHitPct": 0.91,
+          "aav": 946400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 4,
-          "capHitPct": 1.14,
-          "aav": 1185600,
+          "capHitPct": 1.15,
+          "aav": 1196000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 5,
-          "capHitPct": 1.37,
-          "aav": 1424800,
+          "capHitPct": 1.38,
+          "aav": 1435200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 6,
-          "capHitPct": 1.61,
-          "aav": 1674400,
+          "capHitPct": 1.62,
+          "aav": 1684800,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 7,
-          "capHitPct": 2.29,
-          "aav": 2381600,
+          "capHitPct": 2.3,
+          "aav": 2392000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 8,
-          "capHitPct": 2.97,
-          "aav": 3088800,
+          "capHitPct": 2.98,
+          "aav": 3099200,
           "regime": "ufa",
           "ufaYrsBought": 2
         }
@@ -153072,11 +153052,11 @@
         }
       ],
       "compDistances": [
-        4.6969,
-        4.9142,
-        5.4849,
-        5.4881,
-        6.1896
+        4.6827,
+        4.88,
+        5.4522,
+        5.4553,
+        6.1526
       ],
       "career": [
         {
@@ -154244,75 +154224,75 @@
       "seasonNo": 2,
       "signed": false,
       "actualContract": null,
-      "estimatedCapHitPct": 11.24,
-      "estimatedAAV": 11689600,
-      "ciLow": 6.21,
-      "ciHigh": 16.26,
-      "aavLow": 6458400,
-      "aavHigh": 16910400,
-      "estimateStd": 5.03,
+      "estimatedCapHitPct": 12.8,
+      "estimatedAAV": 13312000,
+      "ciLow": 8.62,
+      "ciHigh": 16.97,
+      "aavLow": 8964800,
+      "aavHigh": 17648800,
+      "estimateStd": 4.18,
       "compWeights": [
-        0.2786,
-        0.1913,
-        0.1896,
-        0.1752,
-        0.1653
+        0.2548,
+        0.2375,
+        0.1747,
+        0.173,
+        0.16
       ],
-      "avgCompTerm": 5.6,
+      "avgCompTerm": 6.2,
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 6.18,
-          "aav": 6427200,
+          "capHitPct": 7.04,
+          "aav": 7321600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 7.45,
-          "aav": 7748000,
+          "capHitPct": 8.48,
+          "aav": 8819200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 8.71,
-          "aav": 9058400,
+          "capHitPct": 9.92,
+          "aav": 10316800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 4,
-          "capHitPct": 9.98,
-          "aav": 10379200,
+          "capHitPct": 11.36,
+          "aav": 11814400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 5,
-          "capHitPct": 11.24,
-          "aav": 11689600,
+          "capHitPct": 12.8,
+          "aav": 13312000,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 6,
-          "capHitPct": 11.24,
-          "aav": 11689600,
+          "capHitPct": 12.8,
+          "aav": 13312000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 7,
-          "capHitPct": 11.24,
-          "aav": 11689600,
+          "capHitPct": 12.8,
+          "aav": 13312000,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 8,
-          "capHitPct": 11.24,
-          "aav": 11689600,
+          "capHitPct": 12.8,
+          "aav": 13312000,
           "regime": "ufa",
           "ufaYrsBought": 3
         }
@@ -154350,6 +154330,40 @@
           "careerEVPPG": 0.51,
           "careerTOI": 17.76,
           "careerGPPct": 96.75,
+          "seasonNo": 3
+        },
+        {
+          "playerId": 8484166,
+          "name": "Adam Fantilli",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 21,
+          "ufaYear": 2030,
+          "height": "74",
+          "weight": "205",
+          "shoots": "L",
+          "draftOverall": 3,
+          "draftBucket": 1,
+          "term": 6,
+          "value": 82500000,
+          "aav": 13750000,
+          "capHitPct": 14.4,
+          "gp": 82,
+          "goals": 24,
+          "assists": 35,
+          "points": 59,
+          "ppg": 0.72,
+          "evPoints": 46,
+          "toi": 18.9,
+          "careerGP": 213,
+          "careerPoints": 140,
+          "careerEVPoints": 118,
+          "careerPPG": 0.66,
+          "careerEVPPG": 0.55,
+          "careerTOI": 17.36,
+          "careerGPPct": 86.59,
           "seasonNo": 3
         },
         {
@@ -154453,48 +154467,14 @@
           "careerTOI": 15.6,
           "careerGPPct": 64.63,
           "seasonNo": 3
-        },
-        {
-          "playerId": 8482667,
-          "name": "William Eklund",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "71",
-          "weight": "185",
-          "shoots": "L",
-          "draftOverall": 7,
-          "draftBucket": 2,
-          "term": 3,
-          "value": 16800000,
-          "aav": 5600000,
-          "capHitPct": 5.86,
-          "gp": 78,
-          "goals": 15,
-          "assists": 38,
-          "points": 53,
-          "ppg": 0.68,
-          "evPoints": 37,
-          "toi": 18.54,
-          "careerGP": 252,
-          "careerPoints": 163,
-          "careerEVPoints": 107,
-          "careerPPG": 0.65,
-          "careerEVPPG": 0.42,
-          "careerTOI": 18.18,
-          "careerGPPct": 61.46,
-          "seasonNo": 5
         }
       ],
       "compDistances": [
-        3.6394,
-        5.3007,
-        5.3474,
-        5.7887,
-        6.1348
+        3.6247,
+        3.8896,
+        5.2857,
+        5.3387,
+        5.7722
       ],
       "career": [
         {
@@ -154569,6 +154549,38 @@
             "evPoints": 49,
             "evPPG": 0.61,
             "toi": 18.8
+          }
+        ],
+        "8484166": [
+          {
+            "season": 20232024,
+            "age": 19,
+            "gp": 49,
+            "points": 27,
+            "ppg": 0.55,
+            "evPoints": 24,
+            "evPPG": 0.49,
+            "toi": 15.71
+          },
+          {
+            "season": 20242025,
+            "age": 20,
+            "gp": 82,
+            "points": 54,
+            "ppg": 0.66,
+            "evPoints": 48,
+            "evPPG": 0.59,
+            "toi": 17.48
+          },
+          {
+            "season": 20252026,
+            "age": 21,
+            "gp": 82,
+            "points": 59,
+            "ppg": 0.72,
+            "evPoints": 46,
+            "evPPG": 0.56,
+            "toi": 18.9
           }
         ],
         "8482745": [
@@ -154685,58 +154697,6 @@
             "evPoints": 50,
             "evPPG": 0.66,
             "toi": 17.25
-          }
-        ],
-        "8482667": [
-          {
-            "season": 20212022,
-            "age": 19,
-            "gp": 9,
-            "points": 4,
-            "ppg": 0.44,
-            "evPoints": 1,
-            "evPPG": 0.11,
-            "toi": 14.33
-          },
-          {
-            "season": 20222023,
-            "age": 20,
-            "gp": 8,
-            "points": 3,
-            "ppg": 0.38,
-            "evPoints": 2,
-            "evPPG": 0.25,
-            "toi": 19.84
-          },
-          {
-            "season": 20232024,
-            "age": 21,
-            "gp": 80,
-            "points": 45,
-            "ppg": 0.56,
-            "evPoints": 28,
-            "evPPG": 0.35,
-            "toi": 18.66
-          },
-          {
-            "season": 20242025,
-            "age": 22,
-            "gp": 77,
-            "points": 58,
-            "ppg": 0.75,
-            "evPoints": 39,
-            "evPPG": 0.51,
-            "toi": 19.55
-          },
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 78,
-            "points": 53,
-            "ppg": 0.68,
-            "evPoints": 37,
-            "evPPG": 0.47,
-            "toi": 18.54
           }
         ]
       }
@@ -155902,11 +155862,11 @@
       "aavHigh": 3036800,
       "estimateStd": 1.14,
       "compWeights": [
-        0.2648,
-        0.2118,
-        0.1784,
-        0.1731,
-        0.1719
+        0.2643,
+        0.2127,
+        0.1782,
+        0.1727,
+        0.1721
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -156140,11 +156100,11 @@
         }
       ],
       "compDistances": [
-        3.4793,
-        4.349,
-        5.1635,
-        5.323,
-        5.3605
+        3.4688,
+        4.3111,
+        5.146,
+        5.3099,
+        5.3276
       ],
       "career": [
         {
@@ -162670,17 +162630,17 @@
       "actualContract": null,
       "estimatedCapHitPct": 0.97,
       "estimatedAAV": 1008800,
-      "ciLow": 0.77,
+      "ciLow": 0.78,
       "ciHigh": 1.17,
-      "aavLow": 800800,
+      "aavLow": 811200,
       "aavHigh": 1216800,
       "estimateStd": 0.2,
       "compWeights": [
-        0.8622,
-        0.0453,
+        0.8614,
+        0.0456,
         0.0325,
-        0.0302,
-        0.0298
+        0.0304,
+        0.0301
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -162914,11 +162874,11 @@
         }
       ],
       "compDistances": [
-        0.2076,
-        3.9501,
-        5.5131,
-        5.9268,
-        5.9963
+        0.2072,
+        3.9102,
+        5.4962,
+        5.8668,
+        5.9367
       ],
       "career": [
         {
@@ -169900,10 +169860,10 @@
       "aavHigh": 2776800,
       "estimateStd": 0.98,
       "compWeights": [
-        0.2145,
-        0.2049,
-        0.1968,
-        0.1931,
+        0.2155,
+        0.205,
+        0.1964,
+        0.1925,
         0.1907
       ],
       "avgCompTerm": 2.0,
@@ -170138,11 +170098,11 @@
         }
       ],
       "compDistances": [
-        4.3174,
-        4.5188,
-        4.7059,
-        4.7945,
-        4.8551
+        4.2794,
+        4.4999,
+        4.6965,
+        4.792,
+        4.8369
       ],
       "career": [
         {
@@ -172790,10 +172750,10 @@
       "aavHigh": 2017600,
       "estimateStd": 0.6,
       "compWeights": [
-        0.2253,
-        0.207,
+        0.2254,
+        0.2072,
         0.1953,
-        0.1886,
+        0.1884,
         0.1838
       ],
       "avgCompTerm": 2.4,
@@ -173028,11 +172988,11 @@
         }
       ],
       "compDistances": [
-        4.6452,
-        5.0539,
-        5.3581,
-        5.5492,
-        5.6922
+        4.6301,
+        5.037,
+        5.3428,
+        5.5371,
+        5.6784
       ],
       "career": [
         {
@@ -173212,11 +173172,11 @@
       "aavHigh": 1487200,
       "estimateStd": 0.35,
       "compWeights": [
-        0.2368,
-        0.2055,
+        0.237,
+        0.2052,
         0.1999,
         0.1881,
-        0.1697
+        0.1698
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -173450,11 +173410,11 @@
         }
       ],
       "compDistances": [
-        5.1191,
-        5.8983,
-        6.0637,
-        6.4419,
-        7.1398
+        5.1019,
+        5.8929,
+        6.0466,
+        6.4278,
+        7.1183
       ],
       "career": [
         {
@@ -174620,11 +174580,11 @@
       "aavHigh": 2984800,
       "estimateStd": 1.25,
       "compWeights": [
-        0.2278,
-        0.2128,
-        0.206,
-        0.1807,
-        0.1728
+        0.2279,
+        0.2129,
+        0.2059,
+        0.1804,
+        0.1729
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -174858,11 +174818,11 @@
         }
       ],
       "compDistances": [
-        4.1572,
-        4.4496,
-        4.598,
-        5.2417,
-        5.4809
+        4.1409,
+        4.4336,
+        4.5828,
+        5.232,
+        5.4582
       ],
       "career": [
         {
@@ -175035,518 +174995,6 @@
             "evPoints": 48,
             "evPPG": 0.63,
             "toi": 18.24
-          }
-        ]
-      }
-    },
-    {
-      "playerId": 8484197,
-      "name": "Oliver Moore",
-      "position": "Center",
-      "positionGroup": "Forward",
-      "signingStatus": "RFA",
-      "contractYear": 20252026,
-      "age": 21,
-      "ufaYear": 2032,
-      "height": "71",
-      "weight": "187",
-      "shoots": "L",
-      "draftOverall": 19,
-      "draftBucket": 3,
-      "term": 1,
-      "value": 0,
-      "aav": 0,
-      "capHitPct": 0.0,
-      "gp": 51,
-      "goals": 5,
-      "assists": 14,
-      "points": 19,
-      "ppg": 0.37,
-      "evPoints": 14,
-      "toi": 12.84,
-      "careerGP": 60,
-      "careerPoints": 23,
-      "careerEVPoints": 18,
-      "careerPPG": 0.38,
-      "careerEVPPG": 0.3,
-      "careerTOI": 13.21,
-      "careerGPPct": 36.59,
-      "seasonNo": 2,
-      "signed": false,
-      "actualContract": null,
-      "estimatedCapHitPct": 5.21,
-      "estimatedAAV": 5418400,
-      "ciLow": 3.68,
-      "ciHigh": 6.74,
-      "aavLow": 3827200,
-      "aavHigh": 7009600,
-      "estimateStd": 1.53,
-      "compWeights": [
-        0.2188,
-        0.2089,
-        0.2024,
-        0.1859,
-        0.1841
-      ],
-      "avgCompTerm": 4.8,
-      "termTable": [
-        {
-          "term": 1,
-          "capHitPct": 4.82,
-          "aav": 5012800,
-          "regime": "bridge",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 2,
-          "capHitPct": 4.9,
-          "aav": 5096000,
-          "regime": "bridge",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 3,
-          "capHitPct": 4.98,
-          "aav": 5179200,
-          "regime": "bridge",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 4,
-          "capHitPct": 5.06,
-          "aav": 5262400,
-          "regime": "bridge",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 5,
-          "capHitPct": 5.13,
-          "aav": 5335200,
-          "regime": "bridge",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 6,
-          "capHitPct": 5.21,
-          "aav": 5418400,
-          "regime": "crossover",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 7,
-          "capHitPct": 5.25,
-          "aav": 5460000,
-          "regime": "ufa",
-          "ufaYrsBought": 1
-        },
-        {
-          "term": 8,
-          "capHitPct": 5.28,
-          "aav": 5491200,
-          "regime": "ufa",
-          "ufaYrsBought": 2
-        }
-      ],
-      "comps": [
-        {
-          "playerId": 8482679,
-          "name": "Matt Coronato",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 22,
-          "ufaYear": 2030,
-          "height": "70",
-          "weight": "183",
-          "shoots": "R",
-          "draftOverall": 13,
-          "draftBucket": 2,
-          "term": 7,
-          "value": 45500000,
-          "aav": 6500000,
-          "capHitPct": 7.39,
-          "gp": 77,
-          "goals": 24,
-          "assists": 23,
-          "points": 47,
-          "ppg": 0.61,
-          "evPoints": 30,
-          "toi": 17.58,
-          "careerGP": 112,
-          "careerPoints": 56,
-          "careerEVPoints": 38,
-          "careerPPG": 0.5,
-          "careerEVPPG": 0.34,
-          "careerTOI": 14.94,
-          "careerGPPct": 45.53,
-          "seasonNo": 3
-        },
-        {
-          "playerId": 8482092,
-          "name": "Ridly Greig",
-          "position": "Center",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 22,
-          "ufaYear": 2030,
-          "height": "72",
-          "weight": "185",
-          "shoots": "L",
-          "draftOverall": 28,
-          "draftBucket": 3,
-          "term": 4,
-          "value": 13000000,
-          "aav": 3250000,
-          "capHitPct": 3.69,
-          "gp": 78,
-          "goals": 13,
-          "assists": 21,
-          "points": 34,
-          "ppg": 0.44,
-          "evPoints": 21,
-          "toi": 17.08,
-          "careerGP": 170,
-          "careerPoints": 69,
-          "careerEVPoints": 50,
-          "careerPPG": 0.41,
-          "careerEVPPG": 0.29,
-          "careerTOI": 14.91,
-          "careerGPPct": 69.11,
-          "seasonNo": 3
-        },
-        {
-          "playerId": 8484911,
-          "name": "Collin Graf",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "73",
-          "weight": "194",
-          "shoots": "R",
-          "draftOverall": 999,
-          "draftBucket": 6,
-          "term": 3,
-          "value": 12750000,
-          "aav": 4250000,
-          "capHitPct": 4.45,
-          "gp": 81,
-          "goals": 21,
-          "assists": 25,
-          "points": 46,
-          "ppg": 0.57,
-          "evPoints": 42,
-          "toi": 16.44,
-          "careerGP": 121,
-          "careerPoints": 59,
-          "careerEVPoints": 49,
-          "careerPPG": 0.49,
-          "careerEVPPG": 0.41,
-          "careerTOI": 16.3,
-          "careerGPPct": 49.19,
-          "seasonNo": 3
-        },
-        {
-          "playerId": 8482737,
-          "name": "Zachary Bolduc",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 23,
-          "ufaYear": 2030,
-          "height": "72",
-          "weight": "187",
-          "shoots": "L",
-          "draftOverall": 17,
-          "draftBucket": 3,
-          "term": 4,
-          "value": 16800000,
-          "aav": 4200000,
-          "capHitPct": 4.4,
-          "gp": 78,
-          "goals": 12,
-          "assists": 18,
-          "points": 30,
-          "ppg": 0.38,
-          "evPoints": 24,
-          "toi": 13.63,
-          "careerGP": 175,
-          "careerPoints": 75,
-          "careerEVPoints": 57,
-          "careerPPG": 0.43,
-          "careerEVPPG": 0.33,
-          "careerTOI": 12.82,
-          "careerGPPct": 71.14,
-          "seasonNo": 3
-        },
-        {
-          "playerId": 8482113,
-          "name": "Anton Lundell",
-          "position": "Center",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20232024,
-          "age": 22,
-          "ufaYear": 2028,
-          "height": "73",
-          "weight": "196",
-          "shoots": "L",
-          "draftOverall": 12,
-          "draftBucket": 2,
-          "term": 6,
-          "value": 30000000,
-          "aav": 5000000,
-          "capHitPct": 5.99,
-          "gp": 78,
-          "goals": 13,
-          "assists": 22,
-          "points": 35,
-          "ppg": 0.45,
-          "evPoints": 29,
-          "toi": 15.38,
-          "careerGP": 216,
-          "careerPoints": 112,
-          "careerEVPoints": 91,
-          "careerPPG": 0.52,
-          "careerEVPPG": 0.42,
-          "careerTOI": 15.83,
-          "careerGPPct": 87.8,
-          "seasonNo": 3
-        }
-      ],
-      "compDistances": [
-        4.9662,
-        5.2019,
-        5.3684,
-        5.8448,
-        5.9005
-      ],
-      "career": [
-        {
-          "season": 20242025,
-          "age": 20,
-          "gp": 9,
-          "points": 4,
-          "ppg": 0.44,
-          "evPoints": 4,
-          "evPPG": 0.44,
-          "toi": 13.58
-        },
-        {
-          "season": 20252026,
-          "age": 21,
-          "gp": 51,
-          "points": 19,
-          "ppg": 0.37,
-          "evPoints": 14,
-          "evPPG": 0.27,
-          "toi": 12.84
-        }
-      ],
-      "compCareers": {
-        "8482679": [
-          {
-            "season": 20222023,
-            "age": 20,
-            "gp": 1,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 14.63
-          },
-          {
-            "season": 20232024,
-            "age": 21,
-            "gp": 34,
-            "points": 9,
-            "ppg": 0.26,
-            "evPoints": 8,
-            "evPPG": 0.24,
-            "toi": 12.61
-          },
-          {
-            "season": 20242025,
-            "age": 22,
-            "gp": 77,
-            "points": 47,
-            "ppg": 0.61,
-            "evPoints": 30,
-            "evPPG": 0.39,
-            "toi": 17.58
-          },
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 80,
-            "points": 45,
-            "ppg": 0.56,
-            "evPoints": 30,
-            "evPPG": 0.38,
-            "toi": 16.65
-          }
-        ],
-        "8482092": [
-          {
-            "season": 20222023,
-            "age": 20,
-            "gp": 20,
-            "points": 9,
-            "ppg": 0.45,
-            "evPoints": 6,
-            "evPPG": 0.3,
-            "toi": 12.9
-          },
-          {
-            "season": 20232024,
-            "age": 21,
-            "gp": 72,
-            "points": 26,
-            "ppg": 0.36,
-            "evPoints": 23,
-            "evPPG": 0.32,
-            "toi": 14.74
-          },
-          {
-            "season": 20242025,
-            "age": 22,
-            "gp": 78,
-            "points": 34,
-            "ppg": 0.44,
-            "evPoints": 21,
-            "evPPG": 0.27,
-            "toi": 17.08
-          },
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 77,
-            "points": 35,
-            "ppg": 0.45,
-            "evPoints": 31,
-            "evPPG": 0.4,
-            "toi": 16.69
-          }
-        ],
-        "8484911": [
-          {
-            "season": 20232024,
-            "age": 21,
-            "gp": 7,
-            "points": 2,
-            "ppg": 0.29,
-            "evPoints": 1,
-            "evPPG": 0.14,
-            "toi": 16.6
-          },
-          {
-            "season": 20242025,
-            "age": 22,
-            "gp": 33,
-            "points": 11,
-            "ppg": 0.33,
-            "evPoints": 6,
-            "evPPG": 0.18,
-            "toi": 15.86
-          },
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 81,
-            "points": 46,
-            "ppg": 0.57,
-            "evPoints": 42,
-            "evPPG": 0.52,
-            "toi": 16.44
-          }
-        ],
-        "8482737": [
-          {
-            "season": 20232024,
-            "age": 21,
-            "gp": 25,
-            "points": 9,
-            "ppg": 0.36,
-            "evPoints": 9,
-            "evPPG": 0.36,
-            "toi": 12.02
-          },
-          {
-            "season": 20242025,
-            "age": 22,
-            "gp": 72,
-            "points": 36,
-            "ppg": 0.5,
-            "evPoints": 24,
-            "evPPG": 0.33,
-            "toi": 12.81
-          },
-          {
-            "season": 20252026,
-            "age": 23,
-            "gp": 78,
-            "points": 30,
-            "ppg": 0.38,
-            "evPoints": 24,
-            "evPPG": 0.31,
-            "toi": 13.63
-          }
-        ],
-        "8482113": [
-          {
-            "season": 20212022,
-            "age": 20,
-            "gp": 65,
-            "points": 44,
-            "ppg": 0.68,
-            "evPoints": 36,
-            "evPPG": 0.55,
-            "toi": 15.74
-          },
-          {
-            "season": 20222023,
-            "age": 21,
-            "gp": 73,
-            "points": 33,
-            "ppg": 0.45,
-            "evPoints": 26,
-            "evPPG": 0.36,
-            "toi": 16.37
-          },
-          {
-            "season": 20232024,
-            "age": 22,
-            "gp": 78,
-            "points": 35,
-            "ppg": 0.45,
-            "evPoints": 29,
-            "evPPG": 0.37,
-            "toi": 15.38
-          },
-          {
-            "season": 20242025,
-            "age": 23,
-            "gp": 79,
-            "points": 45,
-            "ppg": 0.57,
-            "evPoints": 37,
-            "evPPG": 0.47,
-            "toi": 16.71
-          },
-          {
-            "season": 20252026,
-            "age": 24,
-            "gp": 64,
-            "points": 44,
-            "ppg": 0.69,
-            "evPoints": 25,
-            "evPPG": 0.39,
-            "toi": 19.15
           }
         ]
       }
@@ -178262,10 +177710,10 @@
       "aavHigh": 2069600,
       "estimateStd": 0.6,
       "compWeights": [
-        0.2814,
-        0.2117,
+        0.2821,
+        0.2111,
         0.1803,
-        0.1683,
+        0.1682,
         0.1583
       ],
       "avgCompTerm": 2.8,
@@ -178500,11 +177948,11 @@
         }
       ],
       "compDistances": [
-        2.6423,
-        3.5115,
-        4.1238,
-        4.4161,
-        4.6959
+        2.6249,
+        3.5087,
+        4.1068,
+        4.4018,
+        4.6781
       ],
       "career": [
         {
@@ -179206,11 +178654,11 @@
       "aavHigh": 1393600,
       "estimateStd": 0.31,
       "compWeights": [
-        0.4263,
-        0.1553,
-        0.1428,
-        0.1383,
-        0.1372
+        0.4259,
+        0.1556,
+        0.143,
+        0.1385,
+        0.1371
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -179444,11 +178892,11 @@
         }
       ],
       "compDistances": [
-        1.2957,
-        3.5563,
-        3.8679,
-        3.9938,
-        4.025
+        1.2934,
+        3.5413,
+        3.853,
+        3.9785,
+        4.0172
       ],
       "career": [
         {
@@ -179698,8 +179146,8 @@
       "aavHigh": 2017600,
       "estimateStd": 0.69,
       "compWeights": [
-        0.3297,
-        0.1892,
+        0.3295,
+        0.1894,
         0.1636,
         0.1615,
         0.156
@@ -179936,11 +179384,11 @@
         }
       ],
       "compDistances": [
-        2.7253,
-        4.7499,
-        5.4943,
-        5.5659,
-        5.7588
+        2.7205,
+        4.7331,
+        5.4774,
+        5.5503,
+        5.7448
       ],
       "career": [
         {
@@ -182380,75 +181828,75 @@
       "seasonNo": 5,
       "signed": false,
       "actualContract": null,
-      "estimatedCapHitPct": 1.47,
-      "estimatedAAV": 1528800,
+      "estimatedCapHitPct": 1.48,
+      "estimatedAAV": 1539200,
       "ciLow": 0.85,
       "ciHigh": 2.1,
       "aavLow": 884000,
       "aavHigh": 2184000,
       "estimateStd": 0.63,
       "compWeights": [
-        0.2322,
-        0.2006,
-        0.196,
-        0.19,
-        0.1812
+        0.2321,
+        0.2005,
+        0.1959,
+        0.1897,
+        0.1818
       ],
       "avgCompTerm": 2.2,
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 0.39,
-          "aav": 405600,
+          "capHitPct": 0.4,
+          "aav": 416000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 0.93,
-          "aav": 967200,
+          "capHitPct": 0.94,
+          "aav": 977600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 1.47,
-          "aav": 1528800,
+          "capHitPct": 1.48,
+          "aav": 1539200,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 4,
-          "capHitPct": 2.15,
-          "aav": 2236000,
+          "capHitPct": 2.16,
+          "aav": 2246400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 5,
-          "capHitPct": 2.83,
-          "aav": 2943200,
+          "capHitPct": 2.84,
+          "aav": 2953600,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 6,
-          "capHitPct": 3.52,
-          "aav": 3660800,
+          "capHitPct": 3.53,
+          "aav": 3671200,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 7,
-          "capHitPct": 4.2,
-          "aav": 4368000,
+          "capHitPct": 4.21,
+          "aav": 4378400,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 8,
-          "capHitPct": 4.88,
-          "aav": 5075200,
+          "capHitPct": 4.89,
+          "aav": 5085600,
           "regime": "ufa",
           "ufaYrsBought": 5
         }
@@ -182626,11 +182074,11 @@
         }
       ],
       "compDistances": [
-        3.7556,
-        4.3469,
-        4.449,
-        4.5902,
-        4.8118
+        3.7422,
+        4.3324,
+        4.4332,
+        4.5788,
+        4.7772
       ],
       "career": [
         {
@@ -187486,11 +186934,11 @@
       "aavHigh": 1300000,
       "estimateStd": 0.23,
       "compWeights": [
-        0.2958,
-        0.2908,
-        0.2108,
-        0.1056,
-        0.0971
+        0.2952,
+        0.2902,
+        0.2114,
+        0.1057,
+        0.0975
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -187724,11 +187172,11 @@
         }
       ],
       "compDistances": [
-        1.9804,
-        2.0145,
-        2.7794,
-        5.548,
-        6.0353
+        1.9812,
+        2.0151,
+        2.7659,
+        5.5312,
+        6.0
       ],
       "career": [
         {
@@ -188904,10 +188352,10 @@
       "aavHigh": 2142400,
       "estimateStd": 0.65,
       "compWeights": [
-        0.2487,
+        0.2485,
         0.2099,
-        0.1839,
-        0.1801,
+        0.184,
+        0.1802,
         0.1774
       ],
       "avgCompTerm": 2.8,
@@ -189142,11 +188590,11 @@
         }
       ],
       "compDistances": [
-        3.0701,
-        3.6383,
-        4.1533,
-        4.24,
-        4.3057
+        3.0644,
+        3.6276,
+        4.1383,
+        4.2261,
+        4.2932
       ],
       "career": [
         {
@@ -190930,11 +190378,11 @@
       "aavHigh": 5959200,
       "estimateStd": 2.49,
       "compWeights": [
-        0.3923,
-        0.2033,
-        0.138,
-        0.1338,
-        0.1327
+        0.3934,
+        0.2029,
+        0.1378,
+        0.1335,
+        0.1325
       ],
       "avgCompTerm": 4.6,
       "termTable": [
@@ -191168,11 +190616,11 @@
         }
       ],
       "compDistances": [
-        3.2518,
-        6.2759,
-        9.2468,
-        9.5341,
-        9.6122
+        3.2318,
+        6.266,
+        9.2287,
+        9.5222,
+        9.5974
       ],
       "career": [
         {
@@ -192218,11 +191666,11 @@
       "aavHigh": 4274400,
       "estimateStd": 1.33,
       "compWeights": [
-        0.2141,
-        0.201,
-        0.1961,
-        0.1952,
-        0.1935
+        0.2139,
+        0.2012,
+        0.1957,
+        0.1955,
+        0.1936
       ],
       "avgCompTerm": 3.0,
       "termTable": [
@@ -192456,11 +191904,11 @@
         }
       ],
       "compDistances": [
-        5.6127,
-        5.9781,
-        6.1269,
-        6.1572,
-        6.2091
+        5.5985,
+        5.9521,
+        6.1205,
+        6.1252,
+        6.1877
       ],
       "career": [
         {
@@ -192750,10 +192198,10 @@
       "aavHigh": 1227200,
       "estimateStd": 0.13,
       "compWeights": [
-        0.3087,
-        0.1859,
-        0.1716,
-        0.1696,
+        0.3084,
+        0.186,
+        0.1717,
+        0.1697,
         0.1643
       ],
       "avgCompTerm": 2.0,
@@ -192988,11 +192436,11 @@
         }
       ],
       "compDistances": [
-        2.0548,
-        3.4123,
-        3.6969,
-        3.7393,
-        3.8608
+        2.0492,
+        3.3985,
+        3.6816,
+        3.7244,
+        3.8463
       ],
       "career": [
         {
@@ -196629,10 +196077,10 @@
       ],
       "compDistances": [
         0.0,
-        1.9771,
-        2.2303,
-        3.9501,
-        5.5459
+        1.9571,
+        2.2116,
+        3.9102,
+        5.529
       ],
       "career": [
         {
@@ -198722,11 +198170,11 @@
       "aavHigh": 1362400,
       "estimateStd": 0.21,
       "compWeights": [
-        0.2217,
-        0.213,
-        0.2035,
-        0.1824,
-        0.1794
+        0.2212,
+        0.2129,
+        0.2034,
+        0.1823,
+        0.1801
       ],
       "avgCompTerm": 2.0,
       "termTable": [
@@ -198960,11 +198408,11 @@
         }
       ],
       "compDistances": [
-        3.7305,
-        3.8832,
-        4.065,
-        4.5335,
-        4.6088
+        3.7227,
+        3.8687,
+        4.0491,
+        4.5178,
+        4.5722
       ],
       "career": [
         {
@@ -201995,10 +201443,10 @@
       "estimateStd": 0.28,
       "compWeights": [
         0.2225,
-        0.2123,
-        0.1916,
-        0.1898,
-        0.1838
+        0.2131,
+        0.1913,
+        0.1895,
+        0.1837
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -202232,11 +201680,11 @@
         }
       ],
       "compDistances": [
-        4.8434,
-        5.0747,
-        5.6257,
-        5.6773,
-        5.8629
+        4.8268,
+        5.0404,
+        5.6145,
+        5.6659,
+        5.8473
       ],
       "career": [
         {
@@ -205291,10 +204739,10 @@
       ],
       "compDistances": [
         0.0,
-        3.9501,
-        5.5805,
-        5.9231,
-        6.0321
+        3.9102,
+        5.5635,
+        5.8632,
+        5.9727
       ],
       "career": [
         {
@@ -205434,11 +204882,11 @@
       "aavHigh": 5709600,
       "estimateStd": 0.91,
       "compWeights": [
-        0.2563,
-        0.2286,
-        0.1738,
-        0.1711,
-        0.1703
+        0.2568,
+        0.2283,
+        0.1735,
+        0.1712,
+        0.1702
       ],
       "avgCompTerm": 4.0,
       "termTable": [
@@ -205672,11 +205120,11 @@
         }
       ],
       "compDistances": [
-        3.094,
-        3.4692,
-        4.5634,
-        4.636,
-        4.6579
+        3.0773,
+        3.4611,
+        4.5551,
+        4.6169,
+        4.6425
       ],
       "career": [
         {
@@ -209056,75 +208504,75 @@
       "seasonNo": 4,
       "signed": false,
       "actualContract": null,
-      "estimatedCapHitPct": 6.0,
-      "estimatedAAV": 6240000,
+      "estimatedCapHitPct": 6.01,
+      "estimatedAAV": 6250400,
       "ciLow": 4.61,
       "ciHigh": 7.4,
       "aavLow": 4794400,
       "aavHigh": 7696000,
       "estimateStd": 1.39,
       "compWeights": [
-        0.2836,
-        0.2239,
-        0.1769,
-        0.1721,
-        0.1435
+        0.2834,
+        0.224,
+        0.1766,
+        0.1722,
+        0.1438
       ],
       "avgCompTerm": 4.0,
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 5.55,
-          "aav": 5772000,
+          "capHitPct": 5.56,
+          "aav": 5782400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 6.0,
-          "aav": 6240000,
+          "capHitPct": 6.01,
+          "aav": 6250400,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 6.04,
-          "aav": 6281600,
+          "capHitPct": 6.05,
+          "aav": 6292000,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 4,
-          "capHitPct": 6.07,
-          "aav": 6312800,
+          "capHitPct": 6.08,
+          "aav": 6323200,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 5,
-          "capHitPct": 6.11,
-          "aav": 6354400,
+          "capHitPct": 6.12,
+          "aav": 6364800,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 6,
-          "capHitPct": 6.14,
-          "aav": 6385600,
+          "capHitPct": 6.15,
+          "aav": 6396000,
           "regime": "ufa",
           "ufaYrsBought": 4
         },
         {
           "term": 7,
-          "capHitPct": 6.18,
-          "aav": 6427200,
+          "capHitPct": 6.19,
+          "aav": 6437600,
           "regime": "ufa",
           "ufaYrsBought": 5
         },
         {
           "term": 8,
-          "capHitPct": 6.22,
-          "aav": 6468800,
+          "capHitPct": 6.23,
+          "aav": 6479200,
           "regime": "ufa",
           "ufaYrsBought": 6
         }
@@ -209302,11 +208750,11 @@
         }
       ],
       "compDistances": [
-        2.1647,
-        2.741,
-        3.4703,
-        3.5658,
-        4.2783
+        2.1623,
+        2.7349,
+        3.4689,
+        3.5576,
+        4.2615
       ],
       "career": [
         {
@@ -216029,16 +215477,16 @@
       "estimatedCapHitPct": 1.01,
       "estimatedAAV": 1050400,
       "ciLow": 0.8,
-      "ciHigh": 1.22,
+      "ciHigh": 1.21,
       "aavLow": 832000,
-      "aavHigh": 1268800,
+      "aavHigh": 1258400,
       "estimateStd": 0.21,
       "compWeights": [
-        0.2979,
-        0.2975,
-        0.1489,
+        0.2982,
+        0.2978,
+        0.1491,
         0.1431,
-        0.1127
+        0.1119
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -216272,11 +215720,11 @@
         }
       ],
       "compDistances": [
-        1.9744,
-        1.9771,
-        3.9488,
-        4.1104,
-        5.2195
+        1.9544,
+        1.9571,
+        3.9088,
+        4.0713,
+        5.2089
       ],
       "career": [
         {
@@ -218090,11 +217538,11 @@
       "aavHigh": 2028000,
       "estimateStd": 0.56,
       "compWeights": [
-        0.3486,
-        0.1906,
-        0.1671,
+        0.3484,
+        0.191,
+        0.1672,
         0.1564,
-        0.1372
+        0.1371
       ],
       "avgCompTerm": 2.8,
       "termTable": [
@@ -218328,11 +217776,11 @@
         }
       ],
       "compDistances": [
-        1.8255,
-        3.3394,
-        3.809,
-        4.068,
-        4.6371
+        1.8219,
+        3.3221,
+        3.797,
+        4.059,
+        4.6305
       ],
       "career": [
         {
@@ -218884,11 +218332,11 @@
       "aavHigh": 3796000,
       "estimateStd": 1.69,
       "compWeights": [
-        0.2671,
-        0.2281,
-        0.214,
-        0.1509,
-        0.1399
+        0.2664,
+        0.2286,
+        0.2135,
+        0.151,
+        0.1405
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -219122,11 +218570,11 @@
         }
       ],
       "compDistances": [
-        2.5014,
-        2.9283,
-        3.1215,
-        4.4257,
-        4.7754
+        2.499,
+        2.913,
+        3.118,
+        4.4098,
+        4.7391
       ],
       "career": [
         {
@@ -223822,11 +223270,11 @@
       "aavHigh": 2017600,
       "estimateStd": 0.58,
       "compWeights": [
-        0.2683,
-        0.249,
-        0.1683,
+        0.2678,
+        0.2498,
+        0.1682,
         0.1671,
-        0.1473
+        0.1471
       ],
       "avgCompTerm": 2.8,
       "termTable": [
@@ -224060,11 +223508,11 @@
         }
       ],
       "compDistances": [
-        2.7471,
-        2.9599,
-        4.3782,
-        4.4117,
-        5.0035
+        2.7461,
+        2.9441,
+        4.3709,
+        4.3997,
+        4.9986
       ],
       "career": [
         {
@@ -230452,11 +229900,11 @@
       "aavHigh": 6801600,
       "estimateStd": 1.13,
       "compWeights": [
-        0.2175,
-        0.2172,
-        0.1959,
-        0.1954,
-        0.174
+        0.2178,
+        0.2174,
+        0.1958,
+        0.1953,
+        0.1737
       ],
       "avgCompTerm": 4.4,
       "termTable": [
@@ -230690,11 +230138,11 @@
         }
       ],
       "compDistances": [
-        2.809,
-        2.8125,
-        3.1189,
-        3.127,
-        3.5117
+        2.7912,
+        2.797,
+        3.1044,
+        3.1129,
+        3.5007
       ],
       "career": [
         {
@@ -231046,75 +230494,75 @@
       "seasonNo": 2,
       "signed": false,
       "actualContract": null,
-      "estimatedCapHitPct": 12.34,
-      "estimatedAAV": 12833600,
-      "ciLow": 7.61,
-      "ciHigh": 17.06,
-      "aavLow": 7914400,
-      "aavHigh": 17742400,
-      "estimateStd": 4.73,
+      "estimatedCapHitPct": 13.18,
+      "estimatedAAV": 13707200,
+      "ciLow": 8.85,
+      "ciHigh": 17.5,
+      "aavLow": 9204000,
+      "aavHigh": 18200000,
+      "estimateStd": 4.33,
       "compWeights": [
-        0.2544,
-        0.2408,
-        0.194,
-        0.1775,
-        0.1333
+        0.234,
+        0.2207,
+        0.204,
+        0.1784,
+        0.1629
       ],
-      "avgCompTerm": 6.6,
+      "avgCompTerm": 6.2,
       "termTable": [
         {
           "term": 1,
-          "capHitPct": 6.79,
-          "aav": 7061600,
+          "capHitPct": 7.25,
+          "aav": 7540000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 2,
-          "capHitPct": 8.18,
-          "aav": 8507200,
+          "capHitPct": 8.73,
+          "aav": 9079200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 9.56,
-          "aav": 9942400,
+          "capHitPct": 10.21,
+          "aav": 10618400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 4,
-          "capHitPct": 10.95,
-          "aav": 11388000,
+          "capHitPct": 11.7,
+          "aav": 12168000,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 5,
-          "capHitPct": 12.34,
-          "aav": 12833600,
+          "capHitPct": 13.18,
+          "aav": 13707200,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 6,
-          "capHitPct": 12.34,
-          "aav": 12833600,
+          "capHitPct": 13.18,
+          "aav": 13707200,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 7,
-          "capHitPct": 12.34,
-          "aav": 12833600,
+          "capHitPct": 13.18,
+          "aav": 13707200,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 8,
-          "capHitPct": 12.34,
-          "aav": 12833600,
+          "capHitPct": 13.18,
+          "aav": 13707200,
           "regime": "ufa",
           "ufaYrsBought": 3
         }
@@ -231189,6 +230637,40 @@
           "seasonNo": 3
         },
         {
+          "playerId": 8484166,
+          "name": "Adam Fantilli",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 21,
+          "ufaYear": 2030,
+          "height": "74",
+          "weight": "205",
+          "shoots": "L",
+          "draftOverall": 3,
+          "draftBucket": 1,
+          "term": 6,
+          "value": 82500000,
+          "aav": 13750000,
+          "capHitPct": 14.4,
+          "gp": 82,
+          "goals": 24,
+          "assists": 35,
+          "points": 59,
+          "ppg": 0.72,
+          "evPoints": 46,
+          "toi": 18.9,
+          "careerGP": 213,
+          "careerPoints": 140,
+          "careerEVPoints": 118,
+          "careerPPG": 0.66,
+          "careerEVPPG": 0.55,
+          "careerTOI": 17.36,
+          "careerGPPct": 86.59,
+          "seasonNo": 3
+        },
+        {
           "playerId": 8483445,
           "name": "Cutter Gauthier",
           "position": "Winger",
@@ -231255,48 +230737,14 @@
           "careerTOI": 15.4,
           "careerGPPct": 69.82,
           "seasonNo": 4
-        },
-        {
-          "playerId": 8482093,
-          "name": "Seth Jarvis",
-          "position": "Winger",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20232024,
-          "age": 22,
-          "ufaYear": 2028,
-          "height": "70",
-          "weight": "181",
-          "shoots": "R",
-          "draftOverall": 13,
-          "draftBucket": 2,
-          "term": 8,
-          "value": 59360696,
-          "aav": 7420087,
-          "capHitPct": 8.89,
-          "gp": 81,
-          "goals": 33,
-          "assists": 34,
-          "points": 67,
-          "ppg": 0.83,
-          "evPoints": 44,
-          "toi": 18.75,
-          "careerGP": 231,
-          "careerPoints": 146,
-          "careerEVPoints": 111,
-          "careerPPG": 0.63,
-          "careerEVPPG": 0.48,
-          "careerTOI": 16.28,
-          "careerGPPct": 93.9,
-          "seasonNo": 3
         }
       ],
       "compDistances": [
-        2.5937,
-        2.7398,
-        3.4008,
-        3.7175,
-        4.9488
+        2.5787,
+        2.7342,
+        2.9591,
+        3.383,
+        3.7052
       ],
       "career": [
         {
@@ -231405,6 +230853,38 @@
             "toi": 19.15
           }
         ],
+        "8484166": [
+          {
+            "season": 20232024,
+            "age": 19,
+            "gp": 49,
+            "points": 27,
+            "ppg": 0.55,
+            "evPoints": 24,
+            "evPPG": 0.49,
+            "toi": 15.71
+          },
+          {
+            "season": 20242025,
+            "age": 20,
+            "gp": 82,
+            "points": 54,
+            "ppg": 0.66,
+            "evPoints": 48,
+            "evPPG": 0.59,
+            "toi": 17.48
+          },
+          {
+            "season": 20252026,
+            "age": 21,
+            "gp": 82,
+            "points": 59,
+            "ppg": 0.72,
+            "evPoints": 46,
+            "evPPG": 0.56,
+            "toi": 18.9
+          }
+        ],
         "8483445": [
           {
             "season": 20232024,
@@ -231487,58 +230967,6 @@
             "evPoints": 30,
             "evPPG": 0.4,
             "toi": 15.32
-          }
-        ],
-        "8482093": [
-          {
-            "season": 20212022,
-            "age": 20,
-            "gp": 68,
-            "points": 40,
-            "ppg": 0.59,
-            "evPoints": 34,
-            "evPPG": 0.5,
-            "toi": 13.88
-          },
-          {
-            "season": 20222023,
-            "age": 21,
-            "gp": 82,
-            "points": 39,
-            "ppg": 0.48,
-            "evPoints": 33,
-            "evPPG": 0.4,
-            "toi": 16.2
-          },
-          {
-            "season": 20232024,
-            "age": 22,
-            "gp": 81,
-            "points": 67,
-            "ppg": 0.83,
-            "evPoints": 44,
-            "evPPG": 0.54,
-            "toi": 18.75
-          },
-          {
-            "season": 20242025,
-            "age": 23,
-            "gp": 73,
-            "points": 67,
-            "ppg": 0.92,
-            "evPoints": 41,
-            "evPPG": 0.56,
-            "toi": 19.36
-          },
-          {
-            "season": 20252026,
-            "age": 24,
-            "gp": 71,
-            "points": 66,
-            "ppg": 0.93,
-            "evPoints": 39,
-            "evPPG": 0.55,
-            "toi": 18.88
           }
         ]
       }
@@ -232652,11 +232080,11 @@
       "aavHigh": 1268800,
       "estimateStd": 0.21,
       "compWeights": [
-        0.297,
-        0.2958,
-        0.1485,
-        0.1447,
-        0.1141
+        0.2973,
+        0.296,
+        0.1486,
+        0.1448,
+        0.1133
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -232890,11 +232318,11 @@
         }
       ],
       "compDistances": [
-        1.9771,
-        1.9853,
-        3.9542,
-        4.0576,
-        5.1474
+        1.9571,
+        1.9653,
+        3.9143,
+        4.0183,
+        5.137
       ],
       "career": [
         {
@@ -234072,11 +233500,11 @@
       "aavHigh": 1268800,
       "estimateStd": 0.21,
       "compWeights": [
-        0.2974,
-        0.2969,
-        0.1486,
-        0.1438,
-        0.1133
+        0.2976,
+        0.2972,
+        0.1488,
+        0.1439,
+        0.1125
       ],
       "avgCompTerm": 2.4,
       "termTable": [
@@ -234310,11 +233738,11 @@
         }
       ],
       "compDistances": [
-        1.9744,
-        1.9771,
-        3.9501,
-        4.0828,
-        5.1826
+        1.9544,
+        1.9571,
+        3.9102,
+        4.0435,
+        5.172
       ],
       "career": [
         {
@@ -234454,11 +233882,11 @@
       "aavHigh": 1081600,
       "estimateStd": 0.1,
       "compWeights": [
-        0.5185,
-        0.2967,
-        0.1077,
+        0.5179,
+        0.2963,
+        0.1085,
         0.0408,
-        0.0363
+        0.0365
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -234692,11 +234120,11 @@
         }
       ],
       "compDistances": [
-        0.4153,
-        0.7259,
-        1.9988,
-        5.2787,
-        5.9377
+        0.4144,
+        0.7243,
+        1.9789,
+        5.2604,
+        5.8778
       ],
       "career": [
         {
@@ -237500,11 +236928,11 @@
       "aavHigh": 5345600,
       "estimateStd": 0.73,
       "compWeights": [
-        0.222,
+        0.2228,
         0.2097,
-        0.1964,
-        0.1907,
-        0.1812
+        0.1959,
+        0.1903,
+        0.1814
       ],
       "avgCompTerm": 3.4,
       "termTable": [
@@ -237738,11 +237166,11 @@
         }
       ],
       "compDistances": [
-        2.6161,
-        2.7706,
-        2.9581,
-        3.0457,
-        3.205
+        2.5988,
+        2.7613,
+        2.9551,
+        3.0432,
+        3.1922
       ],
       "career": [
         {
@@ -238940,19 +238368,19 @@
         "startSeason": "2027-2028",
         "isExtension": true
       },
-      "estimatedCapHitPct": 1.6,
-      "estimatedAAV": 1664000,
+      "estimatedCapHitPct": 1.61,
+      "estimatedAAV": 1674400,
       "ciLow": 0.49,
-      "ciHigh": 2.72,
+      "ciHigh": 2.73,
       "aavLow": 509600,
-      "aavHigh": 2828800,
+      "aavHigh": 2839200,
       "estimateStd": 1.12,
       "compWeights": [
-        0.2346,
-        0.2049,
-        0.1934,
-        0.1866,
-        0.1805
+        0.2358,
+        0.2047,
+        0.1932,
+        0.1863,
+        0.18
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -238972,43 +238400,43 @@
         },
         {
           "term": 3,
-          "capHitPct": 1.21,
-          "aav": 1258400,
+          "capHitPct": 1.22,
+          "aav": 1268800,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 4,
-          "capHitPct": 1.6,
-          "aav": 1664000,
+          "capHitPct": 1.61,
+          "aav": 1674400,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 5,
-          "capHitPct": 2.28,
-          "aav": 2371200,
+          "capHitPct": 2.29,
+          "aav": 2381600,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 6,
-          "capHitPct": 2.96,
-          "aav": 3078400,
+          "capHitPct": 2.97,
+          "aav": 3088800,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 7,
-          "capHitPct": 3.65,
-          "aav": 3796000,
+          "capHitPct": 3.66,
+          "aav": 3806400,
           "regime": "ufa",
           "ufaYrsBought": 3
         },
         {
           "term": 8,
-          "capHitPct": 4.33,
-          "aav": 4503200,
+          "capHitPct": 4.34,
+          "aav": 4513600,
           "regime": "ufa",
           "ufaYrsBought": 4
         }
@@ -239186,11 +238614,11 @@
         }
       ],
       "compDistances": [
-        4.16,
-        4.7629,
-        5.0443,
-        5.228,
-        5.406
+        4.1211,
+        4.7492,
+        5.0318,
+        5.2172,
+        5.3988
       ],
       "career": [
         {
@@ -241676,13 +241104,13 @@
       "ciHigh": 6.23,
       "aavLow": 1248000,
       "aavHigh": 6479200,
-      "estimateStd": 2.52,
+      "estimateStd": 2.51,
       "compWeights": [
-        0.2221,
-        0.2168,
-        0.2055,
-        0.1781,
-        0.1774
+        0.2227,
+        0.2163,
+        0.2051,
+        0.1783,
+        0.1776
       ],
       "avgCompTerm": 4.0,
       "termTable": [
@@ -241916,11 +241344,11 @@
         }
       ],
       "compDistances": [
-        4.92,
-        5.0385,
-        5.3154,
-        6.1327,
-        6.1582
+        4.884,
+        5.0274,
+        5.3019,
+        6.1003,
+        6.1237
       ],
       "career": [
         {
@@ -242185,16 +241613,16 @@
       "estimatedCapHitPct": 10.77,
       "estimatedAAV": 11200800,
       "ciLow": 7.32,
-      "ciHigh": 14.23,
+      "ciHigh": 14.22,
       "aavLow": 7612800,
-      "aavHigh": 14799200,
+      "aavHigh": 14788800,
       "estimateStd": 3.45,
       "compWeights": [
-        0.2605,
+        0.2602,
         0.201,
-        0.1843,
-        0.1785,
-        0.1756
+        0.1842,
+        0.1789,
+        0.1757
       ],
       "avgCompTerm": 6.2,
       "termTable": [
@@ -242428,11 +241856,11 @@
         }
       ],
       "compDistances": [
-        8.8948,
-        11.5269,
-        12.5709,
-        12.9793,
-        13.1927
+        8.8638,
+        11.4765,
+        12.5215,
+        12.8913,
+        13.1255
       ],
       "career": [
         {
@@ -244849,16 +244277,16 @@
       "estimatedCapHitPct": 9.09,
       "estimatedAAV": 9453600,
       "ciLow": 6.37,
-      "ciHigh": 11.81,
+      "ciHigh": 11.82,
       "aavLow": 6624800,
-      "aavHigh": 12282400,
+      "aavHigh": 12292800,
       "estimateStd": 2.72,
       "compWeights": [
-        0.2473,
-        0.2099,
-        0.1859,
-        0.1805,
-        0.1764
+        0.247,
+        0.21,
+        0.1857,
+        0.1808,
+        0.1766
       ],
       "avgCompTerm": 6.0,
       "termTable": [
@@ -245092,11 +244520,11 @@
         }
       ],
       "compDistances": [
-        7.3551,
-        8.6685,
-        9.7859,
-        10.0783,
-        10.3111
+        7.3483,
+        8.6419,
+        9.7731,
+        10.0356,
+        10.278
       ],
       "career": [
         {
@@ -245446,10 +244874,10 @@
       "aavHigh": 7685600,
       "estimateStd": 0.82,
       "compWeights": [
-        0.2486,
-        0.2206,
+        0.2482,
+        0.2211,
         0.1815,
-        0.1784,
+        0.1783,
         0.1709
       ],
       "avgCompTerm": 4.6,
@@ -245684,11 +245112,11 @@
         }
       ],
       "compDistances": [
-        2.6665,
-        3.005,
-        3.6532,
-        3.7173,
-        3.8793
+        2.661,
+        2.9864,
+        3.6383,
+        3.704,
+        3.863
       ],
       "career": [
         {
@@ -246030,19 +245458,19 @@
         "startSeason": "2027-2028",
         "isExtension": true
       },
-      "estimatedCapHitPct": 11.85,
-      "estimatedAAV": 12324000,
+      "estimatedCapHitPct": 11.86,
+      "estimatedAAV": 12334400,
       "ciLow": 8.29,
-      "ciHigh": 15.41,
+      "ciHigh": 15.42,
       "aavLow": 8621600,
-      "aavHigh": 16026400,
+      "aavHigh": 16036800,
       "estimateStd": 3.56,
       "compWeights": [
-        0.2679,
-        0.2448,
-        0.1636,
-        0.1634,
-        0.1603
+        0.2691,
+        0.2443,
+        0.1633,
+        0.1632,
+        0.16
       ],
       "avgCompTerm": 6.8,
       "termTable": [
@@ -246055,50 +245483,50 @@
         },
         {
           "term": 2,
-          "capHitPct": 7.85,
-          "aav": 8164000,
+          "capHitPct": 7.86,
+          "aav": 8174400,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 3,
-          "capHitPct": 9.18,
-          "aav": 9547200,
+          "capHitPct": 9.19,
+          "aav": 9557600,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 4,
-          "capHitPct": 10.52,
-          "aav": 10940800,
+          "capHitPct": 10.53,
+          "aav": 10951200,
           "regime": "bridge",
           "ufaYrsBought": 0
         },
         {
           "term": 5,
-          "capHitPct": 11.85,
-          "aav": 12324000,
+          "capHitPct": 11.86,
+          "aav": 12334400,
           "regime": "crossover",
           "ufaYrsBought": 0
         },
         {
           "term": 6,
-          "capHitPct": 11.85,
-          "aav": 12324000,
+          "capHitPct": 11.86,
+          "aav": 12334400,
           "regime": "ufa",
           "ufaYrsBought": 1
         },
         {
           "term": 7,
-          "capHitPct": 11.85,
-          "aav": 12324000,
+          "capHitPct": 11.86,
+          "aav": 12334400,
           "regime": "ufa",
           "ufaYrsBought": 2
         },
         {
           "term": 8,
-          "capHitPct": 11.85,
-          "aav": 12324000,
+          "capHitPct": 11.86,
+          "aav": 12334400,
           "regime": "ufa",
           "ufaYrsBought": 3
         }
@@ -246173,40 +245601,6 @@
           "seasonNo": 3
         },
         {
-          "playerId": 8483431,
-          "name": "Logan Cooley",
-          "position": "Center",
-          "positionGroup": "Forward",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 22,
-          "ufaYear": 2030,
-          "height": "72",
-          "weight": "192",
-          "shoots": "L",
-          "draftOverall": 3,
-          "draftBucket": 1,
-          "term": 8,
-          "value": 80000000,
-          "aav": 10000000,
-          "capHitPct": 10.47,
-          "gp": 54,
-          "goals": 24,
-          "assists": 19,
-          "points": 43,
-          "ppg": 0.8,
-          "evPoints": 31,
-          "toi": 17.33,
-          "careerGP": 211,
-          "careerPoints": 152,
-          "careerEVPoints": 106,
-          "careerPPG": 0.72,
-          "careerEVPPG": 0.5,
-          "careerTOI": 17.0,
-          "careerGPPct": 85.77,
-          "seasonNo": 3
-        },
-        {
           "playerId": 8479542,
           "name": "Brandon Hagel",
           "position": "Winger",
@@ -246239,6 +245633,40 @@
           "careerTOI": 16.01,
           "careerGPPct": 71.46,
           "seasonNo": 5
+        },
+        {
+          "playerId": 8483431,
+          "name": "Logan Cooley",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 22,
+          "ufaYear": 2030,
+          "height": "72",
+          "weight": "192",
+          "shoots": "L",
+          "draftOverall": 3,
+          "draftBucket": 1,
+          "term": 8,
+          "value": 80000000,
+          "aav": 10000000,
+          "capHitPct": 10.47,
+          "gp": 54,
+          "goals": 24,
+          "assists": 19,
+          "points": 43,
+          "ppg": 0.8,
+          "evPoints": 31,
+          "toi": 17.33,
+          "careerGP": 211,
+          "careerPoints": 152,
+          "careerEVPoints": 106,
+          "careerPPG": 0.72,
+          "careerEVPPG": 0.5,
+          "careerTOI": 17.0,
+          "careerGPPct": 85.77,
+          "seasonNo": 3
         },
         {
           "playerId": 8482077,
@@ -246276,11 +245704,11 @@
         }
       ],
       "compDistances": [
-        10.4877,
-        11.4764,
-        17.1761,
-        17.1949,
-        17.5297
+        10.3951,
+        11.4491,
+        17.1279,
+        17.1376,
+        17.4799
       ],
       "career": [
         {
@@ -246419,38 +245847,6 @@
             "toi": 20.87
           }
         ],
-        "8483431": [
-          {
-            "season": 20232024,
-            "age": 20,
-            "gp": 82,
-            "points": 44,
-            "ppg": 0.54,
-            "evPoints": 30,
-            "evPPG": 0.37,
-            "toi": 15.81
-          },
-          {
-            "season": 20242025,
-            "age": 21,
-            "gp": 75,
-            "points": 65,
-            "ppg": 0.87,
-            "evPoints": 45,
-            "evPPG": 0.6,
-            "toi": 17.86
-          },
-          {
-            "season": 20252026,
-            "age": 22,
-            "gp": 54,
-            "points": 43,
-            "ppg": 0.8,
-            "evPoints": 31,
-            "evPPG": 0.57,
-            "toi": 17.33
-          }
-        ],
         "8479542": [
           {
             "season": 20192020,
@@ -246521,6 +245917,38 @@
             "evPoints": 61,
             "evPPG": 0.86,
             "toi": 19.76
+          }
+        ],
+        "8483431": [
+          {
+            "season": 20232024,
+            "age": 20,
+            "gp": 82,
+            "points": 44,
+            "ppg": 0.54,
+            "evPoints": 30,
+            "evPPG": 0.37,
+            "toi": 15.81
+          },
+          {
+            "season": 20242025,
+            "age": 21,
+            "gp": 75,
+            "points": 65,
+            "ppg": 0.87,
+            "evPoints": 45,
+            "evPPG": 0.6,
+            "toi": 17.86
+          },
+          {
+            "season": 20252026,
+            "age": 22,
+            "gp": 54,
+            "points": 43,
+            "ppg": 0.8,
+            "evPoints": 31,
+            "evPPG": 0.57,
+            "toi": 17.33
           }
         ],
         "8482077": [
@@ -248712,9 +248140,9 @@
       "aavHigh": 1248000,
       "estimateStd": 0.12,
       "compWeights": [
-        0.31,
-        0.2219,
-        0.1757,
+        0.3094,
+        0.2224,
+        0.1759,
         0.1483,
         0.144
       ],
@@ -248950,11 +248378,11 @@
         }
       ],
       "compDistances": [
-        2.3293,
-        3.2545,
-        4.1092,
-        4.8689,
-        5.0162
+        2.3279,
+        3.2383,
+        4.0959,
+        4.8552,
+        5.0027
       ],
       "career": [
         {
@@ -249102,6 +248530,528 @@
       }
     },
     {
+      "playerId": 8484197,
+      "name": "Oliver Moore",
+      "position": "Center",
+      "positionGroup": "Forward",
+      "signingStatus": "RFA",
+      "contractYear": 20252026,
+      "age": 21,
+      "ufaYear": 2032,
+      "height": "71",
+      "weight": "187",
+      "shoots": "L",
+      "draftOverall": 19,
+      "draftBucket": 3,
+      "term": 1,
+      "value": 0,
+      "aav": 0,
+      "capHitPct": 0.0,
+      "gp": 51,
+      "goals": 5,
+      "assists": 14,
+      "points": 19,
+      "ppg": 0.37,
+      "evPoints": 14,
+      "toi": 12.84,
+      "careerGP": 60,
+      "careerPoints": 23,
+      "careerEVPoints": 18,
+      "careerPPG": 0.38,
+      "careerEVPPG": 0.3,
+      "careerTOI": 13.21,
+      "careerGPPct": 36.59,
+      "seasonNo": 2,
+      "signed": true,
+      "actualContract": {
+        "term": 5,
+        "value": 21250000,
+        "aav": 4250000,
+        "capHitPct": 3.74,
+        "signingDate": "2026-09-24",
+        "team": "Blackhawks",
+        "signingStatus": "UFA",
+        "startSeason": "2027-2028",
+        "isExtension": true
+      },
+      "estimatedCapHitPct": 5.21,
+      "estimatedAAV": 5418400,
+      "ciLow": 3.68,
+      "ciHigh": 6.74,
+      "aavLow": 3827200,
+      "aavHigh": 7009600,
+      "estimateStd": 1.53,
+      "compWeights": [
+        0.2186,
+        0.2087,
+        0.2028,
+        0.1861,
+        0.1837
+      ],
+      "avgCompTerm": 4.8,
+      "termTable": [
+        {
+          "term": 1,
+          "capHitPct": 4.82,
+          "aav": 5012800,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 2,
+          "capHitPct": 4.9,
+          "aav": 5096000,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 3,
+          "capHitPct": 4.98,
+          "aav": 5179200,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 4,
+          "capHitPct": 5.06,
+          "aav": 5262400,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 5,
+          "capHitPct": 5.13,
+          "aav": 5335200,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 6,
+          "capHitPct": 5.21,
+          "aav": 5418400,
+          "regime": "crossover",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 7,
+          "capHitPct": 5.25,
+          "aav": 5460000,
+          "regime": "ufa",
+          "ufaYrsBought": 1
+        },
+        {
+          "term": 8,
+          "capHitPct": 5.28,
+          "aav": 5491200,
+          "regime": "ufa",
+          "ufaYrsBought": 2
+        }
+      ],
+      "comps": [
+        {
+          "playerId": 8482679,
+          "name": "Matt Coronato",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 22,
+          "ufaYear": 2030,
+          "height": "70",
+          "weight": "183",
+          "shoots": "R",
+          "draftOverall": 13,
+          "draftBucket": 2,
+          "term": 7,
+          "value": 45500000,
+          "aav": 6500000,
+          "capHitPct": 7.39,
+          "gp": 77,
+          "goals": 24,
+          "assists": 23,
+          "points": 47,
+          "ppg": 0.61,
+          "evPoints": 30,
+          "toi": 17.58,
+          "careerGP": 112,
+          "careerPoints": 56,
+          "careerEVPoints": 38,
+          "careerPPG": 0.5,
+          "careerEVPPG": 0.34,
+          "careerTOI": 14.94,
+          "careerGPPct": 45.53,
+          "seasonNo": 3
+        },
+        {
+          "playerId": 8482092,
+          "name": "Ridly Greig",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 22,
+          "ufaYear": 2030,
+          "height": "72",
+          "weight": "185",
+          "shoots": "L",
+          "draftOverall": 28,
+          "draftBucket": 3,
+          "term": 4,
+          "value": 13000000,
+          "aav": 3250000,
+          "capHitPct": 3.69,
+          "gp": 78,
+          "goals": 13,
+          "assists": 21,
+          "points": 34,
+          "ppg": 0.44,
+          "evPoints": 21,
+          "toi": 17.08,
+          "careerGP": 170,
+          "careerPoints": 69,
+          "careerEVPoints": 50,
+          "careerPPG": 0.41,
+          "careerEVPPG": 0.29,
+          "careerTOI": 14.91,
+          "careerGPPct": 69.11,
+          "seasonNo": 3
+        },
+        {
+          "playerId": 8484911,
+          "name": "Collin Graf",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "73",
+          "weight": "194",
+          "shoots": "R",
+          "draftOverall": 999,
+          "draftBucket": 6,
+          "term": 3,
+          "value": 12750000,
+          "aav": 4250000,
+          "capHitPct": 4.45,
+          "gp": 81,
+          "goals": 21,
+          "assists": 25,
+          "points": 46,
+          "ppg": 0.57,
+          "evPoints": 42,
+          "toi": 16.44,
+          "careerGP": 121,
+          "careerPoints": 59,
+          "careerEVPoints": 49,
+          "careerPPG": 0.49,
+          "careerEVPPG": 0.41,
+          "careerTOI": 16.3,
+          "careerGPPct": 49.19,
+          "seasonNo": 3
+        },
+        {
+          "playerId": 8482737,
+          "name": "Zachary Bolduc",
+          "position": "Winger",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 23,
+          "ufaYear": 2030,
+          "height": "72",
+          "weight": "187",
+          "shoots": "L",
+          "draftOverall": 17,
+          "draftBucket": 3,
+          "term": 4,
+          "value": 16800000,
+          "aav": 4200000,
+          "capHitPct": 4.4,
+          "gp": 78,
+          "goals": 12,
+          "assists": 18,
+          "points": 30,
+          "ppg": 0.38,
+          "evPoints": 24,
+          "toi": 13.63,
+          "careerGP": 175,
+          "careerPoints": 75,
+          "careerEVPoints": 57,
+          "careerPPG": 0.43,
+          "careerEVPPG": 0.33,
+          "careerTOI": 12.82,
+          "careerGPPct": 71.14,
+          "seasonNo": 3
+        },
+        {
+          "playerId": 8482113,
+          "name": "Anton Lundell",
+          "position": "Center",
+          "positionGroup": "Forward",
+          "signingStatus": "RFA",
+          "contractYear": 20232024,
+          "age": 22,
+          "ufaYear": 2028,
+          "height": "73",
+          "weight": "196",
+          "shoots": "L",
+          "draftOverall": 12,
+          "draftBucket": 2,
+          "term": 6,
+          "value": 30000000,
+          "aav": 5000000,
+          "capHitPct": 5.99,
+          "gp": 78,
+          "goals": 13,
+          "assists": 22,
+          "points": 35,
+          "ppg": 0.45,
+          "evPoints": 29,
+          "toi": 15.38,
+          "careerGP": 216,
+          "careerPoints": 112,
+          "careerEVPoints": 91,
+          "careerPPG": 0.52,
+          "careerEVPPG": 0.42,
+          "careerTOI": 15.83,
+          "careerGPPct": 87.8,
+          "seasonNo": 3
+        }
+      ],
+      "compDistances": [
+        4.948,
+        5.1825,
+        5.3333,
+        5.8122,
+        5.8875
+      ],
+      "career": [
+        {
+          "season": 20242025,
+          "age": 20,
+          "gp": 9,
+          "points": 4,
+          "ppg": 0.44,
+          "evPoints": 4,
+          "evPPG": 0.44,
+          "toi": 13.58
+        },
+        {
+          "season": 20252026,
+          "age": 21,
+          "gp": 51,
+          "points": 19,
+          "ppg": 0.37,
+          "evPoints": 14,
+          "evPPG": 0.27,
+          "toi": 12.84
+        }
+      ],
+      "compCareers": {
+        "8482679": [
+          {
+            "season": 20222023,
+            "age": 20,
+            "gp": 1,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 14.63
+          },
+          {
+            "season": 20232024,
+            "age": 21,
+            "gp": 34,
+            "points": 9,
+            "ppg": 0.26,
+            "evPoints": 8,
+            "evPPG": 0.24,
+            "toi": 12.61
+          },
+          {
+            "season": 20242025,
+            "age": 22,
+            "gp": 77,
+            "points": 47,
+            "ppg": 0.61,
+            "evPoints": 30,
+            "evPPG": 0.39,
+            "toi": 17.58
+          },
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 80,
+            "points": 45,
+            "ppg": 0.56,
+            "evPoints": 30,
+            "evPPG": 0.38,
+            "toi": 16.65
+          }
+        ],
+        "8482092": [
+          {
+            "season": 20222023,
+            "age": 20,
+            "gp": 20,
+            "points": 9,
+            "ppg": 0.45,
+            "evPoints": 6,
+            "evPPG": 0.3,
+            "toi": 12.9
+          },
+          {
+            "season": 20232024,
+            "age": 21,
+            "gp": 72,
+            "points": 26,
+            "ppg": 0.36,
+            "evPoints": 23,
+            "evPPG": 0.32,
+            "toi": 14.74
+          },
+          {
+            "season": 20242025,
+            "age": 22,
+            "gp": 78,
+            "points": 34,
+            "ppg": 0.44,
+            "evPoints": 21,
+            "evPPG": 0.27,
+            "toi": 17.08
+          },
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 77,
+            "points": 35,
+            "ppg": 0.45,
+            "evPoints": 31,
+            "evPPG": 0.4,
+            "toi": 16.69
+          }
+        ],
+        "8484911": [
+          {
+            "season": 20232024,
+            "age": 21,
+            "gp": 7,
+            "points": 2,
+            "ppg": 0.29,
+            "evPoints": 1,
+            "evPPG": 0.14,
+            "toi": 16.6
+          },
+          {
+            "season": 20242025,
+            "age": 22,
+            "gp": 33,
+            "points": 11,
+            "ppg": 0.33,
+            "evPoints": 6,
+            "evPPG": 0.18,
+            "toi": 15.86
+          },
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 81,
+            "points": 46,
+            "ppg": 0.57,
+            "evPoints": 42,
+            "evPPG": 0.52,
+            "toi": 16.44
+          }
+        ],
+        "8482737": [
+          {
+            "season": 20232024,
+            "age": 21,
+            "gp": 25,
+            "points": 9,
+            "ppg": 0.36,
+            "evPoints": 9,
+            "evPPG": 0.36,
+            "toi": 12.02
+          },
+          {
+            "season": 20242025,
+            "age": 22,
+            "gp": 72,
+            "points": 36,
+            "ppg": 0.5,
+            "evPoints": 24,
+            "evPPG": 0.33,
+            "toi": 12.81
+          },
+          {
+            "season": 20252026,
+            "age": 23,
+            "gp": 78,
+            "points": 30,
+            "ppg": 0.38,
+            "evPoints": 24,
+            "evPPG": 0.31,
+            "toi": 13.63
+          }
+        ],
+        "8482113": [
+          {
+            "season": 20212022,
+            "age": 20,
+            "gp": 65,
+            "points": 44,
+            "ppg": 0.68,
+            "evPoints": 36,
+            "evPPG": 0.55,
+            "toi": 15.74
+          },
+          {
+            "season": 20222023,
+            "age": 21,
+            "gp": 73,
+            "points": 33,
+            "ppg": 0.45,
+            "evPoints": 26,
+            "evPPG": 0.36,
+            "toi": 16.37
+          },
+          {
+            "season": 20232024,
+            "age": 22,
+            "gp": 78,
+            "points": 35,
+            "ppg": 0.45,
+            "evPoints": 29,
+            "evPPG": 0.37,
+            "toi": 15.38
+          },
+          {
+            "season": 20242025,
+            "age": 23,
+            "gp": 79,
+            "points": 45,
+            "ppg": 0.57,
+            "evPoints": 37,
+            "evPPG": 0.47,
+            "toi": 16.71
+          },
+          {
+            "season": 20252026,
+            "age": 24,
+            "gp": 64,
+            "points": 44,
+            "ppg": 0.69,
+            "evPoints": 25,
+            "evPPG": 0.39,
+            "toi": 19.15
+          }
+        ]
+      }
+    },
+    {
       "playerId": 8484186,
       "name": "Ryan Leonard",
       "position": "Winger",
@@ -249154,11 +249104,11 @@
       "aavHigh": 6572800,
       "estimateStd": 2.57,
       "compWeights": [
-        0.2313,
-        0.2076,
-        0.2003,
-        0.1823,
-        0.1783
+        0.2311,
+        0.208,
+        0.2001,
+        0.1824,
+        0.1784
       ],
       "avgCompTerm": 4.0,
       "termTable": [
@@ -249392,11 +249342,11 @@
         }
       ],
       "compDistances": [
-        5.3288,
-        5.9371,
-        6.1539,
-        6.7607,
-        6.9128
+        5.3135,
+        5.9038,
+        6.1385,
+        6.7309,
+        6.8847
       ],
       "career": [
         {
@@ -250412,11 +250362,11 @@
       "aavHigh": 1216800,
       "estimateStd": 0.12,
       "compWeights": [
-        0.3238,
-        0.1879,
-        0.1842,
-        0.1571,
-        0.147
+        0.324,
+        0.1881,
+        0.1843,
+        0.157,
+        0.1466
       ],
       "avgCompTerm": 2.2,
       "termTable": [
@@ -250650,11 +250600,11 @@
         }
       ],
       "compDistances": [
-        1.804,
-        3.1092,
-        3.1707,
-        3.718,
-        3.9744
+        1.7964,
+        3.0951,
+        3.1581,
+        3.7074,
+        3.9697
       ],
       "career": [
         {
@@ -251580,11 +251530,11 @@
       "aavHigh": 2132000,
       "estimateStd": 0.61,
       "compWeights": [
-        0.3493,
-        0.1795,
-        0.1626,
-        0.1584,
-        0.1502
+        0.3507,
+        0.1792,
+        0.1621,
+        0.1582,
+        0.1497
       ],
       "avgCompTerm": 2.6,
       "termTable": [
@@ -251818,11 +251768,11 @@
         }
       ],
       "compDistances": [
-        2.0688,
-        4.0264,
-        4.4435,
-        4.562,
-        4.8105
+        2.0496,
+        4.0117,
+        4.4333,
+        4.5435,
+        4.8002
       ],
       "career": [
         {
@@ -252012,11 +251962,11 @@
       "aavHigh": 7862400,
       "estimateStd": 1.25,
       "compWeights": [
-        0.2275,
-        0.2121,
-        0.2037,
-        0.1799,
-        0.1768
+        0.2269,
+        0.2123,
+        0.2039,
+        0.18,
+        0.1769
       ],
       "avgCompTerm": 4.6,
       "termTable": [
@@ -252250,11 +252200,11 @@
         }
       ],
       "compDistances": [
-        2.6954,
-        2.8921,
-        3.0109,
-        3.4092,
-        3.4679
+        2.6907,
+        2.8762,
+        2.995,
+        3.393,
+        3.4523
       ],
       "career": [
         {

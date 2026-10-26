@@ -1,9 +1,9 @@
 {
   "meta": {
     "faClassYear": 2026,
-    "generatedAt": "2026-10-25T12:56:56.628679",
-    "signedCount": 245,
-    "pendingCount": 49,
+    "generatedAt": "2026-10-26T14:50:10.349626",
+    "signedCount": 246,
+    "pendingCount": 48,
     "currentCap": 104000000
   },
   "players": [
@@ -1233,12 +1233,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8475842": [
@@ -2633,12 +2633,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8476392": [
@@ -2765,409 +2765,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
-            "points": 4,
-            "ppg": 0.4,
-            "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
-          }
-        ]
-      }
-    },
-    {
-      "playerId": 8482100,
-      "name": "Alexander Nikishin",
-      "position": "Defense",
-      "positionGroup": "Defense",
-      "signingStatus": "RFA",
-      "contractYear": 20252026,
-      "age": 24,
-      "ufaYear": 2029,
-      "height": "75",
-      "weight": "218",
-      "shoots": "L",
-      "draftOverall": 69,
-      "draftBucket": 5,
-      "term": 1,
-      "value": 0,
-      "aav": 0,
-      "capHitPct": 0.0,
-      "gp": 81,
-      "goals": 11,
-      "assists": 22,
-      "points": 33,
-      "ppg": 0.41,
-      "evPoints": 22,
-      "toi": 18.18,
-      "careerGP": 81,
-      "careerPoints": 33,
-      "careerEVPoints": 22,
-      "careerPPG": 0.41,
-      "careerEVPPG": 0.27,
-      "careerTOI": 18.18,
-      "careerGPPct": 98.78,
-      "seasonNo": 1,
-      "signed": false,
-      "actualContract": null,
-      "estimatedCapHitPct": 1.17,
-      "estimatedAAV": 1216800,
-      "ciLow": 0.97,
-      "ciHigh": 1.37,
-      "aavLow": 1008800,
-      "aavHigh": 1424800,
-      "estimateStd": 0.2,
-      "compWeights": [
-        0.4679,
-        0.2176,
-        0.1614,
-        0.1531
-      ],
-      "avgCompTerm": 2.5,
-      "termTable": [
-        {
-          "term": 1,
-          "capHitPct": 0.31,
-          "aav": 322400,
-          "regime": "bridge",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 2,
-          "capHitPct": 0.74,
-          "aav": 769600,
-          "regime": "bridge",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 3,
-          "capHitPct": 1.17,
-          "aav": 1216800,
-          "regime": "crossover",
-          "ufaYrsBought": 0
-        },
-        {
-          "term": 4,
-          "capHitPct": 1.85,
-          "aav": 1924000,
-          "regime": "ufa",
-          "ufaYrsBought": 1
-        },
-        {
-          "term": 5,
-          "capHitPct": 2.53,
-          "aav": 2631200,
-          "regime": "ufa",
-          "ufaYrsBought": 2
-        },
-        {
-          "term": 6,
-          "capHitPct": 3.22,
-          "aav": 3348800,
-          "regime": "ufa",
-          "ufaYrsBought": 3
-        },
-        {
-          "term": 7,
-          "capHitPct": 3.9,
-          "aav": 4056000,
-          "regime": "ufa",
-          "ufaYrsBought": 4
-        },
-        {
-          "term": 8,
-          "capHitPct": 4.58,
-          "aav": 4763200,
-          "regime": "ufa",
-          "ufaYrsBought": 5
-        }
-      ],
-      "comps": [
-        {
-          "playerId": 8481607,
-          "name": "Albert Johansson",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 24,
-          "ufaYear": 2028,
-          "height": "72",
-          "weight": "201",
-          "shoots": "L",
-          "draftOverall": 60,
-          "draftBucket": 4,
-          "term": 2,
-          "value": 2250000,
-          "aav": 1125000,
-          "capHitPct": 1.28,
-          "gp": 61,
-          "goals": 3,
-          "assists": 6,
-          "points": 9,
-          "ppg": 0.15,
-          "evPoints": 9,
-          "toi": 16.36,
-          "careerGP": 61,
-          "careerPoints": 9,
-          "careerEVPoints": 9,
-          "careerPPG": 0.15,
-          "careerEVPPG": 0.15,
-          "careerTOI": 16.36,
-          "careerGPPct": 74.39,
-          "seasonNo": 1
-        },
-        {
-          "playerId": 8482911,
-          "name": "Joel Nystrom",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20252026,
-          "age": 24,
-          "ufaYear": 2029,
-          "height": "71",
-          "weight": "179",
-          "shoots": "R",
-          "draftOverall": 219,
-          "draftBucket": 5,
-          "term": 4,
-          "value": 4900000,
-          "aav": 1225000,
-          "capHitPct": 1.28,
-          "gp": 38,
-          "goals": 1,
-          "assists": 9,
-          "points": 10,
-          "ppg": 0.26,
-          "evPoints": 10,
-          "toi": 15.19,
-          "careerGP": 38,
-          "careerPoints": 10,
-          "careerEVPoints": 10,
-          "careerPPG": 0.26,
-          "careerEVPPG": 0.26,
-          "careerTOI": 15.19,
-          "careerGPPct": 46.34,
-          "seasonNo": 1
-        },
-        {
-          "playerId": 8482482,
-          "name": "Adam Wilsby",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 24,
-          "ufaYear": 2028,
-          "height": "73",
-          "weight": "192",
-          "shoots": "L",
-          "draftOverall": 101,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1625000,
-          "aav": 812500,
-          "capHitPct": 0.92,
-          "gp": 23,
-          "goals": 1,
-          "assists": 4,
-          "points": 5,
-          "ppg": 0.22,
-          "evPoints": 5,
-          "toi": 18.1,
-          "careerGP": 23,
-          "careerPoints": 5,
-          "careerEVPoints": 5,
-          "careerPPG": 0.22,
-          "careerEVPPG": 0.22,
-          "careerTOI": 18.1,
-          "careerGPPct": 28.05,
-          "seasonNo": 1
-        },
-        {
-          "playerId": 8482929,
-          "name": "Emil Lilleberg",
-          "position": "Defense",
-          "positionGroup": "Defense",
-          "signingStatus": "RFA",
-          "contractYear": 20242025,
-          "age": 24,
-          "ufaYear": 2028,
-          "height": "74",
-          "weight": "216",
-          "shoots": "L",
-          "draftOverall": 107,
-          "draftBucket": 5,
-          "term": 2,
-          "value": 1650000,
-          "aav": 825000,
-          "capHitPct": 0.94,
-          "gp": 76,
-          "goals": 1,
-          "assists": 18,
-          "points": 19,
-          "ppg": 0.25,
-          "evPoints": 18,
-          "toi": 15.28,
-          "careerGP": 113,
-          "careerPoints": 24,
-          "careerEVPoints": 23,
-          "careerPPG": 0.21,
-          "careerEVPPG": 0.2,
-          "careerTOI": 15.74,
-          "careerGPPct": 68.9,
-          "seasonNo": 2
-        }
-      ],
-      "compDistances": [
-        0.9614,
-        2.0671,
-        2.788,
-        2.9381,
-        3.0285
-      ],
-      "career": [
-        {
-          "season": 20252026,
-          "age": 24,
-          "gp": 81,
-          "points": 33,
-          "ppg": 0.41,
-          "evPoints": 22,
-          "evPPG": 0.27,
-          "toi": 18.18
-        }
-      ],
-      "compCareers": {
-        "8481607": [
-          {
-            "season": 20242025,
-            "age": 24,
-            "gp": 61,
-            "points": 9,
-            "ppg": 0.15,
-            "evPoints": 9,
-            "evPPG": 0.15,
-            "toi": 16.36
-          },
-          {
-            "season": 20252026,
-            "age": 25,
-            "gp": 82,
-            "points": 11,
-            "ppg": 0.13,
-            "evPoints": 9,
-            "evPPG": 0.11,
-            "toi": 15.94
-          },
-          {
-            "season": 20262027,
-            "age": 26,
             "gp": 11,
-            "points": 1,
-            "ppg": 0.09,
-            "evPoints": 1,
-            "evPPG": 0.09,
-            "toi": 15.68
-          }
-        ],
-        "8482911": [
-          {
-            "season": 20252026,
-            "age": 24,
-            "gp": 38,
-            "points": 10,
-            "ppg": 0.26,
-            "evPoints": 10,
-            "evPPG": 0.26,
-            "toi": 15.19
-          }
-        ],
-        "8482482": [
-          {
-            "season": 20242025,
-            "age": 24,
-            "gp": 23,
-            "points": 5,
-            "ppg": 0.22,
-            "evPoints": 5,
-            "evPPG": 0.22,
-            "toi": 18.1
-          },
-          {
-            "season": 20252026,
-            "age": 25,
-            "gp": 58,
-            "points": 16,
-            "ppg": 0.28,
-            "evPoints": 16,
-            "evPPG": 0.28,
-            "toi": 17.01
-          },
-          {
-            "season": 20262027,
-            "age": 26,
-            "gp": 10,
-            "points": 5,
-            "ppg": 0.5,
+            "points": 4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
-          }
-        ],
-        "8482929": [
-          {
-            "season": 20232024,
-            "age": 23,
-            "gp": 37,
-            "points": 5,
-            "ppg": 0.14,
-            "evPoints": 5,
-            "evPPG": 0.14,
-            "toi": 16.2
-          },
-          {
-            "season": 20242025,
-            "age": 24,
-            "gp": 76,
-            "points": 19,
-            "ppg": 0.25,
-            "evPoints": 18,
-            "evPPG": 0.24,
-            "toi": 15.28
-          },
-          {
-            "season": 20252026,
-            "age": 25,
-            "gp": 50,
-            "points": 12,
-            "ppg": 0.24,
-            "evPoints": 12,
-            "evPPG": 0.24,
-            "toi": 17.31
-          },
-          {
-            "season": 20262027,
-            "age": 26,
-            "gp": 5,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 13.45
-          }
-        ],
-        "8482107": [
-          {
-            "season": 20252026,
-            "age": 24,
-            "gp": 18,
-            "points": 6,
-            "ppg": 0.33,
-            "evPoints": 5,
-            "evPPG": 0.28,
-            "toi": 16.9
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ]
       }
@@ -5031,12 +4634,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 11,
+            "gp": 12,
             "points": 6,
-            "ppg": 0.55,
+            "ppg": 0.5,
             "evPoints": 6,
-            "evPPG": 0.55,
-            "toi": 13.71
+            "evPPG": 0.5,
+            "toi": 13.47
           }
         ],
         "8481024": [
@@ -5073,11 +4676,11 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 12,
+            "gp": 13,
             "points": 8,
-            "ppg": 0.67,
+            "ppg": 0.62,
             "evPoints": 7,
-            "evPPG": 0.58,
+            "evPPG": 0.54,
             "toi": 14.24
           }
         ],
@@ -5105,12 +4708,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
-            "points": 0,
-            "ppg": 0.0,
+            "gp": 11,
+            "points": 1,
+            "ppg": 0.09,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 15.04
+            "toi": 14.93
           }
         ]
       }
@@ -5663,12 +5266,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ],
         "8476419": [
@@ -5815,12 +5418,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ],
         "8475791": [
@@ -7487,12 +7090,12 @@
           {
             "season": 20262027,
             "age": 37,
-            "gp": 10,
+            "gp": 11,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.91
+            "toi": 15.38
           }
         ]
       }
@@ -8127,12 +7730,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.66
+            "toi": 9.6
           }
         ],
         "8476392": [
@@ -8259,12 +7862,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ],
         "8475343": [
@@ -8533,12 +8136,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ]
       }
@@ -9557,12 +9160,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 15.25
+            "evPPG": 0.17,
+            "toi": 14.97
           }
         ],
         "8477810": [
@@ -13907,12 +13510,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8475791": [
@@ -14231,12 +13834,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ],
         "8475722": [
@@ -14525,12 +14128,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ]
       }
@@ -15761,12 +15364,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ]
       }
@@ -16835,12 +16438,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8473419": [
@@ -17890,12 +17493,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 5,
+            "gp": 6,
             "points": 1,
-            "ppg": 0.2,
+            "ppg": 0.17,
             "evPoints": 1,
-            "evPPG": 0.2,
-            "toi": 13.62
+            "evPPG": 0.17,
+            "toi": 13.69
           }
         ],
         "8480058": [
@@ -18623,12 +18226,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 16.12
+            "gp": 7,
+            "points": 1,
+            "ppg": 0.14,
+            "evPoints": 1,
+            "evPPG": 0.14,
+            "toi": 16.22
           }
         ],
         "8479388": [
@@ -19859,12 +19462,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8475343": [
@@ -21085,12 +20688,12 @@
           {
             "season": 20262027,
             "age": 37,
-            "gp": 10,
+            "gp": 11,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.91
+            "toi": 15.38
           }
         ],
         "8475188": [
@@ -22017,12 +21620,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8476419": [
@@ -22169,12 +21772,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ],
         "8476392": [
@@ -22301,12 +21904,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ],
         "8475722": [
@@ -23153,12 +22756,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 6,
+            "gp": 7,
             "points": 2,
-            "ppg": 0.33,
+            "ppg": 0.29,
             "evPoints": 2,
-            "evPPG": 0.33,
-            "toi": 23.5
+            "evPPG": 0.29,
+            "toi": 23.8
           }
         ],
         "8475200": [
@@ -24411,12 +24014,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 7,
+            "gp": 8,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 12.09
+            "toi": 11.73
           }
         ],
         "8478856": [
@@ -25921,12 +25524,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ]
       }
@@ -27846,12 +27449,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ],
         "8476419": [
@@ -27998,12 +27601,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ],
         "8479293": [
@@ -28354,12 +27957,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.66
+            "toi": 9.6
           }
         ]
       }
@@ -30441,11 +30044,11 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 10,
+            "gp": 11,
             "points": 1,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 1,
-            "evPPG": 0.1,
+            "evPPG": 0.09,
             "toi": 13.56
           }
         ],
@@ -31161,12 +30764,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8474586": [
@@ -31677,12 +31280,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ],
         "8475722": [
@@ -32387,12 +31990,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 8,
+            "gp": 9,
             "points": 3,
-            "ppg": 0.38,
+            "ppg": 0.33,
             "evPoints": 3,
-            "evPPG": 0.38,
-            "toi": 20.34
+            "evPPG": 0.33,
+            "toi": 20.15
           }
         ],
         "8476441": [
@@ -33695,12 +33298,12 @@
           {
             "season": 20262027,
             "age": 37,
-            "gp": 10,
+            "gp": 11,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.91
+            "toi": 15.38
           }
         ],
         "8475690": [
@@ -35297,12 +34900,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 12.86
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 13.02
           }
         ],
         "8478413": [
@@ -35399,11 +35002,11 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 10,
+            "gp": 11,
             "points": 1,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 1,
-            "evPPG": 0.1,
+            "evPPG": 0.09,
             "toi": 13.56
           }
         ],
@@ -35501,12 +35104,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 1,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 5.38
+            "gp": 2,
+            "points": 1,
+            "ppg": 0.5,
+            "evPoints": 1,
+            "evPPG": 0.5,
+            "toi": 7.08
           }
         ],
         "8476882": [
@@ -35643,12 +35246,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 8,
+            "gp": 9,
             "points": 5,
-            "ppg": 0.62,
+            "ppg": 0.56,
             "evPoints": 5,
-            "evPPG": 0.62,
-            "toi": 14.76
+            "evPPG": 0.56,
+            "toi": 15.23
           }
         ]
       }
@@ -36021,12 +35624,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 11,
-            "points": 6,
-            "ppg": 0.55,
+            "gp": 12,
+            "points": 8,
+            "ppg": 0.67,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 14.68
+            "evPPG": 0.17,
+            "toi": 14.8
           }
         ],
         "8481726": [
@@ -36063,12 +35666,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 14.1
+            "evPPG": 0.18,
+            "toi": 14.26
           }
         ],
         "8480355": [
@@ -36586,12 +36189,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 13.04
+            "evPPG": 0.18,
+            "toi": 12.98
           }
         ],
         "8480855": [
@@ -37881,12 +37484,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8474586": [
@@ -38519,12 +38122,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ]
       }
@@ -39151,12 +38754,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8477406": [
@@ -39355,12 +38958,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 13.69
+            "evPPG": 0.45,
+            "toi": 13.55
           }
         ]
       }
@@ -39743,12 +39346,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8476952": [
@@ -41671,12 +41274,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 6,
-            "points": 3,
-            "ppg": 0.5,
-            "evPoints": 2,
-            "evPPG": 0.33,
-            "toi": 22.17
+            "gp": 7,
+            "points": 4,
+            "ppg": 0.57,
+            "evPoints": 3,
+            "evPPG": 0.43,
+            "toi": 22.31
           }
         ],
         "8480873": [
@@ -41909,12 +41512,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 19.38
+            "evPPG": 0.27,
+            "toi": 19.04
           }
         ]
       }
@@ -42447,12 +42050,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ],
         "8479293": [
@@ -42681,12 +42284,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.66
+            "toi": 9.6
           }
         ],
         "8475220": [
@@ -42995,12 +42598,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ]
       }
@@ -43503,12 +43106,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.66
+            "toi": 9.6
           }
         ],
         "8479293": [
@@ -45685,12 +45288,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8475791": [
@@ -46171,12 +45774,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ],
         "8476826": [
@@ -46861,12 +46464,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 13.92
+            "evPPG": 0.18,
+            "toi": 14.3
           }
         ],
         "8478891": [
@@ -51677,12 +51280,12 @@
         {
           "season": 20262027,
           "age": 32,
-          "gp": 10,
+          "gp": 11,
           "points": 4,
-          "ppg": 0.4,
+          "ppg": 0.36,
           "evPoints": 3,
-          "evPPG": 0.3,
-          "toi": 16.74
+          "evPPG": 0.27,
+          "toi": 16.81
         }
       ],
       "compCareers": {
@@ -51780,12 +51383,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 13.69
+            "evPPG": 0.45,
+            "toi": 13.55
           }
         ],
         "8476921": [
@@ -52274,6 +51877,411 @@
             "evPoints": 1,
             "evPPG": 0.11,
             "toi": 13.58
+          }
+        ]
+      }
+    },
+    {
+      "playerId": 8482100,
+      "name": "Alexander Nikishin",
+      "position": "Defense",
+      "positionGroup": "Defense",
+      "signingStatus": "RFA",
+      "contractYear": 20252026,
+      "age": 24,
+      "ufaYear": 2029,
+      "height": "75",
+      "weight": "218",
+      "shoots": "L",
+      "draftOverall": 69,
+      "draftBucket": 5,
+      "term": 1,
+      "value": 0,
+      "aav": 0,
+      "capHitPct": 0.0,
+      "gp": 81,
+      "goals": 11,
+      "assists": 22,
+      "points": 33,
+      "ppg": 0.41,
+      "evPoints": 22,
+      "toi": 18.18,
+      "careerGP": 81,
+      "careerPoints": 33,
+      "careerEVPoints": 22,
+      "careerPPG": 0.41,
+      "careerEVPPG": 0.27,
+      "careerTOI": 18.18,
+      "careerGPPct": 98.78,
+      "seasonNo": 1,
+      "signed": true,
+      "actualContract": {
+        "term": 1,
+        "value": 3000000,
+        "aav": 3000000,
+        "capHitPct": 2.88,
+        "signingDate": "2026-10-25",
+        "team": "Hurricanes",
+        "signingStatus": "RFA"
+      },
+      "estimatedCapHitPct": 1.17,
+      "estimatedAAV": 1216800,
+      "ciLow": 0.97,
+      "ciHigh": 1.37,
+      "aavLow": 1008800,
+      "aavHigh": 1424800,
+      "estimateStd": 0.2,
+      "compWeights": [
+        0.4679,
+        0.2176,
+        0.1614,
+        0.1531
+      ],
+      "avgCompTerm": 2.5,
+      "termTable": [
+        {
+          "term": 1,
+          "capHitPct": 0.31,
+          "aav": 322400,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 2,
+          "capHitPct": 0.74,
+          "aav": 769600,
+          "regime": "bridge",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 3,
+          "capHitPct": 1.17,
+          "aav": 1216800,
+          "regime": "crossover",
+          "ufaYrsBought": 0
+        },
+        {
+          "term": 4,
+          "capHitPct": 1.85,
+          "aav": 1924000,
+          "regime": "ufa",
+          "ufaYrsBought": 1
+        },
+        {
+          "term": 5,
+          "capHitPct": 2.53,
+          "aav": 2631200,
+          "regime": "ufa",
+          "ufaYrsBought": 2
+        },
+        {
+          "term": 6,
+          "capHitPct": 3.22,
+          "aav": 3348800,
+          "regime": "ufa",
+          "ufaYrsBought": 3
+        },
+        {
+          "term": 7,
+          "capHitPct": 3.9,
+          "aav": 4056000,
+          "regime": "ufa",
+          "ufaYrsBought": 4
+        },
+        {
+          "term": 8,
+          "capHitPct": 4.58,
+          "aav": 4763200,
+          "regime": "ufa",
+          "ufaYrsBought": 5
+        }
+      ],
+      "comps": [
+        {
+          "playerId": 8481607,
+          "name": "Albert Johansson",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "ufaYear": 2028,
+          "height": "72",
+          "weight": "201",
+          "shoots": "L",
+          "draftOverall": 60,
+          "draftBucket": 4,
+          "term": 2,
+          "value": 2250000,
+          "aav": 1125000,
+          "capHitPct": 1.28,
+          "gp": 61,
+          "goals": 3,
+          "assists": 6,
+          "points": 9,
+          "ppg": 0.15,
+          "evPoints": 9,
+          "toi": 16.36,
+          "careerGP": 61,
+          "careerPoints": 9,
+          "careerEVPoints": 9,
+          "careerPPG": 0.15,
+          "careerEVPPG": 0.15,
+          "careerTOI": 16.36,
+          "careerGPPct": 74.39,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482911,
+          "name": "Joel Nystrom",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20252026,
+          "age": 24,
+          "ufaYear": 2029,
+          "height": "71",
+          "weight": "179",
+          "shoots": "R",
+          "draftOverall": 219,
+          "draftBucket": 5,
+          "term": 4,
+          "value": 4900000,
+          "aav": 1225000,
+          "capHitPct": 1.28,
+          "gp": 38,
+          "goals": 1,
+          "assists": 9,
+          "points": 10,
+          "ppg": 0.26,
+          "evPoints": 10,
+          "toi": 15.19,
+          "careerGP": 38,
+          "careerPoints": 10,
+          "careerEVPoints": 10,
+          "careerPPG": 0.26,
+          "careerEVPPG": 0.26,
+          "careerTOI": 15.19,
+          "careerGPPct": 46.34,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482482,
+          "name": "Adam Wilsby",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "ufaYear": 2028,
+          "height": "73",
+          "weight": "192",
+          "shoots": "L",
+          "draftOverall": 101,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1625000,
+          "aav": 812500,
+          "capHitPct": 0.92,
+          "gp": 23,
+          "goals": 1,
+          "assists": 4,
+          "points": 5,
+          "ppg": 0.22,
+          "evPoints": 5,
+          "toi": 18.1,
+          "careerGP": 23,
+          "careerPoints": 5,
+          "careerEVPoints": 5,
+          "careerPPG": 0.22,
+          "careerEVPPG": 0.22,
+          "careerTOI": 18.1,
+          "careerGPPct": 28.05,
+          "seasonNo": 1
+        },
+        {
+          "playerId": 8482929,
+          "name": "Emil Lilleberg",
+          "position": "Defense",
+          "positionGroup": "Defense",
+          "signingStatus": "RFA",
+          "contractYear": 20242025,
+          "age": 24,
+          "ufaYear": 2028,
+          "height": "74",
+          "weight": "216",
+          "shoots": "L",
+          "draftOverall": 107,
+          "draftBucket": 5,
+          "term": 2,
+          "value": 1650000,
+          "aav": 825000,
+          "capHitPct": 0.94,
+          "gp": 76,
+          "goals": 1,
+          "assists": 18,
+          "points": 19,
+          "ppg": 0.25,
+          "evPoints": 18,
+          "toi": 15.28,
+          "careerGP": 113,
+          "careerPoints": 24,
+          "careerEVPoints": 23,
+          "careerPPG": 0.21,
+          "careerEVPPG": 0.2,
+          "careerTOI": 15.74,
+          "careerGPPct": 68.9,
+          "seasonNo": 2
+        }
+      ],
+      "compDistances": [
+        0.9614,
+        2.0671,
+        2.788,
+        2.9381,
+        3.0285
+      ],
+      "career": [
+        {
+          "season": 20252026,
+          "age": 24,
+          "gp": 81,
+          "points": 33,
+          "ppg": 0.41,
+          "evPoints": 22,
+          "evPPG": 0.27,
+          "toi": 18.18
+        }
+      ],
+      "compCareers": {
+        "8481607": [
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 61,
+            "points": 9,
+            "ppg": 0.15,
+            "evPoints": 9,
+            "evPPG": 0.15,
+            "toi": 16.36
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 82,
+            "points": 11,
+            "ppg": 0.13,
+            "evPoints": 9,
+            "evPPG": 0.11,
+            "toi": 15.94
+          },
+          {
+            "season": 20262027,
+            "age": 26,
+            "gp": 11,
+            "points": 1,
+            "ppg": 0.09,
+            "evPoints": 1,
+            "evPPG": 0.09,
+            "toi": 15.68
+          }
+        ],
+        "8482911": [
+          {
+            "season": 20252026,
+            "age": 24,
+            "gp": 38,
+            "points": 10,
+            "ppg": 0.26,
+            "evPoints": 10,
+            "evPPG": 0.26,
+            "toi": 15.19
+          }
+        ],
+        "8482482": [
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 23,
+            "points": 5,
+            "ppg": 0.22,
+            "evPoints": 5,
+            "evPPG": 0.22,
+            "toi": 18.1
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 58,
+            "points": 16,
+            "ppg": 0.28,
+            "evPoints": 16,
+            "evPPG": 0.28,
+            "toi": 17.01
+          },
+          {
+            "season": 20262027,
+            "age": 26,
+            "gp": 11,
+            "points": 5,
+            "ppg": 0.45,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 19.15
+          }
+        ],
+        "8482929": [
+          {
+            "season": 20232024,
+            "age": 23,
+            "gp": 37,
+            "points": 5,
+            "ppg": 0.14,
+            "evPoints": 5,
+            "evPPG": 0.14,
+            "toi": 16.2
+          },
+          {
+            "season": 20242025,
+            "age": 24,
+            "gp": 76,
+            "points": 19,
+            "ppg": 0.25,
+            "evPoints": 18,
+            "evPPG": 0.24,
+            "toi": 15.28
+          },
+          {
+            "season": 20252026,
+            "age": 25,
+            "gp": 50,
+            "points": 12,
+            "ppg": 0.24,
+            "evPoints": 12,
+            "evPPG": 0.24,
+            "toi": 17.31
+          },
+          {
+            "season": 20262027,
+            "age": 26,
+            "gp": 5,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 13.45
+          }
+        ],
+        "8482107": [
+          {
+            "season": 20252026,
+            "age": 24,
+            "gp": 18,
+            "points": 6,
+            "ppg": 0.33,
+            "evPoints": 5,
+            "evPPG": 0.28,
+            "toi": 16.9
           }
         ]
       }
@@ -53858,12 +53866,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8474586": [
@@ -54344,12 +54352,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ],
         "8475343": [
@@ -55768,12 +55776,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 17.4
+            "evPPG": 0.36,
+            "toi": 17.85
           }
         ],
         "8479619": [
@@ -55932,12 +55940,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 1,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 5.38
+            "gp": 2,
+            "points": 1,
+            "ppg": 0.5,
+            "evPoints": 1,
+            "evPPG": 0.5,
+            "toi": 7.08
           }
         ],
         "8480459": [
@@ -56470,12 +56478,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 16.12
+            "gp": 7,
+            "points": 1,
+            "ppg": 0.14,
+            "evPoints": 1,
+            "evPPG": 0.14,
+            "toi": 16.22
           }
         ],
         "8478840": [
@@ -58076,12 +58084,12 @@
         {
           "season": 20262027,
           "age": 26,
-          "gp": 10,
+          "gp": 11,
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
           "evPPG": 0.0,
-          "toi": 11.98
+          "toi": 11.83
         }
       ],
       "compCareers": {
@@ -58211,12 +58219,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 22.68
+            "evPPG": 0.27,
+            "toi": 22.46
           }
         ],
         "8481598": [
@@ -58639,12 +58647,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 11,
-            "points": 6,
-            "ppg": 0.55,
+            "gp": 12,
+            "points": 8,
+            "ppg": 0.67,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 14.68
+            "evPPG": 0.17,
+            "toi": 14.8
           }
         ],
         "8480355": [
@@ -58807,12 +58815,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
-            "points": 0,
-            "ppg": 0.0,
+            "gp": 11,
+            "points": 1,
+            "ppg": 0.09,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 15.04
+            "toi": 14.93
           }
         ]
       }
@@ -59101,12 +59109,12 @@
         {
           "season": 20262027,
           "age": 26,
-          "gp": 10,
+          "gp": 11,
           "points": 3,
-          "ppg": 0.3,
+          "ppg": 0.27,
           "evPoints": 2,
-          "evPPG": 0.2,
-          "toi": 14.33
+          "evPPG": 0.18,
+          "toi": 14.48
         }
       ],
       "compCareers": {
@@ -59186,12 +59194,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 14.1
+            "evPPG": 0.18,
+            "toi": 14.26
           }
         ],
         "8482172": [
@@ -59282,12 +59290,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
-            "points": 0,
-            "ppg": 0.0,
+            "gp": 11,
+            "points": 1,
+            "ppg": 0.09,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 15.04
+            "toi": 14.93
           }
         ]
       }
@@ -59895,12 +59903,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 13.04
+            "evPPG": 0.18,
+            "toi": 12.98
           }
         ],
         "8481554": [
@@ -62432,12 +62440,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 11.52
+            "evPPG": 0.27,
+            "toi": 11.62
           }
         ],
         "8478133": [
@@ -62514,12 +62522,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 13.92
+            "evPPG": 0.18,
+            "toi": 14.3
           }
         ]
       }
@@ -62857,12 +62865,12 @@
         {
           "season": 20262027,
           "age": 30,
-          "gp": 11,
+          "gp": 12,
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
           "evPPG": 0.0,
-          "toi": 7.72
+          "toi": 7.48
         }
       ],
       "compCareers": {
@@ -63824,12 +63832,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 8,
-            "ppg": 0.73,
+            "ppg": 0.67,
             "evPoints": 5,
-            "evPPG": 0.45,
-            "toi": 18.49
+            "evPPG": 0.42,
+            "toi": 18.33
           }
         ],
         "8475798": [
@@ -64310,12 +64318,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8476419": [
@@ -64462,12 +64470,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ]
       }
@@ -65120,12 +65128,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 10,
+            "gp": 11,
             "points": 1,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 17.87
+            "toi": 17.69
           }
         ],
         "8482655": [
@@ -65772,12 +65780,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8478874": [
@@ -66482,12 +66490,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 6,
-            "points": 3,
-            "ppg": 0.5,
-            "evPoints": 2,
-            "evPPG": 0.33,
-            "toi": 22.17
+            "gp": 7,
+            "points": 4,
+            "ppg": 0.57,
+            "evPoints": 3,
+            "evPPG": 0.43,
+            "toi": 22.31
           }
         ],
         "8482511": [
@@ -66566,12 +66574,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 9,
+            "gp": 10,
             "points": 1,
-            "ppg": 0.11,
+            "ppg": 0.1,
             "evPoints": 1,
-            "evPPG": 0.11,
-            "toi": 15.59
+            "evPPG": 0.1,
+            "toi": 15.54
           }
         ]
       }
@@ -67420,12 +67428,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 8,
+            "gp": 9,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.98
+            "toi": 10.01
           }
         ]
       }
@@ -67864,12 +67872,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 10,
-            "points": 4,
-            "ppg": 0.4,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 15.61
+            "gp": 11,
+            "points": 5,
+            "ppg": 0.45,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 15.55
           }
         ],
         "8482103": [
@@ -68453,12 +68461,12 @@
         {
           "season": 20262027,
           "age": 42,
-          "gp": 11,
+          "gp": 12,
           "points": 3,
-          "ppg": 0.27,
+          "ppg": 0.25,
           "evPoints": 3,
-          "evPPG": 0.27,
-          "toi": 16.33
+          "evPPG": 0.25,
+          "toi": 16.04
         }
       ],
       "compCareers": {
@@ -69142,12 +69150,12 @@
           {
             "season": 20262027,
             "age": 37,
-            "gp": 10,
+            "gp": 11,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.91
+            "toi": 15.38
           }
         ],
         "8475279": [
@@ -69685,12 +69693,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 14.1
+            "evPPG": 0.18,
+            "toi": 14.26
           }
         ],
         "8482726": [
@@ -70172,12 +70180,12 @@
         {
           "season": 20262027,
           "age": 33,
-          "gp": 11,
+          "gp": 12,
           "points": 4,
-          "ppg": 0.36,
+          "ppg": 0.33,
           "evPoints": 4,
-          "evPPG": 0.36,
-          "toi": 18.52
+          "evPPG": 0.33,
+          "toi": 18.87
         }
       ],
       "compCareers": {
@@ -73223,12 +73231,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482911": [
@@ -73997,12 +74005,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 19.8
+            "evPPG": 0.17,
+            "toi": 19.94
           }
         ],
         "8477384": [
@@ -75095,12 +75103,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8476419": [
@@ -75247,12 +75255,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ],
         "8475722": [
@@ -75541,12 +75549,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ],
         "8475754": [
@@ -75683,12 +75691,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 8,
-            "ppg": 0.73,
+            "ppg": 0.67,
             "evPoints": 5,
-            "evPPG": 0.45,
-            "toi": 18.49
+            "evPPG": 0.42,
+            "toi": 18.33
           }
         ]
       }
@@ -76116,12 +76124,12 @@
         {
           "season": 20262027,
           "age": 36,
-          "gp": 10,
+          "gp": 11,
           "points": 4,
-          "ppg": 0.4,
+          "ppg": 0.36,
           "evPoints": 4,
-          "evPPG": 0.4,
-          "toi": 14.64
+          "evPPG": 0.36,
+          "toi": 14.35
         }
       ],
       "compCareers": {
@@ -76289,12 +76297,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8474586": [
@@ -76947,12 +76955,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ]
       }
@@ -78371,12 +78379,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ]
       }
@@ -78704,12 +78712,12 @@
         {
           "season": 20262027,
           "age": 29,
-          "gp": 7,
+          "gp": 8,
           "points": 1,
-          "ppg": 0.14,
+          "ppg": 0.12,
           "evPoints": 1,
-          "evPPG": 0.14,
-          "toi": 9.73
+          "evPPG": 0.12,
+          "toi": 9.66
         }
       ],
       "compCareers": {
@@ -79864,12 +79872,12 @@
         {
           "season": 20262027,
           "age": 25,
-          "gp": 10,
+          "gp": 11,
           "points": 9,
-          "ppg": 0.9,
+          "ppg": 0.82,
           "evPoints": 4,
-          "evPPG": 0.4,
-          "toi": 18.63
+          "evPPG": 0.36,
+          "toi": 19.12
         }
       ],
       "compCareers": {
@@ -80043,12 +80051,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 12,
-            "points": 5,
-            "ppg": 0.42,
-            "evPoints": 3,
-            "evPPG": 0.25,
-            "toi": 13.04
+            "gp": 13,
+            "points": 6,
+            "ppg": 0.46,
+            "evPoints": 4,
+            "evPPG": 0.31,
+            "toi": 13.09
           }
         ],
         "8480188": [
@@ -81094,12 +81102,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 10.97
+            "evPPG": 0.27,
+            "toi": 10.99
           }
         ],
         "8481553": [
@@ -81146,12 +81154,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 12,
-            "points": 5,
-            "ppg": 0.42,
-            "evPoints": 3,
-            "evPPG": 0.25,
-            "toi": 13.04
+            "gp": 13,
+            "points": 6,
+            "ppg": 0.46,
+            "evPoints": 4,
+            "evPPG": 0.31,
+            "toi": 13.09
           }
         ],
         "8482155": [
@@ -81593,12 +81601,12 @@
         {
           "season": 20262027,
           "age": 31,
-          "gp": 10,
+          "gp": 11,
           "points": 2,
-          "ppg": 0.2,
+          "ppg": 0.18,
           "evPoints": 1,
-          "evPPG": 0.1,
-          "toi": 13.71
+          "evPPG": 0.09,
+          "toi": 13.35
         }
       ],
       "compCareers": {
@@ -81686,12 +81694,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8477073": [
@@ -82530,12 +82538,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 17.24
+            "evPPG": 0.27,
+            "toi": 17.4
           }
         ],
         "8480893": [
@@ -83122,12 +83130,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 11,
+            "gp": 12,
             "points": 6,
-            "ppg": 0.55,
+            "ppg": 0.5,
             "evPoints": 6,
-            "evPPG": 0.55,
-            "toi": 13.71
+            "evPPG": 0.5,
+            "toi": 13.47
           }
         ],
         "8481789": [
@@ -84228,12 +84236,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.66
+            "toi": 9.6
           }
         ]
       }
@@ -84932,12 +84940,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 16.12
+            "gp": 7,
+            "points": 1,
+            "ppg": 0.14,
+            "evPoints": 1,
+            "evPPG": 0.14,
+            "toi": 16.22
           }
         ]
       }
@@ -85271,12 +85279,12 @@
         {
           "season": 20262027,
           "age": 21,
-          "gp": 4,
-          "points": 4,
+          "gp": 5,
+          "points": 5,
           "ppg": 1.0,
-          "evPoints": 2,
-          "evPPG": 0.5,
-          "toi": 20.25
+          "evPoints": 3,
+          "evPPG": 0.6,
+          "toi": 20.83
         }
       ],
       "compCareers": {
@@ -85366,12 +85374,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 8,
-            "points": 6,
-            "ppg": 0.75,
-            "evPoints": 5,
-            "evPPG": 0.62,
-            "toi": 20.11
+            "gp": 9,
+            "points": 8,
+            "ppg": 0.89,
+            "evPoints": 6,
+            "evPPG": 0.67,
+            "toi": 20.12
           }
         ],
         "8482078": [
@@ -86396,12 +86404,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 19.8
+            "evPPG": 0.17,
+            "toi": 19.94
           }
         ]
       }
@@ -86812,12 +86820,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 11,
+            "gp": 12,
             "points": 5,
-            "ppg": 0.45,
+            "ppg": 0.42,
             "evPoints": 5,
-            "evPPG": 0.45,
-            "toi": 12.95
+            "evPPG": 0.42,
+            "toi": 12.92
           }
         ],
         "8478508": [
@@ -86894,12 +86902,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 12,
+            "gp": 13,
             "points": 2,
-            "ppg": 0.17,
+            "ppg": 0.15,
             "evPoints": 2,
-            "evPPG": 0.17,
-            "toi": 13.07
+            "evPPG": 0.15,
+            "toi": 13.03
           }
         ],
         "8479390": [
@@ -87120,12 +87128,12 @@
           {
             "season": 20262027,
             "age": 29,
-            "gp": 12,
+            "gp": 13,
             "points": 3,
-            "ppg": 0.25,
+            "ppg": 0.23,
             "evPoints": 2,
-            "evPPG": 0.17,
-            "toi": 15.86
+            "evPPG": 0.15,
+            "toi": 15.91
           }
         ]
       }
@@ -88584,11 +88592,11 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
+            "evPPG": 0.36,
             "toi": 16.04
           }
         ]
@@ -89494,12 +89502,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 15.25
+            "evPPG": 0.17,
+            "toi": 14.97
           }
         ],
         "8475690": [
@@ -90334,12 +90342,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.66
+            "toi": 9.6
           }
         ],
         "8479293": [
@@ -90812,12 +90820,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ]
       }
@@ -92600,12 +92608,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8482167": [
@@ -93635,12 +93643,12 @@
         {
           "season": 20262027,
           "age": 25,
-          "gp": 11,
+          "gp": 12,
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
           "evPPG": 0.0,
-          "toi": 14.14
+          "toi": 13.76
         }
       ],
       "compCareers": {
@@ -94556,12 +94564,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 13.69
+            "evPPG": 0.45,
+            "toi": 13.55
           }
         ],
         "8477406": [
@@ -95328,12 +95336,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 11,
-            "points": 9,
-            "ppg": 0.82,
-            "evPoints": 6,
-            "evPPG": 0.55,
-            "toi": 20.38
+            "gp": 12,
+            "points": 10,
+            "ppg": 0.83,
+            "evPoints": 7,
+            "evPPG": 0.58,
+            "toi": 20.35
           }
         ],
         "8478013": [
@@ -95532,12 +95540,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
-            "points": 2,
-            "ppg": 0.2,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 19.72
+            "gp": 11,
+            "points": 3,
+            "ppg": 0.27,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 19.6
           }
         ],
         "8477447": [
@@ -96056,12 +96064,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 19.38
+            "evPPG": 0.27,
+            "toi": 19.04
           }
         ],
         "8482192": [
@@ -96254,12 +96262,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 2,
-            "ppg": 0.2,
+            "ppg": 0.18,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 20.2
+            "evPPG": 0.18,
+            "toi": 19.96
           }
         ]
       }
@@ -97568,12 +97576,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ]
       }
@@ -97941,12 +97949,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482911": [
@@ -98884,12 +98892,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 16.12
+            "gp": 7,
+            "points": 1,
+            "ppg": 0.14,
+            "evPoints": 1,
+            "evPPG": 0.14,
+            "toi": 16.22
           }
         ],
         "8478452": [
@@ -99824,12 +99832,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 16.12
+            "gp": 7,
+            "points": 1,
+            "ppg": 0.14,
+            "evPoints": 1,
+            "evPPG": 0.14,
+            "toi": 16.22
           }
         ],
         "8477384": [
@@ -101608,12 +101616,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 8,
-            "points": 6,
-            "ppg": 0.75,
-            "evPoints": 5,
-            "evPPG": 0.62,
-            "toi": 20.11
+            "gp": 9,
+            "points": 8,
+            "ppg": 0.89,
+            "evPoints": 6,
+            "evPPG": 0.67,
+            "toi": 20.12
           }
         ],
         "8480014": [
@@ -101690,12 +101698,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 10,
-            "points": 5,
-            "ppg": 0.5,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 17.3
+            "gp": 11,
+            "points": 6,
+            "ppg": 0.55,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 17.42
           }
         ]
       }
@@ -103129,12 +103137,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 12,
-            "points": 5,
-            "ppg": 0.42,
-            "evPoints": 3,
-            "evPPG": 0.25,
-            "toi": 13.04
+            "gp": 13,
+            "points": 6,
+            "ppg": 0.46,
+            "evPoints": 4,
+            "evPPG": 0.31,
+            "toi": 13.09
           }
         ]
       }
@@ -103538,12 +103546,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 2,
-            "ppg": 0.2,
+            "ppg": 0.18,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 20.2
+            "evPPG": 0.18,
+            "toi": 19.96
           }
         ],
         "8482095": [
@@ -104766,12 +104774,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 15.25
+            "evPPG": 0.17,
+            "toi": 14.97
           }
         ],
         "8475208": [
@@ -106740,12 +106748,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8476392": [
@@ -106872,12 +106880,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ],
         "8476419": [
@@ -107024,12 +107032,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ],
         "8479293": [
@@ -107505,12 +107513,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 14.1
+            "evPPG": 0.18,
+            "toi": 14.26
           }
         ],
         "8482153": [
@@ -108109,12 +108117,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 19.38
+            "evPPG": 0.27,
+            "toi": 19.04
           }
         ],
         "8481568": [
@@ -108171,12 +108179,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 2,
-            "ppg": 0.2,
+            "ppg": 0.18,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 20.2
+            "evPPG": 0.18,
+            "toi": 19.96
           }
         ]
       }
@@ -110805,12 +110813,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8481532": [
@@ -111340,12 +111348,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 12,
-            "points": 4,
-            "ppg": 0.33,
-            "evPoints": 4,
-            "evPPG": 0.33,
-            "toi": 13.18
+            "gp": 13,
+            "points": 5,
+            "ppg": 0.38,
+            "evPoints": 5,
+            "evPPG": 0.38,
+            "toi": 13.03
           }
         ],
         "8482768": [
@@ -111372,12 +111380,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 11,
+            "gp": 12,
             "points": 6,
-            "ppg": 0.55,
+            "ppg": 0.5,
             "evPoints": 6,
-            "evPPG": 0.55,
-            "toi": 13.71
+            "evPPG": 0.5,
+            "toi": 13.47
           }
         ],
         "8481577": [
@@ -111797,12 +111805,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482911": [
@@ -112150,12 +112158,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482169": [
@@ -112637,12 +112645,12 @@
         {
           "season": 20262027,
           "age": 38,
-          "gp": 10,
+          "gp": 11,
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
           "evPPG": 0.0,
-          "toi": 17.02
+          "toi": 16.87
         }
       ],
       "compCareers": {
@@ -113458,12 +113466,12 @@
           {
             "season": 20262027,
             "age": 37,
-            "gp": 10,
+            "gp": 11,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.91
+            "toi": 15.38
           }
         ]
       }
@@ -114850,12 +114858,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 13.69
+            "evPPG": 0.45,
+            "toi": 13.55
           }
         ],
         "8478366": [
@@ -115811,12 +115819,12 @@
         {
           "season": 20262027,
           "age": 24,
-          "gp": 10,
-          "points": 1,
-          "ppg": 0.1,
-          "evPoints": 1,
-          "evPPG": 0.1,
-          "toi": 13.16
+          "gp": 11,
+          "points": 2,
+          "ppg": 0.18,
+          "evPoints": 2,
+          "evPPG": 0.18,
+          "toi": 13.38
         }
       ],
       "compCareers": {
@@ -115980,12 +115988,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 14.1
+            "evPPG": 0.18,
+            "toi": 14.26
           }
         ],
         "8484135": [
@@ -116438,12 +116446,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 14.1
+            "evPPG": 0.18,
+            "toi": 14.26
           }
         ],
         "8482476": [
@@ -116480,12 +116488,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 10,
-            "points": 4,
-            "ppg": 0.4,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 15.61
+            "gp": 11,
+            "points": 5,
+            "ppg": 0.45,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 15.55
           }
         ],
         "8482177": [
@@ -117560,12 +117568,12 @@
         {
           "season": 20262027,
           "age": 27,
-          "gp": 10,
-          "points": 2,
-          "ppg": 0.2,
-          "evPoints": 2,
-          "evPPG": 0.2,
-          "toi": 16.52
+          "gp": 11,
+          "points": 3,
+          "ppg": 0.27,
+          "evPoints": 3,
+          "evPPG": 0.27,
+          "toi": 16.53
         }
       ],
       "compCareers": {
@@ -117593,12 +117601,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 12,
-            "points": 4,
-            "ppg": 0.33,
-            "evPoints": 4,
-            "evPPG": 0.33,
-            "toi": 13.18
+            "gp": 13,
+            "points": 5,
+            "ppg": 0.38,
+            "evPoints": 5,
+            "evPPG": 0.38,
+            "toi": 13.03
           }
         ],
         "8484829": [
@@ -117625,12 +117633,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
-            "points": 0,
-            "ppg": 0.0,
+            "gp": 11,
+            "points": 1,
+            "ppg": 0.09,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 15.04
+            "toi": 14.93
           }
         ],
         "8481024": [
@@ -117667,11 +117675,11 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 12,
+            "gp": 13,
             "points": 8,
-            "ppg": 0.67,
+            "ppg": 0.62,
             "evPoints": 7,
-            "evPPG": 0.58,
+            "evPPG": 0.54,
             "toi": 14.24
           }
         ],
@@ -118257,12 +118265,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 1,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 5.38
+            "gp": 2,
+            "points": 1,
+            "ppg": 0.5,
+            "evPoints": 1,
+            "evPPG": 0.5,
+            "toi": 7.08
           }
         ],
         "8477987": [
@@ -118359,12 +118367,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 11.52
+            "evPPG": 0.27,
+            "toi": 11.62
           }
         ],
         "8477451": [
@@ -118491,12 +118499,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 12,
+            "gp": 13,
             "points": 3,
-            "ppg": 0.25,
+            "ppg": 0.23,
             "evPoints": 2,
-            "evPPG": 0.17,
-            "toi": 13.3
+            "evPPG": 0.15,
+            "toi": 13.22
           }
         ],
         "8477935": [
@@ -118623,12 +118631,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 11,
+            "gp": 12,
             "points": 6,
-            "ppg": 0.55,
+            "ppg": 0.5,
             "evPoints": 6,
-            "evPPG": 0.55,
-            "toi": 18.34
+            "evPPG": 0.5,
+            "toi": 18.42
           }
         ],
         "8480459": [
@@ -119655,12 +119663,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 6,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 16.12
+            "gp": 7,
+            "points": 1,
+            "ppg": 0.14,
+            "evPoints": 1,
+            "evPPG": 0.14,
+            "toi": 16.22
           }
         ],
         "8478452": [
@@ -120307,12 +120315,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8485512": [
@@ -120859,12 +120867,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8482103": [
@@ -121307,12 +121315,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8481532": [
@@ -123030,12 +123038,12 @@
         {
           "season": 20262027,
           "age": 35,
-          "gp": 11,
+          "gp": 12,
           "points": 7,
-          "ppg": 0.64,
+          "ppg": 0.58,
           "evPoints": 6,
-          "evPPG": 0.55,
-          "toi": 13.96
+          "evPPG": 0.5,
+          "toi": 14.06
         }
       ],
       "compCareers": {
@@ -123203,12 +123211,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8475722": [
@@ -123517,12 +123525,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 15.72
+            "evPPG": 0.45,
+            "toi": 15.5
           }
         ],
         "8475791": [
@@ -124264,12 +124272,12 @@
         {
           "season": 20262027,
           "age": 37,
-          "gp": 10,
-          "points": 2,
-          "ppg": 0.2,
-          "evPoints": 2,
-          "evPPG": 0.2,
-          "toi": 12.64
+          "gp": 11,
+          "points": 3,
+          "ppg": 0.27,
+          "evPoints": 3,
+          "evPPG": 0.27,
+          "toi": 12.6
         }
       ],
       "compCareers": {
@@ -124983,12 +124991,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ],
         "8475168": [
@@ -126755,12 +126763,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 15.25
+            "evPPG": 0.17,
+            "toi": 14.97
           }
         ],
         "8475690": [
@@ -128277,12 +128285,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8482103": [
@@ -129123,12 +129131,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8477406": [
@@ -130235,12 +130243,12 @@
         {
           "season": 20262027,
           "age": 27,
-          "gp": 10,
-          "points": 11,
-          "ppg": 1.1,
-          "evPoints": 8,
-          "evPPG": 0.8,
-          "toi": 20.22
+          "gp": 11,
+          "points": 13,
+          "ppg": 1.18,
+          "evPoints": 10,
+          "evPPG": 0.91,
+          "toi": 20.1
         }
       ],
       "compCareers": {
@@ -130328,11 +130336,11 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 12,
-            "points": 12,
+            "gp": 13,
+            "points": 13,
             "ppg": 1.0,
-            "evPoints": 6,
-            "evPPG": 0.5,
+            "evPoints": 7,
+            "evPPG": 0.54,
             "toi": 19.58
           }
         ],
@@ -130504,12 +130512,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 8,
-            "points": 6,
-            "ppg": 0.75,
-            "evPoints": 5,
-            "evPPG": 0.62,
-            "toi": 20.11
+            "gp": 9,
+            "points": 8,
+            "ppg": 0.89,
+            "evPoints": 6,
+            "evPPG": 0.67,
+            "toi": 20.12
           }
         ],
         "8480014": [
@@ -130586,12 +130594,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 10,
-            "points": 5,
-            "ppg": 0.5,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 17.3
+            "gp": 11,
+            "points": 6,
+            "ppg": 0.55,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 17.42
           }
         ]
       }
@@ -133251,12 +133259,12 @@
         {
           "season": 20262027,
           "age": 31,
-          "gp": 6,
-          "points": 1,
-          "ppg": 0.17,
-          "evPoints": 1,
-          "evPPG": 0.17,
-          "toi": 11.29
+          "gp": 7,
+          "points": 2,
+          "ppg": 0.29,
+          "evPoints": 2,
+          "evPPG": 0.29,
+          "toi": 11.55
         }
       ],
       "compCareers": {
@@ -133344,12 +133352,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8480762": [
@@ -135506,12 +135514,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 4,
-            "ppg": 0.36,
+            "ppg": 0.33,
             "evPoints": 4,
-            "evPPG": 0.36,
-            "toi": 16.08
+            "evPPG": 0.33,
+            "toi": 15.88
           }
         ]
       }
@@ -137874,12 +137882,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 8,
+            "gp": 9,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.98
+            "toi": 10.01
           }
         ],
         "8477573": [
@@ -144033,12 +144041,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 8,
-            "points": 6,
-            "ppg": 0.75,
-            "evPoints": 5,
-            "evPPG": 0.62,
-            "toi": 20.11
+            "gp": 9,
+            "points": 8,
+            "ppg": 0.89,
+            "evPoints": 6,
+            "evPPG": 0.67,
+            "toi": 20.12
           }
         ],
         "8482078": [
@@ -144715,12 +144723,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 12,
+            "gp": 13,
             "points": 2,
-            "ppg": 0.17,
+            "ppg": 0.15,
             "evPoints": 2,
-            "evPPG": 0.17,
-            "toi": 13.07
+            "evPPG": 0.15,
+            "toi": 13.03
           }
         ],
         "8479365": [
@@ -144879,12 +144887,12 @@
           {
             "season": 20262027,
             "age": 29,
-            "gp": 12,
+            "gp": 13,
             "points": 3,
-            "ppg": 0.25,
+            "ppg": 0.23,
             "evPoints": 2,
-            "evPPG": 0.17,
-            "toi": 15.86
+            "evPPG": 0.15,
+            "toi": 15.91
           }
         ]
       }
@@ -145589,12 +145597,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 1,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 5.38
+            "gp": 2,
+            "points": 1,
+            "ppg": 0.5,
+            "evPoints": 1,
+            "evPPG": 0.5,
+            "toi": 7.08
           }
         ],
         "8478133": [
@@ -145671,12 +145679,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 13.92
+            "evPPG": 0.18,
+            "toi": 14.3
           }
         ],
         "8478463": [
@@ -146122,12 +146130,12 @@
         {
           "season": 20262027,
           "age": 23,
-          "gp": 1,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "evPPG": 0.0,
-          "toi": 11.35
+          "gp": 2,
+          "points": 1,
+          "ppg": 0.5,
+          "evPoints": 1,
+          "evPPG": 0.5,
+          "toi": 12.02
         }
       ],
       "compCareers": {
@@ -146185,12 +146193,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 2,
-            "ppg": 0.2,
+            "ppg": 0.18,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 20.2
+            "evPPG": 0.18,
+            "toi": 19.96
           }
         ],
         "8482176": [
@@ -146237,12 +146245,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 19.38
+            "evPPG": 0.27,
+            "toi": 19.04
           }
         ],
         "8482095": [
@@ -147023,12 +147031,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 13.92
+            "evPPG": 0.18,
+            "toi": 14.3
           }
         ],
         "8478904": [
@@ -147476,12 +147484,12 @@
         {
           "season": 20262027,
           "age": 26,
-          "gp": 10,
+          "gp": 11,
           "points": 2,
-          "ppg": 0.2,
+          "ppg": 0.18,
           "evPoints": 2,
-          "evPPG": 0.2,
-          "toi": 9.99
+          "evPPG": 0.18,
+          "toi": 10.29
         }
       ],
       "compCareers": {
@@ -147611,12 +147619,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 13.04
+            "evPPG": 0.18,
+            "toi": 12.98
           }
         ],
         "8480220": [
@@ -148135,12 +148143,12 @@
         {
           "season": 20262027,
           "age": 29,
-          "gp": 3,
+          "gp": 4,
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
           "evPPG": 0.0,
-          "toi": 9.66
+          "toi": 11.0
         }
       ],
       "compCareers": {
@@ -149553,12 +149561,12 @@
         {
           "season": 20262027,
           "age": 38,
-          "gp": 11,
-          "points": 5,
-          "ppg": 0.45,
-          "evPoints": 4,
-          "evPPG": 0.36,
-          "toi": 15.31
+          "gp": 12,
+          "points": 6,
+          "ppg": 0.5,
+          "evPoints": 5,
+          "evPPG": 0.42,
+          "toi": 15.4
         }
       ],
       "compCareers": {
@@ -150394,12 +150402,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ]
       }
@@ -150786,12 +150794,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 8,
-            "points": 6,
-            "ppg": 0.75,
-            "evPoints": 5,
-            "evPPG": 0.62,
-            "toi": 20.11
+            "gp": 9,
+            "points": 8,
+            "ppg": 0.89,
+            "evPoints": 6,
+            "evPPG": 0.67,
+            "toi": 20.12
           }
         ],
         "8482078": [
@@ -151438,12 +151446,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8485512": [
@@ -151877,12 +151885,12 @@
         {
           "season": 20262027,
           "age": 29,
-          "gp": 10,
+          "gp": 11,
           "points": 5,
-          "ppg": 0.5,
+          "ppg": 0.45,
           "evPoints": 4,
-          "evPPG": 0.4,
-          "toi": 20.67
+          "evPPG": 0.36,
+          "toi": 20.68
         }
       ],
       "compCareers": {
@@ -153158,12 +153166,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.66
+            "toi": 9.6
           }
         ],
         "8474586": [
@@ -153990,12 +153998,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 12,
-            "points": 4,
-            "ppg": 0.33,
-            "evPoints": 4,
-            "evPPG": 0.33,
-            "toi": 13.18
+            "gp": 13,
+            "points": 5,
+            "ppg": 0.38,
+            "evPoints": 5,
+            "evPPG": 0.38,
+            "toi": 13.03
           }
         ],
         "8484829": [
@@ -154022,12 +154030,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
-            "points": 0,
-            "ppg": 0.0,
+            "gp": 11,
+            "points": 1,
+            "ppg": 0.09,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 15.04
+            "toi": 14.93
           }
         ]
       }
@@ -154495,12 +154503,12 @@
         {
           "season": 20262027,
           "age": 37,
-          "gp": 8,
+          "gp": 9,
           "points": 2,
-          "ppg": 0.25,
+          "ppg": 0.22,
           "evPoints": 2,
-          "evPPG": 0.25,
-          "toi": 13.26
+          "evPPG": 0.22,
+          "toi": 13.35
         }
       ],
       "compCareers": {
@@ -155144,12 +155152,12 @@
           {
             "season": 20262027,
             "age": 37,
-            "gp": 10,
+            "gp": 11,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.91
+            "toi": 15.38
           }
         ],
         "8475179": [
@@ -155326,12 +155334,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 15.25
+            "evPPG": 0.17,
+            "toi": 14.97
           }
         ]
       }
@@ -156851,12 +156859,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 14.1
+            "evPPG": 0.18,
+            "toi": 14.26
           }
         ]
       }
@@ -157214,12 +157222,12 @@
         {
           "season": 20262027,
           "age": 28,
-          "gp": 10,
+          "gp": 11,
           "points": 1,
-          "ppg": 0.1,
+          "ppg": 0.09,
           "evPoints": 1,
-          "evPPG": 0.1,
-          "toi": 19.86
+          "evPPG": 0.09,
+          "toi": 19.63
         }
       ],
       "compCareers": {
@@ -158223,12 +158231,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 13.69
+            "evPPG": 0.45,
+            "toi": 13.55
           }
         ],
         "8477015": [
@@ -158950,12 +158958,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482169": [
@@ -160640,12 +160648,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8479661": [
@@ -166073,12 +166081,12 @@
         {
           "season": 20262027,
           "age": 25,
-          "gp": 6,
-          "points": 1,
-          "ppg": 0.17,
-          "evPoints": 1,
-          "evPPG": 0.17,
-          "toi": 15.95
+          "gp": 7,
+          "points": 2,
+          "ppg": 0.29,
+          "evPoints": 2,
+          "evPPG": 0.29,
+          "toi": 15.81
         }
       ],
       "compCareers": {
@@ -166146,12 +166154,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 10.97
+            "evPPG": 0.27,
+            "toi": 10.99
           }
         ],
         "8481554": [
@@ -166332,12 +166340,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 17.24
+            "evPPG": 0.27,
+            "toi": 17.4
           }
         ],
         "8482155": [
@@ -167451,12 +167459,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482911": [
@@ -168021,12 +168029,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 1,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 5.38
+            "gp": 2,
+            "points": 1,
+            "ppg": 0.5,
+            "evPoints": 1,
+            "evPPG": 0.5,
+            "toi": 7.08
           }
         ],
         "8479619": [
@@ -168185,12 +168193,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 13.69
+            "evPPG": 0.45,
+            "toi": 13.55
           }
         ],
         "8477479": [
@@ -168297,12 +168305,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 17.4
+            "evPPG": 0.36,
+            "toi": 17.85
           }
         ]
       }
@@ -169245,12 +169253,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 22.68
+            "evPPG": 0.27,
+            "toi": 22.46
           }
         ],
         "8480887": [
@@ -169680,12 +169688,12 @@
         {
           "season": 20262027,
           "age": 32,
-          "gp": 12,
-          "points": 5,
-          "ppg": 0.42,
-          "evPoints": 5,
-          "evPPG": 0.42,
-          "toi": 13.61
+          "gp": 13,
+          "points": 6,
+          "ppg": 0.46,
+          "evPoints": 6,
+          "evPPG": 0.46,
+          "toi": 13.71
         }
       ],
       "compCareers": {
@@ -169773,12 +169781,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8476952": [
@@ -170528,12 +170536,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 14.1
+            "evPPG": 0.18,
+            "toi": 14.26
           }
         ],
         "8482460": [
@@ -172043,12 +172051,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482911": [
@@ -172388,12 +172396,12 @@
         {
           "season": 20262027,
           "age": 29,
-          "gp": 2,
+          "gp": 3,
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
           "evPPG": 0.0,
-          "toi": 9.16
+          "toi": 9.89
         }
       ],
       "compCareers": {
@@ -174115,12 +174123,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 19.86
+            "evPPG": 0.45,
+            "toi": 19.92
           }
         ],
         "8484304": [
@@ -175779,12 +175787,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 19.8
+            "evPPG": 0.17,
+            "toi": 19.94
           }
         ],
         "8476372": [
@@ -177409,12 +177417,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ]
       }
@@ -178087,12 +178095,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 4,
-            "ppg": 0.36,
+            "ppg": 0.33,
             "evPoints": 4,
-            "evPPG": 0.36,
-            "toi": 16.08
+            "evPPG": 0.33,
+            "toi": 15.88
           }
         ],
         "8475690": [
@@ -178441,12 +178449,12 @@
           {
             "season": 20262027,
             "age": 37,
-            "gp": 10,
+            "gp": 11,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.91
+            "toi": 15.38
           }
         ],
         "8475279": [
@@ -179866,12 +179874,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.66
+            "toi": 9.6
           }
         ],
         "8479293": [
@@ -180202,12 +180210,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ]
       }
@@ -180564,12 +180572,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 10,
-            "points": 4,
-            "ppg": 0.4,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 15.61
+            "gp": 11,
+            "points": 5,
+            "ppg": 0.45,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 15.55
           }
         ],
         "8481532": [
@@ -181066,12 +181074,12 @@
         {
           "season": 20262027,
           "age": 26,
-          "gp": 10,
-          "points": 2,
-          "ppg": 0.2,
-          "evPoints": 2,
-          "evPPG": 0.2,
-          "toi": 17.17
+          "gp": 11,
+          "points": 3,
+          "ppg": 0.27,
+          "evPoints": 3,
+          "evPPG": 0.27,
+          "toi": 17.28
         }
       ],
       "compCareers": {
@@ -181315,12 +181323,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 22.68
+            "evPPG": 0.27,
+            "toi": 22.46
           }
         ],
         "8480879": [
@@ -181875,12 +181883,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 12,
+            "gp": 13,
             "points": 2,
-            "ppg": 0.17,
+            "ppg": 0.15,
             "evPoints": 2,
-            "evPPG": 0.17,
-            "toi": 13.07
+            "evPPG": 0.15,
+            "toi": 13.03
           }
         ],
         "8479543": [
@@ -183331,12 +183339,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.66
+            "toi": 9.6
           }
         ],
         "8479293": [
@@ -183697,12 +183705,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 15.33
+            "evPPG": 0.36,
+            "toi": 15.17
           }
         ],
         "8475413": [
@@ -184225,12 +184233,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 14.1
+            "evPPG": 0.18,
+            "toi": 14.26
           }
         ],
         "8481556": [
@@ -184671,12 +184679,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 6,
-            "points": 3,
-            "ppg": 0.5,
-            "evPoints": 2,
-            "evPPG": 0.33,
-            "toi": 22.17
+            "gp": 7,
+            "points": 4,
+            "ppg": 0.57,
+            "evPoints": 3,
+            "evPPG": 0.43,
+            "toi": 22.31
           }
         ],
         "8482671": [
@@ -184785,12 +184793,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 19.38
+            "evPPG": 0.27,
+            "toi": 19.04
           }
         ],
         "8481593": [
@@ -184827,12 +184835,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 9,
+            "gp": 10,
             "points": 1,
-            "ppg": 0.11,
+            "ppg": 0.1,
             "evPoints": 1,
-            "evPPG": 0.11,
-            "toi": 15.59
+            "evPPG": 0.1,
+            "toi": 15.54
           }
         ],
         "8482858": [
@@ -185435,12 +185443,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 7,
+            "gp": 8,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 12.09
+            "toi": 11.73
           }
         ],
         "8477505": [
@@ -185669,12 +185677,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 13.69
+            "evPPG": 0.45,
+            "toi": 13.55
           }
         ],
         "8478856": [
@@ -186613,12 +186621,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 8,
+            "gp": 9,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.98
+            "toi": 10.01
           }
         ],
         "8479293": [
@@ -187134,12 +187142,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 11,
-            "points": 6,
-            "ppg": 0.55,
+            "gp": 12,
+            "points": 8,
+            "ppg": 0.67,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 14.68
+            "evPPG": 0.17,
+            "toi": 14.8
           }
         ],
         "8484135": [
@@ -187260,12 +187268,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 14.1
+            "evPPG": 0.18,
+            "toi": 14.26
           }
         ],
         "8482201": [
@@ -187785,12 +187793,12 @@
         {
           "season": 20262027,
           "age": 38,
-          "gp": 10,
-          "points": 6,
-          "ppg": 0.6,
-          "evPoints": 5,
-          "evPPG": 0.5,
-          "toi": 19.6
+          "gp": 11,
+          "points": 7,
+          "ppg": 0.64,
+          "evPoints": 6,
+          "evPPG": 0.55,
+          "toi": 19.67
         }
       ],
       "compCareers": {
@@ -189900,12 +189908,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 10,
-            "points": 5,
-            "ppg": 0.5,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 17.3
+            "gp": 11,
+            "points": 6,
+            "ppg": 0.55,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 17.42
           }
         ],
         "8480015": [
@@ -190508,12 +190516,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 6,
-            "points": 3,
-            "ppg": 0.5,
-            "evPoints": 2,
-            "evPPG": 0.33,
-            "toi": 22.17
+            "gp": 7,
+            "points": 4,
+            "ppg": 0.57,
+            "evPoints": 3,
+            "evPPG": 0.43,
+            "toi": 22.31
           }
         ],
         "8482105": [
@@ -191240,12 +191248,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 10.97
+            "evPPG": 0.27,
+            "toi": 10.99
           }
         ],
         "8481617": [
@@ -192464,12 +192472,12 @@
         {
           "season": 20262027,
           "age": 37,
-          "gp": 7,
+          "gp": 8,
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
           "evPPG": 0.0,
-          "toi": 13.69
+          "toi": 13.54
         }
       ],
       "compCareers": {
@@ -193113,12 +193121,12 @@
           {
             "season": 20262027,
             "age": 37,
-            "gp": 10,
+            "gp": 11,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.91
+            "toi": 15.38
           }
         ],
         "8476312": [
@@ -193245,12 +193253,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 4,
-            "ppg": 0.36,
+            "ppg": 0.33,
             "evPoints": 4,
-            "evPPG": 0.36,
-            "toi": 16.08
+            "evPPG": 0.33,
+            "toi": 15.88
           }
         ]
       }
@@ -193639,12 +193647,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8485512": [
@@ -194221,12 +194229,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 10,
+            "gp": 11,
             "points": 7,
-            "ppg": 0.7,
+            "ppg": 0.64,
             "evPoints": 6,
-            "evPPG": 0.6,
-            "toi": 24.6
+            "evPPG": 0.55,
+            "toi": 24.67
           }
         ],
         "8477932": [
@@ -194353,12 +194361,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 9,
-            "points": 3,
-            "ppg": 0.33,
-            "evPoints": 2,
-            "evPPG": 0.22,
-            "toi": 20.87
+            "gp": 10,
+            "points": 4,
+            "ppg": 0.4,
+            "evPoints": 3,
+            "evPPG": 0.3,
+            "toi": 21.04
           }
         ],
         "8476869": [
@@ -194475,12 +194483,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
-            "points": 2,
-            "ppg": 0.2,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 19.72
+            "gp": 11,
+            "points": 3,
+            "ppg": 0.27,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 19.6
           }
         ],
         "8478500": [
@@ -195586,12 +195594,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482911": [
@@ -196875,12 +196883,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 8,
+            "gp": 9,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.98
+            "toi": 10.01
           }
         ],
         "8476952": [
@@ -197657,12 +197665,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8477073": [
@@ -198545,12 +198553,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 19.8
+            "evPPG": 0.17,
+            "toi": 19.94
           }
         ]
       }
@@ -198941,12 +198949,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8482090": [
@@ -199859,12 +199867,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ]
       }
@@ -200399,12 +200407,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 12,
-            "points": 5,
-            "ppg": 0.42,
-            "evPoints": 3,
-            "evPPG": 0.25,
-            "toi": 13.04
+            "gp": 13,
+            "points": 6,
+            "ppg": 0.46,
+            "evPoints": 4,
+            "evPPG": 0.31,
+            "toi": 13.09
           }
         ]
       }
@@ -200855,12 +200863,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8480762": [
@@ -201637,12 +201645,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8485511": [
@@ -203365,12 +203373,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 19.38
+            "evPPG": 0.27,
+            "toi": 19.04
           }
         ],
         "8481564": [
@@ -204141,12 +204149,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 8,
+            "gp": 9,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.98
+            "toi": 10.01
           }
         ]
       }
@@ -204686,12 +204694,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 2,
-            "ppg": 0.2,
+            "ppg": 0.18,
             "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 20.2
+            "evPPG": 0.18,
+            "toi": 19.96
           }
         ]
       }
@@ -205068,12 +205076,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 9,
+            "gp": 10,
             "points": 1,
-            "ppg": 0.11,
+            "ppg": 0.1,
             "evPoints": 1,
-            "evPPG": 0.11,
-            "toi": 15.59
+            "evPPG": 0.1,
+            "toi": 15.54
           }
         ],
         "8482176": [
@@ -205120,12 +205128,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 19.38
+            "evPPG": 0.27,
+            "toi": 19.04
           }
         ],
         "8482858": [
@@ -205214,12 +205222,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 6,
-            "points": 3,
-            "ppg": 0.5,
-            "evPoints": 2,
-            "evPPG": 0.33,
-            "toi": 22.17
+            "gp": 7,
+            "points": 4,
+            "ppg": 0.57,
+            "evPoints": 3,
+            "evPPG": 0.43,
+            "toi": 22.31
           }
         ],
         "8482095": [
@@ -206185,12 +206193,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 10,
-            "points": 4,
-            "ppg": 0.4,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 15.61
+            "gp": 11,
+            "points": 5,
+            "ppg": 0.45,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 15.55
           }
         ],
         "8482460": [
@@ -207304,12 +207312,12 @@
         {
           "season": 20262027,
           "age": 26,
-          "gp": 1,
+          "gp": 2,
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
           "evPPG": 0.0,
-          "toi": 8.18
+          "toi": 6.61
         }
       ],
       "compCareers": {
@@ -207391,12 +207399,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8481732": [
@@ -208277,12 +208285,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 13.69
+            "evPPG": 0.45,
+            "toi": 13.55
           }
         ],
         "8477406": [
@@ -208835,12 +208843,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 5,
-            "evPPG": 0.5,
-            "toi": 19.86
+            "evPPG": 0.45,
+            "toi": 19.92
           }
         ],
         "8479372": [
@@ -210071,12 +210079,12 @@
         {
           "season": 20262027,
           "age": 31,
-          "gp": 10,
+          "gp": 11,
           "points": 3,
-          "ppg": 0.3,
+          "ppg": 0.27,
           "evPoints": 2,
-          "evPPG": 0.2,
-          "toi": 16.34
+          "evPPG": 0.18,
+          "toi": 16.42
         }
       ],
       "compCareers": {
@@ -210174,12 +210182,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 10,
+            "gp": 11,
             "points": 7,
-            "ppg": 0.7,
+            "ppg": 0.64,
             "evPoints": 6,
-            "evPPG": 0.6,
-            "toi": 24.6
+            "evPPG": 0.55,
+            "toi": 24.67
           }
         ],
         "8476869": [
@@ -210296,12 +210304,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 10,
-            "points": 2,
-            "ppg": 0.2,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 19.72
+            "gp": 11,
+            "points": 3,
+            "ppg": 0.27,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 19.6
           }
         ],
         "8478013": [
@@ -210510,12 +210518,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 9,
-            "points": 3,
-            "ppg": 0.33,
-            "evPoints": 2,
-            "evPPG": 0.22,
-            "toi": 20.87
+            "gp": 10,
+            "points": 4,
+            "ppg": 0.4,
+            "evPoints": 3,
+            "evPPG": 0.3,
+            "toi": 21.04
           }
         ],
         "8476906": [
@@ -211005,12 +211013,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482911": [
@@ -211368,12 +211376,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482911": [
@@ -211798,12 +211806,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8482090": [
@@ -212448,12 +212456,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 10,
-            "points": 5,
-            "ppg": 0.5,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 17.3
+            "gp": 11,
+            "points": 6,
+            "ppg": 0.55,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 17.42
           }
         ],
         "8482745": [
@@ -213796,12 +213804,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 15.25
+            "evPPG": 0.17,
+            "toi": 14.97
           }
         ]
       }
@@ -214870,12 +214878,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 15.25
+            "evPPG": 0.17,
+            "toi": 14.97
           }
         ]
       }
@@ -215243,12 +215251,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482911": [
@@ -215853,11 +215861,11 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 10,
+            "gp": 11,
             "points": 1,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 1,
-            "evPPG": 0.1,
+            "evPPG": 0.09,
             "toi": 13.56
           }
         ],
@@ -216667,12 +216675,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 1,
-            "points": 0,
-            "ppg": 0.0,
-            "evPoints": 0,
-            "evPPG": 0.0,
-            "toi": 5.38
+            "gp": 2,
+            "points": 1,
+            "ppg": 0.5,
+            "evPoints": 1,
+            "evPPG": 0.5,
+            "toi": 7.08
           }
         ],
         "8477989": [
@@ -217773,12 +217781,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 16.54
+            "toi": 16.61
           }
         ],
         "8475754": [
@@ -217915,12 +217923,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 11,
+            "gp": 12,
             "points": 8,
-            "ppg": 0.73,
+            "ppg": 0.67,
             "evPoints": 5,
-            "evPPG": 0.45,
-            "toi": 18.49
+            "evPPG": 0.42,
+            "toi": 18.33
           }
         ],
         "8475151": [
@@ -218087,12 +218095,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 10,
-            "points": 3,
-            "ppg": 0.3,
-            "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 16.3
+            "gp": 11,
+            "points": 4,
+            "ppg": 0.36,
+            "evPoints": 4,
+            "evPPG": 0.36,
+            "toi": 16.36
           }
         ]
       }
@@ -219147,12 +219155,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 11,
+            "gp": 12,
             "points": 3,
-            "ppg": 0.27,
+            "ppg": 0.25,
             "evPoints": 3,
-            "evPPG": 0.27,
-            "toi": 17.97
+            "evPPG": 0.25,
+            "toi": 17.81
           }
         ]
       }
@@ -220479,12 +220487,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 8,
+            "gp": 9,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.98
+            "toi": 10.01
           }
         ],
         "8476469": [
@@ -222342,12 +222350,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8483468": [
@@ -222747,12 +222755,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 5,
-            "ppg": 0.5,
+            "ppg": 0.45,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 19.52
+            "evPPG": 0.36,
+            "toi": 19.15
           }
         ],
         "8482911": [
@@ -223177,12 +223185,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8483468": [
@@ -223615,12 +223623,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 4,
-            "evPPG": 0.4,
-            "toi": 11.09
+            "evPPG": 0.36,
+            "toi": 11.0
           }
         ],
         "8482090": [
@@ -224165,12 +224173,12 @@
           {
             "season": 20262027,
             "age": 23,
-            "gp": 8,
+            "gp": 9,
             "points": 4,
-            "ppg": 0.5,
+            "ppg": 0.44,
             "evPoints": 3,
-            "evPPG": 0.38,
-            "toi": 18.18
+            "evPPG": 0.33,
+            "toi": 17.88
           }
         ],
         "8482110": [
@@ -224227,12 +224235,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 10,
+            "gp": 11,
             "points": 4,
-            "ppg": 0.4,
+            "ppg": 0.36,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 15.1
+            "evPPG": 0.27,
+            "toi": 15.12
           }
         ],
         "8482720": [
@@ -224752,12 +224760,12 @@
         {
           "season": 20262027,
           "age": 36,
-          "gp": 11,
+          "gp": 12,
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
           "evPPG": 0.0,
-          "toi": 17.1
+          "toi": 17.09
         }
       ],
       "compCareers": {
@@ -225401,12 +225409,12 @@
           {
             "season": 20262027,
             "age": 37,
-            "gp": 10,
+            "gp": 11,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 14.91
+            "toi": 15.38
           }
         ],
         "8475179": [
@@ -225583,12 +225591,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 11,
+            "gp": 12,
             "points": 2,
-            "ppg": 0.18,
+            "ppg": 0.17,
             "evPoints": 2,
-            "evPPG": 0.18,
-            "toi": 15.25
+            "evPPG": 0.17,
+            "toi": 14.97
           }
         ]
       }
@@ -226253,12 +226261,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 10.08
+            "evPPG": 0.14,
+            "toi": 10.42
           }
         ],
         "8477015": [
@@ -226467,12 +226475,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 8,
+            "gp": 9,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 9.98
+            "toi": 10.01
           }
         ]
       }
@@ -226806,12 +226814,12 @@
         {
           "season": 20262027,
           "age": 24,
-          "gp": 10,
+          "gp": 11,
           "points": 6,
-          "ppg": 0.6,
+          "ppg": 0.55,
           "evPoints": 4,
-          "evPPG": 0.4,
-          "toi": 13.87
+          "evPPG": 0.36,
+          "toi": 13.68
         }
       ],
       "compCareers": {
@@ -227077,12 +227085,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 11,
+            "gp": 12,
             "points": 3,
-            "ppg": 0.27,
+            "ppg": 0.25,
             "evPoints": 3,
-            "evPPG": 0.27,
-            "toi": 17.97
+            "evPPG": 0.25,
+            "toi": 17.81
           }
         ]
       }
@@ -228273,12 +228281,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 10,
-            "points": 4,
-            "ppg": 0.4,
-            "evPoints": 2,
-            "evPPG": 0.2,
-            "toi": 15.61
+            "gp": 11,
+            "points": 5,
+            "ppg": 0.45,
+            "evPoints": 3,
+            "evPPG": 0.27,
+            "toi": 15.55
           }
         ],
         "8481532": [

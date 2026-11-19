@@ -4,6 +4,7 @@ __pycache__/
 *.pyo
 *.pyd
 .env
+*.env
 
 # Aging model — large generated files, not needed in repo
 aging_trace_*.netcdf

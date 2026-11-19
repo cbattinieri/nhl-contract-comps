@@ -75,6 +75,18 @@ CAP_LIMITS = {
 
 KNN_NEIGHBORS = 5
 LOOKBACK_SEASONS = 3  # how many prior FA classes to use as training data
+# Backfilled 1-year deals come from the LOOKBACK_SEASONS offseasons before the class
+# being predicted (platform = CURRENT_SEASON - 10001), mirroring the backtest window.
+ONE_YEAR_MIN_PLATFORM = (CURRENT_SEASON - 10001) - LOOKBACK_SEASONS * 10001
+
+# Actual NHL regular-season game counts for shortened seasons; default 82.
+SEASON_LENGTHS = {
+    20042005: 0,   # lockout — no games
+    20122013: 48,
+    20192020: 70,
+    20202021: 56,
+}
+DEFAULT_SEASON_LENGTH = 82
 
 # Estimation uses inverse-distance weighting (IDW) instead of arbitrary
 # fixed weights. Closer comps get exponentially more influence.
@@ -103,14 +115,18 @@ def fetch_nhl_data(base_url: str, seasons: list[str]) -> pd.DataFrame:
     return pd.DataFrame(all_rows)
 
 
-def fetch_raw_puckpedia() -> list:
-    """Fetch raw player records from PuckPedia API."""
+def fetch_raw_puckpedia(contract_type: str | None = None) -> list:
+    """Fetch raw player records from PuckPedia API.
+
+    Default returns each player's `current`/`future` contracts; with
+    contract_type="historical" each record carries a `history` list of expired deals.
+    """
     if not PUCKPEDIA_API_KEY:
         raise RuntimeError("PUCKPEDIA_API_KEY env var is required")
-    resp = requests.get(
-        f"https://puckpedia.com/api/players2?api_key={PUCKPEDIA_API_KEY}",
-        timeout=60,
-    )
+    url = f"https://puckpedia.com/api/players2?api_key={PUCKPEDIA_API_KEY}"
+    if contract_type:
+        url += f"&contract_type={contract_type}"
+    resp = requests.get(url, timeout=180)
     resp.raise_for_status()
     return resp.json().get("data", [])
 
@@ -157,11 +173,64 @@ def get_actual_contract(pp_record: dict, signing_year: int) -> dict | None:
     return None
 
 
-def fetch_contracts(puckpedia_records: list) -> pd.DataFrame:
+def history_signing_status(history: list) -> dict:
+    """Map contract_id -> signing status for a player's expired contracts.
+
+    PuckPedia's `history` items carry no signing_status. A contract's signing
+    status equals the expiry_status of the player's previous contract (verified
+    985/985 against current contracts); a contract with no predecessor is the ELC.
+    """
+    ordered = sorted(history or [], key=lambda h: h.get("signing_date") or "")
+    return {
+        h.get("contract_id"): (ordered[i - 1].get("expiry_status") if i > 0 else False)
+        for i, h in enumerate(ordered)
+    }
+
+
+def build_one_year_backfill(historical_records: list) -> pd.DataFrame:
+    """Every expired 1-year deal, as training rows (windowed later per predicted class).
+
+    `current` only holds each player's live contract, so a 1-year deal drops out of
+    the training pool the moment it expires — the pool ends up with almost no
+    1-year signings. Multi-year deals stay sourced from `current` (unchanged).
+    All seasons are kept so each backtest class gets its own prior 3 offseasons.
+    """
+    rows = []
+    for r in historical_records:
+        if not r.get("nhl_id"):
+            continue
+        statuses = history_signing_status(r.get("history"))
+        player = {k: v for k, v in r.items() if k != "history"}
+        for h in r.get("history") or []:
+            if str(h.get("length")) != "1":
+                continue
+            status = statuses.get(h.get("contract_id"))
+            if not status:
+                continue  # ELC (no predecessor) — not a market signing
+            try:
+                end_year = int(str(h.get("contract_end")).split("-")[0])
+            except ValueError:
+                continue
+            if end_year >= CURRENT_YEAR:
+                continue  # not fully expired — still-running deals belong to `current`
+            # Player-level fields win on overlapping keys, matching how df_active is built.
+            row = {**{k: v for k, v in h.items() if k not in player}, **player}
+            row.update({
+                "signing_status": status,
+                "is_pending_fa": False,
+                "is_retro_signed": False,
+                "is_history_backfill": True,
+            })
+            rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def fetch_contracts(puckpedia_records: list, historical_records: list | None = None) -> pd.DataFrame:
     """Build contracts DataFrame from raw PuckPedia records.
 
     Returns a combined DataFrame of:
       1. Historical/active contracts (for KNN training)
+         1b. Expired 1-year deals backfilled from the historical endpoint
       2. Pending FA rows (players with no current contract — they just became free agents)
          These rows have is_pending_fa=True and no contract value/length.
          signing_status is inferred from ufa_year.
@@ -181,6 +250,11 @@ def fetch_contracts(puckpedia_records: list) -> pd.DataFrame:
     df_active = df_active.loc[:, ~df_active.columns.duplicated()]  # drop duplicate cols
     df_active = df_active[df_active["contract_id"].notna()].copy()
     df_active["is_pending_fa"] = False
+    df_active["is_history_backfill"] = False
+
+    # ── 1b. EXPIRED 1-YEAR DEALS (historical endpoint) ───────────────────────
+    df_backfill = build_one_year_backfill(historical_records or [])
+    print(f"  1-year deals backfilled from contract history: {len(df_backfill)}")
 
     # ── 2. PENDING FAs (no current contract = just became a free agent) ──────
     # Include active="1" players (standard) PLUS active="0" players whose ufa_year equals
@@ -260,7 +334,9 @@ def fetch_contracts(puckpedia_records: list) -> pd.DataFrame:
     print(f"  Retroactively signed FAs (signed since {offseason_cutoff}): {len(df_retro)}")
 
     # ── 4. COMBINE ────────────────────────────────────────────────────────────
-    return pd.concat([df_active, df_free, df_retro], ignore_index=True)
+    # Backfill sits right after df_active so build_contracts' dedupe keeps the
+    # active row if a player has both for the same platform season.
+    return pd.concat([df_active, df_backfill, df_free, df_retro], ignore_index=True)
 
 
 # ---------------------------------------------------------------------------
@@ -314,6 +390,30 @@ def build_stats(raw_stats: pd.DataFrame) -> pd.DataFrame:
 
     df["pct_gp"] = (df["ctd_gamesPlayed"] / (df["szn_no"] * 82)).round(4)
 
+    # ── Candidate features (additive; validated in validate_features.py) ──
+    df["season_start_year"] = df["seasonId"] // 10000
+    debut = df.groupby("playerId")["seasonId"].transform("min")
+    df["debut_season"] = debut
+    debut_year = debut // 10000
+    df["seasons_since_debut"] = (df["season_start_year"] - debut_year + 1).astype(int)
+
+    _base = int(df["season_start_year"].min())
+    _top = int(df["season_start_year"].max())
+    _cum, _run = {_base - 1: 0}, 0
+    for _y in range(_base, _top + 1):
+        _run += SEASON_LENGTHS.get(_y * 10000 + (_y + 1), DEFAULT_SEASON_LENGTH)
+        _cum[_y] = _run
+    df["possible_gp"] = (
+        df["season_start_year"].map(_cum) - (debut_year - 1).map(_cum)
+    )
+
+    df["pct_gp_v2"] = (
+        (df["ctd_gamesPlayed"] / df["possible_gp"].replace(0, np.nan))
+        .clip(lower=0, upper=1).fillna(0).round(4)
+    )
+
+    df["platform_gp"] = df["gamesPlayed"]
+
     # Even-strength per game
     df["evPointsPerGame"] = (df["evPoints"] / df["gamesPlayed"]).fillna(0).round(4)
 
@@ -359,6 +459,12 @@ def build_contracts(raw_contracts: pd.DataFrame) -> pd.DataFrame:
 
     df = df.dropna(subset=["nhl_id"])
     df["nhl_id"] = df["nhl_id"].astype(int)
+
+    # A backfilled 1-year deal never overrides an active row for the same platform season.
+    dup_backfill = (df["is_history_backfill"] == True) & df.duplicated(  # noqa: E712
+        subset=["nhl_id", "contract_year"], keep="first"
+    )
+    df = df[~dup_backfill]
 
     # Drop ELC slides for active contracts only
     df = df[(df["signing_status"] != False) | (df["is_pending_fa"] == True)]  # noqa: E712
@@ -428,10 +534,27 @@ def model_config(fa_status: str, pos_group: str) -> tuple[list[str], dict | None
     return BASE_FEATURES, None
 
 
+def current_class_signings(df: pd.DataFrame, class_ids: set) -> pd.Series:
+    """Mask of live-contract rows that belong to the FA class being predicted.
+
+    Matches on player across ALL model cells (build_contracts relabels deals ending
+    this season with their expiry status, so a player's signed row and pending row
+    can land in different cells) and on signing date as a backstop. Backfilled
+    deals are fully expired prior contracts and never match.
+    """
+    cutoff = f"{CURRENT_YEAR}-{OFFSEASON_CUTOFF_MMDD}"
+    return (
+        (df["is_pending_fa"] != True)  # noqa: E712
+        & (df["is_history_backfill"] != True)  # noqa: E712
+        & (df["playerId"].isin(class_ids) | (df["signing_date"].fillna("").astype(str) >= cutoff))
+    )
+
+
 def run_knn_model(
     data: pd.DataFrame,
     features: list[str],
     feature_weights: dict | None = None,
+    class_ids: set | None = None,
 ) -> dict:
     """
     Fit KNN on historical FAs, predict comps for current-season FAs.
@@ -440,15 +563,21 @@ def run_knn_model(
     min_season = CURRENT_SEASON - (LOOKBACK_SEASONS * 10001)
 
     pending = data[data["is_pending_fa"] == True].copy()
-    # Exclude any player who appears in the pending pool from historical, even if
-    # they also have an active contract row (e.g. retro-signed players whose new
-    # deal is dated to the current or prior season by PuckPedia). Without this,
-    # a retro-signed player can appear in both pools and become their own comp.
-    pending_player_ids = set(pending["playerId"].unique())
+    # Keep the FA class being predicted out of training: their new deals are the
+    # outcome (e.g. retro-signed players whose deal PuckPedia dates to the prior
+    # season). Backfilled 1-year deals are exempt — they're expired prior contracts,
+    # and most 1-year players are back in this class, so a player guard would erase them.
+    class_ids = set(class_ids or ()) | set(pending["playerId"].unique())
+    is_backfill = data["is_history_backfill"] == True  # noqa: E712
+    in_window = np.where(
+        is_backfill,
+        data["contract_year"] >= ONE_YEAR_MIN_PLATFORM,
+        data["contract_year"] >= min_season,
+    )
     historical = data[
         (data["is_pending_fa"] != True)
-        & ~data["playerId"].isin(pending_player_ids)
-        & (data["contract_year"] >= min_season)
+        & ~current_class_signings(data, class_ids)
+        & in_window
         & (data["contract_year"] < CURRENT_SEASON)
     ].copy()
 
@@ -474,18 +603,40 @@ def run_knn_model(
                 X_hist[feat] *= w
                 X_pend[feat] *= w
 
-    knn = NearestNeighbors(n_neighbors=min(KNN_NEIGHBORS, len(historical)), algorithm="auto")
+    knn = NearestNeighbors(n_neighbors=min(KNN_NEIGHBORS * 4, len(historical)), algorithm="auto")
     knn.fit(X_hist)
     distances, indices = knn.kneighbors(X_pend)
 
     results = {}
     for i, (dists, idxs) in enumerate(zip(distances, indices)):
         pid = int(pending.iloc[i]["playerId"])
-        comp_ids = [int(historical.iloc[idx]["playerId"]) for idx in idxs]
-        comp_dists = [round(float(d), 4) for d in dists]
-        results[pid] = {"comps": comp_ids, "distances": comp_dists}
+        hist_pids = historical["playerId"].to_numpy()[idxs]
+        keep = unique_comp_positions(hist_pids, pid)
+        results[pid] = {
+            "comps": [int(hist_pids[j]) for j in keep],
+            "compYears": [int(historical.iloc[idxs[j]]["contract_year"]) for j in keep],
+            "distances": [round(float(dists[j]), 4) for j in keep],
+        }
 
     return results
+
+
+def unique_comp_positions(neighbor_pids, self_pid: int) -> list[int]:
+    """Positions of the first KNN_NEIGHBORS neighbors, one per player, never self.
+
+    With backfilled 1-year deals a player can hold several training rows (and a
+    pending FA can match his own expired deal), so raw neighbors need deduping.
+    """
+    seen, keep = set(), []
+    for j, cp in enumerate(neighbor_pids):
+        cp = int(cp)
+        if cp == self_pid or cp in seen:
+            continue
+        seen.add(cp)
+        keep.append(j)
+        if len(keep) == KNN_NEIGHBORS:
+            break
+    return keep
 
 
 # ---------------------------------------------------------------------------
@@ -777,9 +928,11 @@ def backtest_model(
     remaining classes, predict cap hit %, and compare to the actual.
     Returns MAE, median absolute error, and per-player errors.
     """
+    # Current-class rows carry no contract value; held out, they'd score as 0% signings.
     subset = merged[
         (merged["signing_status"] == fa_status)
         & (merged["position_group"] == pos_group)
+        & (merged["is_pending_fa"] != True)  # noqa: E712
     ].copy()
 
     # Only backtest on seasons that have actual contract data
@@ -819,15 +972,17 @@ def backtest_model(
                     X_hist[feat] *= w
                     X_pend[feat] *= w
 
-        k = min(KNN_NEIGHBORS, len(historical))
+        k = min(KNN_NEIGHBORS * 4, len(historical))
         knn = NearestNeighbors(n_neighbors=k, algorithm="auto")
         knn.fit(X_hist)
         distances, indices = knn.kneighbors(X_pend)
+        hist_pids = historical["playerId"].to_numpy()
 
         for i in range(len(pending)):
+            keep = unique_comp_positions(hist_pids[indices[i]], int(pending.iloc[i]["playerId"]))
             comp_pcts = []
-            for idx in indices[i]:
-                comp_row = historical.iloc[idx]
+            for j in keep:
+                comp_row = historical.iloc[indices[i][j]]
                 cy = int(comp_row["contract_year"])
                 ul = cap_limits.get(cy, 95_500_000)
                 length = int(comp_row.get("length", 1)) if pd.notna(comp_row.get("length")) else 1
@@ -835,7 +990,7 @@ def backtest_model(
                 aav = value / length if length > 0 else 0
                 comp_pcts.append((aav / ul) * 100 if ul > 0 else 0)
 
-            est = idw_estimate(comp_pcts, list(distances[i]))
+            est = idw_estimate(comp_pcts, [distances[i][j] for j in keep])
 
             # Actual cap hit % for this pending player
             prow = pending.iloc[i]
@@ -985,6 +1140,51 @@ def build_career_history(player_id: int, stats: pd.DataFrame) -> list[dict]:
     return history
 
 
+def build_contract_history(pp_current: dict | None, pp_hist: dict | None) -> list[dict]:
+    """Every NHL contract for a player (expired + current + future), oldest first.
+
+    capHitPct is AAV over the cap of the deal's first season — the standard
+    "cap hit % at signing" — so it can differ from the platform-year basis the
+    KNN comps use.
+    """
+    # "Past" rather than "Expired": history also holds bought-out/terminated deals.
+    contracts = [("Past", c) for c in (pp_hist or {}).get("history") or []]
+    contracts += [("Current", c) for c in (pp_current or {}).get("current") or []]
+    contracts += [("Future", c) for c in (pp_current or {}).get("future") or []]
+    contracts.sort(key=lambda kc: kc[1].get("signing_date") or "")
+
+    out, prev_expiry, has_prior = [], None, False
+    for kind, c in contracts:
+        # Expired/future items lack signing_status; it's the prior deal's expiry status.
+        status = c["signing_status"] if "signing_status" in c else (prev_expiry if has_prior else False)
+        prev_expiry, has_prior = c.get("expiry_status"), True
+        try:
+            length = int(float(c.get("length") or 0))
+            value = int(float(c.get("value") or 0))
+            end_year = int(str(c.get("contract_end")).split("-")[0])
+        except (ValueError, TypeError):
+            continue
+        if length < 1:
+            continue
+        start_year = end_year - length + 1
+        first_cap = CAP_LIMITS.get(start_year * 10000 + start_year + 1)
+        aav = round(value / length)
+        out.append({
+            "status": kind,
+            "signingDate": c.get("signing_date") or None,
+            "team": c.get("team_name") or None,
+            "startSeason": f"{start_year}-{str(start_year + 1)[2:]}",
+            "endSeason": f"{end_year}-{str(end_year + 1)[2:]}",
+            "term": length,
+            "value": value,
+            "aav": aav,
+            "capHitPct": round(aav / first_cap * 100, 2) if first_cap else None,
+            "signingType": "ELC" if status is False else (status or None),
+            "expiryStatus": c.get("expiry_status") or None,
+        })
+    return out
+
+
 # ---------------------------------------------------------------------------
 # MAIN
 # ---------------------------------------------------------------------------
@@ -1021,7 +1221,9 @@ def main():
     print("Fetching contracts from PuckPedia...")
     puckpedia_records = fetch_raw_puckpedia()
     pp_by_nhl_id = {int(r["nhl_id"]): r for r in puckpedia_records if r.get("nhl_id")}
-    raw_contracts = fetch_contracts(puckpedia_records)
+    historical_records = fetch_raw_puckpedia("historical")
+    pp_hist_by_nhl_id = {int(r["nhl_id"]): r for r in historical_records if r.get("nhl_id")}
+    raw_contracts = fetch_contracts(puckpedia_records, historical_records)
     contracts = build_contracts(raw_contracts)
     print(f"  Got {len(contracts)} contract rows")
 
@@ -1029,10 +1231,20 @@ def main():
     merged = merge_stats_contracts(stats, contracts)
     print(f"  Merged to {len(merged)} player-seasons")
 
-    # 6. Derive term-vs-cap-hit% slopes and UFA adjustment factors
-    term_slopes = derive_term_slopes(merged, CAP_LIMITS)
+    # 6. Derive term-vs-cap-hit% slopes and UFA adjustment factors.
+    # Older backfilled 1-year deals exist only for the backtest; keep them out of these
+    # fits, along with the current class's own signings (their outcomes).
+    class_ids = set(merged.loc[merged["is_pending_fa"] == True, "playerId"])  # noqa: E712
+    fit_rows = merged[
+        (
+            (merged["is_history_backfill"] != True)  # noqa: E712
+            | (merged["contract_year"] >= ONE_YEAR_MIN_PLATFORM)
+        )
+        & ~current_class_signings(merged, class_ids)
+    ]
+    term_slopes = derive_term_slopes(fit_rows, CAP_LIMITS)
     print("Fitting UFA premium adjustments for RFA term table...")
-    ufa_adjustments = fit_ufa_adjustments(merged, CAP_LIMITS)
+    ufa_adjustments = fit_ufa_adjustments(fit_rows, CAP_LIMITS)
     for fa_status, tiers in term_slopes.items():
         for tier_name, info in tiers.items():
             if info["fitted"]:
@@ -1060,7 +1272,7 @@ def main():
             # Only include features that exist
             features = [f for f in features if f in subset.columns]
 
-            result = run_knn_model(subset, features, weights)
+            result = run_knn_model(subset, features, weights, class_ids)
             for pid, comp_data in result.items():
                 all_comps[pid] = comp_data
 
@@ -1120,17 +1332,20 @@ def main():
         # retro-signed players whose new contract is dated to the current/prior season.
         comp_records = []
         comp_dists = []
-        for comp_pid, dist in zip(comp_info["comps"], comp_info["distances"]):
-            if comp_pid in pending_fa_player_ids:
-                continue
+        for comp_pid, comp_cy, dist in zip(
+            comp_info["comps"], comp_info["compYears"], comp_info["distances"]
+        ):
+            # The exact contract row KNN matched — a player can have several.
             comp_rows = merged[
                 (merged["playerId"] == comp_pid) &
+                (merged["contract_year"] == comp_cy) &
                 (merged["is_pending_fa"] != True)
             ]
             if comp_rows.empty:
                 continue
-            # Use the most recent signed contract record
-            comp_row = comp_rows.sort_values("contract_year").iloc[-1]
+            comp_row = comp_rows.iloc[0]
+            if comp_pid in pending_fa_player_ids and comp_row.get("is_history_backfill") != True:  # noqa: E712
+                continue
             comp_records.append(build_player_record(comp_row, CAP_LIMITS))
             comp_dists.append(dist)
 
@@ -1225,6 +1440,11 @@ def main():
                 signed_count += 1
 
     print(f"  {signed_count} previously-pending players carried forward as signed")
+
+    # Contract history for every player, including carried-forward snapshots.
+    for p in output["players"]:
+        pid = p["playerId"]
+        p["contractHistory"] = build_contract_history(pp_by_nhl_id.get(pid), pp_hist_by_nhl_id.get(pid))
 
     # Sort: pending first (alphabetical), then signed (alphabetical)
     output["players"].sort(key=lambda p: (p.get("signed", False), p["name"]))

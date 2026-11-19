@@ -2,7 +2,7 @@
   "meta": {
     "faClassYear": 2026,
     "mode": "extension_eligible",
-    "generatedAt": "2026-11-18T16:56:32.088220",
+    "generatedAt": "2026-11-19T01:52:53.475242",
     "signedCount": 32,
     "pendingCount": 359,
     "currentCap": 104000000
@@ -107975,7 +107975,7 @@
             "ppg": 1.24,
             "evPoints": 18,
             "evPPG": 0.86,
-            "toi": 20.12
+            "toi": 20.14
           }
         ]
       }
@@ -243408,7 +243408,7 @@
           "ppg": 0.33,
           "evPoints": 6,
           "evPPG": 0.29,
-          "toi": 14.96
+          "toi": 14.94
         }
       ],
       "compCareers": {

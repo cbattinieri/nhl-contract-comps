@@ -7,7 +7,7 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-11-18T16:56:26.712578",
+    "generatedAt": "2026-11-19T01:52:48.173634",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -108048,7 +108048,7 @@
             "ppg": 1.24,
             "evPoints": 18,
             "evPPG": 0.86,
-            "toi": 20.12
+            "toi": 20.14
           }
         ]
       }
@@ -243481,7 +243481,7 @@
           "ppg": 0.33,
           "evPoints": 6,
           "evPPG": 0.29,
-          "toi": 14.96
+          "toi": 14.94
         }
       ],
       "compCareers": {

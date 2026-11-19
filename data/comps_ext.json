@@ -7,7 +7,7 @@
       "20272028": 113500000,
       "20282029": 113500000
     },
-    "generatedAt": "2026-11-19T02:25:36.111064",
+    "generatedAt": "2026-11-19T17:02:13.589899",
     "estimationMethod": "inverse_distance_weighting",
     "backtest": {
       "RFA_Forward": {
@@ -519,12 +519,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ],
         "8481656": [
@@ -661,7 +661,7 @@
       "age": 22,
       "ufaYear": 2031,
       "height": "75",
-      "weight": "209",
+      "weight": "205",
       "shoots": "L",
       "draftOverall": 209,
       "draftBucket": 5,
@@ -804,7 +804,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -1556,12 +1556,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
+            "gp": 22,
             "points": 7,
-            "ppg": 0.33,
+            "ppg": 0.32,
             "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 10.93
+            "evPPG": 0.32,
+            "toi": 11.07
           }
         ],
         "8484938": [
@@ -1811,7 +1811,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -1959,12 +1959,12 @@
         {
           "season": 20262027,
           "age": 23,
-          "gp": 14,
+          "gp": 15,
           "points": 2,
-          "ppg": 0.14,
+          "ppg": 0.13,
           "evPoints": 2,
-          "evPPG": 0.14,
-          "toi": 11.59
+          "evPPG": 0.13,
+          "toi": 11.46
         }
       ],
       "compCareers": {
@@ -2727,12 +2727,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 21,
-            "points": 8,
-            "ppg": 0.38,
-            "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 15.31
+            "gp": 22,
+            "points": 9,
+            "ppg": 0.41,
+            "evPoints": 8,
+            "evPPG": 0.36,
+            "toi": 15.44
           }
         ],
         "8479520": [
@@ -4049,12 +4049,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ]
       },
@@ -5489,7 +5489,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "76",
-          "weight": "205",
+          "weight": "225",
           "shoots": "L",
           "draftOverall": 50,
           "draftBucket": 4,
@@ -5590,8 +5590,8 @@
           "contractYear": 20252026,
           "age": 25,
           "ufaYear": 2028,
-          "height": "73",
-          "weight": "192",
+          "height": "74",
+          "weight": "196",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -7457,12 +7457,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ],
         "8475745": [
@@ -9059,12 +9059,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ]
       },
@@ -9733,7 +9733,7 @@
       "age": 24,
       "ufaYear": 2029,
       "height": "72",
-      "weight": "198",
+      "weight": "192",
       "shoots": "R",
       "draftOverall": 7,
       "draftBucket": 2,
@@ -10245,12 +10245,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ]
       },
@@ -10504,7 +10504,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -11088,12 +11088,12 @@
         {
           "season": 20262027,
           "age": 30,
-          "gp": 21,
+          "gp": 22,
           "points": 7,
-          "ppg": 0.33,
+          "ppg": 0.32,
           "evPoints": 7,
-          "evPPG": 0.33,
-          "toi": 20.32
+          "evPPG": 0.32,
+          "toi": 20.5
         }
       ],
       "compCareers": {
@@ -12467,12 +12467,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 13,
+            "gp": 14,
             "points": 10,
-            "ppg": 0.77,
+            "ppg": 0.71,
             "evPoints": 5,
-            "evPPG": 0.38,
-            "toi": 15.39
+            "evPPG": 0.36,
+            "toi": 15.49
           }
         ],
         "8476872": [
@@ -13414,7 +13414,7 @@
           "age": 30,
           "ufaYear": 2021,
           "height": "77",
-          "weight": "216",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 152,
           "draftBucket": 5,
@@ -13448,7 +13448,7 @@
           "age": 29,
           "ufaYear": 2023,
           "height": "74",
-          "weight": "207",
+          "weight": "214",
           "shoots": "L",
           "draftOverall": 91,
           "draftBucket": 5,
@@ -13564,12 +13564,12 @@
         {
           "season": 20262027,
           "age": 31,
-          "gp": 16,
+          "gp": 17,
           "points": 1,
           "ppg": 0.06,
           "evPoints": 1,
           "evPPG": 0.06,
-          "toi": 13.6
+          "toi": 13.64
         }
       ],
       "compCareers": {
@@ -13709,12 +13709,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 16,
+            "gp": 17,
             "points": 2,
             "ppg": 0.12,
             "evPoints": 2,
             "evPPG": 0.12,
-            "toi": 12.19
+            "toi": 12.33
           }
         ],
         "8482072": [
@@ -14497,12 +14497,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 13,
+            "gp": 14,
             "points": 3,
-            "ppg": 0.23,
+            "ppg": 0.21,
             "evPoints": 3,
-            "evPPG": 0.23,
-            "toi": 12.25
+            "evPPG": 0.21,
+            "toi": 12.39
           }
         ],
         "8477479": [
@@ -15150,12 +15150,12 @@
         {
           "season": 20262027,
           "age": 32,
-          "gp": 21,
-          "points": 10,
-          "ppg": 0.48,
-          "evPoints": 7,
-          "evPPG": 0.33,
-          "toi": 18.61
+          "gp": 22,
+          "points": 11,
+          "ppg": 0.5,
+          "evPoints": 8,
+          "evPPG": 0.36,
+          "toi": 18.72
         }
       ],
       "compCareers": {
@@ -16804,12 +16804,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 13,
+            "gp": 14,
             "points": 10,
-            "ppg": 0.77,
+            "ppg": 0.71,
             "evPoints": 5,
-            "evPPG": 0.38,
-            "toi": 15.39
+            "evPPG": 0.36,
+            "toi": 15.49
           }
         ]
       },
@@ -17226,12 +17226,12 @@
         {
           "season": 20262027,
           "age": 29,
-          "gp": 22,
+          "gp": 23,
           "points": 8,
-          "ppg": 0.36,
+          "ppg": 0.35,
           "evPoints": 8,
-          "evPPG": 0.36,
-          "toi": 18.0
+          "evPPG": 0.35,
+          "toi": 17.93
         }
       ],
       "compCareers": {
@@ -17309,12 +17309,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.06
+            "evPPG": 0.23,
+            "toi": 19.24
           }
         ],
         "8480192": [
@@ -17690,8 +17690,8 @@
       "contractYear": 20252026,
       "age": 22,
       "ufaYear": 2031,
-      "height": "72",
-      "weight": "176",
+      "height": "73",
+      "weight": "190",
       "shoots": "L",
       "draftOverall": 116,
       "draftBucket": 5,
@@ -17834,7 +17834,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -18293,7 +18293,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -19499,12 +19499,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 21,
-            "points": 8,
-            "ppg": 0.38,
-            "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 15.31
+            "gp": 22,
+            "points": 9,
+            "ppg": 0.41,
+            "evPoints": 8,
+            "evPPG": 0.36,
+            "toi": 15.44
           }
         ],
         "8481481": [
@@ -19805,7 +19805,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "75",
-          "weight": "218",
+          "weight": "223",
           "shoots": "L",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -20096,12 +20096,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 15,
+            "gp": 16,
             "points": 1,
-            "ppg": 0.07,
+            "ppg": 0.06,
             "evPoints": 1,
-            "evPPG": 0.07,
-            "toi": 10.15
+            "evPPG": 0.06,
+            "toi": 10.1
           }
         ],
         "8476867": [
@@ -20852,7 +20852,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "73",
-          "weight": "196",
+          "weight": "190",
           "shoots": "R",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -20928,12 +20928,12 @@
         {
           "season": 20262027,
           "age": 26,
-          "gp": 20,
+          "gp": 21,
           "points": 4,
-          "ppg": 0.2,
+          "ppg": 0.19,
           "evPoints": 4,
-          "evPPG": 0.2,
-          "toi": 12.22
+          "evPPG": 0.19,
+          "toi": 12.15
         }
       ],
       "compCareers": {
@@ -21255,6 +21255,16 @@
             "evPoints": 5,
             "evPPG": 0.08,
             "toi": 14.81
+          },
+          {
+            "season": 20262027,
+            "age": 27,
+            "gp": 1,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 13.08
           }
         ]
       },
@@ -23022,12 +23032,12 @@
         {
           "season": 20262027,
           "age": 31,
-          "gp": 21,
+          "gp": 22,
           "points": 21,
-          "ppg": 1.0,
+          "ppg": 0.95,
           "evPoints": 17,
-          "evPPG": 0.81,
-          "toi": 18.77
+          "evPPG": 0.77,
+          "toi": 18.74
         }
       ],
       "compCareers": {
@@ -24167,12 +24177,12 @@
           {
             "season": 20262027,
             "age": 23,
-            "gp": 21,
+            "gp": 22,
             "points": 14,
-            "ppg": 0.67,
+            "ppg": 0.64,
             "evPoints": 11,
-            "evPPG": 0.52,
-            "toi": 24.32
+            "evPPG": 0.5,
+            "toi": 24.28
           }
         ],
         "8482105": [
@@ -24741,7 +24751,7 @@
       "age": 21,
       "ufaYear": 2032,
       "height": "74",
-      "weight": "198",
+      "weight": "209",
       "shoots": "L",
       "draftOverall": 80,
       "draftBucket": 5,
@@ -25075,12 +25085,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ],
         "8482874": [
@@ -25467,7 +25477,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "70",
-          "weight": "176",
+          "weight": "181",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -26643,12 +26653,12 @@
         {
           "season": 20262027,
           "age": 27,
-          "gp": 22,
-          "points": 12,
-          "ppg": 0.55,
-          "evPoints": 8,
-          "evPPG": 0.36,
-          "toi": 14.71
+          "gp": 23,
+          "points": 13,
+          "ppg": 0.57,
+          "evPoints": 9,
+          "evPPG": 0.39,
+          "toi": 14.7
         }
       ],
       "compCareers": {
@@ -27084,12 +27094,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ]
       },
@@ -28244,12 +28254,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.1
+            "evPPG": 0.23,
+            "toi": 19.06
           }
         ]
       },
@@ -28370,7 +28380,7 @@
       "age": 27,
       "ufaYear": 2026,
       "height": "72",
-      "weight": "187",
+      "weight": "194",
       "shoots": "L",
       "draftOverall": 189,
       "draftBucket": 5,
@@ -28463,7 +28473,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -28497,7 +28507,7 @@
           "age": 27,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "196",
+          "weight": "192",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -29521,11 +29531,11 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 21,
-            "points": 13,
-            "ppg": 0.62,
-            "evPoints": 11,
-            "evPPG": 0.52,
+            "gp": 22,
+            "points": 14,
+            "ppg": 0.64,
+            "evPoints": 12,
+            "evPPG": 0.55,
             "toi": 13.65
           }
         ],
@@ -30314,7 +30324,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -30348,7 +30358,7 @@
           "age": 27,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "196",
+          "weight": "192",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -31018,7 +31028,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "72",
-          "weight": "179",
+          "weight": "185",
           "shoots": "L",
           "draftOverall": 24,
           "draftBucket": 3,
@@ -31600,8 +31610,8 @@
           "contractYear": 20252026,
           "age": 28,
           "ufaYear": 2025,
-          "height": "75",
-          "weight": "205",
+          "height": "74",
+          "weight": "209",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -34206,7 +34216,7 @@
           "age": 30,
           "ufaYear": 2021,
           "height": "77",
-          "weight": "216",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 152,
           "draftBucket": 5,
@@ -34645,12 +34655,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 20,
+            "gp": 21,
             "points": 7,
-            "ppg": 0.35,
+            "ppg": 0.33,
             "evPoints": 7,
-            "evPPG": 0.35,
-            "toi": 19.26
+            "evPPG": 0.33,
+            "toi": 19.48
           }
         ],
         "8477384": [
@@ -34809,12 +34819,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 16,
+            "gp": 17,
             "points": 2,
             "ppg": 0.12,
             "evPoints": 2,
             "evPPG": 0.12,
-            "toi": 12.19
+            "toi": 12.33
           }
         ],
         "8476874": [
@@ -35139,7 +35149,7 @@
           "age": 26,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "205",
+          "weight": "194",
           "shoots": "R",
           "draftOverall": 29,
           "draftBucket": 3,
@@ -37147,11 +37157,11 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 21,
-            "points": 13,
-            "ppg": 0.62,
-            "evPoints": 11,
-            "evPPG": 0.52,
+            "gp": 22,
+            "points": 14,
+            "ppg": 0.64,
+            "evPoints": 12,
+            "evPPG": 0.55,
             "toi": 13.65
           }
         ],
@@ -37907,12 +37917,12 @@
         {
           "season": 20262027,
           "age": 36,
-          "gp": 12,
+          "gp": 13,
           "points": 1,
           "ppg": 0.08,
           "evPoints": 1,
           "evPPG": 0.08,
-          "toi": 15.04
+          "toi": 14.96
         }
       ],
       "compCareers": {
@@ -38050,12 +38060,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 21,
+            "gp": 22,
             "points": 2,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 2,
-            "evPPG": 0.1,
-            "toi": 20.4
+            "evPPG": 0.09,
+            "toi": 20.49
           }
         ],
         "8475462": [
@@ -39740,12 +39750,12 @@
         {
           "season": 20262027,
           "age": 42,
-          "gp": 21,
+          "gp": 22,
           "points": 6,
-          "ppg": 0.29,
+          "ppg": 0.27,
           "evPoints": 6,
-          "evPPG": 0.29,
-          "toi": 16.6
+          "evPPG": 0.27,
+          "toi": 16.65
         }
       ],
       "compCareers": {
@@ -40918,6 +40928,16 @@
           "evPoints": 0,
           "evPPG": 0.0,
           "toi": 10.54
+        },
+        {
+          "season": 20262027,
+          "age": 24,
+          "gp": 1,
+          "points": 0,
+          "ppg": 0.0,
+          "evPoints": 0,
+          "evPPG": 0.0,
+          "toi": 7.37
         }
       ],
       "compCareers": {
@@ -42778,7 +42798,7 @@
           "age": 29,
           "ufaYear": 2023,
           "height": "74",
-          "weight": "207",
+          "weight": "214",
           "shoots": "L",
           "draftOverall": 91,
           "draftBucket": 5,
@@ -43045,12 +43065,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 16,
+            "gp": 17,
             "points": 2,
             "ppg": 0.12,
             "evPoints": 2,
             "evPPG": 0.12,
-            "toi": 12.19
+            "toi": 12.33
           }
         ],
         "8478468": [
@@ -44214,7 +44234,7 @@
           "age": 29,
           "ufaYear": 2024,
           "height": "73",
-          "weight": "205",
+          "weight": "201",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -45154,12 +45174,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 11.03
+            "evPPG": 0.23,
+            "toi": 11.1
           }
         ],
         "8478434": [
@@ -45236,12 +45256,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
-            "points": 1,
-            "ppg": 0.05,
-            "evPoints": 1,
-            "evPPG": 0.05,
-            "toi": 10.08
+            "gp": 22,
+            "points": 2,
+            "ppg": 0.09,
+            "evPoints": 2,
+            "evPPG": 0.09,
+            "toi": 10.07
           }
         ],
         "8479359": [
@@ -45672,7 +45692,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -45949,7 +45969,7 @@
       "age": 31,
       "ufaYear": 2022,
       "height": "77",
-      "weight": "212",
+      "weight": "207",
       "shoots": "L",
       "draftOverall": 137,
       "draftBucket": 5,
@@ -46387,12 +46407,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 9,
+            "gp": 10,
             "points": 1,
-            "ppg": 0.11,
+            "ppg": 0.1,
             "evPoints": 1,
-            "evPPG": 0.11,
-            "toi": 19.28
+            "evPPG": 0.1,
+            "toi": 18.83
           }
         ],
         "8476441": [
@@ -48417,12 +48437,12 @@
         {
           "season": 20262027,
           "age": 28,
-          "gp": 21,
-          "points": 12,
-          "ppg": 0.57,
-          "evPoints": 11,
-          "evPPG": 0.52,
-          "toi": 14.42
+          "gp": 22,
+          "points": 14,
+          "ppg": 0.64,
+          "evPoints": 13,
+          "evPPG": 0.59,
+          "toi": 14.37
         }
       ],
       "compCareers": {
@@ -49133,7 +49153,7 @@
           "age": 29,
           "ufaYear": 2024,
           "height": "73",
-          "weight": "187",
+          "weight": "194",
           "shoots": "L",
           "draftOverall": 97,
           "draftBucket": 5,
@@ -49201,7 +49221,7 @@
           "age": 29,
           "ufaYear": 2023,
           "height": "74",
-          "weight": "207",
+          "weight": "214",
           "shoots": "L",
           "draftOverall": 91,
           "draftBucket": 5,
@@ -49629,7 +49649,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -50461,12 +50481,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ],
         "8475768": [
@@ -50623,11 +50643,11 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 21,
-            "points": 13,
-            "ppg": 0.62,
-            "evPoints": 11,
-            "evPPG": 0.52,
+            "gp": 22,
+            "points": 14,
+            "ppg": 0.64,
+            "evPoints": 12,
+            "evPPG": 0.55,
             "toi": 13.65
           }
         ],
@@ -52532,12 +52552,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ]
       },
@@ -52967,12 +52987,12 @@
         {
           "season": 20262027,
           "age": 28,
-          "gp": 21,
+          "gp": 22,
           "points": 6,
-          "ppg": 0.29,
+          "ppg": 0.27,
           "evPoints": 5,
-          "evPPG": 0.24,
-          "toi": 12.13
+          "evPPG": 0.23,
+          "toi": 12.19
         }
       ],
       "compCareers": {
@@ -53224,12 +53244,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
-            "points": 9,
-            "ppg": 0.43,
-            "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 13.0
+            "gp": 22,
+            "points": 10,
+            "ppg": 0.45,
+            "evPoints": 9,
+            "evPPG": 0.41,
+            "toi": 13.13
           }
         ],
         "8480980": [
@@ -53442,7 +53462,7 @@
       "age": 24,
       "ufaYear": 2029,
       "height": "72",
-      "weight": "187",
+      "weight": "192",
       "shoots": "R",
       "draftOverall": 114,
       "draftBucket": 5,
@@ -53950,12 +53970,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 20,
+            "gp": 21,
             "points": 4,
-            "ppg": 0.2,
+            "ppg": 0.19,
             "evPoints": 3,
-            "evPPG": 0.15,
-            "toi": 15.47
+            "evPPG": 0.14,
+            "toi": 15.14
           }
         ],
         "8482475": [
@@ -54270,7 +54290,7 @@
           "age": 27,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "196",
+          "weight": "192",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -54304,7 +54324,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -54867,7 +54887,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "70",
-          "weight": "176",
+          "weight": "181",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -56129,12 +56149,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ],
         "8482148": [
@@ -57999,12 +58019,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.06
+            "evPPG": 0.23,
+            "toi": 19.24
           }
         ],
         "8479983": [
@@ -59531,12 +59551,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ]
       },
@@ -59838,8 +59858,8 @@
           "contractYear": 20252026,
           "age": 25,
           "ufaYear": 2028,
-          "height": "73",
-          "weight": "192",
+          "height": "74",
+          "weight": "196",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -59941,7 +59961,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "76",
-          "weight": "205",
+          "weight": "225",
           "shoots": "L",
           "draftOverall": 50,
           "draftBucket": 4,
@@ -60769,12 +60789,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 9,
+            "gp": 10,
             "points": 0,
             "ppg": 0.0,
             "evPoints": 0,
             "evPPG": 0.0,
-            "toi": 13.71
+            "toi": 13.8
           }
         ],
         "8477365": [
@@ -60861,12 +60881,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 9,
+            "gp": 10,
             "points": 1,
-            "ppg": 0.11,
+            "ppg": 0.1,
             "evPoints": 1,
-            "evPPG": 0.11,
-            "toi": 19.28
+            "evPPG": 0.1,
+            "toi": 18.83
           }
         ],
         "8476441": [
@@ -61609,12 +61629,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ],
         "8483733": [
@@ -62604,12 +62624,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 13,
+            "gp": 14,
             "points": 10,
-            "ppg": 0.77,
+            "ppg": 0.71,
             "evPoints": 5,
-            "evPPG": 0.38,
-            "toi": 15.39
+            "evPPG": 0.36,
+            "toi": 15.49
           }
         ]
       },
@@ -64332,7 +64352,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -65402,7 +65422,7 @@
           "age": 26,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "205",
+          "weight": "194",
           "shoots": "R",
           "draftOverall": 29,
           "draftBucket": 3,
@@ -65614,12 +65634,12 @@
         {
           "season": 20262027,
           "age": 27,
-          "gp": 19,
+          "gp": 20,
           "points": 5,
-          "ppg": 0.26,
+          "ppg": 0.25,
           "evPoints": 5,
-          "evPPG": 0.26,
-          "toi": 14.35
+          "evPPG": 0.25,
+          "toi": 14.24
         }
       ],
       "compCareers": {
@@ -66182,7 +66202,7 @@
           "age": 29,
           "ufaYear": 2024,
           "height": "73",
-          "weight": "187",
+          "weight": "194",
           "shoots": "L",
           "draftOverall": 97,
           "draftBucket": 5,
@@ -66216,7 +66236,7 @@
           "age": 29,
           "ufaYear": 2023,
           "height": "74",
-          "weight": "207",
+          "weight": "214",
           "shoots": "L",
           "draftOverall": 91,
           "draftBucket": 5,
@@ -66673,12 +66693,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 16,
+            "gp": 17,
             "points": 2,
             "ppg": 0.12,
             "evPoints": 2,
             "evPPG": 0.12,
-            "toi": 12.19
+            "toi": 12.33
           }
         ],
         "8479395": [
@@ -69477,7 +69497,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "76",
-          "weight": "205",
+          "weight": "225",
           "shoots": "L",
           "draftOverall": 50,
           "draftBucket": 4,
@@ -69578,8 +69598,8 @@
           "contractYear": 20252026,
           "age": 25,
           "ufaYear": 2028,
-          "height": "73",
-          "weight": "192",
+          "height": "74",
+          "weight": "196",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -70535,7 +70555,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "75",
-          "weight": "218",
+          "weight": "223",
           "shoots": "L",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -70836,12 +70856,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 15,
+            "gp": 16,
             "points": 1,
-            "ppg": 0.07,
+            "ppg": 0.06,
             "evPoints": 1,
-            "evPPG": 0.07,
-            "toi": 10.15
+            "evPPG": 0.06,
+            "toi": 10.1
           }
         ],
         "8476867": [
@@ -74082,12 +74102,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 12.75
+            "evPPG": 0.27,
+            "toi": 13.09
           }
         ],
         "8478434": [
@@ -74164,12 +74184,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
-            "points": 1,
-            "ppg": 0.05,
-            "evPoints": 1,
-            "evPPG": 0.05,
-            "toi": 10.08
+            "gp": 22,
+            "points": 2,
+            "ppg": 0.09,
+            "evPoints": 2,
+            "evPPG": 0.09,
+            "toi": 10.07
           }
         ],
         "8481481": [
@@ -74410,12 +74430,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 11.03
+            "evPPG": 0.23,
+            "toi": 11.1
           }
         ]
       },
@@ -75086,12 +75106,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 13,
+            "gp": 14,
             "points": 3,
-            "ppg": 0.23,
+            "ppg": 0.21,
             "evPoints": 3,
-            "evPPG": 0.23,
-            "toi": 12.25
+            "evPPG": 0.21,
+            "toi": 12.39
           }
         ],
         "8482062": [
@@ -76559,12 +76579,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 21,
+            "gp": 22,
             "points": 2,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 2,
-            "evPPG": 0.1,
-            "toi": 20.4
+            "evPPG": 0.09,
+            "toi": 20.49
           }
         ],
         "8476467": [
@@ -77755,12 +77775,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ]
       },
@@ -78529,7 +78549,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -79301,12 +79321,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 22,
+            "gp": 23,
             "points": 7,
-            "ppg": 0.32,
+            "ppg": 0.3,
             "evPoints": 7,
-            "evPPG": 0.32,
-            "toi": 12.81
+            "evPPG": 0.3,
+            "toi": 12.83
           }
         ],
         "8482148": [
@@ -79435,12 +79455,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 4,
-            "evPPG": 0.19,
-            "toi": 13.62
+            "evPPG": 0.18,
+            "toi": 13.78
           }
         ]
       },
@@ -80025,12 +80045,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ]
       },
@@ -81615,12 +81635,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 21,
+            "gp": 22,
             "points": 2,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 2,
-            "evPPG": 0.1,
-            "toi": 20.4
+            "evPPG": 0.09,
+            "toi": 20.49
           }
         ],
         "8476467": [
@@ -82797,12 +82817,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 21,
+            "gp": 22,
             "points": 2,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 2,
-            "evPPG": 0.1,
-            "toi": 20.4
+            "evPPG": 0.09,
+            "toi": 20.49
           }
         ],
         "8475690": [
@@ -84627,7 +84647,7 @@
       "age": 23,
       "ufaYear": 2030,
       "height": "71",
-      "weight": "181",
+      "weight": "201",
       "shoots": "R",
       "draftOverall": 121,
       "draftBucket": 5,
@@ -85512,12 +85532,12 @@
         {
           "season": 20262027,
           "age": 33,
-          "gp": 21,
+          "gp": 22,
           "points": 11,
-          "ppg": 0.52,
+          "ppg": 0.5,
           "evPoints": 10,
-          "evPPG": 0.48,
-          "toi": 15.45
+          "evPPG": 0.45,
+          "toi": 15.44
         }
       ],
       "compCareers": {
@@ -87632,12 +87652,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ]
       },
@@ -88177,12 +88197,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ],
         "8479365": [
@@ -88659,7 +88679,7 @@
           "age": 27,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "196",
+          "weight": "192",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -88693,7 +88713,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -89560,12 +89580,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ],
         "8483676": [
@@ -90518,12 +90538,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 22,
+            "gp": 23,
             "points": 7,
-            "ppg": 0.32,
+            "ppg": 0.3,
             "evPoints": 7,
-            "evPPG": 0.32,
-            "toi": 12.81
+            "evPPG": 0.3,
+            "toi": 12.83
           }
         ],
         "8482145": [
@@ -90776,12 +90796,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 4,
-            "evPPG": 0.19,
-            "toi": 13.62
+            "evPPG": 0.18,
+            "toi": 13.78
           }
         ]
       },
@@ -92192,7 +92212,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "75",
-          "weight": "218",
+          "weight": "223",
           "shoots": "L",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -92637,12 +92657,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 15,
+            "gp": 16,
             "points": 1,
-            "ppg": 0.07,
+            "ppg": 0.06,
             "evPoints": 1,
-            "evPPG": 0.07,
-            "toi": 10.15
+            "evPPG": 0.06,
+            "toi": 10.1
           }
         ],
         "8476867": [
@@ -94249,7 +94269,7 @@
           "age": 29,
           "ufaYear": 2024,
           "height": "73",
-          "weight": "187",
+          "weight": "194",
           "shoots": "L",
           "draftOverall": 97,
           "draftBucket": 5,
@@ -94283,7 +94303,7 @@
           "age": 29,
           "ufaYear": 2023,
           "height": "74",
-          "weight": "207",
+          "weight": "214",
           "shoots": "L",
           "draftOverall": 91,
           "draftBucket": 5,
@@ -94317,7 +94337,7 @@
           "age": 30,
           "ufaYear": 2021,
           "height": "77",
-          "weight": "216",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 152,
           "draftBucket": 5,
@@ -94628,12 +94648,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 16,
+            "gp": 17,
             "points": 2,
             "ppg": 0.12,
             "evPoints": 2,
             "evPPG": 0.12,
-            "toi": 12.19
+            "toi": 12.33
           }
         ],
         "8478841": [
@@ -95159,7 +95179,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "73",
-          "weight": "196",
+          "weight": "190",
           "shoots": "R",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -95512,6 +95532,16 @@
             "evPoints": 5,
             "evPPG": 0.08,
             "toi": 14.81
+          },
+          {
+            "season": 20262027,
+            "age": 27,
+            "gp": 1,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 13.08
           }
         ]
       },
@@ -96492,12 +96522,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ],
         "8482874": [
@@ -96826,7 +96856,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -97747,12 +97777,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 21,
+            "gp": 22,
             "points": 2,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 2,
-            "evPPG": 0.1,
-            "toi": 20.4
+            "evPPG": 0.09,
+            "toi": 20.49
           }
         ],
         "8475324": [
@@ -98925,12 +98955,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.1
+            "evPPG": 0.23,
+            "toi": 19.06
           }
         ],
         "8477365": [
@@ -99017,12 +99047,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 9,
+            "gp": 10,
             "points": 1,
-            "ppg": 0.11,
+            "ppg": 0.1,
             "evPoints": 1,
-            "evPPG": 0.11,
-            "toi": 19.28
+            "evPPG": 0.1,
+            "toi": 18.83
           }
         ],
         "8476441": [
@@ -99541,8 +99571,8 @@
           "contractYear": 20252026,
           "age": 25,
           "ufaYear": 2028,
-          "height": "73",
-          "weight": "192",
+          "height": "74",
+          "weight": "196",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -100148,8 +100178,8 @@
           "contractYear": 20252026,
           "age": 25,
           "ufaYear": 2028,
-          "height": "73",
-          "weight": "192",
+          "height": "74",
+          "weight": "196",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -101121,12 +101151,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ],
         "8480448": [
@@ -101193,12 +101223,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
-            "points": 9,
-            "ppg": 0.43,
-            "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 13.0
+            "gp": 22,
+            "points": 10,
+            "ppg": 0.45,
+            "evPoints": 9,
+            "evPPG": 0.41,
+            "toi": 13.13
           }
         ]
       },
@@ -101280,7 +101310,7 @@
       "age": 22,
       "ufaYear": 2031,
       "height": "73",
-      "weight": "203",
+      "weight": "196",
       "shoots": "L",
       "draftOverall": 98,
       "draftBucket": 5,
@@ -101837,7 +101867,7 @@
       "age": 23,
       "ufaYear": 2030,
       "height": "72",
-      "weight": "201",
+      "weight": "205",
       "shoots": "L",
       "draftOverall": 999,
       "draftBucket": 6,
@@ -102568,7 +102598,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "72",
-          "weight": "179",
+          "weight": "185",
           "shoots": "L",
           "draftOverall": 24,
           "draftBucket": 3,
@@ -103212,7 +103242,7 @@
           "age": 26,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "205",
+          "weight": "194",
           "shoots": "R",
           "draftOverall": 29,
           "draftBucket": 3,
@@ -103816,7 +103846,7 @@
           "age": 29,
           "ufaYear": 2024,
           "height": "73",
-          "weight": "187",
+          "weight": "194",
           "shoots": "L",
           "draftOverall": 97,
           "draftBucket": 5,
@@ -104183,12 +104213,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.06
+            "evPPG": 0.23,
+            "toi": 19.24
           }
         ],
         "8478841": [
@@ -104843,7 +104873,7 @@
       "contractYear": 20252026,
       "age": 24,
       "ufaYear": 2029,
-      "height": "72",
+      "height": "73",
       "weight": "205",
       "shoots": "L",
       "draftOverall": 999,
@@ -105485,7 +105515,7 @@
           "age": 26,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "205",
+          "weight": "194",
           "shoots": "R",
           "draftOverall": 29,
           "draftBucket": 3,
@@ -106053,8 +106083,8 @@
       "contractYear": 20252026,
       "age": 22,
       "ufaYear": 2031,
-      "height": "70",
-      "weight": "174",
+      "height": "72",
+      "weight": "185",
       "shoots": "nan",
       "draftOverall": 999,
       "draftBucket": 6,
@@ -106197,7 +106227,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -106672,7 +106702,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "72",
-          "weight": "179",
+          "weight": "185",
           "shoots": "L",
           "draftOverall": 24,
           "draftBucket": 3,
@@ -107350,7 +107380,7 @@
           "age": 30,
           "ufaYear": 2021,
           "height": "77",
-          "weight": "216",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 152,
           "draftBucket": 5,
@@ -109250,12 +109280,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ]
       },
@@ -109337,7 +109367,7 @@
       "age": 21,
       "ufaYear": 2032,
       "height": "76",
-      "weight": "220",
+      "weight": "209",
       "shoots": "L",
       "draftOverall": 49,
       "draftBucket": 4,
@@ -109514,7 +109544,7 @@
           "age": 23,
           "ufaYear": 2030,
           "height": "70",
-          "weight": "172",
+          "weight": "194",
           "shoots": "L",
           "draftOverall": 50,
           "draftBucket": 4,
@@ -109849,12 +109879,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ]
       },
@@ -110637,7 +110667,7 @@
       "age": 23,
       "ufaYear": 2030,
       "height": "72",
-      "weight": "183",
+      "weight": "192",
       "shoots": "L",
       "draftOverall": 130,
       "draftBucket": 5,
@@ -113377,7 +113407,7 @@
       "age": 22,
       "ufaYear": 2031,
       "height": "76",
-      "weight": "227",
+      "weight": "220",
       "shoots": "R",
       "draftOverall": 144,
       "draftBucket": 5,
@@ -113755,12 +113785,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ],
         "8482874": [
@@ -113971,7 +114001,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -114005,7 +114035,7 @@
           "age": 27,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "196",
+          "weight": "192",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -115076,12 +115106,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
+            "gp": 22,
             "points": 24,
-            "ppg": 1.14,
+            "ppg": 1.09,
             "evPoints": 18,
-            "evPPG": 0.86,
-            "toi": 19.85
+            "evPPG": 0.82,
+            "toi": 19.8
           }
         ],
         "8477939": [
@@ -115959,11 +115989,11 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 21,
-            "points": 13,
-            "ppg": 0.62,
-            "evPoints": 11,
-            "evPPG": 0.52,
+            "gp": 22,
+            "points": 14,
+            "ppg": 0.64,
+            "evPoints": 12,
+            "evPPG": 0.55,
             "toi": 13.65
           }
         ],
@@ -116405,12 +116435,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ],
         "8475798": [
@@ -117404,12 +117434,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 9,
+            "gp": 10,
             "points": 1,
-            "ppg": 0.11,
+            "ppg": 0.1,
             "evPoints": 1,
-            "evPPG": 0.11,
-            "toi": 19.28
+            "evPPG": 0.1,
+            "toi": 18.83
           }
         ],
         "8476441": [
@@ -118664,12 +118694,12 @@
         {
           "season": 20262027,
           "age": 28,
-          "gp": 19,
+          "gp": 20,
           "points": 10,
-          "ppg": 0.53,
+          "ppg": 0.5,
           "evPoints": 9,
-          "evPPG": 0.47,
-          "toi": 11.64
+          "evPPG": 0.45,
+          "toi": 11.55
         }
       ],
       "compCareers": {
@@ -118973,12 +119003,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ],
         "8480448": [
@@ -119045,12 +119075,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
-            "points": 9,
-            "ppg": 0.43,
-            "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 13.0
+            "gp": 22,
+            "points": 10,
+            "ppg": 0.45,
+            "evPoints": 9,
+            "evPPG": 0.41,
+            "toi": 13.13
           }
         ]
       },
@@ -119704,12 +119734,12 @@
           {
             "season": 20262027,
             "age": 23,
-            "gp": 21,
-            "points": 13,
-            "ppg": 0.62,
+            "gp": 22,
+            "points": 14,
+            "ppg": 0.64,
             "evPoints": 9,
-            "evPPG": 0.43,
-            "toi": 18.37
+            "evPPG": 0.41,
+            "toi": 18.33
           }
         ]
       },
@@ -120301,12 +120331,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 9,
-            "ppg": 0.43,
+            "ppg": 0.41,
             "evPoints": 6,
-            "evPPG": 0.29,
-            "toi": 14.55
+            "evPPG": 0.27,
+            "toi": 14.46
           }
         ]
       },
@@ -120336,7 +120366,7 @@
       "age": 22,
       "ufaYear": 2031,
       "height": "71",
-      "weight": "183",
+      "weight": "205",
       "shoots": "R",
       "draftOverall": 17,
       "draftBucket": 3,
@@ -120724,12 +120754,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ],
         "8483733": [
@@ -122589,12 +122619,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 21,
+            "gp": 22,
             "points": 2,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 2,
-            "evPPG": 0.1,
-            "toi": 20.4
+            "evPPG": 0.09,
+            "toi": 20.49
           }
         ],
         "8477845": [
@@ -124057,7 +124087,7 @@
       "age": 25,
       "ufaYear": 2028,
       "height": "75",
-      "weight": "220",
+      "weight": "209",
       "shoots": "L",
       "draftOverall": 30,
       "draftBucket": 3,
@@ -124493,12 +124523,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
+            "gp": 22,
             "points": 7,
-            "ppg": 0.33,
+            "ppg": 0.32,
             "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 10.93
+            "evPPG": 0.32,
+            "toi": 11.07
           }
         ],
         "8482726": [
@@ -124797,7 +124827,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "75",
-          "weight": "218",
+          "weight": "223",
           "shoots": "L",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -125292,12 +125322,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 15,
+            "gp": 16,
             "points": 1,
-            "ppg": 0.07,
+            "ppg": 0.06,
             "evPoints": 1,
-            "evPPG": 0.07,
-            "toi": 10.15
+            "evPPG": 0.06,
+            "toi": 10.1
           }
         ],
         "8479944": [
@@ -126325,7 +126355,7 @@
       "age": 27,
       "ufaYear": 2026,
       "height": "74",
-      "weight": "194",
+      "weight": "203",
       "shoots": "L",
       "draftOverall": 65,
       "draftBucket": 5,
@@ -126486,7 +126516,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -126520,7 +126550,7 @@
           "age": 27,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "196",
+          "weight": "192",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -127339,12 +127369,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 22,
+            "gp": 23,
             "points": 7,
-            "ppg": 0.32,
+            "ppg": 0.3,
             "evPoints": 7,
-            "evPPG": 0.32,
-            "toi": 12.81
+            "evPPG": 0.3,
+            "toi": 12.83
           }
         ],
         "8481582": [
@@ -127493,12 +127523,12 @@
           {
             "season": 20262027,
             "age": 27,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 4,
-            "evPPG": 0.19,
-            "toi": 13.62
+            "evPPG": 0.18,
+            "toi": 13.78
           }
         ],
         "8480220": [
@@ -128379,7 +128409,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "70",
-          "weight": "176",
+          "weight": "181",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -130405,7 +130435,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "73",
-          "weight": "196",
+          "weight": "190",
           "shoots": "R",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -130808,6 +130838,16 @@
             "evPoints": 5,
             "evPPG": 0.08,
             "toi": 14.81
+          },
+          {
+            "season": 20262027,
+            "age": 27,
+            "gp": 1,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 13.08
           }
         ]
       },
@@ -132215,7 +132255,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -133123,12 +133163,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ],
         "8479981": [
@@ -133501,7 +133541,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "70",
-          "weight": "176",
+          "weight": "181",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -134594,7 +134634,7 @@
           "age": 29,
           "ufaYear": 2024,
           "height": "73",
-          "weight": "187",
+          "weight": "194",
           "shoots": "L",
           "draftOverall": 97,
           "draftBucket": 5,
@@ -135155,12 +135195,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 16,
+            "gp": 17,
             "points": 2,
             "ppg": 0.12,
             "evPoints": 2,
             "evPPG": 0.12,
-            "toi": 12.19
+            "toi": 12.33
           }
         ]
       },
@@ -135242,7 +135282,7 @@
       "age": 24,
       "ufaYear": 2029,
       "height": "75",
-      "weight": "190",
+      "weight": "194",
       "shoots": "L",
       "draftOverall": 999,
       "draftBucket": 6,
@@ -135812,7 +135852,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -135846,7 +135886,7 @@
           "age": 27,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "196",
+          "weight": "192",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -136342,7 +136382,7 @@
       "age": 22,
       "ufaYear": 2031,
       "height": "72",
-      "weight": "192",
+      "weight": "187",
       "shoots": "L",
       "draftOverall": 150,
       "draftBucket": 5,
@@ -136782,12 +136822,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ],
         "8483733": [
@@ -137585,7 +137625,7 @@
       "age": 28,
       "ufaYear": 2025,
       "height": "77",
-      "weight": "220",
+      "weight": "240",
       "shoots": "R",
       "draftOverall": 999,
       "draftBucket": 6,
@@ -137678,7 +137718,7 @@
           "age": 28,
           "ufaYear": 2023,
           "height": "75",
-          "weight": "218",
+          "weight": "205",
           "shoots": "L",
           "draftOverall": 128,
           "draftBucket": 5,
@@ -138077,12 +138117,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 12.75
+            "evPPG": 0.27,
+            "toi": 13.09
           }
         ],
         "8479671": [
@@ -138241,12 +138281,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
-            "points": 1,
-            "ppg": 0.05,
-            "evPoints": 1,
-            "evPPG": 0.05,
-            "toi": 10.08
+            "gp": 22,
+            "points": 2,
+            "ppg": 0.09,
+            "evPoints": 2,
+            "evPPG": 0.09,
+            "toi": 10.07
           }
         ]
       },
@@ -138484,7 +138524,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "75",
-          "weight": "218",
+          "weight": "223",
           "shoots": "L",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -138791,12 +138831,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 15,
+            "gp": 16,
             "points": 1,
-            "ppg": 0.07,
+            "ppg": 0.06,
             "evPoints": 1,
-            "evPPG": 0.07,
-            "toi": 10.15
+            "evPPG": 0.06,
+            "toi": 10.1
           }
         ],
         "8476867": [
@@ -139895,12 +139935,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 15,
+            "gp": 16,
             "points": 1,
-            "ppg": 0.07,
+            "ppg": 0.06,
             "evPoints": 1,
-            "evPPG": 0.07,
-            "toi": 10.15
+            "evPPG": 0.06,
+            "toi": 10.1
           }
         ]
       },
@@ -140423,12 +140463,12 @@
         {
           "season": 20262027,
           "age": 35,
-          "gp": 21,
+          "gp": 22,
           "points": 9,
-          "ppg": 0.43,
+          "ppg": 0.41,
           "evPoints": 5,
-          "evPPG": 0.24,
-          "toi": 20.63
+          "evPPG": 0.23,
+          "toi": 20.74
         }
       ],
       "compCareers": {
@@ -142528,7 +142568,7 @@
           "age": 29,
           "ufaYear": 2024,
           "height": "73",
-          "weight": "205",
+          "weight": "201",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -143086,7 +143126,7 @@
       "age": 23,
       "ufaYear": 2030,
       "height": "68",
-      "weight": "176",
+      "weight": "181",
       "shoots": "R",
       "draftOverall": 147,
       "draftBucket": 5,
@@ -143554,12 +143594,12 @@
           {
             "season": 20262027,
             "age": 23,
-            "gp": 19,
-            "points": 22,
-            "ppg": 1.16,
+            "gp": 20,
+            "points": 23,
+            "ppg": 1.15,
             "evPoints": 9,
-            "evPPG": 0.47,
-            "toi": 18.76
+            "evPPG": 0.45,
+            "toi": 18.86
           }
         ],
         "8482175": [
@@ -143616,12 +143656,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 21,
-            "points": 14,
-            "ppg": 0.67,
-            "evPoints": 13,
-            "evPPG": 0.62,
-            "toi": 17.59
+            "gp": 22,
+            "points": 15,
+            "ppg": 0.68,
+            "evPoints": 14,
+            "evPPG": 0.64,
+            "toi": 17.44
           }
         ],
         "8483445": [
@@ -144269,7 +144309,7 @@
       "age": 23,
       "ufaYear": 2030,
       "height": "74",
-      "weight": "209",
+      "weight": "205",
       "shoots": "R",
       "draftOverall": 999,
       "draftBucket": 6,
@@ -145256,12 +145296,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 21,
-            "points": 8,
-            "ppg": 0.38,
-            "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 15.31
+            "gp": 22,
+            "points": 9,
+            "ppg": 0.41,
+            "evPoints": 8,
+            "evPPG": 0.36,
+            "toi": 15.44
           }
         ],
         "8477450": [
@@ -145765,7 +145805,7 @@
           "age": 29,
           "ufaYear": 2024,
           "height": "73",
-          "weight": "187",
+          "weight": "194",
           "shoots": "L",
           "draftOverall": 97,
           "draftBucket": 5,
@@ -145833,7 +145873,7 @@
           "age": 29,
           "ufaYear": 2023,
           "height": "74",
-          "weight": "207",
+          "weight": "214",
           "shoots": "L",
           "draftOverall": 91,
           "draftBucket": 5,
@@ -146842,7 +146882,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "72",
-          "weight": "179",
+          "weight": "185",
           "shoots": "L",
           "draftOverall": 24,
           "draftBucket": 3,
@@ -147654,12 +147694,12 @@
         {
           "season": 20262027,
           "age": 30,
-          "gp": 22,
-          "points": 5,
-          "ppg": 0.23,
-          "evPoints": 4,
-          "evPPG": 0.18,
-          "toi": 13.44
+          "gp": 23,
+          "points": 7,
+          "ppg": 0.3,
+          "evPoints": 6,
+          "evPPG": 0.26,
+          "toi": 13.55
         }
       ],
       "compCareers": {
@@ -148013,12 +148053,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 21,
-            "points": 8,
-            "ppg": 0.38,
-            "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 15.31
+            "gp": 22,
+            "points": 9,
+            "ppg": 0.41,
+            "evPoints": 8,
+            "evPPG": 0.36,
+            "toi": 15.44
           }
         ],
         "8478904": [
@@ -148533,12 +148573,12 @@
         {
           "season": 20262027,
           "age": 26,
-          "gp": 19,
+          "gp": 20,
           "points": 7,
-          "ppg": 0.37,
+          "ppg": 0.35,
           "evPoints": 6,
-          "evPPG": 0.32,
-          "toi": 11.37
+          "evPPG": 0.3,
+          "toi": 11.7
         }
       ],
       "compCareers": {
@@ -148810,12 +148850,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ],
         "8479353": [
@@ -149246,7 +149286,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -149542,7 +149582,7 @@
       "age": 32,
       "ufaYear": 2021,
       "height": "77",
-      "weight": "234",
+      "weight": "207",
       "shoots": "L",
       "draftOverall": 999,
       "draftBucket": 6,
@@ -149635,7 +149675,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "75",
-          "weight": "218",
+          "weight": "223",
           "shoots": "L",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -150062,12 +150102,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 15,
+            "gp": 16,
             "points": 1,
-            "ppg": 0.07,
+            "ppg": 0.06,
             "evPoints": 1,
-            "evPPG": 0.07,
-            "toi": 10.15
+            "evPPG": 0.06,
+            "toi": 10.1
           }
         ],
         "8477527": [
@@ -151720,12 +151760,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ],
         "8475768": [
@@ -151882,11 +151922,11 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 21,
-            "points": 13,
-            "ppg": 0.62,
-            "evPoints": 11,
-            "evPPG": 0.52,
+            "gp": 22,
+            "points": 14,
+            "ppg": 0.64,
+            "evPoints": 12,
+            "evPPG": 0.55,
             "toi": 13.65
           }
         ],
@@ -152435,7 +152475,7 @@
       "age": 24,
       "ufaYear": 2029,
       "height": "72",
-      "weight": "181",
+      "weight": "190",
       "shoots": "L",
       "draftOverall": 79,
       "draftBucket": 5,
@@ -154241,12 +154281,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ]
       },
@@ -154719,12 +154759,12 @@
         {
           "season": 20262027,
           "age": 30,
-          "gp": 22,
+          "gp": 23,
           "points": 7,
-          "ppg": 0.32,
+          "ppg": 0.3,
           "evPoints": 6,
-          "evPPG": 0.27,
-          "toi": 15.25
+          "evPPG": 0.26,
+          "toi": 15.3
         }
       ],
       "compCareers": {
@@ -155026,12 +155066,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 21,
-            "points": 8,
-            "ppg": 0.38,
-            "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 15.31
+            "gp": 22,
+            "points": 9,
+            "ppg": 0.41,
+            "evPoints": 8,
+            "evPPG": 0.36,
+            "toi": 15.44
           }
         ],
         "8477987": [
@@ -155448,7 +155488,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -155550,7 +155590,7 @@
           "age": 27,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "196",
+          "weight": "192",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -156139,7 +156179,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "75",
-          "weight": "218",
+          "weight": "223",
           "shoots": "L",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -156299,12 +156339,12 @@
         {
           "season": 20262027,
           "age": 32,
-          "gp": 9,
-          "points": 0,
-          "ppg": 0.0,
-          "evPoints": 0,
-          "evPPG": 0.0,
-          "toi": 7.88
+          "gp": 10,
+          "points": 1,
+          "ppg": 0.1,
+          "evPoints": 1,
+          "evPPG": 0.1,
+          "toi": 7.77
         }
       ],
       "compCareers": {
@@ -157376,12 +157416,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ],
         "8482751": [
@@ -158384,12 +158424,12 @@
           {
             "season": 20262027,
             "age": 23,
-            "gp": 21,
-            "points": 19,
-            "ppg": 0.9,
-            "evPoints": 14,
-            "evPPG": 0.67,
-            "toi": 25.08
+            "gp": 22,
+            "points": 22,
+            "ppg": 1.0,
+            "evPoints": 16,
+            "evPPG": 0.73,
+            "toi": 25.16
           }
         ],
         "8482122": [
@@ -158582,12 +158622,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 17,
+            "gp": 18,
             "points": 6,
-            "ppg": 0.35,
+            "ppg": 0.33,
             "evPoints": 5,
-            "evPPG": 0.29,
-            "toi": 22.66
+            "evPPG": 0.28,
+            "toi": 22.62
           }
         ]
       },
@@ -159038,12 +159078,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.06
+            "evPPG": 0.23,
+            "toi": 19.24
           }
         ],
         "8478136": [
@@ -160119,7 +160159,7 @@
           "age": 23,
           "ufaYear": 2030,
           "height": "70",
-          "weight": "172",
+          "weight": "194",
           "shoots": "L",
           "draftOverall": 50,
           "draftBucket": 4,
@@ -160512,12 +160552,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ]
       },
@@ -160547,7 +160587,7 @@
       "age": 24,
       "ufaYear": 2029,
       "height": "72",
-      "weight": "170",
+      "weight": "190",
       "shoots": "L",
       "draftOverall": 17,
       "draftBucket": 3,
@@ -162326,12 +162366,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ]
       },
@@ -162829,12 +162869,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ],
         "8482765": [
@@ -163646,12 +163686,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 21,
+            "gp": 22,
             "points": 2,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 2,
-            "evPPG": 0.1,
-            "toi": 20.4
+            "evPPG": 0.09,
+            "toi": 20.49
           }
         ],
         "8475690": [
@@ -164328,7 +164368,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "75",
-          "weight": "218",
+          "weight": "223",
           "shoots": "L",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -164430,7 +164470,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "70",
-          "weight": "176",
+          "weight": "181",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -164895,12 +164935,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 15,
+            "gp": 16,
             "points": 1,
-            "ppg": 0.07,
+            "ppg": 0.06,
             "evPoints": 1,
-            "evPPG": 0.07,
-            "toi": 10.15
+            "evPPG": 0.06,
+            "toi": 10.1
           }
         ],
         "8476994": [
@@ -165590,12 +165630,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ],
         "8480980": [
@@ -166083,7 +166123,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -166818,12 +166858,12 @@
         {
           "season": 20262027,
           "age": 23,
-          "gp": 4,
+          "gp": 5,
           "points": 1,
-          "ppg": 0.25,
+          "ppg": 0.2,
           "evPoints": 1,
-          "evPPG": 0.25,
-          "toi": 14.92
+          "evPPG": 0.2,
+          "toi": 15.28
         }
       ],
       "compCareers": {
@@ -166955,12 +166995,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 9,
-            "ppg": 0.43,
+            "ppg": 0.41,
             "evPoints": 6,
-            "evPPG": 0.29,
-            "toi": 14.55
+            "evPPG": 0.27,
+            "toi": 14.46
           }
         ],
         "8481656": [
@@ -167124,7 +167164,7 @@
       "age": 22,
       "ufaYear": 2031,
       "height": "75",
-      "weight": "205",
+      "weight": "196",
       "shoots": "L",
       "draftOverall": 93,
       "draftBucket": 5,
@@ -167267,7 +167307,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -167531,7 +167571,7 @@
       "age": 28,
       "ufaYear": 2025,
       "height": "74",
-      "weight": "212",
+      "weight": "201",
       "shoots": "L",
       "draftOverall": 999,
       "draftBucket": 6,
@@ -168165,7 +168205,7 @@
       "age": 25,
       "ufaYear": 2028,
       "height": "72",
-      "weight": "194",
+      "weight": "185",
       "shoots": "L",
       "draftOverall": 166,
       "draftBucket": 5,
@@ -168410,7 +168450,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -169381,12 +169421,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 13,
+            "gp": 14,
             "points": 3,
-            "ppg": 0.23,
+            "ppg": 0.21,
             "evPoints": 3,
-            "evPPG": 0.23,
-            "toi": 12.25
+            "evPPG": 0.21,
+            "toi": 12.39
           }
         ]
       },
@@ -169582,7 +169622,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "75",
-          "weight": "218",
+          "weight": "223",
           "shoots": "L",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -169803,12 +169843,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 15,
+            "gp": 16,
             "points": 1,
-            "ppg": 0.07,
+            "ppg": 0.06,
             "evPoints": 1,
-            "evPPG": 0.07,
-            "toi": 10.15
+            "evPPG": 0.06,
+            "toi": 10.1
           }
         ],
         "8476867": [
@@ -170592,12 +170632,12 @@
         {
           "season": 20262027,
           "age": 26,
-          "gp": 20,
-          "points": 6,
-          "ppg": 0.3,
-          "evPoints": 6,
-          "evPPG": 0.3,
-          "toi": 17.9
+          "gp": 21,
+          "points": 8,
+          "ppg": 0.38,
+          "evPoints": 8,
+          "evPPG": 0.38,
+          "toi": 17.71
         }
       ],
       "compCareers": {
@@ -173893,12 +173933,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ]
       },
@@ -174517,12 +174557,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.1
+            "evPPG": 0.23,
+            "toi": 19.06
           }
         ],
         "8477220": [
@@ -175605,12 +175645,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.06
+            "evPPG": 0.23,
+            "toi": 19.24
           }
         ],
         "8484304": [
@@ -176012,7 +176052,7 @@
           "age": 29,
           "ufaYear": 2024,
           "height": "73",
-          "weight": "205",
+          "weight": "201",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -177902,7 +177942,7 @@
           "age": 26,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "205",
+          "weight": "194",
           "shoots": "R",
           "draftOverall": 29,
           "draftBucket": 3,
@@ -178759,12 +178799,12 @@
         {
           "season": 20262027,
           "age": 23,
-          "gp": 15,
+          "gp": 16,
           "points": 7,
-          "ppg": 0.47,
+          "ppg": 0.44,
           "evPoints": 7,
-          "evPPG": 0.47,
-          "toi": 9.5
+          "evPPG": 0.44,
+          "toi": 9.71
         }
       ],
       "compCareers": {
@@ -179088,7 +179128,7 @@
       "age": 25,
       "ufaYear": 2028,
       "height": "76",
-      "weight": "209",
+      "weight": "201",
       "shoots": "L",
       "draftOverall": 49,
       "draftBucket": 4,
@@ -179231,7 +179271,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "76",
-          "weight": "205",
+          "weight": "225",
           "shoots": "L",
           "draftOverall": 50,
           "draftBucket": 4,
@@ -179333,7 +179373,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "73",
-          "weight": "196",
+          "weight": "190",
           "shoots": "R",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -179676,6 +179716,16 @@
             "evPoints": 5,
             "evPPG": 0.08,
             "toi": 14.81
+          },
+          {
+            "season": 20262027,
+            "age": 27,
+            "gp": 1,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 13.08
           }
         ]
       },
@@ -180171,12 +180221,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ],
         "8481656": [
@@ -180497,7 +180547,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "70",
-          "weight": "176",
+          "weight": "181",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -181737,12 +181787,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 21,
-            "points": 21,
+            "gp": 22,
+            "points": 22,
             "ppg": 1.0,
-            "evPoints": 12,
-            "evPPG": 0.57,
-            "toi": 19.81
+            "evPoints": 13,
+            "evPPG": 0.59,
+            "toi": 19.85
           }
         ],
         "8484166": [
@@ -182745,8 +182795,8 @@
           "contractYear": 20252026,
           "age": 28,
           "ufaYear": 2025,
-          "height": "75",
-          "weight": "205",
+          "height": "74",
+          "weight": "209",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -183007,12 +183057,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 11.03
+            "evPPG": 0.23,
+            "toi": 11.1
           }
         ],
         "8481043": [
@@ -183541,12 +183591,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 21,
+            "gp": 22,
             "points": 17,
-            "ppg": 0.81,
+            "ppg": 0.77,
             "evPoints": 13,
-            "evPPG": 0.62,
-            "toi": 15.67
+            "evPPG": 0.59,
+            "toi": 15.88
           }
         ],
         "8483676": [
@@ -183647,12 +183697,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
+            "gp": 22,
             "points": 7,
-            "ppg": 0.33,
+            "ppg": 0.32,
             "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 10.93
+            "evPPG": 0.32,
+            "toi": 11.07
           }
         ],
         "8482765": [
@@ -184491,12 +184541,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 13,
+            "gp": 14,
             "points": 3,
-            "ppg": 0.23,
+            "ppg": 0.21,
             "evPoints": 3,
-            "evPPG": 0.23,
-            "toi": 12.25
+            "evPPG": 0.21,
+            "toi": 12.39
           }
         ],
         "8476927": [
@@ -184670,7 +184720,7 @@
       "age": 24,
       "ufaYear": 2029,
       "height": "69",
-      "weight": "176",
+      "weight": "181",
       "shoots": "R",
       "draftOverall": 95,
       "draftBucket": 5,
@@ -184881,7 +184931,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -185593,12 +185643,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 13,
+            "gp": 14,
             "points": 3,
-            "ppg": 0.23,
+            "ppg": 0.21,
             "evPoints": 3,
-            "evPPG": 0.23,
-            "toi": 12.25
+            "evPPG": 0.21,
+            "toi": 12.39
           }
         ],
         "8481624": [
@@ -185939,7 +185989,7 @@
       "age": 26,
       "ufaYear": 2027,
       "height": "74",
-      "weight": "198",
+      "weight": "203",
       "shoots": "L",
       "draftOverall": 142,
       "draftBucket": 5,
@@ -187355,12 +187405,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 21,
-            "points": 8,
-            "ppg": 0.38,
-            "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 15.31
+            "gp": 22,
+            "points": 9,
+            "ppg": 0.41,
+            "evPoints": 8,
+            "evPPG": 0.36,
+            "toi": 15.44
           }
         ]
       },
@@ -187442,7 +187492,7 @@
       "age": 28,
       "ufaYear": 2025,
       "height": "73",
-      "weight": "223",
+      "weight": "218",
       "shoots": "L",
       "draftOverall": 160,
       "draftBucket": 5,
@@ -187534,8 +187584,8 @@
           "contractYear": 20252026,
           "age": 28,
           "ufaYear": 2025,
-          "height": "75",
-          "weight": "205",
+          "height": "74",
+          "weight": "209",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -188867,12 +188917,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 9,
+            "gp": 10,
             "points": 1,
-            "ppg": 0.11,
+            "ppg": 0.1,
             "evPoints": 1,
-            "evPPG": 0.11,
-            "toi": 19.28
+            "evPPG": 0.1,
+            "toi": 18.83
           }
         ],
         "8476967": [
@@ -188999,12 +189049,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.1
+            "evPPG": 0.23,
+            "toi": 19.06
           }
         ],
         "8477220": [
@@ -189478,7 +189528,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -189687,7 +189737,7 @@
       "age": 28,
       "ufaYear": 2025,
       "height": "73",
-      "weight": "205",
+      "weight": "196",
       "shoots": "R",
       "draftOverall": 999,
       "draftBucket": 6,
@@ -189847,8 +189897,8 @@
           "contractYear": 20252026,
           "age": 28,
           "ufaYear": 2025,
-          "height": "75",
-          "weight": "205",
+          "height": "74",
+          "weight": "209",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -190283,12 +190333,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 11.03
+            "evPPG": 0.23,
+            "toi": 11.1
           }
         ]
       },
@@ -190912,12 +190962,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
-            "points": 9,
-            "ppg": 0.43,
-            "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 13.0
+            "gp": 22,
+            "points": 10,
+            "ppg": 0.45,
+            "evPoints": 9,
+            "evPPG": 0.41,
+            "toi": 13.13
           }
         ],
         "8480281": [
@@ -191903,12 +191953,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ]
       },
@@ -192447,12 +192497,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 11.03
+            "evPPG": 0.23,
+            "toi": 11.1
           }
         ],
         "8481043": [
@@ -192581,12 +192631,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
-            "points": 1,
-            "ppg": 0.05,
-            "evPoints": 1,
-            "evPPG": 0.05,
-            "toi": 10.08
+            "gp": 22,
+            "points": 2,
+            "ppg": 0.09,
+            "evPoints": 2,
+            "evPPG": 0.09,
+            "toi": 10.07
           }
         ],
         "8479671": [
@@ -194293,12 +194343,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ]
       },
@@ -195950,12 +196000,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.06
+            "evPPG": 0.23,
+            "toi": 19.24
           }
         ],
         "8480336": [
@@ -198172,12 +198222,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.06
+            "evPPG": 0.23,
+            "toi": 19.24
           }
         ],
         "8480043": [
@@ -199407,12 +199457,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 13,
+            "gp": 14,
             "points": 10,
-            "ppg": 0.77,
+            "ppg": 0.71,
             "evPoints": 5,
-            "evPPG": 0.38,
-            "toi": 15.39
+            "evPPG": 0.36,
+            "toi": 15.49
           }
         ]
       },
@@ -199849,12 +199899,12 @@
         {
           "season": 20262027,
           "age": 30,
-          "gp": 15,
+          "gp": 16,
           "points": 7,
-          "ppg": 0.47,
+          "ppg": 0.44,
           "evPoints": 7,
-          "evPPG": 0.47,
-          "toi": 12.24
+          "evPPG": 0.44,
+          "toi": 12.47
         }
       ],
       "compCareers": {
@@ -199932,12 +199982,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 21,
-            "points": 8,
-            "ppg": 0.38,
-            "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 15.31
+            "gp": 22,
+            "points": 9,
+            "ppg": 0.41,
+            "evPoints": 8,
+            "evPPG": 0.36,
+            "toi": 15.44
           }
         ],
         "8477478": [
@@ -201727,7 +201777,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "72",
-          "weight": "198",
+          "weight": "205",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -204181,7 +204231,7 @@
       "age": 27,
       "ufaYear": 2026,
       "height": "72",
-      "weight": "190",
+      "weight": "201",
       "shoots": "L",
       "draftOverall": 111,
       "draftBucket": 5,
@@ -207334,12 +207384,12 @@
         {
           "season": 20262027,
           "age": 23,
-          "gp": 14,
-          "points": 2,
-          "ppg": 0.14,
-          "evPoints": 2,
-          "evPPG": 0.14,
-          "toi": 11.85
+          "gp": 15,
+          "points": 3,
+          "ppg": 0.2,
+          "evPoints": 3,
+          "evPPG": 0.2,
+          "toi": 11.63
         }
       ],
       "compCareers": {
@@ -207431,12 +207481,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ],
         "8483491": [
@@ -208270,12 +208320,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ],
         "8478569": [
@@ -208554,11 +208604,11 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 21,
-            "points": 13,
-            "ppg": 0.62,
-            "evPoints": 11,
-            "evPPG": 0.52,
+            "gp": 22,
+            "points": 14,
+            "ppg": 0.64,
+            "evPoints": 12,
+            "evPPG": 0.55,
             "toi": 13.65
           }
         ],
@@ -209457,7 +209507,7 @@
       "age": 32,
       "ufaYear": 2021,
       "height": "75",
-      "weight": "220",
+      "weight": "209",
       "shoots": "R",
       "draftOverall": 81,
       "draftBucket": 5,
@@ -209550,7 +209600,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "70",
-          "weight": "176",
+          "weight": "181",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -210877,12 +210927,12 @@
         {
           "season": 20262027,
           "age": 23,
-          "gp": 7,
+          "gp": 8,
           "points": 3,
-          "ppg": 0.43,
+          "ppg": 0.38,
           "evPoints": 3,
-          "evPPG": 0.43,
-          "toi": 8.97
+          "evPPG": 0.38,
+          "toi": 8.81
         }
       ],
       "compCareers": {
@@ -210974,12 +211024,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ],
         "8482859": [
@@ -211072,7 +211122,7 @@
       "contractYear": 20252026,
       "age": 22,
       "ufaYear": 2031,
-      "height": "77",
+      "height": "76",
       "weight": "201",
       "shoots": "L",
       "draftOverall": 21,
@@ -212189,8 +212239,8 @@
       "contractYear": 20252026,
       "age": 25,
       "ufaYear": 2028,
-      "height": "69",
-      "weight": "181",
+      "height": "70",
+      "weight": "185",
       "shoots": "R",
       "draftOverall": 999,
       "draftBucket": 6,
@@ -213108,12 +213158,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 19.06
+            "evPPG": 0.23,
+            "toi": 19.24
           }
         ],
         "8480192": [
@@ -214020,12 +214070,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
-            "points": 9,
-            "ppg": 0.43,
-            "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 13.0
+            "gp": 22,
+            "points": 10,
+            "ppg": 0.45,
+            "evPoints": 9,
+            "evPPG": 0.41,
+            "toi": 13.13
           }
         ],
         "8479977": [
@@ -214122,12 +214172,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ]
       },
@@ -214558,12 +214608,12 @@
         {
           "season": 20262027,
           "age": 30,
-          "gp": 20,
-          "points": 15,
-          "ppg": 0.75,
-          "evPoints": 8,
-          "evPPG": 0.4,
-          "toi": 19.27
+          "gp": 21,
+          "points": 17,
+          "ppg": 0.81,
+          "evPoints": 9,
+          "evPPG": 0.43,
+          "toi": 19.16
         }
       ],
       "compCareers": {
@@ -214945,12 +214995,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 21,
+            "gp": 22,
             "points": 17,
-            "ppg": 0.81,
+            "ppg": 0.77,
             "evPoints": 13,
-            "evPPG": 0.62,
-            "toi": 17.16
+            "evPPG": 0.59,
+            "toi": 17.13
           }
         ],
         "8477497": [
@@ -215272,8 +215322,8 @@
       "contractYear": 20252026,
       "age": 24,
       "ufaYear": 2029,
-      "height": "72",
-      "weight": "190",
+      "height": "73",
+      "weight": "198",
       "shoots": "R",
       "draftOverall": 24,
       "draftBucket": 3,
@@ -215721,12 +215771,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ],
         "8482742": [
@@ -216030,7 +216080,7 @@
           "age": 29,
           "ufaYear": 2023,
           "height": "74",
-          "weight": "207",
+          "weight": "214",
           "shoots": "L",
           "draftOverall": 91,
           "draftBucket": 5,
@@ -216064,7 +216114,7 @@
           "age": 29,
           "ufaYear": 2024,
           "height": "73",
-          "weight": "187",
+          "weight": "194",
           "shoots": "L",
           "draftOverall": 97,
           "draftBucket": 5,
@@ -216297,12 +216347,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 16,
+            "gp": 17,
             "points": 2,
             "ppg": 0.12,
             "evPoints": 2,
             "evPPG": 0.12,
-            "toi": 12.19
+            "toi": 12.33
           }
         ],
         "8478468": [
@@ -217027,12 +217077,12 @@
         {
           "season": 20262027,
           "age": 34,
-          "gp": 21,
+          "gp": 22,
           "points": 8,
-          "ppg": 0.38,
+          "ppg": 0.36,
           "evPoints": 8,
-          "evPPG": 0.38,
-          "toi": 17.17
+          "evPPG": 0.36,
+          "toi": 17.27
         }
       ],
       "compCareers": {
@@ -217822,7 +217872,7 @@
       "age": 27,
       "ufaYear": 2027,
       "height": "74",
-      "weight": "185",
+      "weight": "181",
       "shoots": "L",
       "draftOverall": 23,
       "draftBucket": 3,
@@ -218051,7 +218101,7 @@
           "age": 26,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "205",
+          "weight": "194",
           "shoots": "R",
           "draftOverall": 29,
           "draftBucket": 3,
@@ -219341,12 +219391,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 13,
+            "gp": 14,
             "points": 3,
-            "ppg": 0.23,
+            "ppg": 0.21,
             "evPoints": 3,
-            "evPPG": 0.23,
-            "toi": 12.25
+            "evPPG": 0.21,
+            "toi": 12.39
           }
         ]
       },
@@ -219937,12 +219987,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
-            "points": 9,
-            "ppg": 0.43,
-            "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 13.0
+            "gp": 22,
+            "points": 10,
+            "ppg": 0.45,
+            "evPoints": 9,
+            "evPPG": 0.41,
+            "toi": 13.13
           }
         ],
         "8479365": [
@@ -220131,12 +220181,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ]
       },
@@ -220864,12 +220914,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 21,
+            "gp": 22,
             "points": 19,
-            "ppg": 0.9,
+            "ppg": 0.86,
             "evPoints": 14,
-            "evPPG": 0.67,
-            "toi": 21.69
+            "evPPG": 0.64,
+            "toi": 21.84
           }
         ],
         "8478178": [
@@ -223174,12 +223224,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ]
       },
@@ -223853,12 +223903,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 16,
+            "gp": 17,
             "points": 2,
             "ppg": 0.12,
             "evPoints": 2,
             "evPPG": 0.12,
-            "toi": 12.19
+            "toi": 12.33
           }
         ],
         "8482072": [
@@ -224071,8 +224121,8 @@
           "contractYear": 20252026,
           "age": 28,
           "ufaYear": 2025,
-          "height": "75",
-          "weight": "205",
+          "height": "74",
+          "weight": "209",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -224174,7 +224224,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -224788,7 +224838,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -225187,7 +225237,7 @@
           "age": 23,
           "ufaYear": 2030,
           "height": "70",
-          "weight": "172",
+          "weight": "194",
           "shoots": "L",
           "draftOverall": 50,
           "draftBucket": 4,
@@ -225476,12 +225526,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 9,
-            "ppg": 0.43,
+            "ppg": 0.41,
             "evPoints": 6,
-            "evPPG": 0.29,
-            "toi": 14.55
+            "evPPG": 0.27,
+            "toi": 14.46
           }
         ],
         "8481582": [
@@ -226059,12 +226109,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 21,
-            "points": 8,
-            "ppg": 0.38,
-            "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 15.31
+            "gp": 22,
+            "points": 9,
+            "ppg": 0.41,
+            "evPoints": 8,
+            "evPPG": 0.36,
+            "toi": 15.44
           }
         ],
         "8477478": [
@@ -227640,12 +227690,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ]
       },
@@ -229802,12 +229852,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ],
         "8475745": [
@@ -231684,7 +231734,7 @@
       "age": 23,
       "ufaYear": 2030,
       "height": "70",
-      "weight": "181",
+      "weight": "192",
       "shoots": "R",
       "draftOverall": 115,
       "draftBucket": 5,
@@ -236095,12 +236145,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ]
       },
@@ -236510,12 +236560,12 @@
           {
             "season": 20262027,
             "age": 23,
-            "gp": 21,
+            "gp": 22,
             "points": 14,
-            "ppg": 0.67,
+            "ppg": 0.64,
             "evPoints": 11,
-            "evPPG": 0.52,
-            "toi": 24.32
+            "evPPG": 0.5,
+            "toi": 24.28
           }
         ],
         "8482122": [
@@ -237415,12 +237465,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 19,
+            "gp": 20,
             "points": 8,
-            "ppg": 0.42,
+            "ppg": 0.4,
             "evPoints": 8,
-            "evPPG": 0.42,
-            "toi": 20.99
+            "evPPG": 0.4,
+            "toi": 21.07
           }
         ],
         "8477969": [
@@ -238861,7 +238911,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "75",
-          "weight": "218",
+          "weight": "223",
           "shoots": "L",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -239120,12 +239170,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 15,
+            "gp": 16,
             "points": 1,
-            "ppg": 0.07,
+            "ppg": 0.06,
             "evPoints": 1,
-            "evPPG": 0.07,
-            "toi": 10.15
+            "evPPG": 0.06,
+            "toi": 10.1
           }
         ],
         "8476867": [
@@ -240087,12 +240137,12 @@
           {
             "season": 20262027,
             "age": 23,
-            "gp": 21,
+            "gp": 22,
             "points": 14,
-            "ppg": 0.67,
+            "ppg": 0.64,
             "evPoints": 11,
-            "evPPG": 0.52,
-            "toi": 24.32
+            "evPPG": 0.5,
+            "toi": 24.28
           }
         ]
       },
@@ -240487,12 +240537,12 @@
         {
           "season": 20262027,
           "age": 34,
-          "gp": 7,
+          "gp": 8,
           "points": 0,
           "ppg": 0.0,
           "evPoints": 0,
           "evPPG": 0.0,
-          "toi": 12.39
+          "toi": 12.55
         }
       ],
       "compCareers": {
@@ -241192,7 +241242,7 @@
       "age": 22,
       "ufaYear": 2031,
       "height": "77",
-      "weight": "218",
+      "weight": "214",
       "shoots": "L",
       "draftOverall": 186,
       "draftBucket": 5,
@@ -241973,12 +242023,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 9,
-            "ppg": 0.43,
+            "ppg": 0.41,
             "evPoints": 6,
-            "evPPG": 0.29,
-            "toi": 14.55
+            "evPPG": 0.27,
+            "toi": 14.46
           }
         ],
         "8482113": [
@@ -246184,12 +246234,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 20,
+            "gp": 21,
             "points": 4,
-            "ppg": 0.2,
+            "ppg": 0.19,
             "evPoints": 3,
-            "evPPG": 0.15,
-            "toi": 15.47
+            "evPPG": 0.14,
+            "toi": 15.14
           }
         ],
         "8481596": [
@@ -246624,7 +246674,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -246812,7 +246862,7 @@
       "age": 26,
       "ufaYear": 2027,
       "height": "75",
-      "weight": "190",
+      "weight": "201",
       "shoots": "L",
       "draftOverall": 177,
       "draftBucket": 5,
@@ -247200,12 +247250,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 13,
-            "points": 11,
-            "ppg": 0.85,
-            "evPoints": 7,
-            "evPPG": 0.54,
-            "toi": 15.74
+            "gp": 14,
+            "points": 12,
+            "ppg": 0.86,
+            "evPoints": 8,
+            "evPPG": 0.57,
+            "toi": 15.99
           }
         ],
         "8479981": [
@@ -247626,7 +247676,7 @@
           "age": 26,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "205",
+          "weight": "194",
           "shoots": "R",
           "draftOverall": 29,
           "draftBucket": 3,
@@ -248313,7 +248363,7 @@
           "age": 32,
           "ufaYear": 2021,
           "height": "70",
-          "weight": "176",
+          "weight": "181",
           "shoots": "R",
           "draftOverall": 169,
           "draftBucket": 5,
@@ -248571,12 +248621,12 @@
         {
           "season": 20262027,
           "age": 34,
-          "gp": 7,
+          "gp": 8,
           "points": 4,
-          "ppg": 0.57,
+          "ppg": 0.5,
           "evPoints": 4,
-          "evPPG": 0.57,
-          "toi": 9.66
+          "evPPG": 0.5,
+          "toi": 9.41
         }
       ],
       "compCareers": {
@@ -249476,7 +249526,7 @@
           "age": 30,
           "ufaYear": 2021,
           "height": "77",
-          "weight": "216",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 152,
           "draftBucket": 5,
@@ -249863,12 +249913,12 @@
           {
             "season": 20262027,
             "age": 32,
-            "gp": 9,
+            "gp": 10,
             "points": 1,
-            "ppg": 0.11,
+            "ppg": 0.1,
             "evPoints": 1,
-            "evPPG": 0.11,
-            "toi": 19.28
+            "evPPG": 0.1,
+            "toi": 18.83
           }
         ],
         "8477384": [
@@ -250170,7 +250220,7 @@
       "age": 28,
       "ufaYear": 2025,
       "height": "75",
-      "weight": "201",
+      "weight": "209",
       "shoots": "R",
       "draftOverall": 58,
       "draftBucket": 4,
@@ -250568,12 +250618,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
-            "points": 1,
-            "ppg": 0.05,
-            "evPoints": 1,
-            "evPPG": 0.05,
-            "toi": 10.08
+            "gp": 22,
+            "points": 2,
+            "ppg": 0.09,
+            "evPoints": 2,
+            "evPPG": 0.09,
+            "toi": 10.07
           }
         ],
         "8481481": [
@@ -250752,12 +250802,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 12.75
+            "evPPG": 0.27,
+            "toi": 13.09
           }
         ],
         "8479661": [
@@ -250824,12 +250874,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 11.03
+            "evPPG": 0.23,
+            "toi": 11.1
           }
         ],
         "8479671": [
@@ -252143,7 +252193,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "73",
-          "weight": "196",
+          "weight": "190",
           "shoots": "R",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -252245,7 +252295,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "76",
-          "weight": "205",
+          "weight": "225",
           "shoots": "L",
           "draftOverall": 50,
           "draftBucket": 4,
@@ -252452,6 +252502,16 @@
             "evPoints": 5,
             "evPPG": 0.08,
             "toi": 14.81
+          },
+          {
+            "season": 20262027,
+            "age": 27,
+            "gp": 1,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 13.08
           }
         ],
         "8480860": [
@@ -252819,7 +252879,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -254203,7 +254263,7 @@
           "age": 27,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "196",
+          "weight": "192",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -254237,7 +254297,7 @@
           "age": 27,
           "ufaYear": 2026,
           "height": "72",
-          "weight": "205",
+          "weight": "223",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -254757,7 +254817,7 @@
           "age": 26,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "205",
+          "weight": "194",
           "shoots": "R",
           "draftOverall": 29,
           "draftBucket": 3,
@@ -255434,7 +255494,7 @@
       "age": 23,
       "ufaYear": 2030,
       "height": "71",
-      "weight": "185",
+      "weight": "201",
       "shoots": "L",
       "draftOverall": 105,
       "draftBucket": 5,
@@ -256054,7 +256114,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -256840,12 +256900,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ]
       },
@@ -257133,7 +257193,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "73",
-          "weight": "196",
+          "weight": "190",
           "shoots": "R",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -257516,6 +257576,16 @@
             "evPoints": 5,
             "evPPG": 0.08,
             "toi": 14.81
+          },
+          {
+            "season": 20262027,
+            "age": 27,
+            "gp": 1,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 13.08
           }
         ]
       },
@@ -258288,12 +258358,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 21,
+            "gp": 22,
             "points": 2,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 2,
-            "evPPG": 0.1,
-            "toi": 20.4
+            "evPPG": 0.09,
+            "toi": 20.49
           }
         ],
         "8475324": [
@@ -260970,12 +261040,12 @@
           {
             "season": 20262027,
             "age": 35,
-            "gp": 21,
+            "gp": 22,
             "points": 13,
-            "ppg": 0.62,
+            "ppg": 0.59,
             "evPoints": 9,
-            "evPPG": 0.43,
-            "toi": 17.46
+            "evPPG": 0.41,
+            "toi": 17.64
           }
         ],
         "8475798": [
@@ -261310,7 +261380,7 @@
           "age": 26,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "205",
+          "weight": "194",
           "shoots": "R",
           "draftOverall": 29,
           "draftBucket": 3,
@@ -262867,12 +262937,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
-            "points": 1,
-            "ppg": 0.05,
-            "evPoints": 1,
-            "evPPG": 0.05,
-            "toi": 10.08
+            "gp": 22,
+            "points": 2,
+            "ppg": 0.09,
+            "evPoints": 2,
+            "evPPG": 0.09,
+            "toi": 10.07
           }
         ],
         "8479661": [
@@ -262939,12 +263009,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
+            "gp": 22,
             "points": 5,
-            "ppg": 0.24,
+            "ppg": 0.23,
             "evPoints": 5,
-            "evPPG": 0.24,
-            "toi": 11.03
+            "evPPG": 0.23,
+            "toi": 11.1
           }
         ],
         "8481186": [
@@ -263031,12 +263101,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 12.75
+            "evPPG": 0.27,
+            "toi": 13.09
           }
         ],
         "8479359": [
@@ -264648,12 +264718,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 13,
+            "gp": 14,
             "points": 3,
-            "ppg": 0.23,
+            "ppg": 0.21,
             "evPoints": 3,
-            "evPPG": 0.23,
-            "toi": 12.25
+            "evPPG": 0.21,
+            "toi": 12.39
           }
         ],
         "8481624": [
@@ -265075,7 +265145,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
@@ -265339,7 +265409,7 @@
       "age": 25,
       "ufaYear": 2028,
       "height": "72",
-      "weight": "181",
+      "weight": "185",
       "shoots": "L",
       "draftOverall": 20,
       "draftBucket": 3,
@@ -265481,8 +265551,8 @@
           "contractYear": 20252026,
           "age": 25,
           "ufaYear": 2028,
-          "height": "73",
-          "weight": "192",
+          "height": "74",
+          "weight": "196",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -266951,8 +267021,8 @@
       "contractYear": 20252026,
       "age": 23,
       "ufaYear": 2030,
-      "height": "75",
-      "weight": "201",
+      "height": "76",
+      "weight": "205",
       "shoots": "R",
       "draftOverall": 55,
       "draftBucket": 4,
@@ -267674,8 +267744,8 @@
           "contractYear": 20252026,
           "age": 25,
           "ufaYear": 2028,
-          "height": "73",
-          "weight": "192",
+          "height": "74",
+          "weight": "196",
           "shoots": "R",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -270843,12 +270913,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 20,
+            "gp": 21,
             "points": 4,
-            "ppg": 0.2,
+            "ppg": 0.19,
             "evPoints": 3,
-            "evPPG": 0.15,
-            "toi": 15.47
+            "evPPG": 0.14,
+            "toi": 15.14
           }
         ],
         "8482702": [
@@ -271421,12 +271491,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 21,
-            "points": 21,
+            "gp": 22,
+            "points": 22,
             "ppg": 1.0,
-            "evPoints": 12,
-            "evPPG": 0.57,
-            "toi": 19.81
+            "evPoints": 13,
+            "evPPG": 0.59,
+            "toi": 19.85
           }
         ],
         "8484153": [
@@ -272084,7 +272154,7 @@
       "age": 26,
       "ufaYear": 2027,
       "height": "74",
-      "weight": "196",
+      "weight": "209",
       "shoots": "L",
       "draftOverall": 999,
       "draftBucket": 6,
@@ -272245,7 +272315,7 @@
           "age": 27,
           "ufaYear": 2025,
           "height": "72",
-          "weight": "196",
+          "weight": "192",
           "shoots": "L",
           "draftOverall": 999,
           "draftBucket": 6,
@@ -272620,12 +272690,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
-            "points": 9,
-            "ppg": 0.43,
-            "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 13.0
+            "gp": 22,
+            "points": 10,
+            "ppg": 0.45,
+            "evPoints": 9,
+            "evPPG": 0.41,
+            "toi": 13.13
           }
         ]
       },
@@ -275295,12 +275365,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 21,
+            "gp": 22,
             "points": 2,
-            "ppg": 0.1,
+            "ppg": 0.09,
             "evPoints": 2,
-            "evPPG": 0.1,
-            "toi": 20.4
+            "evPPG": 0.09,
+            "toi": 20.49
           }
         ],
         "8475462": [
@@ -277583,12 +277653,12 @@
         {
           "season": 20262027,
           "age": 29,
-          "gp": 21,
+          "gp": 22,
           "points": 16,
-          "ppg": 0.76,
+          "ppg": 0.73,
           "evPoints": 11,
-          "evPPG": 0.52,
-          "toi": 19.65
+          "evPPG": 0.5,
+          "toi": 19.68
         }
       ],
       "compCareers": {
@@ -278609,12 +278679,12 @@
         {
           "season": 20262027,
           "age": 26,
-          "gp": 21,
-          "points": 10,
-          "ppg": 0.48,
-          "evPoints": 9,
-          "evPPG": 0.43,
-          "toi": 16.15
+          "gp": 22,
+          "points": 11,
+          "ppg": 0.5,
+          "evPoints": 10,
+          "evPPG": 0.45,
+          "toi": 16.21
         }
       ],
       "compCareers": {
@@ -278774,12 +278844,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 20,
+            "gp": 21,
             "points": 4,
-            "ppg": 0.2,
+            "ppg": 0.19,
             "evPoints": 3,
-            "evPPG": 0.15,
-            "toi": 15.47
+            "evPPG": 0.14,
+            "toi": 15.14
           }
         ],
         "8481522": [
@@ -279653,12 +279723,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 20,
+            "gp": 21,
             "points": 9,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.45,
-            "toi": 18.39
+            "evPPG": 0.43,
+            "toi": 18.58
           }
         ],
         "8478055": [
@@ -280245,12 +280315,12 @@
           {
             "season": 20262027,
             "age": 26,
-            "gp": 21,
+            "gp": 22,
             "points": 17,
-            "ppg": 0.81,
+            "ppg": 0.77,
             "evPoints": 13,
-            "evPPG": 0.62,
-            "toi": 15.67
+            "evPPG": 0.59,
+            "toi": 15.88
           }
         ],
         "8483676": [
@@ -280991,12 +281061,12 @@
           {
             "season": 20262027,
             "age": 33,
-            "gp": 21,
+            "gp": 22,
             "points": 19,
-            "ppg": 0.9,
+            "ppg": 0.86,
             "evPoints": 14,
-            "evPPG": 0.67,
-            "toi": 21.69
+            "evPPG": 0.64,
+            "toi": 21.84
           }
         ],
         "8478178": [
@@ -282909,12 +282979,12 @@
           {
             "season": 20262027,
             "age": 28,
-            "gp": 21,
-            "points": 9,
-            "ppg": 0.43,
-            "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 13.0
+            "gp": 22,
+            "points": 10,
+            "ppg": 0.45,
+            "evPoints": 9,
+            "evPPG": 0.41,
+            "toi": 13.13
           }
         ],
         "8480980": [
@@ -283366,12 +283436,12 @@
         {
           "season": 20262027,
           "age": 22,
-          "gp": 21,
+          "gp": 22,
           "points": 13,
-          "ppg": 0.62,
+          "ppg": 0.59,
           "evPoints": 11,
-          "evPPG": 0.52,
-          "toi": 16.42
+          "evPPG": 0.5,
+          "toi": 16.31
         }
       ],
       "compCareers": {
@@ -283597,12 +283667,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ]
       },
@@ -284041,12 +284111,12 @@
           {
             "season": 20262027,
             "age": 23,
-            "gp": 19,
-            "points": 22,
-            "ppg": 1.16,
+            "gp": 20,
+            "points": 23,
+            "ppg": 1.15,
             "evPoints": 9,
-            "evPPG": 0.47,
-            "toi": 18.76
+            "evPPG": 0.45,
+            "toi": 18.86
           }
         ],
         "8482740": [
@@ -284275,7 +284345,7 @@
       "age": 23,
       "ufaYear": 2030,
       "height": "75",
-      "weight": "183",
+      "weight": "190",
       "shoots": "R",
       "draftOverall": 169,
       "draftBucket": 5,
@@ -285689,8 +285759,8 @@
       "actualContract": {
         "term": 1,
         "value": 4900000,
-        "aav": 10000000,
-        "capHitPct": 8.81,
+        "aav": 4900000,
+        "capHitPct": 4.32,
         "signingDate": "2026-09-15",
         "team": "Hurricanes",
         "signingStatus": "UFA",
@@ -287038,12 +287108,12 @@
           {
             "season": 20262027,
             "age": 36,
-            "gp": 22,
+            "gp": 23,
             "points": 10,
-            "ppg": 0.45,
+            "ppg": 0.43,
             "evPoints": 9,
-            "evPPG": 0.41,
-            "toi": 14.05
+            "evPPG": 0.39,
+            "toi": 13.97
           }
         ]
       },
@@ -287561,12 +287631,12 @@
           {
             "season": 20262027,
             "age": 25,
-            "gp": 21,
-            "points": 14,
-            "ppg": 0.67,
-            "evPoints": 13,
-            "evPPG": 0.62,
-            "toi": 17.59
+            "gp": 22,
+            "points": 15,
+            "ppg": 0.68,
+            "evPoints": 14,
+            "evPPG": 0.64,
+            "toi": 17.44
           }
         ],
         "8479542": [
@@ -288326,12 +288396,12 @@
           {
             "season": 20262027,
             "age": 23,
-            "gp": 19,
-            "points": 22,
-            "ppg": 1.16,
+            "gp": 20,
+            "points": 23,
+            "ppg": 1.15,
             "evPoints": 9,
-            "evPPG": 0.47,
-            "toi": 18.76
+            "evPPG": 0.45,
+            "toi": 18.86
           }
         ],
         "8482740": [
@@ -288708,7 +288778,7 @@
           "age": 26,
           "ufaYear": 2027,
           "height": "73",
-          "weight": "196",
+          "weight": "190",
           "shoots": "R",
           "draftOverall": 26,
           "draftBucket": 3,
@@ -289025,6 +289095,16 @@
             "evPoints": 5,
             "evPPG": 0.08,
             "toi": 14.81
+          },
+          {
+            "season": 20262027,
+            "age": 27,
+            "gp": 1,
+            "points": 0,
+            "ppg": 0.0,
+            "evPoints": 0,
+            "evPPG": 0.0,
+            "toi": 13.08
           }
         ],
         "8480049": [
@@ -289548,12 +289628,12 @@
         {
           "season": 20262027,
           "age": 25,
-          "gp": 18,
-          "points": 11,
-          "ppg": 0.61,
-          "evPoints": 7,
-          "evPPG": 0.39,
-          "toi": 17.09
+          "gp": 19,
+          "points": 12,
+          "ppg": 0.63,
+          "evPoints": 8,
+          "evPPG": 0.42,
+          "toi": 17.02
         }
       ],
       "compCareers": {
@@ -290480,12 +290560,12 @@
           {
             "season": 20262027,
             "age": 23,
-            "gp": 19,
-            "points": 22,
-            "ppg": 1.16,
+            "gp": 20,
+            "points": 23,
+            "ppg": 1.15,
             "evPoints": 9,
-            "evPPG": 0.47,
-            "toi": 18.76
+            "evPPG": 0.45,
+            "toi": 18.86
           }
         ],
         "8482077": [
@@ -290901,12 +290981,12 @@
         {
           "season": 20262027,
           "age": 24,
-          "gp": 21,
+          "gp": 22,
           "points": 6,
-          "ppg": 0.29,
+          "ppg": 0.27,
           "evPoints": 6,
-          "evPPG": 0.29,
-          "toi": 13.99
+          "evPPG": 0.27,
+          "toi": 14.01
         }
       ],
       "compCareers": {
@@ -290996,12 +291076,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ],
         "8482703": [
@@ -292831,11 +292911,11 @@
         {
           "season": 20262027,
           "age": 28,
-          "gp": 21,
-          "points": 14,
-          "ppg": 0.67,
-          "evPoints": 6,
-          "evPPG": 0.29,
+          "gp": 22,
+          "points": 15,
+          "ppg": 0.68,
+          "evPoints": 7,
+          "evPPG": 0.32,
           "toi": 18.43
         }
       ],
@@ -294483,12 +294563,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 9,
-            "ppg": 0.43,
+            "ppg": 0.41,
             "evPoints": 6,
-            "evPPG": 0.29,
-            "toi": 14.55
+            "evPPG": 0.27,
+            "toi": 14.46
           }
         ],
         "8482113": [
@@ -295103,12 +295183,12 @@
           {
             "season": 20262027,
             "age": 24,
-            "gp": 21,
+            "gp": 22,
             "points": 8,
-            "ppg": 0.38,
+            "ppg": 0.36,
             "evPoints": 8,
-            "evPPG": 0.38,
-            "toi": 12.14
+            "evPPG": 0.36,
+            "toi": 12.15
           }
         ],
         "8482703": [
@@ -295723,12 +295803,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 10,
+            "gp": 11,
             "points": 3,
-            "ppg": 0.3,
+            "ppg": 0.27,
             "evPoints": 3,
-            "evPPG": 0.3,
-            "toi": 12.75
+            "evPPG": 0.27,
+            "toi": 13.09
           }
         ],
         "8478434": [
@@ -295805,12 +295885,12 @@
           {
             "season": 20262027,
             "age": 30,
-            "gp": 21,
-            "points": 1,
-            "ppg": 0.05,
-            "evPoints": 1,
-            "evPPG": 0.05,
-            "toi": 10.08
+            "gp": 22,
+            "points": 2,
+            "ppg": 0.09,
+            "evPoints": 2,
+            "evPPG": 0.09,
+            "toi": 10.07
           }
         ],
         "8479353": [
@@ -296502,12 +296582,12 @@
           {
             "season": 20262027,
             "age": 22,
-            "gp": 6,
+            "gp": 7,
             "points": 1,
-            "ppg": 0.17,
+            "ppg": 0.14,
             "evPoints": 1,
-            "evPPG": 0.17,
-            "toi": 9.43
+            "evPPG": 0.14,
+            "toi": 8.46
           }
         ],
         "8482751": [
@@ -297615,12 +297695,12 @@
           {
             "season": 20262027,
             "age": 31,
-            "gp": 21,
-            "points": 8,
-            "ppg": 0.38,
-            "evPoints": 7,
-            "evPPG": 0.33,
-            "toi": 15.31
+            "gp": 22,
+            "points": 9,
+            "ppg": 0.41,
+            "evPoints": 8,
+            "evPPG": 0.36,
+            "toi": 15.44
           }
         ],
         "8477987": [
@@ -298779,7 +298859,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "72",
-          "weight": "179",
+          "weight": "185",
           "shoots": "L",
           "draftOverall": 24,
           "draftBucket": 3,
@@ -300033,12 +300113,12 @@
           {
             "season": 20262027,
             "age": 34,
-            "gp": 21,
+            "gp": 22,
             "points": 15,
-            "ppg": 0.71,
+            "ppg": 0.68,
             "evPoints": 9,
-            "evPPG": 0.43,
-            "toi": 18.49
+            "evPPG": 0.41,
+            "toi": 18.51
           }
         ],
         "8475791": [
@@ -300673,7 +300753,7 @@
           "age": 29,
           "ufaYear": 2023,
           "height": "74",
-          "weight": "207",
+          "weight": "214",
           "shoots": "L",
           "draftOverall": 91,
           "draftBucket": 5,
@@ -301211,7 +301291,7 @@
           "age": 23,
           "ufaYear": 2029,
           "height": "75",
-          "weight": "201",
+          "weight": "205",
           "shoots": "R",
           "draftOverall": 35,
           "draftBucket": 4,
